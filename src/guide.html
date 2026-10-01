@@ -120,6 +120,28 @@
   .card .metarow{display:flex; gap:5px; flex-wrap:wrap;}
   .mtag{font-size:9.5px; font-weight:700; padding:1.5px 7px; border-radius:999px; background:var(--bg); border:1px solid var(--line); color:var(--ink-faint);}
   .mtag.must{background:var(--coral); border-color:var(--coral); color:#fff;}
+  .lv{align-self:flex-start; font-size:10px; font-weight:800; padding:2px 9px; border-radius:999px; letter-spacing:.01em;}
+  .lv.must{background:var(--coral); color:#fff;}
+  .lv.rec{background:var(--euca-soft); color:var(--euca-ink);}
+  .lv.chk{background:var(--gold-soft); color:var(--gold);}
+  .lv-row{display:flex; gap:5px; flex-wrap:wrap; align-items:center;}
+  .lv.off{background:var(--coral-soft); color:var(--coral-ink);}
+  .card .quick{font-size:11px; color:var(--ink-faint); line-height:1.45;}
+  .card .quick b{color:var(--ink-soft); font-weight:700;}
+  .card .alert{font-size:11.5px; font-weight:700; color:var(--coral-ink); background:var(--coral-soft); border-radius:8px; padding:6px 9px; line-height:1.45;}
+  details.more{border-top:1px dashed var(--line); padding-top:7px;}
+  details.more summary{cursor:pointer; font-size:11.5px; font-weight:700; color:var(--ocean); list-style:none;}
+  details.more summary::-webkit-details-marker{display:none;}
+  details.more summary::after{content:" ▾";}
+  details.more[open] summary::after{content:" ▴";}
+  details.more dl{margin:8px 0 0; display:grid; grid-template-columns:auto 1fr; gap:4px 10px; font-size:11.5px; line-height:1.5;}
+  details.more dt{color:var(--ink-faint); font-weight:700; white-space:nowrap;}
+  details.more dd{margin:0; color:var(--ink-soft); overflow-wrap:anywhere;}
+  details.more dd a{color:var(--ocean);}
+  .filter-row{display:flex; gap:6px; flex-wrap:wrap; margin:0 0 14px;}
+  .filter-btn{font:inherit; font-size:12px; font-weight:700; padding:6px 13px; border-radius:999px; border:1.5px solid var(--line); background:var(--surface); color:var(--ink-soft); cursor:pointer;}
+  .filter-btn.on{background:var(--ocean-deep); border-color:var(--ocean-deep); color:#fff;}
+  .filter-btn span{opacity:.7; font-weight:600; margin-left:3px;}
   .card-bottom{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:6px;}
   .maplink{font-size:11px; font-weight:700; color:var(--ocean); text-decoration:none; display:inline-flex; align-items:center; gap:4px;}
   .pick-btn{flex:none; width:28px; height:28px; border-radius:50%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink-faint); cursor:pointer; display:flex; align-items:center; justify-content:center;}
@@ -374,6 +396,7 @@
         <h2>가볼만한곳</h2>
         <p>시드니 15개 지역 + 멜버른 6개 지역, 총 40여 곳을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
       </div>
+      <div class="filter-row" id="place-filter"></div>
       <div id="place-grid"></div>
       <div class="picked-summary" id="place-summary"></div>
       <div class="note-box"><b>혹등고래 크루즈는?</b> 시드니 웨일와칭 시즌은 5~11월이에요. 2월은 시즌이 아니라 이번 여행에서는 제외하는 게 맞아요.</div>
@@ -388,6 +411,7 @@
         <h2>맛집 · 카페</h2>
         <p>시드니 10개 지역 + 멜버른 4개 지역, 30여 곳. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
       </div>
+      <div class="filter-row" id="food-filter"></div>
       <div id="food-grid"></div>
       <div class="picked-summary" id="food-summary"></div>
     </section>
@@ -666,18 +690,85 @@
     return groups;
   }
 
+  // 새로 조사한 장소와 장소별 상세(운영시간·휴무일·좌표)는 build.py가 data/*.json에서 주입
+  var EXTRA = window.GUIDE_EXTRA || [];
+  var DETAILS = window.GUIDE_DETAILS || {};
+  (window.GUIDE_PHOTOS || []).forEach(function(id){ PHOTOS[id] = 1; });
+  EXTRA.forEach(function(e){ (e.kind==="food" ? FOOD : PLACES).push(e); });
+  var FILTER = {place:"all", food:"all"};
+  var DOWS = ["월","화","수","목","금","토","일"];
+
+  function levelOf(it){
+    if (it.tags && it.tags.indexOf("필수")!==-1) return "필수";
+    return it.badge || "추천";
+  }
+  function detailOf(it){
+    var d = DETAILS[it.id] || {};
+    return {hours:d.hours||it.hours||"", closed:d.closed||it.closed||[], price:d.price||it.price||"", note:d.note||it.note||"",
+            verified:d.verified||it.verified||"", src:d.src||it.src||"", lat:d.lat, lng:d.lng};
+  }
+  function closedText(c){
+    if (!c || !c.length) return "";
+    if (c.length===7) return "현재 운영 안 함";
+    if (c.length>=4) return DOWS.filter(function(x){return c.indexOf(x)===-1;}).join("·")+"요일만 운영";
+    return c.join("·")+"요일 휴무";
+  }
+  var VERIFIED = {official:"공식 사이트 확인", secondary:"예매·안내 사이트 기준", blog:"블로그 후기 기준 — 재확인 필요", unconfirmed:"확인 못함 — 방문 전 확인"};
+  function levelHtml(it, d){
+    var lv = levelOf(it);
+    var cls = lv==="필수" ? "must" : lv==="검토필요" ? "chk" : "rec";
+    var ct = closedText(d.closed);
+    return '<div class="lv-row"><span class="lv '+cls+'">'+lv+'</span>'+(ct?'<span class="lv off">'+esc(ct)+'</span>':'')+'</div>';
+  }
+  function detailHtml(d){
+    var alert = "", note = d.note;
+    if (note.indexOf("주의:")===0){
+      var cut = note.indexOf(". ");
+      alert = '<div class="alert">'+esc(cut===-1?note:note.slice(0,cut+1))+'</div>';
+    }
+    var quick = d.hours ? '<div class="quick"><b>운영</b> '+esc(d.hours)+'</div>' : '';
+    var rows = '';
+    if (d.hours) rows += '<dt>운영시간</dt><dd>'+esc(d.hours)+'</dd>';
+    var ct = closedText(d.closed);
+    rows += '<dt>휴무</dt><dd>'+(ct?esc(ct):'없음(매일) 또는 상시 개방')+'</dd>';
+    if (d.price) rows += '<dt>요금</dt><dd>'+esc(d.price)+'</dd>';
+    if (note) rows += '<dt>참고</dt><dd>'+esc(note)+'</dd>';
+    if (d.verified) rows += '<dt>확인 수준</dt><dd>'+esc(VERIFIED[d.verified]||d.verified)+(d.src?' · <a href="'+esc(d.src)+'" target="_blank" rel="noopener">출처</a>':'')+'</dd>';
+    return alert + quick + '<details class="more"><summary>상세보기</summary><dl>'+rows+'</dl></details>';
+  }
+  function renderFilter(kind, items){
+    var n = {all:items.length, top:0, chk:0};
+    items.forEach(function(it){ if (levelOf(it)==="검토필요") n.chk++; else n.top++; });
+    var defs = [["all","전체"],["top","필수·추천"],["chk","검토필요"]];
+    document.getElementById(kind+"-filter").innerHTML = defs.map(function(f){
+      return '<button class="filter-btn'+(FILTER[kind]===f[0]?" on":"")+'" onclick="setGuideFilter(\''+kind+'\',\''+f[0]+'\')">'+f[1]+'<span>'+n[f[0]]+'</span></button>';
+    }).join("");
+  }
+  function applyFilter(kind, items){
+    var f = FILTER[kind];
+    if (f==="all") return items;
+    return items.filter(function(it){ var c = levelOf(it)==="검토필요"; return f==="chk" ? c : !c; });
+  }
+  window.setGuideFilter = function(kind, f){
+    FILTER[kind] = f;
+    if (kind==="place") renderPlaces(); else renderFood();
+  };
+
   function renderPlaces(){
     var picks = loadPicks("au_places");
-    var groups = groupByRegion(PLACES);
+    renderFilter("place", PLACES);
+    var groups = groupByRegion(applyFilter("place", PLACES));
     document.getElementById("place-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(s){
-        var on = !!picks[s.id];
+        var on = !!picks[s.id], d = detailOf(s);
         return '<div class="card'+(on?" picked":"")+'" data-id="'+s.id+'">'
           + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
+          + levelHtml(s, d)
           + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub)+'</span></div></div>'
           + '<p>'+esc(s.desc)+'</p>'
-          + '<div class="metarow">'+s.tags.map(function(t){return '<span class="mtag'+(t==="필수"?" must":"")+'">'+esc(t)+'</span>';}).join("")+'</div>'
-          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(s.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'지도</a>'
+          + '<div class="metarow">'+s.tags.filter(function(t){return t!=="필수";}).map(function(t){return '<span class="mtag">'+esc(t)+'</span>';}).join("")+'</div>'
+          + detailHtml(d)
+          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(s.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
           + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
           + '</div>';
       }).join("");
@@ -701,15 +792,19 @@
 
   function renderFood(){
     var picks = loadPicks("au_food");
-    var groups = groupByRegion(FOOD);
+    renderFilter("food", FOOD);
+    var groups = groupByRegion(applyFilter("food", FOOD));
     document.getElementById("food-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(f){
-        var on = !!picks[f.id];
+        var on = !!picks[f.id], d = detailOf(f);
         return '<div class="card'+(on?" picked":"")+'" data-id="'+f.id+'">'
+          + (PHOTOS[f.id] ? '<img class="card-photo" src="img/'+f.id+'.jpg" alt="'+esc(f.title)+'" loading="lazy">' : '')
+          + levelHtml(f, d)
           + '<div class="card-top"><span class="card-ic">'+svgUse(f.icon)+'</span><div><h4>'+esc(f.title)+'</h4></div></div>'
           + '<span class="badge">'+esc(f.sig)+'</span>'
           + '<p>'+esc(f.desc)+'</p>'
-          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(f.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'지도</a>'
+          + detailHtml(d)
+          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(f.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
           + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
           + '</div>';
       }).join("");

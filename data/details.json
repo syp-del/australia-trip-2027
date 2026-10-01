@@ -1,0 +1,1880 @@
+{
+ "wombattour": {
+  "hours": "미확인 — 운영사·출발 요일 예약 전 확인 (종일 투어, 시드니 달링하버 집결)",
+  "closed": [],
+  "price": "투어 요금 미확인 / 웜뱃 교감 체험 현장 결제 약 A$15",
+  "note": "한국어 가이드 상품은 지그재그투어(보우럴 마을+와이너리+타랄가 와일드라이프 파크)로 확인되며 사전 예약 필수. 출발 시간·아동 요금·최소 연령은 확인하지 못했으니 예약 시 7세 아동 참여 조건과 웜뱃 안기 가능 여부를 문의.",
+  "lat": null,
+  "lng": null,
+  "verified": "unconfirmed",
+  "src": "https://www.trvlogue.com/ko/sydney-wombat-tour-zig-zag"
+ },
+ "bondi": {
+  "hours": "상시 개방 (라이프가드 10~4월 매일 06:00~19:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "빨강·노랑 깃발 사이에서만 수영. 한여름 낮은 자외선이 매우 강하니 오전 일찍 방문 권장, 주차는 유료·혼잡해 버스(333번) 이용이 편함.",
+  "lat": -33.8908,
+  "lng": 151.2743,
+  "verified": "secondary",
+  "src": "https://www.waverley.nsw.gov.au/recreation/beaches_and_coast/our_lifeguards"
+ },
+ "icebergs": {
+  "hours": "월~금 06:00~18:30, 토·일 06:30~18:30 (목요일 청소 휴장 — 여름엔 조수에 따라 개장하기도 함)",
+  "closed": [
+   "목"
+  ],
+  "price": "어른 A$10 / 아동 A$7 / 가족 A$30",
+  "note": "목요일은 청소로 휴장이 원칙이라 다른 요일 권장. 어린이 풀이 따로 있고 라이프가드 상주, 사우나 포함·수건/락커 대여 각 A$5, 파도가 높으면 물이 넘어오니 아이는 키즈풀 이용.",
+  "lat": -33.895,
+  "lng": 151.2743,
+  "verified": "official",
+  "src": "https://icebergs.com.au/pool/"
+ },
+ "coastalwalk": {
+  "hours": "상시 개방 (조명 거의 없음 — 낮 시간 이용)",
+  "closed": [],
+  "price": "무료",
+  "note": "본다이~쿠지 약 6km, 계단 많고 그늘이 거의 없어 여름엔 오전 9시 전 출발 권장. 7세 아이와는 본다이~브론테(약 2.5km) 구간만 걷고 버스로 복귀하는 것도 방법이며, 폭우·높은 파도 뒤 일부 구간 임시 폐쇄 여부는 웨이벌리 카운슬 공지 확인.",
+  "lat": -33.8953,
+  "lng": 151.2748,
+  "verified": "secondary",
+  "src": "https://www.waverley.nsw.gov.au/recreation/beaches_and_coast/beach_safety/local_walks"
+ },
+ "coogee": {
+  "hours": "상시 개방 (라이프가드 연중 순찰, 여름 07:00~19:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "파도가 비교적 잔잔해 아이와 놀기 좋고 깃발 사이에서만 수영. 그랜트 리저브에 놀이터·무료 전기 BBQ·화장실이 있으며 주변 주차는 시간 제한이 있어 주말엔 일찍 도착.",
+  "lat": -33.9208,
+  "lng": 151.2577,
+  "verified": "secondary",
+  "src": "https://www.randwick.nsw.gov.au/facilities-and-recreation/beaches-and-coast/beaches/coogee-beach"
+ },
+ "clovelly": {
+  "hours": "상시 개방 (라이프가드 여름 08:00~18:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "콘크리트 데크로 둘러싸인 좁은 만이라 잔잔하고 스노클링에 좋음(계단 입수, 바닥이 미끄러움). 절벽 위 무료 주차장이 있으나 여름 주말은 오전에 만차.",
+  "lat": -33.9143,
+  "lng": 151.267,
+  "verified": "secondary",
+  "src": "https://www.randwick.nsw.gov.au/facilities-and-recreation/beaches-and-coast/lifeguards"
+ },
+ "bbq": {
+  "hours": "상시 개방 (무료 전기 BBQ는 해질 무렵까지 작동)",
+  "closed": [],
+  "price": "무료",
+  "note": "브론테 파크 무료 전기 바비큐·지붕 있는 피크닉 헛은 선착순이라 주말엔 오전에 자리 확보. 주차장은 작고 유료(미터)이며 브론테 비치 라이프가드는 여름 06:00~19:00, 남쪽 끝 암석 풀(Bogey Hole)이 아이에게 안전.",
+  "lat": -33.9034,
+  "lng": 151.267,
+  "verified": "official",
+  "src": "https://waverley.nsw.gov.au/recreation/parks_and_reserves/bronte_park"
+ },
+ "manlybeach": {
+  "hours": "상시 개방 (사우스 스테인 라이프가드 연중 순찰, 대략 08:00~17:00대)",
+  "closed": [],
+  "price": "무료 (서큘러키~맨리 페리 요금 별도)",
+  "note": "서큘러키에서 페리 약 20~30분, 코르소 상점가는 대부분 09:00~17:30. 깃발 사이에서만 수영하고 순찰 시간은 계절별로 달라 당일 현장 표지 확인.",
+  "lat": -33.797,
+  "lng": 151.288,
+  "verified": "secondary",
+  "src": "https://beachsafe.org.au/beach/nsw/manly/manly/queenscliff-north-steyne-manly"
+ },
+ "shellybeach": {
+  "hours": "상시 개방 (라이프가드 없음)",
+  "closed": [],
+  "price": "무료 (셸리비치 주차장 유료)",
+  "note": "라이프가드가 없는 보호 만이지만 잔잔해 아이 스노클링에 적합, 보호자 밀착 필요. 맨리에서 해안 산책로로 도보 약 15~20분이며 중간의 페어리 바워 암석 풀은 만조·큰 파도 때 물이 넘침.",
+  "lat": -33.8004,
+  "lng": 151.2977,
+  "verified": "unconfirmed",
+  "src": "https://www.northernbeaches.nsw.gov.au/things-to-do/beaches"
+ },
+ "northhead": {
+  "hours": "차량 게이트 05:00~20:30 (서머타임 기간), 4~10월 06:00~18:00",
+  "closed": [],
+  "price": "주차 A$5/차량·일 (입장 무료)",
+  "note": "노스헤드 시닉 드라이브 끝 페어팩스 주차장에서 포장 순환로(약 1km, 유모차 가능)로 전망대 접근. 블루피시 포인트 등 일부 구역은 화재 피해·지반 불안정으로 폐쇄 중이며 그늘이 적어 오전이나 해질녘 권장.",
+  "lat": -33.8223,
+  "lng": 151.299,
+  "verified": "official",
+  "src": "https://www.nationalparks.nsw.gov.au/things-to-do/walking-tracks/fairfax-walk/local-alerts"
+ },
+ "thegap": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "왓슨스베이 페리 선착장에서 도보 5분, 절벽 전망대라 아이 손을 꼭 잡고 울타리 밖으로 나가지 말 것. 그늘이 거의 없어 오전이나 늦은 오후가 좋고 주차는 시간 제한·혼잡하니 페리 이용 권장.",
+  "lat": -33.8437,
+  "lng": 151.2847,
+  "verified": "unconfirmed",
+  "src": "https://www.nationalparks.nsw.gov.au/visit-a-park/parks/sydney-harbour-national-park"
+ },
+ "balmoral": {
+  "hours": "상시 개방 (상주 라이프가드 정보 없음)",
+  "closed": [],
+  "price": "무료 / 주차 유료(에스플러네이드 주차장 2시간 A$6, 노상 약 A$8/시간)",
+  "note": "파도가 거의 없는 항만 해변이고 상어 그물로 둘러싼 발모랄 배스(수영 구역)가 있어 아이에게 적합하나 보호자 감독 필수. 주말은 주차가 매우 어려워 오전 9시 전 도착 권장.",
+  "lat": -33.8262,
+  "lng": 151.2516,
+  "verified": "secondary",
+  "src": "https://beachsafe.org.au/beach/nsw/balmoral-beach"
+ },
+ "taronga": {
+  "hours": "매일 09:30~17:00 (9~4월), 5~8월은 16:30까지",
+  "closed": [],
+  "price": "현장 어른 A$57 / 아동(4~15세) A$33 / 가족(2+2) A$162 — 온라인 어른 A$51.30~, 아동 A$29.70~, 가족 A$144~",
+  "note": "온라인 사전 구매가 저렴하고 줄을 덜 선다. 서큘러키에서 페리 12분, 언덕 지형이라 위쪽 정문에서 시작해 아래 선착장으로 내려오는 동선이 편하며 더운 날은 오전 개장 직후 방문 권장. 사육사 체험 'Keeper for a Day' 주니어 과정은 만 8~11세 대상이라 2027년 2월에 만 7세인 아이들은 참가할 수 없어요.",
+  "lat": -33.8435,
+  "lng": 151.2413,
+  "verified": "secondary",
+  "src": "https://www.taronga.org.au/sydney-zoo/plan/visitor-information/ticket-prices/"
+ },
+ "fireworks": {
+  "hours": "미확인 — 방문 전 확인 (2026년은 매주가 아니라 지정 토요일만 개최, 여름철 21:00 전후 약 10분)",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "일"
+  ],
+  "price": "무료",
+  "note": "주의: 2026년 일정은 매월 첫 토요일 위주의 지정일만 진행되어 '매주 토요일'이 아니며, 2027년 2월 일정은 아직 공지되지 않아 2/13(토) 개최 여부 미확인. 출발 전 darlingharbour.com 불꽃 일정을 확인하고 코클베이 주변은 30분 전 자리 잡기, 악천후 시 취소.",
+  "lat": -33.8707,
+  "lng": 151.2007,
+  "verified": "unconfirmed",
+  "src": "https://www.darlingharbour.com/Whats-On/Campaigns/Fireworks"
+ },
+ "agnsw": {
+  "hours": "매일 10:00~17:00 (수요일 22:00까지)",
+  "closed": [],
+  "price": "무료 (일부 특별전 유료)",
+  "note": "본관(Naala Nura)과 신관(Naala Badu) 두 건물 모두 무료이고 냉방이 좋아 한낮 더위 피하기 좋다. 수요일 야간 개장은 한산하며 시티에서 도보 약 15분.",
+  "lat": -33.8688,
+  "lng": 151.2174,
+  "verified": "official",
+  "src": "https://www.artgallery.nsw.gov.au/visit/"
+ },
+ "circularquay": {
+  "hours": "상시 개방 (오페라하우스 가이드 투어는 매일 운영, 약 1시간, 시간대는 예약 시 선택)",
+  "closed": [],
+  "price": "산책 무료 / 오페라하우스 투어 사전예약 어른 A$50, 아동(5~15세) A$30, 가족(2+2) A$130 (2027-03-31까지)",
+  "note": "오페라하우스 투어는 한국어 투어가 있으며 계단 약 300개·2.5km를 걷는다. 당일 구매는 A$5 더 비싸니 온라인 예약, 그늘이 적어 오전이나 해질녘 산책 권장.",
+  "lat": -33.861,
+  "lng": 151.211,
+  "verified": "official",
+  "src": "https://www.sydneyoperahouse.com/tours/sydney-opera-house-tour"
+ },
+ "darlingharbour": {
+  "hours": "씨라이프: 평일 10:00~18:00, 주말·방학 09:30~18:00 (입장 마감 17:00) / 와일드라이프: 매일 09:30~17:30경 (입장 마감 16:30) — 날짜별 변동, 방문 전 확인",
+  "closed": [],
+  "price": "씨라이프 온라인 어른 A$39~44, 아동 A$24~32 / 와일드라이프 온라인 어른 A$50, 아동 A$36 (콤보권이 저렴)",
+  "note": "두 곳은 바로 옆 건물이고 온라인 사전 예약(날짜·시간 지정)이 현장보다 최대 30% 저렴하며 2곳 콤보 패스가 유리. 운영 시간이 학기 중 평일엔 짧아지니 공식 사이트 달력에서 해당 날짜 확인.",
+  "lat": -33.8693,
+  "lng": 151.2021,
+  "verified": "secondary",
+  "src": "https://www.visitsealife.com/sydney/plan-your-day/before-you-visit/opening-hours/"
+ },
+ "barangaroo": {
+  "hours": "24시간 개방 (지하 주차장 06:00~24:00)",
+  "closed": [],
+  "price": "무료 (윌슨 주차장 유료)",
+  "note": "메트로 바랑가루역에서 가깝고 사암 해안 산책로·잔디 언덕이 있으며 마리나위 코브에서 수영 가능(라이프가드 없음). 그늘이 적으니 오전이나 해질녘 방문, 피크닉 가능.",
+  "lat": -33.857,
+  "lng": 151.2015,
+  "verified": "official",
+  "src": "https://www.barangaroo.com/visit/barangaroo-reserve"
+ },
+ "fishmarket": {
+  "hours": "매일 07:00~22:00 (매장별 영업시간 상이)",
+  "closed": [],
+  "price": "입장 무료",
+  "note": "주의: 2026년 블랙와틀 베이의 신축 건물(Bridge Rd, Glebe 쪽)로 이전했으니 옛 피어몬트 건물로 가지 말 것. 수산물 소매점은 오후 일찍 닫는 곳이 많아 점심 전 방문 권장, 평일 15시 이후 입차·17시 전 출차 시 주차 무료.",
+  "lat": -33.875,
+  "lng": 151.19,
+  "verified": "official",
+  "src": "https://www.sydneyfishmarket.com.au/"
+ },
+ "powerhouse": {
+  "hours": "휴관 중 — 재개관일 미정",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "토",
+   "일"
+  ],
+  "price": "",
+  "note": "주의: 파워하우스 울티모는 2024년 2월부터 3억 달러 규모 리노베이션으로 휴관 중이며 공식 재개관일이 없고 2027년 2월에도 닫혀 있을 가능성이 높다. 대안은 파워하우스 캐슬힐(주말 10:00~16:00)이나 시드니 천문대(목~일).",
+  "lat": -33.8785,
+  "lng": 151.1995,
+  "verified": "official",
+  "src": "https://powerhouse.com.au/visit/ultimo"
+ },
+ "northsydneypool": {
+  "hours": "월~금 05:30~21:00, 토·일 07:00~18:30 (공휴일 08:00~16:30)",
+  "closed": [],
+  "price": "어른 A$11 / 아동(3~15세) A$8.80 / 가족(2+2) A$31.70 / 관람만 A$7.50",
+  "note": "5년 재개발 후 2026년 8월 7일 재개장, 키즈풀·스플래시 패드 있음. 현금 불가(카드만)·입장권은 현장 구매만 가능하며 14세 미만은 16세 이상 보호자 동반, 주차는 앞길 유료 미터뿐이라 밀슨스포인트역 도보 이용 권장.",
+  "lat": -33.8493,
+  "lng": 151.2112,
+  "verified": "official",
+  "src": "https://northsydneyolympicpool.com.au/visit-us/"
+ },
+ "lunapark": {
+  "hours": "금~일 정상 운영(대략 금·토 11:00~22:00, 일 10:00~18:00 — 날짜별 상이) / 학기 중 월~수는 '루나 라이트' 10:00~14:00 축소 운영 / 목요일 미확인 — 방문 전 달력 확인",
+  "closed": [
+   "목"
+  ],
+  "price": "공원 입장 무료 / 무제한 탑승권 약 어른 A$65~, 아동 A$55~ (키 기준, 날짜별 변동) / 루나 라이트: 1회 A$15, 2회 A$25",
+  "note": "학기 중 평일은 일부 놀이기구만 4시간 운영하므로 제대로 타려면 금~일 방문. 요금은 키 기준(85~105cm, 106~131cm, 132cm 이상)이라 7세는 보통 중간 등급이고 일부 스릴 기구는 탑승 불가, 공식 사이트 접속이 막혀 시간은 2차 출처 기준.",
+  "lat": -33.8476,
+  "lng": 151.21,
+  "verified": "secondary",
+  "src": "https://www.lunaparksydney.com/luna-lite"
+ },
+ "wendysgarden": {
+  "hours": "상시 개방 (정해진 운영시간 없음, 조명이 없어 낮 시간 권장)",
+  "closed": [],
+  "price": "무료",
+  "note": "경사진 흙길과 계단이 많아 유모차는 어렵고 조명이 없어 일몰 전 방문. 밀슨스포인트역에서 도보 약 10분, 클라크 파크 쪽으로 진입하며 화장실은 정원 안에 없음.",
+  "lat": -33.8448,
+  "lng": 151.2075,
+  "verified": "official",
+  "src": "https://www.wendyssecretgarden.org.au/?p=945"
+ },
+ "tumbalong": {
+  "hours": "상시 개방 (놀이터는 새벽~해질녘, 물놀이 시설 가동 시간 미확인)",
+  "closed": [],
+  "price": "무료",
+  "note": "대형 놀이터에 물놀이 구역이 있어 갈아입을 옷·수건을 챙길 것. 그늘막이 일부 있지만 한낮엔 바닥이 뜨거우니 오전이나 늦은 오후가 좋고 화장실·카페가 바로 옆에 있다.",
+  "lat": -33.8755,
+  "lng": 151.202,
+  "verified": "secondary",
+  "src": "https://www.cityofsydney.nsw.gov.au/playgrounds/tumbalong-park-playground"
+ },
+ "mrsmacquarie": {
+  "hours": "포인트 자체는 상시 개방 / 인접 왕립식물원은 매일 07:00~20:00 (2월 기준)",
+  "closed": [],
+  "price": "무료 (미시즈 맥쿼리스 로드 주차 유료)",
+  "note": "오페라하우스와 하버브리지를 한 화면에 담는 전망 포인트로 일몰 무렵이 가장 좋다. 식물원을 통해 걸어오면 2월에는 20시에 문이 닫히니 주의, 그늘이 적어 한낮은 피할 것.",
+  "lat": -33.8597,
+  "lng": 151.2225,
+  "verified": "secondary",
+  "src": "https://www.botanicgardens.org.au/sydney"
+ },
+ "paddingtonres": {
+  "hours": "상시 개방 (지하 정원부는 낮 시간에만 개방)",
+  "closed": [],
+  "price": "무료",
+  "note": "옥스퍼드 스트리트 255a, 계단 또는 엘리베이터로 내려가는 선큰 가든이라 15~20분이면 둘러본다. 토요일 패딩턴 마켓과 묶어 방문하면 좋고 연못 주변은 난간이 낮아 아이 주의.",
+  "lat": -33.885,
+  "lng": 151.2265,
+  "verified": "secondary",
+  "src": "https://www.cityofsydney.nsw.gov.au/parks/paddington-reservoir-gardens"
+ },
+ "paddingtonmkt": {
+  "hours": "토 10:00~16:00 (우천에도 운영)",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "일"
+  ],
+  "price": "입장 무료",
+  "note": "매주 토요일에만 열리므로 여행 중 기회는 2/13(토) 하루뿐. 옥스퍼드 스트리트 395 패딩턴 유나이팅 교회 마당에 150여 개 노점, 주차가 어려워 버스(333·440번 등) 이용.",
+  "lat": -33.8869,
+  "lng": 151.2301,
+  "verified": "official",
+  "src": "https://www.paddingtonmarkets.com.au/"
+ },
+ "centennial": {
+  "hours": "보행자 상시 출입 / 차량 게이트 06:00~20:00 (서머타임 기간) / 와일드 플레이 가든 매일 10:00~17:00",
+  "closed": [],
+  "price": "무료",
+  "note": "이안 포터 칠드런스 와일드 플레이 가든(물놀이·트리하우스)은 무료이고 여름에 물놀이 시설 가동, 갈아입을 옷 준비. 공원 안 주차는 무료지만 주말엔 혼잡하고 차량 게이트는 일몰 후 닫힌다.",
+  "lat": -33.8983,
+  "lng": 151.234,
+  "verified": "official",
+  "src": "https://www.centennialparklands.com.au/visit/opening-hours"
+ },
+ "camperdown": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "울타리 있는 그늘 놀이터·화장실·식수대가 있고 뉴타운 킹 스트리트에서 도보 5분. 공원 일부는 반려견 오프리시 구역(평일 종일)이라 개를 무서워하는 아이는 주의.",
+  "lat": -33.894,
+  "lng": 151.1795,
+  "verified": "official",
+  "src": "https://www.innerwest.nsw.gov.au/explore/parks-sport-and-recreation/parks-and-playgrounds/parks-by-suburb/newtown-parks/camperdown-memorial-rest-park"
+ },
+ "parramattapark": {
+  "hours": "매일 06:00~20:00 (서머타임 기간, 그 외 18:00까지)",
+  "closed": [],
+  "price": "무료",
+  "note": "도메인 크릭 놀이터(물 펌프·모래 놀이)와 페이퍼바크 놀이터가 아이에게 좋다. 파라마타는 시드니 도심보다 기온이 몇 도 높으니 오전 방문 권장, 차량 출입은 개방 시간 내에만 가능.",
+  "lat": -33.8105,
+  "lng": 150.9965,
+  "verified": "secondary",
+  "src": "https://www.greatersydneyparklands.nsw.gov.au/parramatta-park-facilities"
+ },
+ "grounds": {
+  "hours": "카페 기준 월~금 07:00~15:30, 토·일 07:00~16:00 (마감 30분 전 주문 종료)",
+  "closed": [],
+  "price": "입장 무료 (식음료 별도)",
+  "note": "주말 브런치는 대기가 길어 평일 오전 방문 권장, 카페는 예약 없이 선착순이고 정원·동물(농장 동물) 구경은 무료. 주소 7a/2 Huntley St, Alexandria, 주변 노상 주차는 시간 제한.",
+  "lat": -33.9107,
+  "lng": 151.1943,
+  "verified": "official",
+  "src": "https://thegrounds.com.au/alexandria/"
+ },
+ "hosierlane": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "공공 골목이라 언제든 갈 수 있고 사진은 사람 적은 오전 9시 전이 좋다. 페더레이션 스퀘어 맞은편이며 그라피티는 수시로 바뀌고 작업 중인 스프레이 냄새가 날 수 있음.",
+  "lat": -37.8165,
+  "lng": 144.9692,
+  "verified": "unconfirmed",
+  "src": "https://whatson.melbourne.vic.gov.au/"
+ },
+ "degravesst": {
+  "hours": "상시 개방 (카페는 대체로 07:00~16:00경, 가게별 상이)",
+  "closed": [],
+  "price": "무료 (식음료 별도)",
+  "note": "골목 자체는 24시간 열려 있지만 카페 대부분이 오후에 닫아 아침·브런치 시간대 방문 권장. 플린더스 스트리트역 바로 맞은편, 주말 오전은 매우 붐빔.",
+  "lat": -37.8172,
+  "lng": 144.9656,
+  "verified": "unconfirmed",
+  "src": "https://whatson.melbourne.vic.gov.au/"
+ },
+ "acmi": {
+  "hours": "매일 10:00~17:00",
+  "closed": [],
+  "price": "무료 (상설전 'The Story of the Moving Image' 무료, 특별전·상영 유료)",
+  "note": "페더레이션 스퀘어 안에 있고 체험형 전시가 많아 7세 아이에게 적합, 냉방이 되어 더운 날 대안으로 좋다. 스완스턴/플린더스 교차로 횡단보도 일부가 공사로 막혀 있으니 인근 횡단보도 이용.",
+  "lat": -37.8176,
+  "lng": 144.969,
+  "verified": "official",
+  "src": "https://www.acmi.net.au/visit/"
+ },
+ "statelibrary": {
+  "hours": "매일 10:00~18:00 (퀸스 홀은 16:00까지)",
+  "closed": [],
+  "price": "무료",
+  "note": "돔 열람실(라 트로브 리딩룸)과 폴린 갠델 칠드런스 쿼터가 볼거리. 현재 돔 5~6층 전망 구역과 라 트로브 스트리트 쪽 입구·카페는 보수 공사로 닫혀 있으니 스완스턴 스트리트 정문 이용.",
+  "lat": -37.8098,
+  "lng": 144.9652,
+  "verified": "official",
+  "src": "https://www.slv.vic.gov.au/visit/opening-hours"
+ },
+ "eurekaskydeck": {
+  "hours": "매일 12:00~22:00 (입장 마감 21:30) — 2026-11-02~2027-04-04 기준",
+  "closed": [],
+  "price": "어른 약 A$39 / 아동(4~16세) 약 A$25 / 가족(2+2) 약 A$105 (수요 연동 변동가, Edge 체험 추가 요금)",
+  "note": "현재 공식 명칭은 '멜버른 스카이덱(Melbourne Skydeck)'으로 바뀌었고 정오에 문을 열어 오전 방문은 불가. 2월 일몰은 20:20 전후라 19:30쯤 올라가면 노을과 야경을 함께 볼 수 있으며 온라인 예매가 저렴.",
+  "lat": -37.8213,
+  "lng": 144.9647,
+  "verified": "secondary",
+  "src": "https://www.melbourneskydeck.com.au/"
+ },
+ "sealifemelb": {
+  "hours": "매일 09:30~17:00 (입장 마감 16:00)",
+  "closed": [],
+  "price": "온라인 사전예약 평일 어른 A$39~, 아동(2~15세) A$25~ / 당일·주말 어른 A$49~, 아동 A$35~",
+  "note": "온라인으로 날짜·시간대를 지정해 사전 예약·결제해야 하며 타사 구매 티켓도 사이트에서 시간 예약이 필요. 관람 약 1.5~2시간, 주말은 입장 대기가 있어 평일 오전 권장.",
+  "lat": -37.8209,
+  "lng": 144.9582,
+  "verified": "official",
+  "src": "https://www.visitsealife.com/melbourne/plan-your-day/before-you-visit/opening-hours/"
+ },
+ "melbournemuseum": {
+  "hours": "매일 09:00~17:00 (성금요일·크리스마스 휴관)",
+  "closed": [],
+  "price": "박물관 어른 A$15 / 16세 이하 무료 · IMAX 다큐 A$10, 장편 어른 A$25.50~29, 아동 A$16.50~19.50",
+  "note": "어린이 갤러리는 붐비는 날 시간 지정 입장이 될 수 있어 온라인 예매 권장, 일부 특별전은 추가 요금. IMAX는 같은 건물이지만 별도 티켓·상영 시간표이므로 따로 예매.",
+  "lat": -37.8033,
+  "lng": 144.9717,
+  "verified": "secondary",
+  "src": "https://museumsvictoria.com.au/melbournemuseum/visiting/admission-prices"
+ },
+ "melbournezoo": {
+  "hours": "매일 09:00~17:00 (연중무휴)",
+  "closed": [],
+  "price": "아동(4~15세) 평일 A$29, 주말·공휴일·빅토리아 방학 무료 / 어른은 날짜별 변동가(힐스빌 기준 A$58 수준, 온라인 사전 구매가 저렴)",
+  "note": "학기 중 평일엔 아동도 유료이니 주말(2/13~14)에 가면 아이 둘이 무료. 현금 불가(카드만), 트램 58번이 공사로 대체 운행될 수 있어 업필드선 로열파크역 이용이 무난하고 더운 날은 개장 직후가 동물 보기 좋다.",
+  "lat": -37.7841,
+  "lng": 144.9515,
+  "verified": "official",
+  "src": "https://www.zoo.org.au/melbourne/plan-your-visit/"
+ },
+ "fitzroygardens": {
+  "hours": "정원 상시 개방 / 온실(Conservatory) 매일 09:00~17:00 / 쿡스 코티지 매일 10:00~16:00",
+  "closed": [],
+  "price": "정원·온실 무료 / 쿡스 코티지 어른 약 A$7.90, 아동 약 A$4.30, 가족 약 A$21.30",
+  "note": "요정 나무(Fairies' Tree)와 미니어처 튜더 빌리지는 무료로 아이들이 좋아한다. 쿡스 코티지는 예약제 입장이며 요금은 출처마다 차이가 있어 현장 확인, 큰 나무 그늘이 많아 한낮에도 무난.",
+  "lat": -37.813,
+  "lng": 144.98,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/things-to-do/cooks-cottage"
+ },
+ "collingwoodfarm": {
+  "hours": "매일 09:30~16:30 (입장 마감 16:00, 연중무휴)",
+  "closed": [],
+  "price": "어른 A$17 / 아동(2~17세) A$8 / 2세 미만 무료",
+  "note": "2월은 여름 시간표라 16:30까지 운영(4월 하순~9월 학기 중 평일은 15:30 마감). 온라인(Humanitix) 예매 가능, 기니피그 안기·젖소 짜기 등 체험 시간은 당일 안내판 확인, 흙길이라 운동화 권장.",
+  "lat": -37.8027,
+  "lng": 145.0045,
+  "verified": "secondary",
+  "src": "https://farm.org.au/visit-us"
+ },
+ "scienceworks": {
+  "hours": "매일 10:00~16:30 (성금요일·크리스마스 휴관)",
+  "closed": [],
+  "price": "어른 A$15 / 16세 이하 무료 · 플라네타리움·라이트닝 룸 각 A$10 추가",
+  "note": "플라네타리움과 라이트닝 룸은 회차별 좌석이 일찍 매진되니 온라인으로 함께 예매. 학기 중 평일 오전은 학교 단체가 많아 오후가 한산하며 스포츠우드역에서 도보 약 10분, 주차장 있음.",
+  "lat": -37.8316,
+  "lng": 144.8925,
+  "verified": "secondary",
+  "src": "https://museumsvictoria.com.au/scienceworks/visiting"
+ },
+ "legoland": {
+  "hours": "학기 중 월~수 10:00~17:00, 목~일 09:30~18:00 (방학 중 09:00~18:00 이상) — 날짜별 변동, 예약 화면에서 확인",
+  "closed": [],
+  "price": "온라인 A$28.80~ (어른·아동 동일 요금대, 날짜별 변동)",
+  "note": "채드스톤 쇼핑센터 2층, 시간 지정 온라인 사전 예약 권장(입장 마감은 폐장 약 1.5시간 전). 어른은 아이 동반 시에만 입장 가능하고 3~10세 대상이라 7세에게 적당, 체류 2~3시간.",
+  "lat": -37.8861,
+  "lng": 145.0835,
+  "verified": "secondary",
+  "src": "https://www.legolanddiscoverycentre.com/melbourne/"
+ },
+ "healesville": {
+  "hours": "힐스빌 생추어리 매일 09:00~17:00 / 야라밸리 초콜릿공장 매일 09:00~17:00",
+  "closed": [],
+  "price": "생추어리 어른 A$58 / 아동(4~15세) 평일 A$29, 주말·공휴일·방학 무료 / 초콜릿공장 입장 무료",
+  "note": "멜버른에서 차로 약 1시간~1시간 15분, 두 곳은 차로 15분 거리. 맹금류 쇼 'Spirits of the Sky'는 하루 2회라 도착 즉시 시간 확인, 산불 위험 '재난(Catastrophic)' 등급일에는 휴장할 수 있어 폭염일 아침 공지 확인.",
+  "lat": -37.6817,
+  "lng": 145.5317,
+  "verified": "official",
+  "src": "https://zoo.org.au/healesville/healesville-sanctuary-prices"
+ },
+ "puffingbilly": {
+  "hours": "미확인 — 방문 전 확인 (2026년 2월 기준 월~목 벨그레이브 출발 10:00·11:00·12:30·14:15, 레이크사이드 왕복; 2027년 시간표 미발표)",
+  "closed": [],
+  "price": "벨그레이브~레이크사이드 왕복 어른 약 A$61~64 / 아동(4~16세) 약 A$30 (2026년 기준)",
+  "note": "전 좌석 온라인 사전 예약 필수(현장 판매 없음)이고 여름 주말은 몇 주 전 매진. 산불 위험이 극심한 날(전면 화기 금지일 등)에는 증기기관차 대신 디젤로 바뀌거나 운휴될 수 있으며 공식 사이트 접속이 막혀 2차 출처 기준.",
+  "lat": -37.9085,
+  "lng": 145.3545,
+  "verified": "unconfirmed",
+  "src": "https://puffingbilly.com.au/visit-us/fares-timetables/"
+ },
+ "grotto": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "주차장에서 포장길과 나무 계단(왕복 약 15~20분)으로 내려가는 구조라 유모차 불가, 계단이 가파르니 아이 손 잡기. 조명·그늘이 없어 낮에 방문하고 높은 파도 때는 아래 전망대에 물이 튈 수 있음.",
+  "lat": -38.6208,
+  "lng": 142.9113,
+  "verified": "secondary",
+  "src": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park"
+ },
+ "londonbridge": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "주차장에서 전망대까지 평탄한 길로 도보 5분 이내, 해변으로 내려가는 길은 없다(펭귄 보호 구역). 해질녘에 아래 해변으로 돌아오는 리틀 펭귄을 멀리서 볼 수 있음.",
+  "lat": -38.6232,
+  "lng": 142.931,
+  "verified": "official",
+  "src": "https://www.parks.vic.gov.au/places-to-see/parks/port-campbell-national-park/things-to-do/london-bridge"
+ },
+ "twelveapostles": {
+  "hours": "신규 방문자센터 08:00~20:00 (서머타임 기간), 그 외 09:00~17:00, 연중무휴 — 2026년 10월 중순 개장 예정 기준",
+  "closed": [],
+  "price": "미확인 — 입장료 도입 예정(금액 미발표, A$20 이하로 보도) / 주차·센터 이용 사전 예약제",
+  "note": "주의: 2026년 10월 중순 새 방문자 체험 센터 개장과 함께 '사전 예약 후 도착' 방식으로 바뀌고 유료화가 예고되어 있어, 예약 없이 가면 주차·입장을 못 할 수 있다. 출발 전 그레이트 오션 로드 관리청(GORCAPA) 사이트에서 예약·요금을 확인하고 일몰 시간대는 특히 일찍 예약.",
+  "lat": -38.6635,
+  "lng": 143.1045,
+  "verified": "official",
+  "src": "https://www.greatoceanroadauthority.vic.gov.au/Projects/Twelve-Apostles-Visitor-Centre/Industry-Updates"
+ },
+ "kennettriver": {
+  "hours": "상시 개방 (카페 코알라: 월~목 09:00~17:00, 금 09:00~18:00, 토 08:30~18:00, 일 08:30~17:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "카페 코알라 앞에 주차 후 그레이 리버 로드(비포장)를 따라 걸으며 유칼립투스 위 야생 코알라를 찾는다. 코알라는 이른 아침과 해지기 1~2시간 전에 활발하고 한낮엔 자고 있어 찾기 어려우며, 만지거나 먹이 주기는 금지.",
+  "lat": -38.6677,
+  "lng": 143.861,
+  "verified": "secondary",
+  "src": "https://visitgreatoceanroad.org.au/restaurants/kafe-koala-general-store/"
+ },
+ "daysyhill": {
+  "hours": "숙소 — 체크인 15:00~20:00, 체크아웃 10:00 (리셉션 08:00~20:00)",
+  "closed": [],
+  "price": "요금은 객실·날짜별 상이(미확인), 2인 초과 시 1인당 1박 A$20 추가",
+  "note": "포트캠벨 시내에서 차로 2분(2585 Cobden-Port Campbell Rd), 가족용 2베드룸 코티지·캐빈이 있고 자가 취사형이라 장은 미리 볼 것. 20시 이후 도착이면 사전 연락(+61 3 5598 6226) 필요, 좌표는 주소 기준 근사치.",
+  "lat": -38.602,
+  "lng": 143.0,
+  "verified": "secondary",
+  "src": "https://www.daysyhillcottages.com.au/"
+ },
+ "peninsulahot": {
+  "hours": "배스하우스 매일 05:00~23:00 (연중무휴) — 시간은 2차 출처 기준, 예약 화면에서 확인",
+  "closed": [],
+  "price": "배스하우스 어른 약 A$75~80부터 (시간대·요일별 변동, 08:30 이전·18시 이후 할인) / 아동 요금 미확인, 당일 예약·공휴일 10% 할증",
+  "note": "사전 온라인 예약 필수에 가깝고 당일 예약은 10% 비싸다. 15세 이하는 배스하우스 구역만 이용 가능(스파 드리밍 센터는 16세 이상)하며 언덕 위 풀 등 일부는 10시 이후 16세 이상 전용이라 아이와는 오전 일찍 입장 권장, 수영복·슬리퍼·물병 지참.",
+  "lat": -38.4116,
+  "lng": 144.8497,
+  "verified": "secondary",
+  "src": "https://www.peninsulahotsprings.com/plan-your-visit"
+ },
+ "bayandbush": {
+  "hours": "숙소 — 체크인 14:00부터, 체크아웃 10:00",
+  "closed": [],
+  "price": "요금은 코티지·날짜별 상이(미확인)",
+  "note": "허스키슨에서 차로 7분(21 Pritchard Ave, Woollamia), 27에이커 숲속 자가 취사형 코티지·사파리 텐트로 캥거루 등 야생동물이 나온다. 최소 숙박일과 가족용 코티지는 예약 시 확인(02 4444 6879), 좌표는 주소 기준 근사치.",
+  "lat": -35.017,
+  "lng": 150.648,
+  "verified": "secondary",
+  "src": "https://www.bayandbush.com.au/"
+ },
+ "runbarangaroo": {
+  "hours": "상시 개방 (24시간)",
+  "closed": [],
+  "price": "무료",
+  "note": "바랑가루 리저브는 24시간 개방. 월시베이~도스포인트~서큘러키~오페라하우스 해안 산책로는 이어져 있고 확인된 폐쇄 공지는 없음(공식 폐쇄 공지 페이지는 따로 확인 못함). 한여름엔 해 뜬 직후나 해질녘에, 복귀는 서큘러키에서 전철·라이트레일.",
+  "lat": -33.8573,
+  "lng": 151.2015,
+  "verified": "official",
+  "src": "https://www.barangaroo.com/visit/barangaroo-reserve"
+ },
+ "walkabout": {
+  "hours": "매일 09:30~17:00 (연중무휴)",
+  "closed": [],
+  "price": "현장 성인 A$45 · 어린이(3~11) A$30 · 가족(성인2+어린이1) A$100, 추가 어린이 A$25 / 온라인 성인 A$40 · 어린이 A$25 · 가족 A$85, 추가 어린이 A$20",
+  "note": "온라인 예매가 1인당 A$5 저렴(4인 가족 온라인 A$105). 차 없이는 가기 어려워요.",
+  "lat": -33.4294,
+  "lng": 151.2247,
+  "verified": "official",
+  "src": "https://walkaboutpark.com.au/opening-hours-prices/"
+ },
+ "hydepark": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "공중화장실·카페 있음. 조명·전기 설비 교체 공사가 진행 중이라 일부 구역이 막혀 있을 수 있어요.",
+  "lat": -33.8731,
+  "lng": 151.2113,
+  "verified": "official",
+  "src": "https://www.cityofsydney.nsw.gov.au/parks/hyde-park"
+ },
+ "bbqbronte": {
+  "hours": "상시 개방 (바베큐는 해질 때까지)",
+  "closed": [],
+  "price": "무료",
+  "note": "무료 전기 바베큐와 피크닉 셸터가 있다는 것은 지역 안내 사이트로 확인(웨이벌리 카운슬 페이지는 접속 차단으로 직접 확인 못함). 예약 불가 선착순, 주말 점심엔 오전에 도착. 키친타월·호일 지참.",
+  "lat": -33.904,
+  "lng": 151.2665,
+  "verified": "secondary",
+  "src": "https://visitbondibeach.com/bondi-blog/2025/1/20/locals-guide-to-free-bbq-spots-at-bondi-bronte-tamarama"
+ },
+ "bbqclovelly": {
+  "hours": "바베큐 가동 매일 08:00~20:00",
+  "closed": [],
+  "price": "무료",
+  "note": "랜드윅 카운슬 안내상 바베큐는 버로우스 파크가 아니라 클로벨리 비치 양쪽(북쪽 산책로 피크닉 셸터 옆, 남쪽 번독 파크 쪽)에 있어요. 예약 불가 선착순. 좌표는 클로벨리 비치 북쪽 산책로 기준.",
+  "lat": -33.9138,
+  "lng": 151.267,
+  "verified": "official",
+  "src": "https://www.randwick.nsw.gov.au/facilities-and-recreation/parks/parks-by-suburb/clovelly/bundock-park"
+ },
+ "bbqshelly": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료 (주차 유료)",
+  "note": "무료 전기 바베큐 2대뿐이라 일찍 가야 해요. 안전요원이 없는 해변이니 아이들 물놀이는 보호자가 지켜보기. 주차장은 낮 시간 유료(pay-and-display).",
+  "lat": -33.8003,
+  "lng": 151.2978,
+  "verified": "official",
+  "src": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/shelly-beach-manly"
+ },
+ "bbqpirrama": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "시티오브시드니 공원 페이지에 바베큐·피크닉 구역, 놀이터, 화장실 명시(무료 표기는 sydney.com). 물놀이 분수 가동 시간은 공식 페이지에 없어 미확인. 피쉬마켓에서 장봐서 가기 좋은 위치.",
+  "lat": -33.8644,
+  "lng": 151.1917,
+  "verified": "official",
+  "src": "https://www.cityofsydney.nsw.gov.au/parks/pirrama-park"
+ },
+ "bbqglebe": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "바베큐 유무 미확인: 시티오브시드니 공원 페이지를 열 수 없어 바베큐 유무를 공식 확인하지 못했어요(시 뉴스·가이드 사이트에는 바베큐와 울타리 놀이터가 있다고 나옴). 가기 전 현장 확인 권장.",
+  "lat": -33.8745,
+  "lng": 151.1785,
+  "verified": "unconfirmed",
+  "src": "https://news.cityofsydney.nsw.gov.au/articles/best-picnic-spots-city-sydney"
+ },
+ "cookphillip": {
+  "hours": "매일 06:00~20:00 (공휴일 07:00~19:00) · 레저풀 08:30~20:00",
+  "closed": [],
+  "price": "성인 A$9.20 · 어린이(3~16) A$6.00 · 가족(2+2) A$22.80",
+  "note": "파도풀은 주말에만 13:00~19:15, 매시 10분씩 가동(평일엔 파도 없음). 수건·세면도구 지참.",
+  "lat": -33.8735,
+  "lng": 151.2135,
+  "verified": "official",
+  "src": "https://cityofsydneyleisure.com.au/visit/cook-phillip-park-pool/opening-hours"
+ },
+ "gunyama": {
+  "hours": "매일 06:00~20:00 (공휴일 07:00~19:00) · 실내 아쿠아플레이 08:30~20:00",
+  "closed": [],
+  "price": "성인 A$9.20 · 어린이(3~16) A$6.00 · 가족(2+2) A$22.80",
+  "note": "야외 레저풀은 9월 1일~4월 30일에만 운영(2월 이용 가능). 16시 이후엔 수영 강습으로 붐벼요.",
+  "lat": -33.9075,
+  "lng": 151.2085,
+  "verified": "official",
+  "src": "https://cityofsydneyleisure.com.au/visit/gunyama-park-aquatic-and-recreation-centre/opening-hours"
+ },
+ "sopaquatic": {
+  "hours": "평일 05:00~20:00 · 주말·공휴일 06:00~19:00 (마감 30분 전 입장 종료)",
+  "closed": [],
+  "price": "성인 A$10 · 어린이(4~15) A$7.60 · 가족(성인2+어린이3) A$36 · 관람 A$5",
+  "note": "학기 중 평일엔 스플래셔스 놀이터 09:00~12:30·15:00~19:00, 워터슬라이드 15:00~19:00만 가동(주말 둘 다 10:00~18:00). 큰 슬라이드는 키 120cm 제한이 있다는 안내가 있어 현장 확인. P2·P3 주차 할인 검증 가능.",
+  "lat": -33.8508,
+  "lng": 151.068,
+  "verified": "official",
+  "src": "https://www.sopa.nsw.gov.au/aquatic-centre/aquatic-centre-venue-information"
+ },
+ "abcpool": {
+  "hours": "매일 06:00~20:00 (공휴일 07:00~19:00) · 9~4월 시즌 운영",
+  "closed": [],
+  "price": "성인 A$8 · 어린이(3~16) A$5.20 · 가족(2+2) A$19.80",
+  "note": "50m 야외 해수풀과 강습용 프로그램풀만 있고 전용 유아·키즈풀은 공식 안내에 없어요. 그늘이 없어 오전이나 늦은 오후에. 카페 07:00~14:00.",
+  "lat": -33.8632,
+  "lng": 151.2206,
+  "verified": "official",
+  "src": "https://cityofsydneyleisure.com.au/visit/andrew-boy-charlton-pool/opening-hours"
+ },
+ "princealfredpool": {
+  "hours": "정상 운영 시간 미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "성인 A$8 · 어린이(3~16) A$5.20 · 가족(2+2) A$19.80",
+  "note": "2026년 9월 14일~11월 중순 필수 보수 공사로 휴장 중이라 공식 페이지에 평소 시간이 내려가 있어요. 2월엔 재개장 예정이지만 일정 지연 여부를 출발 전 확인. 어린이 스플래시 패드는 10월~4월 운영.",
+  "lat": -33.8884,
+  "lng": 151.2046,
+  "verified": "official",
+  "src": "https://cityofsydneyleisure.com.au/visit/prince-alfred-park-pool/opening-hours"
+ },
+ "brontebaths": {
+  "hours": "상시 개방 · 매주 수요일은 청소로 일부 시간 폐쇄",
+  "closed": [],
+  "price": "무료",
+  "note": "수요일은 간조 4시간 전부터 물을 빼고 청소(간조가 오전이면 05시부터, 오후면 10시부터 폐쇄) — 여행 중 2/10·2/17이 수요일. 락풀 수심 1~2m로 생각보다 깊고, 해변 쪽은 파도가 있는 서핑 비치.",
+  "lat": -33.9053,
+  "lng": 151.269,
+  "verified": "official",
+  "src": "https://www.waverley.nsw.gov.au/recreation/beaches_and_coast/pool_cleaning_schedule/bronte_pool_cleaning_schedule"
+ },
+ "sharkbeach": {
+  "hours": "매일 일출~일몰 (국립공원 구역)",
+  "closed": [],
+  "price": "무료 (닐슨 파크 주차비 없음)",
+  "note": "방파제 공사 후 2024년 12월 재개장. 2025년 8월 파도로 수영 구역 그물이 손상돼 수리 공지가 있었으니 그물 상태는 현장 확인(현재 공식 경보 없음). 안전요원 배치는 확인 못함. 더운 주말엔 일찍, 주차 적음.",
+  "lat": -33.851,
+  "lng": 151.2672,
+  "verified": "official",
+  "src": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/nielsen-park"
+ },
+ "campcove": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "2월엔 안전요원이 토·일에만 있어요(매일 배치는 12~1월 방학 기간만). 화장실·샤워·키오스크 있음, 길가 주차는 매우 적음. 그늘이 거의 없어 래시가드·파라솔 준비.",
+  "lat": -33.8395,
+  "lng": 151.279,
+  "verified": "official",
+  "src": "https://www.woollahra.nsw.gov.au/Recreation/list-of-parks-reserves-and-playgrounds/camp-cove-beach"
+ },
+ "ausmuseum": {
+  "hours": "매일 10:00~17:00",
+  "closed": [],
+  "price": "상설 무료 (특별전 유료)",
+  "note": "크리스마스만 휴관. 어린이 학습 공간(Burra)과 카페는 16:30에 닫아요. 한낮 더위 피하기 좋은 2~3시간 코스.",
+  "lat": -33.8743,
+  "lng": 151.2131,
+  "verified": "official",
+  "src": "https://australian.museum/visit/"
+ },
+ "maritime": {
+  "hours": "매일 10:00~16:00 (함정 탑승 마감 15:10)",
+  "closed": [],
+  "price": "See It All(함정 포함) 성인 A$35 · 어린이(4~15) A$25 · 가족(성인2+어린이3) A$89 / 전시만 성인 A$25 · 어린이 A$15 · 가족 A$69",
+  "note": "함정 탑승은 키 90cm 이상. 기온 36℃ 이상이면 함정을 닫으니 더운 날은 오전에. 방학 기간에만 09:30~17:00로 연장.",
+  "lat": -33.8693,
+  "lng": 151.1986,
+  "verified": "official",
+  "src": "https://www.sea.museum/en/visit/plan-your-visit"
+ },
+ "observatoryhill": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "울타리 없는 공원이라 상시 출입 가능(시 공원 페이지는 열리지 않아 안내 사이트로 확인). 화장실은 Watson Rd(아가일 스트리트 입구 쪽)와 Upper Fort St. 2월 일몰은 20시 무렵, 한 시간 전엔 자리 잡기.",
+  "lat": -33.8594,
+  "lng": 151.2046,
+  "verified": "secondary",
+  "src": "https://www.cityofsydney.nsw.gov.au/histories-local-parks-playgrounds/history-observatory-park"
+ },
+ "rbgsydney": {
+  "hours": "매일 07:00~20:00 (2월 기준)",
+  "closed": [],
+  "price": "무료",
+  "note": "연중무휴지만 폐장 시각이 달마다 달라요. 악천후 땐 조기 폐장. 매점이 적어 물을 챙기고 그늘 자리 잡기.",
+  "lat": -33.8642,
+  "lng": 151.2166,
+  "verified": "official",
+  "src": "https://www.botanicgardens.org.au/royal-botanic-garden-sydney/plan-your-visit"
+ },
+ "operatour": {
+  "hours": "매일 11:15 · 12:15 · 13:45 · 14:45 · 15:45 (약 30분, 상황에 따라 변동)",
+  "closed": [],
+  "price": "사전예약 성인 A$37 · 어린이(5~15) A$27 · 가족(2+2) A$101 / 당일 성인 A$42 · 어린이 A$32 · 가족 A$116",
+  "note": "5세 이상 권장, 온라인 사전 예약이 저렴. 15분 전 로어 콘코스 웰컴센터 집합, 계단 약 200개·엘리베이터 없음.",
+  "lat": -33.8568,
+  "lng": 151.2153,
+  "verified": "official",
+  "src": "https://www.sydneyoperahouse.com/tours-and-experiences/korean-tour"
+ },
+ "towereye": {
+  "hours": "시기별 변동 — 2026년 10월 기준 11:00~19:00 (입장 마감 18:00), 2월 시간은 방문 전 확인",
+  "closed": [],
+  "price": "일반 입장 온라인 A$34부터",
+  "note": "공식 사이트는 날짜별로 시간을 공지하고 행사에 따라 바뀌어요(예매 대행 사이트엔 10:00~20:00로 표기). 2월 일몰이 20시 무렵이라 노을은 보기 어려울 수 있어요.",
+  "lat": -33.8704,
+  "lng": 151.2088,
+  "verified": "official",
+  "src": "https://www.sydneytowereye.com.au/plan-your-day/before-you-visit/opening-hours/"
+ },
+ "rocksmarket": {
+  "hours": "금 10:00~15:00 · 토·일 10:00~17:00",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목"
+  ],
+  "price": "입장 무료",
+  "note": "금요일은 Jack Mundey Place·Playfair St만, 토·일은 George St까지 열려요. 여행 중 2/12(금), 2/13(토), 2/14(일) 가능.",
+  "lat": -33.859,
+  "lng": 151.2087,
+  "verified": "official",
+  "src": "https://www.therocks.com/whats-on/market-overview"
+ },
+ "paddys": {
+  "hours": "수~일 10:00~18:00",
+  "closed": [
+   "월",
+   "화"
+  ],
+  "price": "입장 무료",
+  "note": "푸드 구역(Hay St Market)은 수·일 11:00~20:00, 목~토 11:00~23:00. 가격 평은 갈리니 여러 가게 비교 후 구매.",
+  "lat": -33.8797,
+  "lng": 151.204,
+  "verified": "official",
+  "src": "https://paddysmarkets.com.au/haymarket/trading-hours"
+ },
+ "qvb": {
+  "hours": "월~수·금·토 09:00~18:00 · 목 09:00~21:00 · 일 11:00~17:00",
+  "closed": [],
+  "price": "입장 무료",
+  "note": "1·2층 매장은 월~토 10:00부터 열어요.",
+  "lat": -33.8718,
+  "lng": 151.2067,
+  "verified": "official",
+  "src": "https://www.qvb.com.au/"
+ },
+ "glebemarket": {
+  "hours": "토 10:00~16:00",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "일"
+  ],
+  "price": "입장 무료",
+  "note": "글리브 퍼블릭 스쿨(46-56 Glebe Point Rd) 운동장에서 열려요. 여행 중 2/13(토)만 가능. 야외라 덥고 아이들 흥미는 낮을 수 있어요.",
+  "lat": -33.883,
+  "lng": 151.1903,
+  "verified": "official",
+  "src": "https://www.glebemarkets.com.au/"
+ },
+ "carriageworks": {
+  "hours": "토 08:00~13:00",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "일"
+  ],
+  "price": "입장 무료",
+  "note": "245 Wilson St, Eveleigh. 여행 중 2/13(토)만 가능, 오후엔 이미 끝나요. 대형 행사 때 쉬는 주가 있으니 직전 주에 공식 페이지 확인.",
+  "lat": -33.8935,
+  "lng": 151.1915,
+  "verified": "official",
+  "src": "https://carriageworks.com.au/events/carriageworks-farmers-market/"
+ },
+ "alfies": {
+  "hours": "월~금 11:30~늦게 · 토 12:00~늦게 (식사 11:30/12:00~15:00, 17:00~, 마지막 주문 월 21:00·화~토 22:00)",
+  "closed": [
+   "일"
+  ],
+  "price": "설로인 220g A$45",
+  "note": "주의: 공식 사이트에 모든 손님 만 18세 이상(영유아 포함 입장 불가)으로 명시 — 7세 아이들과는 갈 수 없어요. 어른만 갈 때 후보, 예약은 SevenRooms.",
+  "lat": -33.8655,
+  "lng": 151.2105,
+  "verified": "official",
+  "src": "https://www.liquidandlarder.com.au/venues/alfies/"
+ },
+ "macelleria": {
+  "hours": "월~목 11:30~20:30 · 금·일 11:00~20:30 · 토 11:00~21:00 (2026년 봄 기준, 연중무휴)",
+  "closed": [],
+  "price": "1인 약 A$40~60",
+  "note": "주소는 G09/180 Campbell Parade(본다이 퍼시픽 빌딩 1층, 해변 맞은편). 예약 없이 워크인만, 피크 시간엔 대기. 계절별로 시간이 바뀌니 여름 시간은 직전 확인.",
+  "lat": -33.8897,
+  "lng": 151.2773,
+  "verified": "official",
+  "src": "https://macelleriabondi.com.au/contact"
+ },
+ "meatwine": {
+  "hours": "월~목·일 12:00~22:00 · 금·토 12:00~22:30",
+  "closed": [],
+  "price": "런치 3코스 약 A$55 (블로그 기준, 공식 가격 미확인)",
+  "note": "International Tower One 1층(100 Barangaroo Ave). 예약 권장, 익스프레스 런치 세트가 가성비. 키즈 메뉴 유무는 공식 페이지에 없어 예약 시 문의.",
+  "lat": -33.864,
+  "lng": 151.2018,
+  "verified": "official",
+  "src": "https://themeatandwineco.com/restaurant/barangaroo/"
+ },
+ "pancakesrocks": {
+  "hours": "일~목 07:30~24:00 · 금·토 07:30~02:00",
+  "closed": [],
+  "price": "미확인 (공식 메뉴 페이지 참고)",
+  "note": "22 Playfair St, The Rocks. 양이 많아 나눠 먹기. 평은 갈리는 편, 아이 메뉴는 무난.",
+  "lat": -33.8585,
+  "lng": 151.2083,
+  "verified": "official",
+  "src": "https://pancakesontherocks.au/"
+ },
+ "elements": {
+  "hours": "런치 월~목 12:00~14:00 · 금~일 12:00~16:30 / 디너 월~목 17:30~ · 금~일 17:00~",
+  "closed": [],
+  "price": "익스프레스 런치 2코스 A$59 · 3코스 A$69 (월~목만)",
+  "note": "익스프레스 런치는 월~목에만 제공되고 평일 런치 주문 시간이 짧아요. 키즈 메뉴·어린이 정책은 공식 페이지에 없어 예약 시 문의. Pier 8/9, 23 Hickson Rd.",
+  "lat": -33.8562,
+  "lng": 151.204,
+  "verified": "official",
+  "src": "https://elementsbarandgrill.com.au/"
+ },
+ "singleo": {
+  "hours": "월~금 07:00~15:30 · 토·일 08:00~15:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "좁고 붐벼요. 예약 불가, 오픈 시간에 가기.",
+  "lat": -33.8812,
+  "lng": 151.21,
+  "verified": "official",
+  "src": "https://singleo.com.au/pages/surry-hills"
+ },
+ "gumption": {
+  "hours": "월~금 08:30~17:00 · 토 09:00~16:00 · 일 11:00~16:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "스트랜드 아케이드 1층 Shop 11. 좌석이 거의 없는 테이크아웃 위주.",
+  "lat": -33.8695,
+  "lng": 151.2075,
+  "verified": "secondary",
+  "src": "https://www.strandarcade.com.au/stores/gumption-by-coffee-alchemy"
+ },
+ "apbakery": {
+  "hours": "매일 07:30~15:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "Level 2, 80 Commonwealth St 루프탑. 줄이 길고 비싸다는 평이 공통. 근처 A.P Supply(106 Commonwealth St)는 같은 시간 테이크아웃 전용.",
+  "lat": -33.88,
+  "lng": 151.2105,
+  "verified": "official",
+  "src": "https://www.apbakery.com.au/stores-locations"
+ },
+ "lode": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "미확인",
+  "note": "공식 사이트에서 영업시간을 확인하지 못했어요. 오래된 리스팅(2022~23년)엔 수~일 08:00~14:00, 월·화 휴무로 나와 월·화 방문은 피하는 게 안전. 인기 품목은 일찍 매진.",
+  "lat": -33.8872,
+  "lng": 151.2138,
+  "verified": "unconfirmed",
+  "src": "https://www.timeout.com/sydney/restaurants/lode-pies"
+ },
+ "theeca": {
+  "hours": "매일 07:30~15:00 (평일 주방 14:30 마감) · 디너 목·일 17:00~22:00, 금·토 17:00~23:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "낮엔 카페, 밤엔 바이닐 바로 운영되니 아이들과는 낮 브런치로. SevenRooms 예약 가능. 팬케이크는 호불호가 크게 갈려요.",
+  "lat": -33.8786,
+  "lng": 151.214,
+  "verified": "official",
+  "src": "https://www.theeca.com.au/"
+ },
+ "messina": {
+  "hours": "월~목 12:00~22:30 · 금 12:00~23:30 · 토 11:30~23:30 · 일 11:30~22:00 (서큘러키점)",
+  "closed": [],
+  "price": "2스쿱 A$8.90 (블로그 기준)",
+  "note": "서큘러키점 주소는 Shop G-10, Gateway Plaza, 1 Macquarie Place. 공식 사이트는 시간을 구글 지도로 안내해 리스팅 사이트 기준. 야외석은 갈매기 주의.",
+  "lat": -33.8617,
+  "lng": 151.21,
+  "verified": "secondary",
+  "src": "https://atmosfy.io/location/sydney/gelato-messina-circular-quay"
+ },
+ "yochi": {
+  "hours": "매일 10:00~22:30",
+  "closed": [],
+  "price": "무게당 계산",
+  "note": "조지 스트리트점은 614 George St. 밤 10시에도 줄이 있지만 금방 빠져요.",
+  "lat": -33.8762,
+  "lng": 151.2063,
+  "verified": "official",
+  "src": "https://yochi.com.au/yochi-venues/"
+ },
+ "anita": {
+  "hours": "일~목 09:30~22:30 · 금·토 09:30~23:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "46-48 The Corso. 줄이 길어요. 공식 매장 페이지는 직접 열리지 않아 검색 결과에 표시된 공식 페이지 내용 기준.",
+  "lat": -33.7975,
+  "lng": 151.287,
+  "verified": "official",
+  "src": "https://www.anita-gelato.com/au/our-locations/manly-the-corso/"
+ },
+ "wildplay": {
+  "hours": "매일 10:00~17:00",
+  "closed": [],
+  "price": "무료",
+  "note": "2~12세 대상, 보호자 동반 필수. 입구는 Grand Drive의 York Road 게이트 맞은편. 물놀이 구역이 있어 수영복·수건·갈아입을 옷 지참. 겨울에 한 달가량 정비 휴장(2월 해당 없음), 임시 휴장은 공원 공지 확인.",
+  "lat": -33.8975,
+  "lng": 151.2415,
+  "verified": "official",
+  "src": "https://www.centennialparklands.com.au/learn/nature-play/the-ian-potter-children-s-wild-play-garden"
+ },
+ "murrayrose": {
+  "hours": "상시 개방 (연중 수영 가능)",
+  "closed": [],
+  "price": "무료",
+  "note": "안전요원이 없어요. 536 New South Head Rd에서 계단으로 내려가고 화장실·탈의실·샤워·키오스크 있음. 큰비 뒤엔 수질 때문에 수영 자제. 평일 길가 주차 적음.",
+  "lat": -33.8725,
+  "lng": 151.2466,
+  "verified": "official",
+  "src": "https://www.woollahra.nsw.gov.au/Recreation/List-of-Parks-Reserves-and-Playgrounds/Murray-Rose-Pool"
+ },
+ "blaxland": {
+  "hours": "매일 일출~일몰 · 물놀이 구역 10:00~17:00 (서머타임 기간)",
+  "closed": [],
+  "price": "무료 (주차 2시간 무료, 이후 평일 A$3/시간 · 주말 A$5/시간)",
+  "note": "물놀이 시설 가동 확인(2월은 서머타임이라 17시까지). 무료 바베큐도 있어요. 공원 안 Armory Wharf Café는 무기한 휴업이라 먹거리 지참. CBD에서 20km 이상.",
+  "lat": -33.8275,
+  "lng": 151.0585,
+  "verified": "official",
+  "src": "https://www.sopa.nsw.gov.au/parks-and-playgrounds/blaxland-riverside-park"
+ },
+ "birkenhead": {
+  "hours": "월~수·금 10:00~17:30 · 목 10:00~19:30 · 토 09:00~18:00 · 일 10:00~18:00",
+  "closed": [],
+  "price": "",
+  "note": "공식 사이트 시간표가 읽히지 않아 리스팅 사이트 기준, 매장별로 다를 수 있어요. 19 Roseby St, Drummoyne. 아이들 흥미는 낮아요.",
+  "lat": -33.8555,
+  "lng": 151.162,
+  "verified": "secondary",
+  "src": "https://www.birkenheadpoint.com.au/visit/hours"
+ },
+ "bills": {
+  "hours": "매일 07:00~22:00 (마지막 주문)",
+  "closed": [],
+  "price": "핫케이크 약 A$33 (블로그 기준)",
+  "note": "355 Crown St. 낮엔 예약 없이 워크인, 예약은 17시 이후만 받아요. 아침 메뉴는 12시까지. 피크 시간 대기.",
+  "lat": -33.8826,
+  "lng": 151.2137,
+  "verified": "official",
+  "src": "https://www.bills.com.au/locations/surry-hills"
+ },
+ "reubenhills": {
+  "hours": "월~금 07:00~15:30 · 토·일 07:30~15:30",
+  "closed": [],
+  "price": "미확인",
+  "note": "61 Albion St. 예약 불가 워크인만, 항상 대기.",
+  "lat": -33.8829,
+  "lng": 151.2107,
+  "verified": "official",
+  "src": "https://reubenhills.com.au/"
+ },
+ "flyingbear": {
+  "hours": "매일 07:00~14:00",
+  "closed": [],
+  "price": "미확인 (일요일 10% · 공휴일 15% 할증)",
+  "note": "76 McDougall St, 시드니 플라잉 스쿼드론 부두. 워크인만, 키즈 메뉴 있음(아침은 11:30까지). 야외석 햇볕이 강해요.",
+  "lat": -33.844,
+  "lng": 151.215,
+  "verified": "official",
+  "src": "https://www.birdandbear.com.au/flying-bear"
+ },
+ "lunesydney": {
+  "hours": "평일 07:30~17:00 · 주말 08:00~17:00 (매진 시 조기 마감)",
+  "closed": [],
+  "price": "플레인 A$8 · 아몬드 A$12.50 (블로그 기준)",
+  "note": "마틴플레이스 메트로역 안(1 Elizabeth St, Castlereagh St 쪽 입구). 공식 사이트엔 시간이 없어 기사·리스팅 기준이니 직전 확인. 오후엔 매진될 수 있어요.",
+  "lat": -33.8673,
+  "lng": 151.2103,
+  "verified": "secondary",
+  "src": "https://www.lunecroissanterie.com/locations"
+ },
+ "rivareno": {
+  "hours": "일~수 12:00~22:00 · 목 12:00~22:30 · 금·토 12:00~23:30",
+  "closed": [],
+  "price": "미확인",
+  "note": "Shop 4, 33 Barangaroo Ave. 인터내셔널 타워스(건물 측) 안내 페이지 기준.",
+  "lat": -33.8655,
+  "lng": 151.2017,
+  "verified": "secondary",
+  "src": "https://internationaltowers.com/dining-shopping/rivareno-gelato"
+ },
+ "harrys": {
+  "hours": "월·화 08:30~02:00 · 수·목 08:30~03:00 · 금 08:30~04:00 · 토 09:00~04:00 · 일 09:00~01:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "공식 사이트엔 매장별 시간이 없어 타임아웃 리스팅 기준(블로그 시간보다 훨씬 늦게까지). 야외 벤치에서 먹어야 해요.",
+  "lat": -33.869,
+  "lng": 151.2215,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/sydney/restaurants/harrys-cafe-de-wheels"
+ },
+ "bettys": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "버거 A$13.90 · 감자튀김 A$4.90 (블로그 기준)",
+  "note": "44 Market St 지점 시간을 공식 사이트(매장 검색형)에서 확인하지 못했어요. 참고로 달링하버 ICC점은 월~목 11:00~21:00, 금·토 10:30~21:30, 일 10:30~21:00로 안내돼요.",
+  "lat": -33.8708,
+  "lng": 151.206,
+  "verified": "unconfirmed",
+  "src": "https://www.bettysburgers.com.au/locations"
+ },
+ "operabar": {
+  "hours": "매일 10:00~24:00 (금·토 00:30까지)",
+  "closed": [],
+  "price": "미확인",
+  "note": "바지만 공식 FAQ상 18세 미만도 부모와 함께면 입장 가능. 예약 없이 워크인만. 리노베이션 중이라 실내 다이닝은 닫고 야외 테라스만 운영, 매우 붐벼요.",
+  "lat": -33.858,
+  "lng": 151.2145,
+  "verified": "official",
+  "src": "https://www.operabar.com.au/"
+ },
+ "theeight": {
+  "hours": "런치(얌차) 월~금 10:00~15:30 · 토·일 09:30~15:30 / 디너 매일 17:30~23:00 (주방 21:15 마감)",
+  "closed": [],
+  "price": "미확인",
+  "note": "마켓시티 3층(9-13 Hay St). 카트 딤섬은 런치 시간에, 주말엔 일찍 가야 대기가 짧아요. 런치 2시간 무료 주차.",
+  "lat": -33.8797,
+  "lng": 151.2037,
+  "verified": "official",
+  "src": "https://www.theeightrestaurant.com.au/"
+ },
+ "scenicworld": {
+  "hours": "평일 10:00~16:00 · 주말·공휴일·방학 09:00~17:00 (마지막 탑승은 마감 20분 전)",
+  "closed": [],
+  "price": "Unlimited Discovery Pass 성인 A$64부터 · 어린이 A$38.40부터 · 3세 미만 무료",
+  "note": "연중무휴, 날짜별 변동 요금이며 매진되는 날이 있어 온라인 사전 예매 권장. 현금 불가. 긴 보드워크는 마감 1시간 전부터 순차 폐쇄. 시드니에서 약 2시간.",
+  "lat": -33.7289,
+  "lng": 150.3012,
+  "verified": "official",
+  "src": "https://www.scenicworld.com.au/plan-your-visit"
+ },
+ "echopoint": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료 (주차 유료·시간 제한)",
+  "note": "악천후·산불 위험 시 폐쇄될 수 있어요(여름엔 fire ban 경보 확인). 주차 요금이 비싸고 주말엔 자리가 부족해요. 화장실·식수 있음, 전망대는 평탄.",
+  "lat": -33.7325,
+  "lng": 150.312,
+  "verified": "official",
+  "src": "https://www.nationalparks.nsw.gov.au/things-to-do/lookouts/echo-point-lookout-three-sisters/visitor-info"
+ },
+ "leura": {
+  "hours": "거리 상시 개방 · 가게별 영업시간 미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "무료",
+  "note": "마을 전체의 공식 영업시간은 없어요. 확인된 예로 Josophan's는 매일 09:00~17:00. 가게 대부분 17시 무렵 닫는다는 블로그 정보는 확인 못함.",
+  "lat": -33.7135,
+  "lng": 150.331,
+  "verified": "unconfirmed",
+  "src": "https://www.josophans.com.au/"
+ },
+ "cafesana": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "미확인",
+  "note": "5/146 Leura Mall 주소만 리스팅으로 확인되고 영업시간·휴무일은 확인하지 못했어요. 가기 전 구글 지도나 전화로 확인.",
+  "lat": -33.7133,
+  "lng": 150.3312,
+  "verified": "unconfirmed",
+  "src": "https://www.agfg.com.au/restaurant/cafe-sana-leura-134120"
+ },
+ "josophans": {
+  "hours": "매일 09:00~17:00",
+  "closed": [],
+  "price": "미확인",
+  "note": "187-197 Leura Mall. 주 7일 영업.",
+  "lat": -33.7142,
+  "lng": 150.3308,
+  "verified": "official",
+  "src": "https://www.josophans.com.au/"
+ },
+ "yellowdeli": {
+  "hours": "일 12:00~19:00 · 월~목 07:00~19:00 · 금 07:00~15:00",
+  "closed": [
+   "토"
+  ],
+  "price": "미확인",
+  "note": "토요일 휴무, 금요일은 15시에 닫아요. 종교 공동체가 운영해 종교 절기에 임시 휴무가 있어요(주로 9~10월).",
+  "lat": -33.7185,
+  "lng": 150.311,
+  "verified": "official",
+  "src": "https://yellowdeli.com/katoomba"
+ },
+ "featherdale": {
+  "hours": "매일 08:00~17:00",
+  "closed": [],
+  "price": "어린이(3~15) A$29 · 성인 요금은 공식 확인 못함(블로그 A$42) · 온라인 예매 10% 할인",
+  "note": "217 Kildare Rd, Doonside. 더우니 8시 오픈에 맞춰 가기. 요금은 예매 대행 사이트 기준이라 공식 티켓 페이지에서 재확인(결제 수수료·공휴일 할증 있음).",
+  "lat": -33.7665,
+  "lng": 150.884,
+  "verified": "official",
+  "src": "https://www.featherdale.com.au/"
+ },
+ "bmsunsettour": {
+  "hours": "미확인 — 방문 전 확인 (업체별 오후 출발 · 밤 늦게 복귀)",
+  "closed": [],
+  "price": "1인 약 5.1만~7.5만원 (블로그 기준)",
+  "note": "특정 업체를 확인하지 못해 출발 시간·요금·아동 조건은 예약처에서 확인. 링컨스락은 2026년 1월 폐쇄 후 11월 30일 재개방 예정이지만 버스·미니버스 진입이 제한돼 투어 일정에서 빠질 수 있어요. 2월 일몰 19:50 무렵이라 복귀가 매우 늦어요.",
+  "lat": -33.7325,
+  "lng": 150.312,
+  "verified": "unconfirmed",
+  "src": "https://www.bluemountainsgazette.com.au/story/9320259/lincolns-rock-reopening-date-finally-set-after-k-pop-star-jennies-photo/"
+ },
+ "pstour": {
+  "hours": "미확인 — 방문 전 확인 (블로그 기준 07:00 출발 · 편도 2.5시간)",
+  "closed": [],
+  "price": "1인 약 11.9만~17만원 (블로그 기준)",
+  "note": "특정 업체를 확인하지 못해 운영 요일·요금·아동 조건은 예약처에서 확인. 긴 하루라 옵션을 줄이는 게 낫다는 엄마 후기가 있어요.",
+  "lat": -32.718,
+  "lng": 152.1445,
+  "verified": "unconfirmed",
+  "src": ""
+ },
+ "stockton": {
+  "hours": "업체 셔틀 10:00~15:30, 30분 간격 (업체별 상이)",
+  "closed": [],
+  "price": "무제한 샌드보딩 성인 A$45 (Port Stephens 4WD Tours, 어린이 요금 미확인)",
+  "note": "집합은 Anna Bay James Paterson St 끝 아래쪽 주차장. 셔틀 시간은 예약 대행 사이트 기준이라 예약 시 확인. 그늘이 없고 모래가 뜨거워 양말·운동화 필수, 이른 시간에.",
+  "lat": -32.786,
+  "lng": 152.075,
+  "verified": "secondary",
+  "src": "https://www.portstephens4wd.com.au/"
+ },
+ "nelsonbay": {
+  "hours": "매일 10:30·13:30 출항 (약 1.5시간, 15분 전 승선)",
+  "closed": [],
+  "price": "성인 A$46 · 어린이(4~14) A$28 · 가족(2+2) A$120",
+  "note": "Moonshadow-TQC 돌핀 디스커버리 크루즈 기준(d'Albora 마리나 출발). 3:30pm 편은 방학에만 있어요. 야생이라 못 볼 수도 있고 그 경우 재승선 바우처 제공, 사전 예약 권장.",
+  "lat": -32.7178,
+  "lng": 152.144,
+  "verified": "official",
+  "src": "https://moonshadow-tqc.com.au/dolphin-cruises/dolphin-watching/"
+ },
+ "oakvale": {
+  "hours": "매일 10:00~17:00 (입장 마감 16:00)",
+  "closed": [],
+  "price": "성인 A$33 · 어린이 A$20 · 가족(2+2) A$130",
+  "note": "스플래시 베이(10:00~16:45) 입장료에 포함, 수영복 챙기기. 투어가 아니면 차 필요. 개인 요금은 예매 사이트에서 재확인.",
+  "lat": -32.7797,
+  "lng": 151.8917,
+  "verified": "official",
+  "src": "https://oakvalewildlife.com.au/visit/location-opening-times"
+ },
+ "symbio": {
+  "hours": "매일 09:30~17:00",
+  "closed": [],
+  "price": "온라인 성인 A$44 · 어린이(3~15) A$29 · 가족(2+2) A$140 (현장은 A$47/32/149)",
+  "note": "스플래시 파크 포함. 시드니에서 약 1시간, 차가 사실상 필요. 요금은 제휴 예매처 기준이라 공식 예매 페이지에서 재확인.",
+  "lat": -34.2006,
+  "lng": 150.9831,
+  "verified": "official",
+  "src": "https://symbiowildlife.com.au/"
+ },
+ "wattamolla": {
+  "hours": "공원 게이트 매일 07:00~20:30",
+  "closed": [],
+  "price": "차량 1대 하루 A$12",
+  "note": "안전요원 없음. 폭포 위에서 라군으로 뛰어내리기 금지, 식수 지참. 더운 날·산불 위험일엔 주차장 만차나 공원 폐쇄가 있으니 당일 NPWS 알림 확인.",
+  "lat": -34.1372,
+  "lng": 151.1165,
+  "verified": "official",
+  "src": "https://www.nationalparks.nsw.gov.au/things-to-do/picnic-areas/wattamolla-picnic-area"
+ },
+ "seacliff": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "볼드힐 주차 무료(앞쪽은 2시간 제한), 화장실·카페 있음. 씨클리프 브릿지 보도(편도 약 665m)는 그늘이 없어 한낮은 피하고, 양 끝 주차 공간이 작아요.",
+  "lat": -34.2235,
+  "lng": 150.9929,
+  "verified": "secondary",
+  "src": "https://www.visitwollongong.com.au/operators/attraction/great-outdoors-beaches/bald-hill-lookout/"
+ },
+ "nantien": {
+  "hours": "화~일·공휴일 09:00~17:00",
+  "closed": [
+   "월"
+  ],
+  "price": "무료",
+  "note": "월요일 휴무(공휴일이면 개방). 단정한 복장.",
+  "lat": -34.4667,
+  "lng": 150.8497,
+  "verified": "official",
+  "src": "https://www.nantien.org.au/en/node/441"
+ },
+ "kiamablowhole": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "남동 너울이 있어야 크게 솟구쳐요. 주차·피크닉 공간과 화장실이 있고 등대 내부는 들어갈 수 없어요.",
+  "lat": -34.6716,
+  "lng": 150.8627,
+  "verified": "official",
+  "src": "https://kiama.com.au/experience/iconic-wonders/blow-holes"
+ },
+ "pennywhistlers": {
+  "hours": "일~수 07:00~15:00 · 목~토 07:00~22:00 무렵",
+  "closed": [],
+  "price": "브런치 1인 약 A$20~30 (추정, 메뉴 확인)",
+  "note": "5/31 Shoalhaven St. 공식 사이트엔 시간이 없어 관광청 등록 정보 기준이니 저녁 방문은 전화(02 4233 2770)로 확인.",
+  "lat": -34.6717,
+  "lng": 150.8553,
+  "verified": "secondary",
+  "src": "https://www.visitnsw.com/destinations/south-coast/kiama-area/kiama/food-and-drink/penny-whistlers"
+ },
+ "southcoasttour": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "성인 약 8.9만~9.4만원 (블로그 기준, 미확인)",
+  "note": "한인 투어사 상품이라 출발 시간·요일·최소 인원을 공식 채널에서 확인하지 못했어요. 예약 전 투어사에 직접 확인.",
+  "lat": -34.2541,
+  "lng": 150.9741,
+  "verified": "unconfirmed",
+  "src": "https://blog.naver.com/kjrang2/224420742437"
+ },
+ "hyams": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "서프 라이프세이빙 순찰이 없는 해변(안전요원 없음). 주차 약 400면뿐이라 일찍 도착, 그늘 없음.",
+  "lat": -35.101,
+  "lng": 150.692,
+  "verified": "secondary",
+  "src": "https://beachsafe.org.au/beach/nsw/shoalhaven/hyams-beach/hyams-point"
+ },
+ "fivelittlepigs": {
+  "hours": "매일 07:00~16:00",
+  "closed": [],
+  "price": "브런치 1인 약 A$20~30 (추정)",
+  "note": "64-66 Owen St. 만석이 잦아요. 예약 여부는 미확인.",
+  "lat": -35.0395,
+  "lng": 150.6722,
+  "verified": "official",
+  "src": "https://5littlepigs.com.au/"
+ },
+ "palmbeach": {
+  "hours": "상시 개방 (등대 내부는 일요일 가이드 투어만)",
+  "closed": [],
+  "price": "무료 (Governor Phillip Park 주차 유료)",
+  "note": "등대까지 Barrenjoey Track 1km 약 30분, 차량 진입 불가. 그늘이 없어 이른 아침이나 늦은 오후에. 악천후·산불 위험일엔 폐쇄될 수 있어요.",
+  "lat": -33.5803,
+  "lng": 151.3296,
+  "verified": "official",
+  "src": "https://www.nationalparks.nsw.gov.au/things-to-do/historic-buildings-places/barrenjoey-lighthouse"
+ },
+ "kiamarockpool": {
+  "hours": "상시 개방 (파도 높은 날 임시 폐쇄)",
+  "closed": [],
+  "price": "무료",
+  "note": "상주 안전요원 없음. 만조·큰 너울 땐 카운슬이 닫고, 과거 파도에 휩쓸린 사고가 있었으니 잔잔한 날만. 얕은 유아 구역, 주차·탈의실 있음.",
+  "lat": -34.6706,
+  "lng": 150.8614,
+  "verified": "official",
+  "src": "https://www.kiama.nsw.gov.au/Facilities/Public-pools-and-rock-pools"
+ },
+ "kiamafish": {
+  "hours": "Saltwater Kiama: 일~목 07:00~16:30 · 금·토 07:00~19:00",
+  "closed": [],
+  "price": "피시앤칩스 1인 약 A$15~25 (추정)",
+  "note": "항구 쪽 후보는 Saltwater Kiama(104 Terralong St), Jaws Seafood(106 Terralong St), By The Sea Takeaway(72 Terralong St). 블로그가 말한 가게가 어디인지는 특정하지 못했어요.",
+  "lat": -34.6711,
+  "lng": 150.8527,
+  "verified": "secondary",
+  "src": "https://www.visitnsw.com/destinations/south-coast/kiama-area/kiama/food-and-drink/saltwater-kiama"
+ },
+ "gerroaclub": {
+  "hours": "매일 점심 12:00~14:30 · 저녁 17:30~20:00 (Seahorse Brasserie)",
+  "closed": [],
+  "price": "메인 약 A$25~40 (추정)",
+  "note": "68 Crooked River Rd. 수영복 차림 입장 불가, 신발 필수. 클럽이라 방문자 등록이 필요하고 점심·저녁 사이엔 주방이 쉬어요.",
+  "lat": -34.7717,
+  "lng": 150.814,
+  "verified": "official",
+  "src": "https://gerroafishos.com.au/"
+ },
+ "berrydonut": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "미확인",
+  "note": "73 Queen St, Berry. 공식 사이트가 준비 중이고 안내마다 영업시간이 달라요(09:00~18:00 설, 08:30~16:45 설). 방문 전 인스타그램·전화(0423 319 413) 확인.",
+  "lat": -34.7756,
+  "lng": 150.6948,
+  "verified": "unconfirmed",
+  "src": "https://www.visitnsw.com/destinations/south-coast/jervis-bay-and-shoalhaven/berry/food-and-drink/berry-donut-van"
+ },
+ "jbdolphin": {
+  "hours": "매일 운항 · 보통 10:30·13:00 출항 (약 1.5시간, 조수 따라 변동)",
+  "closed": [],
+  "price": "성인 약 A$35 · 어린이(2~14) 약 A$22 (예매처 기준)",
+  "note": "Jervis Bay Wild 기준, 허스키슨 부두 출발·15분 전 승선. 출항 시간과 요금은 공식 예약(FareHarbor)에서 날짜별로 확인.",
+  "lat": -35.0385,
+  "lng": 150.673,
+  "verified": "secondary",
+  "src": "https://www.jervisbaywild.com.au/"
+ },
+ "irukandji": {
+  "hours": "매일 09:00~17:00",
+  "closed": [],
+  "price": "성인 A$41 · 어린이(3~16) A$25 · 가족(2+2) A$122",
+  "note": "기본 입장권으로 얕은 라군에 들어가 먹이주기 가능. 제브라샤크 스노클은 6세 이상, 리프샤크 스노클은 12세 이상. 약 2시간 소요, 요금은 예매처 기준.",
+  "lat": -32.7733,
+  "lng": 152.0731,
+  "verified": "official",
+  "src": "https://www.sharkencounters.com.au/"
+ },
+ "reptilepark": {
+  "hours": "매일 09:00~17:00 (크리스마스만 휴무)",
+  "closed": [],
+  "price": "온라인 성인 A$47.99 · 어린이(3~15) A$30.99 · 가족(2+2) A$134.99 (현장 A$54.99/34.99/149.99)",
+  "note": "온라인 예매가 더 저렴해요. 차 필요, 피크닉·바베큐 공간 있음.",
+  "lat": -33.4186,
+  "lng": 151.2776,
+  "verified": "official",
+  "src": "https://reptilepark.com.au/visit/plan-your-visit-to-australian-reptile-park"
+ },
+ "terrigal": {
+  "hours": "상시 개방 (순찰 시즌 평일 안전요원 09:00~17:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "순찰 시즌은 9월 말~4월 말로 2월은 매일 순찰(평일 카운슬 안전요원, 주말 자원봉사). 2026-27 시즌 정확한 날짜는 미발표. 깃발 사이에서만 수영.",
+  "lat": -33.446,
+  "lng": 151.444,
+  "verified": "official",
+  "src": "https://www.centralcoast.nsw.gov.au/residents/support-programs/community-health-and-safety/beach-safety"
+ },
+ "pelican": {
+  "hours": "학기 중 수·토·일 15:30 (공휴일·방학엔 매일)",
+  "closed": [
+   "월",
+   "화",
+   "목",
+   "금"
+  ],
+  "price": "무료",
+  "note": "주의: 예전 먹이주기 쇼는 없어지고 Marine Wildlife Rescue 자원봉사자의 '펠리칸 타임' 해설로 바뀌었어요. 장소는 Memorial Park(펠리칸 플라자), 학기 중엔 수·토·일만.",
+  "lat": -33.3437,
+  "lng": 151.4983,
+  "verified": "official",
+  "src": "https://www.nsw.gov.au/visiting-and-exploring-nsw/locations-and-attractions/pelican-time-marine-wildlife-rescue-central-coast"
+ },
+ "calmsley": {
+  "hours": "학기 중 평일 09:00~15:00 (입장 마감 14:00) · 주말·공휴일 09:00~16:00 (입장 마감 15:00)",
+  "closed": [],
+  "price": "성인 약 A$32 · 어린이 약 A$17 · 가족(5인) 약 A$97 (예매처 기준)",
+  "note": "평일은 14시 이후 입장 불가라 오전에. 요금은 공식 예매 페이지에서 재확인.",
+  "lat": -33.867,
+  "lng": 150.8625,
+  "verified": "official",
+  "src": "https://www.calmsleyhill.com.au/visitor-information/opening-hours/"
+ },
+ "hvgardens": {
+  "hours": "매일 09:00~17:00 (입장 마감 16:00)",
+  "closed": [],
+  "price": "성인 A$42 · 어린이(4~15) A$31 · 3세 이하 무료",
+  "note": "2월엔 매우 덥고 그늘이 적어 오전 방문 권장. 요금은 2026년 봄 기준이라 행사 기간엔 달라질 수 있어요.",
+  "lat": -32.7783,
+  "lng": 151.2985,
+  "verified": "official",
+  "src": "https://www.huntervalleygardens.com.au/?p=2050"
+ },
+ "newcastlebaths": {
+  "hours": "상시 개방 · 목요일 청소로 종일 폐쇄 (탈의실 05:30~)",
+  "closed": [
+   "목"
+  ],
+  "price": "무료",
+  "note": "미어웨더 오션배스는 매주 목요일 종일 청소 폐쇄(뉴캐슬 오션배스는 수요일). 여름 안전요원 09:00~17:30. 2027년 청소 일정표는 아직 없어 방문 전 시 홈페이지 확인.",
+  "lat": -32.9498,
+  "lng": 151.7545,
+  "verified": "official",
+  "src": "https://www.newcastle.nsw.gov.au/explore/recreation/beaches-and-baths/ocean-baths"
+ },
+ "wollongonglight": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "플래그스태프 힐에 무료 주차장. 등대 내부는 들어갈 수 없고 잠깐 들르는 정차지예요.",
+  "lat": -34.4218,
+  "lng": 150.9092,
+  "verified": "secondary",
+  "src": "https://www.visitwollongong.com.au/operators/attraction/arts-and-culture/wollongong-harbour-and-lighthouse/"
+ },
+ "bilpin": {
+  "hours": "매장·카페 매일 08:00~17:00 · 과일 따기 10:00~15:00 (열매 있을 때만, 예약제)",
+  "closed": [],
+  "price": "과일 따기 입장 성인 약 A$20 · 어린이 약 A$10 (목록 사이트 기준, 미확인)",
+  "note": "2월 중순은 복숭아·넥타린 끝물과 사과(로열갈라 등, 1월 말~3월) 시작 시기로 알려져 있지만 공식 달력은 없어요. 과일 따기는 통상 주말·공휴일만 열어 평일은 매장만 가능할 수 있으니 예약 페이지나 전화(0404 061 262)로 확인.",
+  "lat": -33.497,
+  "lng": 150.533,
+  "verified": "official",
+  "src": "https://www.bilpinfruitbowl.com.au/"
+ },
+ "leuraeats": {
+  "hours": "가게마다 다름 — Leura Gourmet 08:00~17:00 · Pizza Sublime 10:00~19:00 · Gia 목~월 08:30~15:00(금~일 저녁 17:30~20:00)",
+  "closed": [],
+  "price": "1인 약 A$20~40 (추정)",
+  "note": "모두 Leura Mall 주변. Gia는 화·수 휴무, Polar Bear of Leura는 수요일 휴무로 안내돼요. 지역 행사 사이트 정보라 방문 전 각 가게 확인.",
+  "lat": -33.714,
+  "lng": 150.331,
+  "verified": "secondary",
+  "src": "https://leuragardensfestival.com.au/plan-your-visit/leura-cafes-and-restaurants"
+ },
+ "nelsonbayeats": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "미확인",
+  "note": "Hog's Breath Cafe Nelson Bay는 목록 사이트에 남아 있지만 현재 영업시간을 확인하지 못했어요(체인 매장 수가 줄어드는 중). Nero's Gelato는 오래된 글에 매일 11:00~21:00·현금만으로 나와 현재 영업 여부 미확인.",
+  "lat": -32.72,
+  "lng": 152.144,
+  "verified": "unconfirmed",
+  "src": "https://wanderlog.com/place/details/539560/hogs-breath-cafe-nelson-bay"
+ },
+ "glenworth": {
+  "hours": "가이드 승마 평일 10:00·14:00 · 주말·공휴일 09:00·11:00·14:00 출발",
+  "closed": [],
+  "price": "가이드 승마 A$125부터 · 키즈 리드 포니 A$50~80",
+  "note": "일반 승마는 7세 이상이라 아이들 참여 가능. 키즈 리드 포니(3~12세)는 보호자가 직접 말을 끌어요. 사전 예약 권장, 헬멧 필수, 더운 날 운영은 미확인.",
+  "lat": -33.4014,
+  "lng": 151.1869,
+  "verified": "official",
+  "src": "https://glenworth.com.au/lead-horse-pony-riding"
+ },
+ "sydneyzoo": {
+  "hours": "매일 09:00~17:00",
+  "closed": [],
+  "price": "성인 A$39~49 · 어린이 A$26~36 (평일 사전예매가 저렴) · 가족(2+2) 묶음 A$110",
+  "note": "평일 온라인 사전 예매가 가장 저렴해요. 야외 동선이 길어 더운 날은 오전에. 입장 마감 시간은 미확인.",
+  "lat": -33.7903,
+  "lng": 150.869,
+  "verified": "official",
+  "src": "https://sydneyzoo.com/"
+ },
+ "qvm": {
+  "hours": "화·목·금 06:00~15:00 · 토 06:00~16:00 · 일 09:00~16:00 (잡화 구역은 09:00부터)",
+  "closed": [
+   "월",
+   "수"
+  ],
+  "price": "입장 무료",
+  "note": "월·수 휴무. 여행 중엔 2/14(일)·2/16(화)·2/18(목). 수요일 서머 나이트마켓 2026-27 시즌 날짜는 2026-10-01 현재 미발표(지난 시즌은 11/19~3/11 수 17:00~22:00)라 2/17(수) 개최 여부는 재확인.",
+  "lat": -37.8076,
+  "lng": 144.9568,
+  "verified": "official",
+  "src": "https://qvm.com.au/visit/"
+ },
+ "donutkitchen": {
+  "hours": "화·목·금 07:00~15:00 · 토·일 07:00~16:00",
+  "closed": [
+   "월",
+   "수"
+  ],
+  "price": "10개 약 A$20~25",
+  "note": "주의: 2025년에 Queen St 밴 자리에서 D Shed 맨 위(Peel St 쪽)로 옮겼다는 안내가 있어요(2차 출처). 마켓 휴무일(월·수)엔 쉬어요.",
+  "lat": -37.8066,
+  "lng": 144.956,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/american-doughnut-kitchen"
+ },
+ "southmelbmarket": {
+  "hours": "수 08:00~16:00 · 금 08:00~17:00 · 토·일 08:00~16:00",
+  "closed": [
+   "월",
+   "화",
+   "목"
+  ],
+  "price": "입장 무료",
+  "note": "여행 중엔 2/14(일)·2/17(수)만.",
+  "lat": -37.832,
+  "lng": 144.956,
+  "verified": "official",
+  "src": "https://www.southmelbournemarket.com.au/"
+ },
+ "agathe": {
+  "hours": "수 08:00~16:00 · 금 08:00~17:00 · 토·일 08:00~16:00 (마켓 운영일)",
+  "closed": [
+   "월",
+   "화",
+   "목"
+  ],
+  "price": "크루아상 약 A$7~10 (추정)",
+  "note": "사우스 멜버른 마켓 Aisle B, Stall 63. 피크엔 줄, 늦으면 품절.",
+  "lat": -37.8322,
+  "lng": 144.9563,
+  "verified": "secondary",
+  "src": "https://burpple.com/agathe-patisserie"
+ },
+ "marketlane": {
+  "hours": "월·수 08:00~15:00 · 화·목·금·일 08:00~17:00 · 토 07:00~17:00",
+  "closed": [],
+  "price": "커피 약 A$5~6",
+  "note": "462 Queen St. 마켓이 쉬는 월·수에도 열어요. 서서 마시는 테이크아웃 위주.",
+  "lat": -37.8075,
+  "lng": 144.9577,
+  "verified": "official",
+  "src": "https://marketlane.com.au/pages/locations"
+ },
+ "patricia": {
+  "hours": "월~금 07:00~16:00",
+  "closed": [
+   "토",
+   "일"
+  ],
+  "price": "커피 약 A$5~6",
+  "note": "주말·공휴일 휴무. 좌석 없는 스탠딩 바.",
+  "lat": -37.8147,
+  "lng": 144.9567,
+  "verified": "official",
+  "src": "https://www.patriciacoffee.com.au/"
+ },
+ "dukes": {
+  "hours": "월~금 07:00~16:30 · 토 08:00~17:00",
+  "closed": [
+   "일"
+  ],
+  "price": "커피 약 A$4.5~6",
+  "note": "일요일 휴무.",
+  "lat": -37.8169,
+  "lng": 144.9661,
+  "verified": "official",
+  "src": "https://www.dukescoffee.com.au/"
+ },
+ "higherground": {
+  "hours": "월~금 07:00~17:00 · 토·일 07:30~17:00",
+  "closed": [],
+  "price": "메인 약 A$25~35",
+  "note": "저녁 영업은 하지 않아요. 예약 강력 권장(온라인 SevenRooms), 주말 브런치는 대기.",
+  "lat": -37.8155,
+  "lng": 144.953,
+  "verified": "official",
+  "src": "https://highergroundmelbourne.com.au/"
+ },
+ "hectors": {
+  "hours": "매일 07:00~15:00",
+  "closed": [],
+  "price": "샌드위치 약 A$15~20",
+  "note": "테이크아웃 위주. 크리스마스만 휴무이고 CBD에 매장이 여럿이라 지점 주소를 지도에서 확인.",
+  "lat": -37.8167,
+  "lng": 144.9597,
+  "verified": "official",
+  "src": "https://hectorsdeli.com.au/pages/locations"
+ },
+ "bricklane": {
+  "hours": "월~금 07:30~15:00 · 토·일 08:00~15:00",
+  "closed": [],
+  "price": "브런치 약 A$25~35 (추정)",
+  "note": "33 Guildford Lane. 온라인 예약 가능, 15시에 닫으니 점심 전에.",
+  "lat": -37.8108,
+  "lng": 144.9596,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/brick-lane-cafe"
+ },
+ "bakemono": {
+  "hours": "월~금 07:30~15:00 · 토·일 08:30~15:00",
+  "closed": [],
+  "price": "빵 1개 약 A$7~12 (추정)",
+  "note": "273 Little Lonsdale St (Drewery Lane). 늦으면 품절.",
+  "lat": -37.8111,
+  "lng": 144.964,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/bakemono-bakers"
+ },
+ "piccolina": {
+  "hours": "매일 12:00~23:00 (디그레이브스점)",
+  "closed": [],
+  "price": "약 A$7~10",
+  "note": "32 Degraves St. 저녁엔 줄. 공식 사이트에는 지점별 시간이 없어 시 관광 안내 기준.",
+  "lat": -37.8172,
+  "lng": 144.9657,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/piccolina-gelateria-melbourne"
+ },
+ "goodmeasure": {
+  "hours": "일~목 08:00~23:00 · 금·토 08:00~01:00",
+  "closed": [],
+  "price": "커피 약 A$6~9 (추정)",
+  "note": "낮엔 카페, 저녁엔 칵테일 바로 바뀌어요(에스프레소는 20시까지). 아이와는 낮에 방문.",
+  "lat": -37.801,
+  "lng": 144.9667,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/melbourne/bars/good-measure"
+ },
+ "universal": {
+  "hours": "월~목 11:00~23:00 · 금·토 11:00~23:30 · 일 11:00~22:00",
+  "closed": [],
+  "price": "파르마 약 A$15부터",
+  "note": "141 Lygon St. 일반 테이블 예약은 받지 않아요(단체만). 가족 동반에 편한 캐주얼 식당.",
+  "lat": -37.8025,
+  "lng": 144.9665,
+  "verified": "official",
+  "src": "https://www.universalrestaurant.com.au/"
+ },
+ "tipo00": {
+  "hours": "월~토 11:30~21:30",
+  "closed": [
+   "일"
+  ],
+  "price": "파스타 약 A$35~45",
+  "note": "예약 사실상 필수(공식 사이트). 일요일 휴무라 여행 중 2/14(일)엔 못 가요.",
+  "lat": -37.8134,
+  "lng": 144.9612,
+  "verified": "official",
+  "src": "https://www.tipo00.com.au/"
+ },
+ "meatwinemel": {
+  "hours": "일~목 12:00~22:00 · 금·토 12:00~23:00",
+  "closed": [],
+  "price": "런치 2코스 A$42 · 3코스 A$49 (월~토 12:00~16:00)",
+  "note": "런치 세트는 일요일 제외이고 가격은 시즌마다 바뀌어 예약 시 확인. Freshwater Place, 3 Queens Bridge St.",
+  "lat": -37.8222,
+  "lng": 144.962,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/the-meat-wine-co"
+ },
+ "ngv": {
+  "hours": "매일 10:00~17:00",
+  "closed": [],
+  "price": "상설 무료 (특별전 유료)",
+  "note": "크리스마스만 휴관. 안내데스크에서 어린이 활동지를 줘요.",
+  "lat": -37.8226,
+  "lng": 144.9689,
+  "verified": "official",
+  "src": "https://www.ngv.vic.gov.au/plan-your-visit/"
+ },
+ "rbgmelb": {
+  "hours": "매일 07:30~19:30 (어린이 정원은 수~일 10:00~19:30)",
+  "closed": [],
+  "price": "무료",
+  "note": "이안 포터 어린이 정원은 학기 중 수~일만 열어 2/15(월)·2/16(화)엔 못 들어가요. 본 정원은 연중무휴.",
+  "lat": -37.8304,
+  "lng": 144.9796,
+  "verified": "official",
+  "src": "https://www.rbg.vic.gov.au/melbourne-gardens/"
+ },
+ "carltongardens": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료",
+  "note": "정원 북쪽 구역, 멜버른 뮤지엄 옆. 미로 콘셉트 놀이터와 모래놀이, 화장실 있음.",
+  "lat": -37.803,
+  "lng": 144.972,
+  "verified": "official",
+  "src": "https://www.melbourne.vic.gov.au/community/parks-open-spaces/major-parks-gardens/pages/carlton-gardens.aspx"
+ },
+ "fedsquare": {
+  "hours": "상시 개방 (상점·식당은 각자 영업시간)",
+  "closed": [],
+  "price": "무료",
+  "note": "24시간 열린 광장. ACMI와 이안 포터 센터(NGV Australia)가 붙어 있어요.",
+  "lat": -37.818,
+  "lng": 144.9691,
+  "verified": "official",
+  "src": "https://fedsquare.com/getting-here"
+ },
+ "stkildabeach": {
+  "hours": "해변 상시 · 펭귄 관람은 매일 밤 2회(일몰 무렵·어두워진 뒤, 각 1시간)",
+  "closed": [],
+  "price": "무료 (펭귄 관람도 무료, 예약 필수)",
+  "note": "펭귄 관람은 2025년 10월 새 관람 데크 개장 후 예약제로, Phillip Island Nature Parks(penguins.org.au)에서 회당 150명만 받아요. 예약 오픈 시점은 안내가 엇갈리니(매주 화 10시 설 / 수개월 전 오픈 설) 일정 확정 즉시 확인. 2월은 일몰이 늦어 20:30 이후, 플래시·조명 금지.",
+  "lat": -37.8647,
+  "lng": 144.965,
+  "verified": "official",
+  "src": "https://www.parks.vic.gov.au/places-to-see/parks/st-kilda-pier-and-breakwater/attractions/little-penguins"
+ },
+ "brighton": {
+  "hours": "상시 개방",
+  "closed": [],
+  "price": "무료 (주변 주차 유료, 시간당 약 A$3~4)",
+  "note": "그늘이 거의 없고 바람 부는 날은 추워요. 주차는 Brighton Life Saving Club 쪽이나 Green Point, 순찰 시간은 미확인.",
+  "lat": -37.9177,
+  "lng": 144.9866,
+  "verified": "secondary",
+  "src": "https://bayside.vic.gov.au/facilities-venues/brighton-beach-bathing-boxes"
+ },
+ "phillipisland": {
+  "hours": "방문자센터 매일 12:00 개장 · 펭귄 도착 2월 약 20:30 (1시간 전 도착 권장)",
+  "closed": [],
+  "price": "일반석 성인(16+) A$34 · 어린이(4~15) A$17 · 가족(2+2) A$85",
+  "note": "사전 예약 필수. 펭귄 촬영 금지, 겉옷 챙기기. 투어로 가면 숙소 복귀가 자정 무렵이에요.",
+  "lat": -38.5103,
+  "lng": 145.1503,
+  "verified": "official",
+  "src": "https://www.penguins.org.au/attractions/penguin-parade/"
+ },
+ "moonlit": {
+  "hours": "매일 09:30~16:00 (입장 마감 15:00)",
+  "closed": [],
+  "price": "성인 A$37 · 어린이(4~17) A$19 · 가족(2+2) A$99",
+  "note": "크리스마스만 휴무. 차 없이는 투어로, 야외라 더운 날은 오전에.",
+  "lat": -38.2136,
+  "lng": 145.2536,
+  "verified": "official",
+  "src": "https://moonlitsanctuary.com.au/visit/hours-and-pricing/"
+ },
+ "msac": {
+  "hours": "월~금 05:30~22:00 · 토 05:30~20:00 · 일·공휴일 07:00~20:00",
+  "closed": [],
+  "price": "성인 약 A$8.50 · 어린이 약 A$5.80 · 가족 약 A$21.40 (2024년 기준)",
+  "note": "파도풀은 평일 16~20시로 알려져 있으나 공식 페이지에선 세션제라 방문 전 시간표 확인. 파도 운영 중 10세 미만은 보호자가 팔 닿는 거리에. 운영사 이름이 State Sport Centres로 바뀌었어요.",
+  "lat": -37.8437,
+  "lng": 144.962,
+  "verified": "official",
+  "src": "https://statesportcentres.com.au/venues/msac/"
+ },
+ "geelong": {
+  "hours": "상시 개방 (어린이 풀 안전요원 12월 말~2월 말 매일 10:00~17:00)",
+  "closed": [],
+  "price": "무료",
+  "note": "안전요원 시간은 2025-26 시즌 기준이고 2026-27은 미발표. 10세 미만은 보호자 적극 감독, 5세 미만은 함께 입수. 기차로 1시간, 거의 하루가 걸려요.",
+  "lat": -38.148,
+  "lng": 144.372,
+  "verified": "secondary",
+  "src": "https://www.geelongcity.vic.gov.au/services/parks-and-outdoor-spaces/parks-and-reserves/eastern-beach-reserve"
+ },
+ "lunaparkmel": {
+  "hours": "학기 중 토·일 11:00~18:00 무렵 (방학·공휴일은 매일)",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금"
+  ],
+  "price": "무제한 탑승 13세 이상 A$57 · 4~12세 A$47 · 가족 4인 A$175",
+  "note": "2027년 2월 운영 달력은 아직 미공개(현재 10월분까지만)라 여행 중엔 2/14(일)만 가능할 것으로 보이며 시간은 재확인. 놀이기구별 키 제한은 공식 Ride Safety 페이지 확인.",
+  "lat": -37.8676,
+  "lng": 144.9768,
+  "verified": "official",
+  "src": "https://lunapark.com.au/tickets/"
+ },
+ "babubudan": {
+  "hours": "매일 07:00~17:00",
+  "closed": [],
+  "price": "커피 약 A$5~6",
+  "note": "359 Little Bourke St. 좌석이 적어 테이크아웃 위주. 공휴일 영업은 Seven Seeds 공지 확인.",
+  "lat": -37.8134,
+  "lng": 144.962,
+  "verified": "official",
+  "src": "https://sevenseeds.com.au/pages/seven-seeds-locations"
+ },
+ "maxhardware": {
+  "hours": "매일 12:00~23:00",
+  "closed": [],
+  "price": "메인 약 A$30~45 (추정)",
+  "note": "54-58 Hardware Lane. 평이 갈려요. 아이들은 피자·파스타.",
+  "lat": -37.8135,
+  "lng": 144.9603,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/max-on-hardware"
+ },
+ "dragonhotpot": {
+  "hours": "러셀 스트리트점 24시간",
+  "closed": [],
+  "price": "재료 100g당 약 A$3.20 (무게제)",
+  "note": "콜라겐 본 브로스 등 덜 매운 국물과 맵기 단계 선택이 가능하다고 안내돼요. 아이용은 주문 때 안 매운 국물 확인.",
+  "lat": -37.8117,
+  "lng": 144.9676,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/melbourne/restaurants/dragon-hotpot"
+ },
+ "bykorea": {
+  "hours": "일~목 11:30~21:30 · 금·토 11:30~22:00 (By Korea CBD, 7 Tattersalls Ln)",
+  "closed": [],
+  "price": "1인 약 A$20~35 (추정)",
+  "note": "현재 영업 중으로 배달앱·리뷰 사이트에 등록돼 있어요. 같은 이름 지점이 CBD에 여럿(Little Bourke St, La Trobe St 등)이라 블로그가 말한 지점은 특정하지 못했어요.",
+  "lat": -37.8117,
+  "lng": 144.9657,
+  "verified": "secondary",
+  "src": "https://www.ubereats.com/au/store/by-korea-cbd/VCSBP0ukRI6Ix3XQ8qc_rg"
+ },
+ "pinkflake": {
+  "hours": "11:00~21:30 무렵 (요일별 시간 미확인)",
+  "closed": [],
+  "price": "피시앤칩스 팩 약 A$15~17",
+  "note": "92a Acland St, St Kilda. 2026년에도 리뷰·배달앱에 영업 중으로 나오지만 공식 사이트를 열지 못해 요일별 시간은 미확인.",
+  "lat": -37.868,
+  "lng": 144.9793,
+  "verified": "secondary",
+  "src": "https://pinkflakefishnchips.com.au/"
+ },
+ "librarydock": {
+  "hours": "월~목 10:00~19:00 · 금 13:00~18:00 · 토 10:00~16:00 · 일 12:00~16:00",
+  "closed": [],
+  "price": "무료",
+  "note": "107 Victoria Harbour Promenade, Docklands. 시 홈페이지 검색 결과 기준이라 금요일 오후 개관 등 최신 시간은 방문 전 재확인.",
+  "lat": -37.8197,
+  "lng": 144.941,
+  "verified": "secondary",
+  "src": "https://www.melbourne.vic.gov.au/community/hubs-bookable-spaces/the-dock/library-at-the-dock/Pages/library-at-the-dock.aspx"
+ },
+ "gimlet": {
+  "hours": "매일 12:00부터 (일~목 자정 무렵까지 · 금·토 심야 서퍼 22:00~01:00)",
+  "closed": [],
+  "price": "1인 약 A$120 이상 (추정)",
+  "note": "33 Russell St. 온라인 예약은 3개월 전부터(1~8명), 일요일 10%·공휴일 15% 추가 요금. 어린이 정책은 공식 안내가 없고 분위기는 어른 위주예요.",
+  "lat": -37.8155,
+  "lng": 144.9695,
+  "verified": "official",
+  "src": "https://gimlet.melbourne/visit"
+ }
+}

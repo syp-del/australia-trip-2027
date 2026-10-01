@@ -108,7 +108,12 @@ def main():
     shell = shell.replace("<!--PANE_CSS-->", "\n".join(pane_css))
     shell = shell.replace("<!--SPRITE-->", '<svg style="display:none" aria-hidden="true">\n' + "\n".join(sprite) + "\n</svg>")
     shell = shell.replace("<!--CREDITS-->", "\n".join(items))
-    shell = shell.replace("<!--PANE_SCRIPTS-->", "\n".join(pane_scripts))
+    extra = json.loads((ROOT / "data" / "extra.json").read_text())
+    details = json.loads((ROOT / "data" / "details.json").read_text())
+    photos = sorted(f.stem for f in (ROOT / "img").glob("*.jpg"))
+    data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;</script>" % tuple(
+        json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos))
+    shell = shell.replace("<!--PANE_SCRIPTS-->", data + "\n" + "\n".join(pane_scripts))
     (ROOT / "index.html").write_text(shell)
     print(f"index.html: {len(shell) / 1024:.0f} KB, {len(sprite)} icons, {len(items)} photo credits")
 
