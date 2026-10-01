@@ -1,0 +1,486 @@
+<title>시드니 멜버른 여정표</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F3F7F6; --bg-alt:#E7F0EE; --surface:#FFFFFF; --surface-line:#D9E6E3;
+    --ink:#12262A; --ink-soft:#4E6669; --ink-faint:#7C9294;
+    --accent:#FF6B4A; --accent-ink:#7A2E1C; --accent-soft:#FFE4DB;
+    --teal:#0E4F4F; --teal-soft:#DCEEEC;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    --good:#1E8A6E; --good-soft:#DDF1E8;
+    --mid:#C4860F; --mid-soft:#F7EAD1;
+    --low:#C1473C; --low-soft:#F7DEDA;
+    --sage:#5B8A63; --sage-ink:#2F4A34; --sage-soft:#E3EFE1;
+    --sunset:#E08A3C;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+      --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+      --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+      --teal:#8FD6CE; --teal-soft:#173736;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      --good:#4FCBA3; --good-soft:#123330;
+      --mid:#E4B550; --mid-soft:#3A2E13;
+      --low:#F0847A; --low-soft:#3A1B17;
+      --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+      --sunset:#F0A860;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+    --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+    --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+    --teal:#8FD6CE; --teal-soft:#173736;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    --good:#4FCBA3; --good-soft:#123330;
+    --mid:#E4B550; --mid-soft:#3A2E13;
+    --low:#F0847A; --low-soft:#3A1B17;
+    --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+    --sunset:#F0A860;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:20px; padding-block:36px 64px;}
+  .wrap{max-width:1060px; margin:0 auto;}
+  h1,h2,h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0;}
+  svg.ic{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round;}
+
+  header{margin-bottom:26px;}
+  .eyebrow{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); background:var(--teal-soft); padding:5px 12px; border-radius:999px; margin-bottom:14px;}
+  h1{font-size:clamp(27px,4.8vw,40px); font-weight:600; line-height:1.16;}
+  .lede{font-size:15.5px; color:var(--ink-soft); max-width:66ch; margin-top:10px; line-height:1.6;}
+
+  .flight-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+  .flight-card{flex:1; min-width:220px; background:var(--surface); border:1px solid var(--surface-line); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:4px;}
+  .flight-card .route{font-size:12px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.04em;}
+  .flight-card .num{font-family:'Fraunces',serif; font-size:16px; font-weight:600;}
+  .flight-card .time{font-size:12.5px; color:var(--ink-soft);}
+
+  section{margin-top:48px;}
+  .section-head{margin-bottom:20px;}
+  .section-head h2{font-size:clamp(21px,3.2vw,27px); font-weight:600;}
+  .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:14px; max-width:68ch;}
+
+  /* Plan chooser */
+  .plan-choice{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:620px){.plan-choice{grid-template-columns:1fr;}}
+  .plan-card{border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:12px;}
+  .plan-card.a{background:var(--accent-soft); border:1.5px solid color-mix(in srgb, var(--accent) 45%, transparent);}
+  .plan-card.b{background:var(--sage-soft); border:1.5px solid color-mix(in srgb, var(--sage) 45%, transparent);}
+  .plan-card .tag{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;}
+  .plan-card.a .tag{color:var(--accent-ink);}
+  .plan-card.b .tag{color:var(--sage-ink);}
+  .plan-card h3{font-size:19px; font-weight:600;}
+  .plan-card p{margin:0; font-size:13.5px; line-height:1.55; color:var(--ink-soft);}
+  .plan-icons{display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;}
+  .pi{width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+  .plan-card.a .pi{background:#fff; color:var(--accent-ink);}
+  :root[data-theme="dark"] .plan-card.a .pi{background:rgba(255,255,255,.08); color:var(--accent-ink);}
+  .plan-card.b .pi{background:#fff; color:var(--sage-ink);}
+  :root[data-theme="dark"] .plan-card.b .pi{background:rgba(255,255,255,.08); color:var(--sage-ink);}
+  .pi svg{width:18px; height:18px;}
+  .plan-stat{display:flex; justify-content:space-between; font-size:12.5px; padding-top:10px; border-top:1px dashed color-mix(in srgb, var(--ink) 20%, transparent); color:var(--ink-soft);}
+  .plan-stat b{color:var(--ink); font-family:'Fraunces',serif; font-size:15px; font-weight:600;}
+
+  /* Day cards with icon */
+  .daywrap{display:flex; flex-direction:column; gap:14px;}
+  .day{border-radius:16px; padding:18px 20px; border:1px solid var(--surface-line); background:var(--surface); display:grid; grid-template-columns:52px 74px 1fr; gap:14px; align-items:start;}
+  @media (max-width:520px){.day{grid-template-columns:44px 1fr; }
+    .day .day-date{grid-column:2; order:-1;}
+    .day .icon-badge{grid-row:1 / span 2;}
+  }
+  .icon-badge{width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; flex:none;}
+  .a .icon-badge{background:var(--accent-soft); color:var(--accent-ink);}
+  .b .icon-badge{background:var(--sage-soft); color:var(--sage-ink);}
+  .icon-badge svg{width:28px; height:28px;}
+  .day-date{display:flex; flex-direction:column; gap:3px;}
+  .day-date .dow{font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase;}
+  .day-date .dom{font-family:'Fraunces',serif; font-size:20px; font-weight:600;}
+  .city-tag{font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; align-self:flex-start;}
+  .city-tag.syd{background:var(--teal-soft); color:var(--teal);}
+  .city-tag.mel{background:var(--gold-soft); color:var(--gold);}
+  .day-body h3{font-size:16px; font-weight:600; margin-bottom:8px;}
+  .day-plan{display:flex; flex-direction:column; gap:6px;}
+  .plan-row{display:flex; gap:10px; font-size:13.3px; line-height:1.55; color:var(--ink-soft);}
+  .plan-row .tod{flex:none; width:44px; font-weight:700; color:var(--ink-faint); font-size:11px; text-transform:uppercase; padding-top:2px;}
+  .plan-row b{color:var(--ink); font-weight:700;}
+  .day-note{margin-top:8px; font-size:12px; color:var(--ink-faint); background:var(--bg-alt); border-radius:8px; padding:7px 10px;}
+  .tagrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;}
+  .mini-tag{font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--teal-soft); color:var(--teal); display:inline-flex; align-items:center; gap:4px;}
+  .mini-tag svg.ic{width:11px; height:11px;}
+
+  /* condensed A timeline */
+  .a-line{display:flex; flex-direction:column; gap:10px;}
+  .a-row{display:grid; grid-template-columns:74px 40px 1fr; gap:12px; align-items:center; padding:12px 16px; background:var(--surface); border:1px solid var(--surface-line); border-radius:12px;}
+  .a-row .d{font-family:'Fraunces',serif; font-weight:600; font-size:14px; color:var(--ink-soft);}
+  .a-row .ic{width:40px; height:40px; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink); display:flex; align-items:center; justify-content:center;}
+  .a-row .ic svg{width:22px; height:22px;}
+  .a-row .tx b{color:var(--ink); font-weight:700; font-size:13.5px;}
+  .a-row .tx span{display:block; font-size:12px; color:var(--ink-faint); margin-top:2px;}
+
+  /* Budget compare */
+  .budget-compare{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  @media (max-width:620px){.budget-compare{grid-template-columns:1fr;}}
+  .bc-card{border-radius:18px; padding:22px; color:#fff;}
+  .bc-card.a{background:var(--accent-ink);}
+  .bc-card.b{background:var(--sage-ink);}
+  .bc-card .tag{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; opacity:.75;}
+  .bc-card .big{font-family:'Fraunces',serif; font-size:clamp(24px,4vw,32px); font-weight:600; margin-top:6px; font-variant-numeric:tabular-nums;}
+  .bc-card .sub{font-size:12px; opacity:.8; margin-top:4px;}
+  .bc-list{margin-top:14px; display:flex; flex-direction:column; gap:6px; border-top:1px solid rgba(255,255,255,.2); padding-top:12px;}
+  .bc-list div{display:flex; justify-content:space-between; font-size:12.5px; opacity:.9;}
+  .bc-list b{font-variant-numeric:tabular-nums; font-weight:700;}
+
+  .prep-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px;}
+  .prep-card{background:var(--surface); border:1px solid var(--surface-line); border-radius:14px; padding:16px 18px;}
+  .prep-card h4{margin:0 0 8px; font-family:'Fraunces',serif; font-weight:600; font-size:15px;}
+  .prep-card ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:5px;}
+  .prep-card li{font-size:13px; color:var(--ink-soft); line-height:1.5;}
+
+  .book-list{display:flex; flex-direction:column; gap:10px;}
+  .book-item{display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--surface-line); border-radius:12px; padding:12px 14px;}
+  .book-item .pri{flex:none; width:26px; height:26px; border-radius:50%; background:var(--low-soft); color:var(--low); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;}
+  .book-item p{margin:0; font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
+  .book-item b{color:var(--ink);}
+
+  footer{margin-top:44px; font-size:12px; color:var(--ink-faint); text-align:center;}
+</style>
+
+<!-- Icon symbol sprite -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-koala" viewBox="0 0 48 48"><circle cx="14" cy="12" r="7"/><circle cx="34" cy="12" r="7"/><circle cx="24" cy="26" r="14"/><circle cx="19" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.6" fill="currentColor" stroke="none"/><path d="M20 31c1.5 1.5 6.5 1.5 8 0"/></symbol>
+  <symbol id="i-roo" viewBox="0 0 48 48"><path d="M10 40c0-6 3-9 3-14 0-7-3-9-3-14 3-1 7 1 8 5 1-2 3-3 5-3 6 0 9 5 9 10 0 3-1 5-1 8l2 8"/><path d="M22 24c2 0 4 1 5 3"/><circle cx="27" cy="15" r="1.3" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-quokka" viewBox="0 0 48 48"><circle cx="24" cy="26" r="13"/><circle cx="15" cy="16" r="5"/><circle cx="33" cy="16" r="5"/><path d="M18 29c2 3 10 3 12 0" /><circle cx="19" cy="24" r="1.4" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.4" fill="currentColor" stroke="none"/></symbol>
+  <symbol id="i-penguin" viewBox="0 0 48 48"><path d="M24 8c8 0 12 8 12 18 0 9-5 14-12 14S12 35 12 26C12 16 16 8 24 8z"/><path d="M24 14c4 0 6 5 6 11 0 6-3 9-6 9s-6-3-6-9c0-6 2-11 6-11z"/><circle cx="21" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M24 38l-3 5M24 38l3 5"/></symbol>
+  <symbol id="i-ferry" viewBox="0 0 48 48"><path d="M8 30h32l-4 9H12l-4-9z"/><path d="M14 30V16h20v14"/><path d="M24 16V8"/><path d="M24 8c4 0 6 3 6 6h-6"/><path d="M4 38c3 2 6 2 9 0s6-2 9 0 6 2 9 0 6-2 9 0"/></symbol>
+  <symbol id="i-bridge" viewBox="0 0 48 48"><path d="M4 34c6-14 14-22 20-22s14 8 20 22"/><path d="M4 34h40"/><path d="M12 34V22M20 34v-9M28 34v-9M36 34V22"/></symbol>
+  <symbol id="i-picnic" viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="14" rx="2"/><path d="M8 25h32"/><path d="M16 18v-4h16v4"/><circle cx="16" cy="12" r="2"/><path d="M6 38h36"/></symbol>
+  <symbol id="i-run" viewBox="0 0 48 48"><circle cx="28" cy="9" r="4"/><path d="M20 40l6-10-4-6 6-5 4 6 8 2"/><path d="M22 24l-8 4 2 8"/><path d="M10 40c6-10 10-26 22-26"/></symbol>
+  <symbol id="i-market" viewBox="0 0 48 48"><path d="M6 16l4-8h28l4 8"/><path d="M6 16c0 3 3 5 5 5s5-2 5-5c0 3 3 5 5 5s5-2 5-5c0 3 3 5 5 5s5-2 5-5"/><path d="M10 21v19h28V21"/><path d="M20 40v-9h8v9"/></symbol>
+  <symbol id="i-bbq" viewBox="0 0 48 48"><path d="M24 6c-3 4-5 6-5 9a5 5 0 0010 0c0-2-1-3-2-5 1 2 3 3 3 6a6 6 0 01-12 0c0-5 3-7 6-10z"/><ellipse cx="24" cy="34" rx="14" ry="6"/><path d="M10 34v4a14 6 0 0028 0v-4"/></symbol>
+  <symbol id="i-coffee" viewBox="0 0 48 48"><path d="M10 18h22v12a11 11 0 01-22 0V18z"/><path d="M32 20h4a5 5 0 010 10h-4"/><path d="M16 10c0 2-2 2-2 4M23 10c0 2-2 2-2 4M30 10c0 2-2 2-2 4"/></symbol>
+  <symbol id="i-sunset" viewBox="0 0 48 48"><path d="M4 34h40"/><path d="M14 34a10 10 0 0120 0"/><path d="M24 16v-6M13 24l-4-4M35 24l4-4M8 34h4M36 34h4"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 48 48"><path d="M6 26l36-14-14 36-4-14-14-4 18-8"/></symbol>
+  <symbol id="i-tour" viewBox="0 0 48 48"><path d="M6 40l10-24 8 6 8-14 10 32z"/><circle cx="16" cy="10" r="4"/></symbol>
+</svg>
+
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">2027.02.09 ~ 02.19 · 가족 4인</span>
+    <h1>시드니 · 멜버른, 두 갈래 코스</h1>
+    <p class="lede">발권된 국제선(인천↔시드니)과 예약된 시드니 호텔은 그대로 두고, 성향이 다른 두 가지 코스를 나란히 짰습니다. <b>플랜 A</b>는 특별한 동물체험과 자연 스케일을 최대화한 모험형, <b>플랜 B</b>는 동물원·유람선·피크닉·노을처럼 여유를 최대화한 라이프스타일형이에요.</p>
+
+    <div class="flight-strip">
+      <div class="flight-card">
+        <span class="route">국제선 · 가는 편</span>
+        <span class="num">OZ601</span>
+        <span class="time">2/9(화) 20:00 인천 → 2/10(수) 약 08:30 시드니</span>
+      </div>
+      <div class="flight-card">
+        <span class="route">국제선 · 오는 편</span>
+        <span class="num">OZ602</span>
+        <span class="time">2/19(금) 10:20 시드니 출발</span>
+      </div>
+      <div class="flight-card">
+        <span class="route">숙소</span>
+        <span class="num">메리턴 스위트 월드타워</span>
+        <span class="time">2/10~2/14, 4박 예약 완료 (AUD 1,867.50 ≈ 약 185만원)</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; background:var(--low-soft); border:1px solid color-mix(in srgb, var(--low) 40%, transparent); border-radius:14px; padding:14px 18px; font-size:13px; color:var(--ink); line-height:1.6;">
+      <b style="color:var(--low);">읽고 시작하세요:</b> 이 문서는 <b>멜버른을 포함하는 시나리오 전용</b>이에요. 멜버른 없이 시드니 근교만 도는 안을 고려 중이면 <a href="https://claude.ai/artifact/VC5HLTGoibGAaEqU3Cjceg" target="_blank" rel="noopener" style="color:var(--low); font-weight:700;">루트 빌더의 "시드니 중심" 모드</a>를 참고하세요. 또한 <b>Plan A(모험형, 738~958만원)는 예산 상한(500~800만원)을 초과할 수 있어요</b> — 예산이 최우선이면 Plan B(564~704만원)를 추천해요.
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <h2>플랜 A vs 플랜 B</h2>
+      <p>같은 항공권·같은 호텔에서 출발하지만, 하루를 채우는 방식이 달라요.</p>
+    </div>
+    <div class="plan-choice">
+      <div class="plan-card a">
+        <span class="tag">Plan A · 모험형</span>
+        <h3>특별한 동물체험 + 자연 스케일</h3>
+        <p>웜뱃을 직접 안고, 블루마운틴·그레이트오션로드의 압도적 풍경을 본다. 이동은 길지만 "평생 기억에 남을 장면"이 많다.</p>
+        <div class="plan-icons">
+          <span class="pi"><svg class="ic"><use href="#i-quokka"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-tour"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-penguin"/></svg></span>
+        </div>
+        <div class="plan-stat"><span>예상 경비(4인, 항공료 제외)</span><b>738~958만원</b></div>
+        <p style="margin-top:2px; font-size:11.5px; color:var(--low);">주의: 9일 중 명시적 수영은 2/12(본다이) 단 하루뿐 — "수영+새동물" 우선순위 중 동물 쪽에 치우쳐 있어요.</p>
+      </div>
+      <div class="plan-card b">
+        <span class="tag">Plan B · 라이프스타일형</span>
+        <h3>동물원 + 유람선 + 피크닉 + 노을</h3>
+        <p>동물은 가까운 동물원에서 여유 있게 보고, 나머지는 조깅·마켓·집밥·노을처럼 현지인처럼 사는 하루하루. 이동이 적어 아이들 체력 부담이 훨씬 적다.</p>
+        <div class="plan-icons">
+          <span class="pi"><svg class="ic"><use href="#i-picnic"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-ferry"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-sunset"/></svg></span>
+        </div>
+        <div class="plan-stat"><span>예상 경비(4인, 항공료 제외)</span><b>564~704만원</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Plan A · 모험형 요약</h2>
+      <p>이전에 확정했던 안 그대로예요 — 자세한 시간표는 아래 Plan B와 같은 형식으로 참고만 하시고, 핵심만 축약했습니다.</p>
+    </div>
+    <div class="a-line">
+      <div class="a-row"><span class="d">2/10 수</span><span class="ic"><svg class="ic"><use href="#i-ferry"/></svg></span><span class="tx"><b>도착 · 시차 적응</b><span>달링하버, 호텔 체크인</span></span></div>
+      <div class="a-row"><span class="d">2/11 목</span><span class="ic"><svg class="ic"><use href="#i-quokka"/></svg></span><span class="tx"><b>웜뱃투어</b><span>웜뱃 직접 안기 + 코알라·쿼카 관찰, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/12 금</span><span class="ic"><svg class="ic"><use href="#i-run"/></svg></span><span class="tx"><b>시티 + 본다이비치</b><span>회복일, 시티워킹 + 해변 수영</span></span></div>
+      <div class="a-row"><span class="d">2/13 토</span><span class="ic"><svg class="ic"><use href="#i-roo"/></svg></span><span class="tx"><b>블루마운틴 + 페더데일</b><span>코알라·캥거루 근접체험 + 전망대, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/14 일</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>멜버른 이동</b><span>국내선, 저녁 레인웨이 식사</span></span></div>
+      <div class="a-row"><span class="d">2/15 월</span><span class="ic"><svg class="ic"><use href="#i-market"/></svg></span><span class="tx"><b>멜버른 시티</b><span>퀸빅토리아마켓, 보타닉가든</span></span></div>
+      <div class="a-row"><span class="d">2/16 화</span><span class="ic"><svg class="ic"><use href="#i-tour"/></svg></span><span class="tx"><b>그레이트오션로드</b><span>12사도 + 야생 코알라 관찰, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/17 수</span><span class="ic"><svg class="ic"><use href="#i-penguin"/></svg></span><span class="tx"><b>필립아일랜드</b><span>오전 휴식 + 저녁 펭귄퍼레이드</span></span></div>
+      <div class="a-row"><span class="d">2/18 목</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>시드니 복귀</b><span>공항 인근 1박</span></span></div>
+      <div class="a-row"><span class="d">2/19 금</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>귀국</b><span>10:20 OZ602</span></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Plan B · 라이프스타일형 상세</h2>
+      <p>동물원(코알라·캥거루·왈라비), 브릿지 뷰 피크닉, 유람선, 해변 조깅, 마켓, 집밥, 카페, 노을 — 요청하신 요소를 하루하루에 풀어 담았어요.</p>
+    </div>
+
+    <div class="daywrap">
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-sunset"/></svg></div>
+        <div class="day-date"><span class="dow">Wed</span><span class="dom">2/10</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>도착 · 첫 노을</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>08:30 도착 → 짐 보관 → 달링하버 가볍게 산책, 근처 카페에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>체크인, 근처 마트(울월스)에서 장보기 — 이번 트립 첫 집밥 재료</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>달링하버에서 <b>첫 노을</b> 감상 후 숙소에서 가볍게 저녁</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-ferry"/></svg></div>
+        <div class="day-date"><span class="dow">Thu</span><span class="dom">2/11</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>타롱가동물원 + 옵저버토리힐 피크닉</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>써큘러키에서 <b>페리(유람선)</b>를 타고 타롱가동물원으로 — 하버브리지·오페라하우스를 바다에서 감상</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>코알라·캥거루·왈라비 근접 관찰 (쿼카 전시는 방문 전 홈페이지 확인 추천)</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>더록스 <b>옵저버토리힐 파크</b>에서 하버브리지가 보이는 잔디밭에 돗자리 펴고 피크닉</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-koala"/></svg>코알라</span><span class="mini-tag"><svg class="ic"><use href="#i-roo"/></svg>캥거루</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span><span class="mini-tag"><svg class="ic"><use href="#i-picnic"/></svg>피크닉</span><span class="mini-tag"><svg class="ic"><use href="#i-bridge"/></svg>브릿지뷰</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-run"/></svg></div>
+        <div class="day-date"><span class="dow">Fri</span><span class="dom">2/12</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>해변 조깅 + 장보기 + 집밥</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">아침</span><span>본다이비치~쿠지비치 <b>해안 조깅</b>(3.5km, 유모차·아이 페이스면 절반만 걸어도 충분히 예쁨)</span></div>
+            <div class="plan-row"><span class="tod">오전</span><span>본다이 근처 <b>카페</b>에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>본다이비치 수영, 돌아오는 길에 장보기(스테이크·해산물)</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>숙소에서 <b>고기 구워먹기</b> — 취사 가능 객실 활용</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-run"/></svg>조깅</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span><span class="mini-tag"><svg class="ic"><use href="#i-bbq"/></svg>집밥</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-market"/></svg></div>
+        <div class="day-date"><span class="dow">Sat</span><span class="dom">2/13</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>마켓 + 시내 + 선셋 하버크루즈</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span><b>캐리지웍스 마켓</b>(08:00~13:00) — 로컬 파머스마켓, 커피·페이스트리</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>QVB·시티 여유롭게 쇼핑</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span><b>선셋 하버크루즈</b> — 유람선에서 노을+하버브리지 야경을 동시에</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-market"/></svg>마켓</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Sun</span><span class="dom">2/14</span><span class="city-tag syd">이동</span></div>
+        <div class="day-body">
+          <h3>시드니 → 멜버른</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>체크아웃, 마지막 짐 정리</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>국내선 이동(약 1시간 25분), 멜버른 취사 가능 숙소 체크인</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>레인웨이(골목길) 카페에서 가볍게 첫 저녁</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-market"/></svg></div>
+        <div class="day-date"><span class="dow">Mon</span><span class="dom">2/15</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>퀸빅토리아마켓 + 보타닉가든 피크닉 + 집밥</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span><b>퀸빅토리아마켓</b>에서 장보기 — 델리·치즈·과일까지 다 여기서</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>로열보타닉가든에서 여유로운 피크닉</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>숙소에서 마켓에서 사온 재료로 <b>고기 구워먹기</b></span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-market"/></svg>마켓</span><span class="mini-tag"><svg class="ic"><use href="#i-picnic"/></svg>피크닉</span><span class="mini-tag"><svg class="ic"><use href="#i-bbq"/></svg>집밥</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-run"/></svg></div>
+        <div class="day-date"><span class="dow">Tue</span><span class="dom">2/16</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>세인트킬다 조깅 + 야라강 유람선</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">아침</span><span>세인트킬다비치 해안 <b>조깅</b> + 부두 산책(야생 리틀펭귄 서식지, 운 좋으면 낮에도 흔적 관찰)</span></div>
+            <div class="plan-row"><span class="tod">오전</span><span>근처 <b>카페</b>에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>야라강 <b>유람선</b> 투어 — 도심을 물 위에서 여유롭게</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-run"/></svg>조깅</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-penguin"/></svg></div>
+        <div class="day-date"><span class="dow">Wed</span><span class="dom">2/17</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>여유로운 오전 + 필립아일랜드 펭귄퍼레이드</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>숙소 근처 카페·수영장에서 느긋하게</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>필립아일랜드 이동, 가는 길 해안 노을 감상</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span><b>야생 리틀펭귄 퍼레이드</b> — Plan B에서 유일하게 남겨둔 풀데이급 하이라이트</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-penguin"/></svg>펭귄</span><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Thu</span><span class="dom">2/18</span><span class="city-tag syd">이동</span></div>
+        <div class="day-body">
+          <h3>멜버른 → 시드니</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>체크아웃, 국내선으로 시드니 복귀</span></div>
+            <div class="plan-row"><span class="tod">오후~밤</span><span>공항 인근 숙소, 마지막 기념품 쇼핑 + 마지막 노을</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Fri</span><span class="dom">2/19</span><span class="city-tag syd">귀국</span></div>
+        <div class="day-body">
+          <h3>귀국</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>10:20 OZ602 시드니 출발 → 인천</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>예산 비교</h2>
+      <p>항공료는 두 플랜 모두 이미 마일리지로 해결돼 있어 제외했습니다. 숙박·국내선은 거의 동일하고, 차이는 투어·입장료와 식비에서 갈려요.</p>
+    </div>
+    <div class="budget-compare">
+      <div class="bc-card a">
+        <span class="tag">Plan A · 모험형</span>
+        <div class="big">738~958만원</div>
+        <div class="sub">4인 총액, 항공료 제외</div>
+        <div class="bc-list">
+          <div><span>투어·입장료</span><b>232~307만원</b></div>
+          <div><span>식비</span><b>97~146만원</b></div>
+          <div><span>숙박+국내선+교통+기타</span><b>409~505만원</b></div>
+        </div>
+      </div>
+      <div class="bc-card b">
+        <span class="tag">Plan B · 라이프스타일형</span>
+        <div class="big">564~704만원</div>
+        <div class="sub">4인 총액, 항공료 제외</div>
+        <div class="bc-list">
+          <div><span>투어·입장료(동물원+크루즈×2+필립아일랜드)</span><b>88~118만원</b></div>
+          <div><span>식비(집밥 비중↑)</span><b>80~120만원</b></div>
+          <div><span>숙박+국내선+교통+기타</span><b>396~466만원</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>준비물 & 팁</h2>
+    </div>
+    <div class="prep-grid">
+      <div class="prep-card">
+        <h4>매일 기본</h4>
+        <ul>
+          <li>수영복 + 빠르게 마르는 수건</li>
+          <li>자외선차단제 SPF50+, 조깅용 모자</li>
+          <li>돗자리 또는 피크닉 매트(옵저버토리힐·보타닉가든용)</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>집밥 · 장보기</h4>
+        <ul>
+          <li>숙소에 그릴/인덕션 화구 있는지 예약 전 확인</li>
+          <li>울월스·콜스 앱 미리 설치하면 재고·가격 확인 편함</li>
+          <li>캐리지웍스·퀸빅토리아마켓은 현금보다 카드 결제가 대부분 편함</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>유람선 · 크루즈</h4>
+        <ul>
+          <li>선셋크루즈는 성수기 저녁 시간대 조기 마감 — 미리 예약</li>
+          <li>페리(타롱가행)는 오팔카드로 바로 탑승 가능</li>
+          <li>바람이 강할 수 있어 얇은 겉옷 챙기기</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>필립아일랜드(공통)</h4>
+        <ul>
+          <li>촬영 금지 구역 있음 — 아이들에게 미리 설명</li>
+          <li>저녁 바닷바람 쌀쌀 — 겉옷 필수</li>
+          <li>소규모 투어라 성수기엔 조기 마감, 최우선 예약</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>지금 예약해야 할 것</h2>
+      <p>어느 플랜으로 가든 공통으로 서두를 항목이에요.</p>
+    </div>
+    <div class="book-list">
+      <div class="book-item"><span class="pri">1</span><p><b>시드니⇄멜버른 국내선</b> — 두 플랜 모두 동일하게 필요, 확정되는 대로 예약.</p></div>
+      <div class="book-item"><span class="pri">2</span><p><b>필립아일랜드 펭귄퍼레이드</b> — 두 플랜 공통 하이라이트, 소규모라 조기 마감.</p></div>
+      <div class="book-item"><span class="pri">3</span><p><b>(Plan A 선택 시) 웜뱃투어</b> — 성수기 좌석 여유 없음.</p></div>
+      <div class="book-item"><span class="pri">4</span><p><b>(Plan B 선택 시) 선셋 하버크루즈, 타롱가동물원 페리 콤보</b> — 저녁 시간대 인기 슬롯부터 마감.</p></div>
+      <div class="book-item"><span class="pri">5</span><p><b>멜버른 숙소</b> — 취사 시설(그릴 포함) 있는 곳으로, 두 플랜 모두 필요.</p></div>
+    </div>
+  </section>
+
+  <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 국제선·시드니 호텔은 예약 완료, 금액은 최근 시세 기반 추정치입니다</footer>
+
+</div>

@@ -1,0 +1,334 @@
+<title>호주여행 예약 트래커</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#EFF6F4; --surface:#FBF6E9; --surface-alt:#F3EEDD; --line:#DCE7E2;
+    --ink:#0C2B2F; --ink-soft:#3F5D5C; --ink-faint:#6F8B89;
+    --ocean:#0F7A93; --ocean-deep:#063240; --ocean-soft:#DCEEF1;
+    --coral:#FF6F4D; --coral-ink:#8A3018; --coral-soft:#FFE4DA;
+    --euca:#5E8F63; --euca-ink:#2E4A31; --euca-soft:#E4EFE0;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    --grey:#7B84A8; --grey-soft:#E7E9F2;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+      --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+      --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+      --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+      --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      --grey:#9AA3CC; --grey-soft:#1B2440;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+    --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+    --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+    --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+    --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    --grey:#9AA3CC; --grey-soft:#1B2440;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:0; padding-block:0 60px;}
+  .wrap{max-width:900px; margin:0 auto; padding-inline:20px;}
+  h1,h2,h3{font-family:'Bricolage Grotesque',system-ui,sans-serif; text-wrap:balance; margin:0;}
+  a{color:var(--ocean);}
+  svg.ic{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+  button, input{font-family:inherit;}
+
+  .hero{background:linear-gradient(180deg, var(--ocean-deep), #0A4A5C 65%, var(--ocean)); padding:40px 0 56px;}
+  .hero-eyebrow{display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#CFF3EE; background:rgba(255,255,255,.12); padding:6px 14px; border-radius:999px;}
+  .hero h1{color:#fff; font-size:clamp(27px,5vw,38px); font-weight:700; line-height:1.15; margin-top:14px;}
+  .hero p{color:#CFE9E5; font-size:14.5px; max-width:60ch; margin-top:10px; line-height:1.6;}
+
+  .tabbar{display:flex; gap:5px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:5px; margin-top:-26px; position:relative; z-index:3; box-shadow:0 8px 22px rgba(0,0,0,.12);}
+  .tab-btn{flex:1; text-align:center; padding:11px 12px; border:none; background:none; border-radius:999px; font-family:'Manrope',sans-serif; font-weight:800; font-size:13px; color:var(--ink-faint); cursor:pointer;}
+  .tab-btn.active{background:var(--ocean); color:#fff;}
+  .tabpanel{display:none;}
+  .tabpanel.active{display:block;}
+
+  section{margin-top:34px;}
+  .section-head{margin-bottom:16px;}
+  .section-head .eyebrow2{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--euca-ink); background:var(--euca-soft); padding:4px 11px; border-radius:999px; margin-bottom:8px;}
+  .section-head h2{font-size:clamp(20px,3.2vw,25px); font-weight:700;}
+  .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:13.5px; max-width:68ch;}
+
+  /* progress bar */
+  .progress-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
+  .progress-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;}
+  .progress-top b{font-family:'Bricolage Grotesque',serif; font-size:20px;}
+  .progress-track{height:10px; background:var(--surface-alt); border-radius:999px; overflow:hidden;}
+  .progress-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--euca)); border-radius:999px; transition:width .3s;}
+  .progress-legend{display:flex; gap:14px; margin-top:10px; font-size:11.5px; color:var(--ink-faint);}
+  .progress-legend span{display:inline-flex; align-items:center; gap:5px;}
+  .dot{width:8px; height:8px; border-radius:50%;}
+
+  /* booking rows */
+  .booking-list{display:flex; flex-direction:column; gap:10px;}
+  .booking-row{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:8px;}
+  .booking-top{display:flex; align-items:center; gap:12px;}
+  .booking-ic{width:38px; height:38px; border-radius:10px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center; flex:none;}
+  .booking-title{flex:1; min-width:0;}
+  .booking-title b{font-size:14px; display:block;}
+  .booking-title span{font-size:11.5px; color:var(--ink-faint);}
+  .prio{font-size:9.5px; font-weight:800; padding:2px 8px; border-radius:999px; flex:none;}
+  .prio.high{background:var(--coral-soft); color:var(--coral-ink);}
+  .prio.mid{background:var(--gold-soft); color:var(--gold);}
+  .status-btn{flex:none; font-size:11.5px; font-weight:800; padding:6px 13px; border-radius:999px; border:none; cursor:pointer;}
+  .status-btn.todo{background:var(--grey-soft); color:var(--grey);}
+  .status-btn.progress{background:var(--gold-soft); color:var(--gold);}
+  .status-btn.done{background:var(--euca-soft); color:var(--euca-ink);}
+  .booking-note{font-size:12px; color:var(--ink-soft); line-height:1.5; background:var(--surface-alt); border-radius:9px; padding:8px 11px;}
+  .booking-input{width:100%; border:1px solid var(--line); background:var(--bg); border-radius:9px; padding:8px 11px; font-size:12.5px; color:var(--ink);}
+  .booking-input::placeholder{color:var(--ink-faint);}
+
+  /* emergency card */
+  .ecard{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:14px;}
+  .ecard h3{font-size:15px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+  .ecard h3 svg{width:20px; height:20px; color:var(--coral);}
+  .erow{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 0; border-bottom:1px dashed var(--line);}
+  .erow:last-child{border-bottom:none;}
+  .erow .elabel{font-size:12.5px; color:var(--ink-faint);}
+  .erow .eval{font-size:13px; font-weight:700; font-variant-numeric:tabular-nums;}
+  .copy-btn{font-size:10.5px; font-weight:700; color:var(--ocean); background:var(--ocean-soft); border:none; border-radius:999px; padding:4px 10px; cursor:pointer; margin-left:8px;}
+  .ecard p.small{margin:8px 0 0; font-size:11.5px; color:var(--ink-faint); line-height:1.5;}
+
+  .fill-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  @media (max-width:520px){.fill-grid{grid-template-columns:1fr;}}
+  .fill-field label{display:block; font-size:11.5px; font-weight:700; color:var(--ink-soft); margin-bottom:5px;}
+  .fill-field input{width:100%; border:1px solid var(--line); background:var(--bg); border-radius:9px; padding:9px 11px; font-size:13px; color:var(--ink);}
+
+  .save-note{font-size:11.5px; color:var(--ink-faint); margin-top:10px; display:flex; align-items:center; gap:6px;}
+
+  footer{margin-top:44px; font-size:12px; color:var(--ink-faint); text-align:center;}
+  .footer-wrap{max-width:900px; margin:0 auto; padding-inline:20px;}
+</style>
+
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-plane" viewBox="0 0 48 48"><path d="M6 26l36-14-14 36-4-14-14-4 18-8"/></symbol>
+  <symbol id="i-koala" viewBox="0 0 48 48"><circle cx="14" cy="12" r="7"/><circle cx="34" cy="12" r="7"/><circle cx="24" cy="26" r="14"/><circle cx="19" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.6" fill="currentColor" stroke="none"/><path d="M20 31c1.5 1.5 6.5 1.5 8 0"/></symbol>
+  <symbol id="i-tour" viewBox="0 0 48 48"><path d="M6 40l10-24 8 6 8-14 10 32z"/><circle cx="16" cy="10" r="4"/></symbol>
+  <symbol id="i-penguin" viewBox="0 0 48 48"><path d="M24 8c8 0 12 8 12 18 0 9-5 14-12 14S12 35 12 26C12 16 16 8 24 8z"/><path d="M24 14c4 0 6 5 6 11 0 6-3 9-6 9s-6-3-6-9c0-6 2-11 6-11z"/><circle cx="21" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M24 38l-3 5M24 38l3 5"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 48 48"><path d="M6 40V20a4 4 0 014-4h28a4 4 0 014 4v20"/><path d="M6 32h36"/><circle cx="14" cy="22" r="3"/><path d="M20 22h14"/></symbol>
+  <symbol id="i-ferry" viewBox="0 0 48 48"><path d="M8 30h32l-4 9H12l-4-9z"/><path d="M14 30V16h20v14"/><path d="M24 16V8"/><path d="M24 8c4 0 6 3 6 6h-6"/><path d="M4 38c3 2 6 2 9 0s6-2 9 0 6 2 9 0 6-2 9 0"/></symbol>
+  <symbol id="i-sunset" viewBox="0 0 48 48"><path d="M4 34h40"/><path d="M14 34a10 10 0 0120 0"/><path d="M24 16v-6M13 24l-4-4M35 24l4-4M8 34h4M36 34h4"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 5l16 6v11c0 11-7 18-16 21-9-3-16-10-16-21V11z"/><path d="M17 24l5 5 9-11"/></symbol>
+  <symbol id="i-passport" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="3"/><circle cx="24" cy="20" r="6"/><path d="M16 34c1-4 4-6 8-6s7 2 8 6"/></symbol>
+  <symbol id="i-car" viewBox="0 0 48 48"><path d="M6 30l4-11c1-3 3-4 6-4h16c3 0 5 1 6 4l4 11"/><rect x="4" y="30" width="40" height="10" rx="3"/><circle cx="13" cy="40" r="3"/><circle cx="35" cy="40" r="3"/></symbol>
+  <symbol id="i-map" viewBox="0 0 48 48"><path d="M24 6c7 0 12 5 12 12 0 9-12 24-12 24S12 27 12 18C12 11 17 6 24 6z"/><circle cx="24" cy="18" r="4"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 48 48"><path d="M10 40V26a14 14 0 0128 0v14"/><path d="M6 40h36"/><path d="M24 6v6M14 10l3 5M34 10l-3 5"/></symbol>
+  <symbol id="i-building" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="38"/><path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M20 44v-8h8v8"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 48 48"><path d="M10 8h8l3 8-5 4c2 6 6 10 12 12l4-5 8 3v8c0 2-2 4-4 4-16-1-28-13-29-29 0-2 1-5 3-5z"/></symbol>
+</svg>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="hero-eyebrow">2027.02.09 ~ 02.19 · 가족 4인</span>
+    <h1>예약 트래커 & 비상연락처</h1>
+    <p>국제선·시드니 호텔 4박만 확정, 나머지는 전부 미예약이에요. 무엇부터 예약해야 하는지, 만약을 대비한 연락처는 무엇인지 한곳에 모았어요.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="tabbar">
+    <button class="tab-btn active" data-tab="booking" onclick="showTab('booking')">예약 트래커</button>
+    <button class="tab-btn" data-tab="emergency" onclick="showTab('emergency')">비상연락처</button>
+  </div>
+
+  <!-- TAB 1: BOOKING TRACKER -->
+  <div class="tabpanel active" id="tab-booking">
+    <section style="margin-top:28px;">
+      <div class="progress-card">
+        <div class="progress-top"><span style="font-size:13px; color:var(--ink-soft); font-weight:700;">예약 진행률</span><b id="progress-text">0 / 0 완료</b></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+        <div class="progress-legend">
+          <span><span class="dot" style="background:var(--grey);"></span>미정</span>
+          <span><span class="dot" style="background:var(--gold);"></span>진행중</span>
+          <span><span class="dot" style="background:var(--euca);"></span>완료</span>
+        </div>
+      </div>
+      <div class="section-head">
+        <span class="eyebrow2">상태를 탭하면 바뀌어요</span>
+        <h2>예약해야 할 것들</h2>
+        <p>2월은 호주 성수기라 소규모 투어(웜뱃·필립아일랜드)부터 조기 마감돼요. 메모칸에 예약처·가격·확인번호를 적어두면 나중에 한눈에 보여요.</p>
+      </div>
+      <div class="booking-list" id="booking-list"></div>
+    </section>
+  </div>
+
+  <!-- TAB 2: EMERGENCY -->
+  <div class="tabpanel" id="tab-emergency">
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">만약을 위해</span>
+        <h2>비상연락처</h2>
+        <p>인쇄하거나 스크린샷으로 저장해서 가족 모두의 휴대폰에 넣어두는 걸 추천해요.</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-siren"/></svg>호주 응급 신고</h3>
+        <div class="erow"><span class="elabel">경찰·소방·구급 (긴급)</span><span class="eval">000</span></div>
+        <div class="erow"><span class="elabel">경찰 비긴급</span><span class="eval">131 444</span></div>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-building"/></svg>주시드니 대한민국 총영사관 (NSW 관할)</h3>
+        <div class="erow"><span class="elabel">주소</span><span class="eval" style="font-weight:600; font-size:12px;">Level 10, 44 Market St, Sydney NSW 2000</span></div>
+        <div class="erow"><span class="elabel">대표전화(근무시간)</span><span class="eval">+61 2 9210 0200</span></div>
+        <div class="erow"><span class="elabel">영사콜센터(24시간)</span><span class="eval">+82 2 3210 0404</span></div>
+        <div class="erow"><span class="elabel">긴급연락처(사건사고)</span><span class="eval">+61 403 546 058</span></div>
+        <p class="small">여권 분실·사건사고 등 긴급 상황엔 24시간 영사콜센터로 먼저 연락하세요. 무료 연결: +800-2100-0404 (현지 유선전화 기준, 호텔 전화 등에서 시도)</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-building"/></svg>주호주연방 대한민국 대사관 멜버른 분관 (VIC 관할)</h3>
+        <div class="erow"><span class="elabel">주소</span><span class="eval" style="font-weight:600; font-size:12px;">Level 10, 636 St Kilda Rd, Melbourne VIC 3004</span></div>
+        <div class="erow"><span class="elabel">대표전화(근무시간)</span><span class="eval">+61 3 9533 3800</span></div>
+        <div class="erow"><span class="elabel">긴급전화(근무시간외)</span><span class="eval">+61 418 435 915</span></div>
+        <p class="small">멜버른 체류 중 사건사고는 이쪽이 담당 공관이에요. 근무시간(월~금 09:00~17:00, 점심 12~13시) 외에는 긴급전화로.</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-shield"/></svg>내 정보 채워두기</h3>
+        <div class="fill-grid">
+          <div class="fill-field"><label>여행자보험사</label><input type="text" id="f-insurer" placeholder="예: OO화재" onchange="saveField('insurer', this.value)"></div>
+          <div class="fill-field"><label>보험 비상연락처</label><input type="text" id="f-insurerphone" placeholder="24시간 해외비상 전화번호" onchange="saveField('insurerphone', this.value)"></div>
+          <div class="fill-field"><label>보험증권번호</label><input type="text" id="f-policyno" placeholder="증권번호" onchange="saveField('policyno', this.value)"></div>
+          <div class="fill-field"><label>국내 비상연락처</label><input type="text" id="f-homecontact" placeholder="한국에 있는 비상연락처" onchange="saveField('homecontact', this.value)"></div>
+        </div>
+        <div class="save-note" id="save-status">입력하면 자동 저장돼요</div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer><div class="footer-wrap">가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 총영사관 연락처는 2026년 9월 조사 기준, 출발 전 mofa.go.kr에서 재확인 권장</div></footer>
+
+<script>
+(function(){
+  "use strict";
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function svgUse(icon){ return '<svg class="ic"><use href="#'+icon+'"/></svg>'; }
+
+  window.showTab = function(name){
+    document.querySelectorAll(".tab-btn").forEach(function(b){ b.classList.toggle("active", b.dataset.tab===name); });
+    document.querySelectorAll(".tabpanel").forEach(function(p){ p.classList.toggle("active", p.id==="tab-"+name); });
+  };
+
+  var BOOKINGS = [
+    {id:"domestic", icon:"i-plane", title:"시드니 ⇄ 멜버른 국내선", sub:"또는 게링공 렌터카", prio:"high"},
+    {id:"wombat", icon:"i-koala", title:"웜뱃투어", sub:"웜뱃 안기, 소규모·조기마감", prio:"high"},
+    {id:"phillip", icon:"i-penguin", title:"필립아일랜드 펭귄퍼레이드", sub:"소규모 투어, 조기마감", prio:"high"},
+    {id:"bluemtn", icon:"i-tour", title:"블루마운틴 + 페더데일 투어", sub:"", prio:"mid"},
+    {id:"gor", icon:"i-tour", title:"그레이트오션로드 투어", sub:"", prio:"mid"},
+    {id:"melhotel", icon:"i-bed", title:"멜버른 숙소 (4박)", sub:"취사 가능한 곳 추천", prio:"high"},
+    {id:"lasthotel", icon:"i-bed", title:"시드니 마지막밤 숙소", sub:"또는 타롱가 리트릿 스플러지", prio:"mid"},
+    {id:"tarongacombo", icon:"i-ferry", title:"타롱가동물원 페리+입장 콤보", sub:"Plan B 선택 시", prio:"mid"},
+    {id:"sunsetcruise", icon:"i-sunset", title:"선셋 하버크루즈", sub:"Plan B 선택 시, 저녁시간대 인기", prio:"mid"},
+    {id:"insurance", icon:"i-shield", title:"여행자보험", sub:"4인 전원", prio:"high"},
+    {id:"eta", icon:"i-passport", title:"ETA 관광비자", sub:"4인 전원, 출발 1주일 전 신청", prio:"high"},
+    {id:"rentalcar", icon:"i-car", title:"렌터카 + 국제운전면허증", sub:"게링공 데이트립 선택 시", prio:"mid"},
+    {id:"gerringong", icon:"i-map", title:"게링공 데이트립(투어 또는 렌터카)", sub:"다오를란도는 화요일 휴무", prio:"mid"},
+    {id:"campervan", icon:"i-car", title:"캠퍼밴 렌탈 + 캠핑장 예약", sub:"페블리비치 등, 성수기라 서둘러야 함", prio:"mid"}
+  ];
+
+  var state = {status:{}, notes:{}, fields:{}};
+  var dbRef = null;
+
+  function renderBooking(){
+    var list = document.getElementById("booking-list");
+    list.innerHTML = BOOKINGS.map(function(b){
+      var st = state.status[b.id] || "todo";
+      var label = st==="done" ? "완료" : st==="progress" ? "진행중" : "미정";
+      var note = state.notes[b.id] || "";
+      return '<div class="booking-row">'
+        + '<div class="booking-top">'
+        + '<span class="booking-ic">'+svgUse(b.icon)+'</span>'
+        + '<span class="booking-title"><b>'+esc(b.title)+'</b>'+(b.sub?'<span>'+esc(b.sub)+'</span>':'')+'</span>'
+        + '<span class="prio '+b.prio+'">'+(b.prio==="high"?"최우선":"보통")+'</span>'
+        + '<button class="status-btn '+st+'" onclick="cycleStatus(\''+b.id+'\')">'+label+'</button>'
+        + '</div>'
+        + '<input class="booking-input" placeholder="메모: 예약처 · 가격 · 확인번호" value="'+esc(note)+'" onchange="saveNote(\''+b.id+'\', this.value)">'
+        + '</div>';
+    }).join("");
+    renderProgress();
+  }
+  function renderProgress(){
+    var done = BOOKINGS.filter(function(b){ return state.status[b.id]==="done"; }).length;
+    document.getElementById("progress-text").textContent = done+" / "+BOOKINGS.length+" 완료";
+    document.getElementById("progress-fill").style.width = (BOOKINGS.length? (done/BOOKINGS.length*100) : 0)+"%";
+  }
+
+  window.cycleStatus = function(id){
+    var order = ["todo","progress","done"];
+    var cur = state.status[id] || "todo";
+    var next = order[(order.indexOf(cur)+1) % order.length];
+    state.status[id] = next;
+    renderBooking();
+    persist();
+  };
+  window.saveNote = function(id, val){
+    state.notes[id] = val;
+    persist();
+  };
+  window.saveField = function(key, val){
+    state.fields[key] = val;
+    document.getElementById("save-status").textContent = "저장됨";
+    persist();
+    setTimeout(function(){ document.getElementById("save-status").textContent = "입력하면 자동 저장돼요"; }, 1500);
+  };
+
+  function renderFields(){
+    var f = state.fields || {};
+    ["insurer","insurerphone","policyno","homecontact"].forEach(function(k){
+      var el = document.getElementById("f-"+k);
+      if (el && f[k]) el.value = f[k];
+    });
+  }
+
+  async function persist(){
+    if (!dbRef) return;
+    try { await dbRef.set({status: state.status, notes: state.notes, fields: state.fields, updatedAt: Date.now()}); }
+    catch(e){ /* keep local state */ }
+  }
+
+  async function init(){
+    renderBooking();
+    try {
+      if (window.claude && window.claude.use){
+        var db = await window.claude.use("db");
+        if (db){
+          dbRef = db.doc("trip/tracker");
+          var snap = await dbRef.get();
+          if (snap.exists && snap.data()){
+            state.status = snap.data().status || {};
+            state.notes = snap.data().notes || {};
+            state.fields = snap.data().fields || {};
+            renderBooking();
+            renderFields();
+          }
+          dbRef.onSnapshot(function(s){
+            if (s.exists && s.data()){
+              state.status = s.data().status || {};
+              state.notes = s.data().notes || {};
+              state.fields = s.data().fields || {};
+              renderBooking();
+              renderFields();
+            }
+          }, function(err){});
+        }
+      }
+    } catch(e){}
+  }
+
+  init();
+})();
+</script>
