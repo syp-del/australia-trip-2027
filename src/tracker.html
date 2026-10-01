@@ -281,6 +281,7 @@
   };
   window.saveField = function(key, val){
     state.fields[key] = val;
+    try { localStorage.setItem("au_fields", JSON.stringify(state.fields)); } catch(e){}
     document.getElementById("save-status").textContent = "저장됨";
     persist();
     setTimeout(function(){ document.getElementById("save-status").textContent = "입력하면 자동 저장돼요"; }, 1500);
@@ -296,12 +297,15 @@
 
   async function persist(){
     if (!dbRef) return;
-    try { await dbRef.set({status: state.status, notes: state.notes, fields: state.fields, updatedAt: Date.now()}); }
+    try { await dbRef.set({status: state.status, notes: state.notes, updatedAt: Date.now()}); }
     catch(e){ /* keep local state */ }
   }
 
   async function init(){
+    // 보험 증권번호 등은 서버에 올리지 않고 이 기기에만 저장
+    try { state.fields = JSON.parse(localStorage.getItem("au_fields")||"{}"); } catch(e){}
     renderBooking();
+    renderFields();
     try {
       if (window.claude && window.claude.use){
         var db = await window.claude.use("db");
@@ -311,17 +315,13 @@
           if (snap.exists && snap.data()){
             state.status = snap.data().status || {};
             state.notes = snap.data().notes || {};
-            state.fields = snap.data().fields || {};
             renderBooking();
-            renderFields();
           }
           dbRef.onSnapshot(function(s){
             if (s.exists && s.data()){
               state.status = s.data().status || {};
               state.notes = s.data().notes || {};
-              state.fields = s.data().fields || {};
               renderBooking();
-              renderFields();
             }
           }, function(err){});
         }

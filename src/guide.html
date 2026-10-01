@@ -120,6 +120,7 @@
   .card .metarow{display:flex; gap:5px; flex-wrap:wrap;}
   .mtag{font-size:9.5px; font-weight:700; padding:1.5px 7px; border-radius:999px; background:var(--bg); border:1px solid var(--line); color:var(--ink-faint);}
   .mtag.must{background:var(--coral); border-color:var(--coral); color:#fff;}
+  .shop-card .sph{width:64px; height:64px; border-radius:10px; object-fit:cover; flex:none; background:var(--surface-alt);}
   .lv{align-self:flex-start; font-size:10px; font-weight:800; padding:2px 9px; border-radius:999px; letter-spacing:.01em;}
   .lv.must{background:var(--coral); color:#fff;}
   .lv.rec{background:var(--euca-soft); color:var(--euca-ink);}
@@ -605,38 +606,38 @@
   ];
 
   var MART_SNACK = [
-    {icon:"i-honey", item:"팀탐(Tim Tam)", desc:"$4~6/박스. 민트초코·솔티드카라멜 등 한국에 없는 맛 다수"},
-    {icon:"i-honey", item:"팟츠(Pods)", desc:"약 $5. 타르트형 비스킷+초콜릿잼"},
-    {icon:"i-bag", item:"스미스 칩스 · 트위스티스 · 버거링", desc:"각 약 $2.70. 한국 포카칩과 비슷하거나 호주 한정 스낵"},
-    {icon:"i-honey", item:"바이올렛 크럼블", desc:"약 $7. 초콜릿코팅 허니콤(호주판 달고나)"},
-    {icon:"i-honey", item:"카드버리(Cadbury)", desc:"마트가 면세점보다 저렴. 데어리밀크·프레도 등"},
-    {icon:"i-honey", item:"골든게이타임", sig:"아이스크림", desc:"바닐라+토피+초콜릿크럼. 1970년부터 이어진 국민 아이스크림"},
-    {icon:"i-leaf", item:"마카다미아", desc:"호주 원산, 껍질째 로스팅해 고소함 진함"}
+    {icon:"i-honey", id:"m_timtam", item:"팀탐(Tim Tam)", desc:"$4~6/박스. 민트초코·솔티드카라멜 등 한국에 없는 맛 다수"},
+    {icon:"i-honey", id:"m_pods", item:"팟츠(Pods)", desc:"약 $5. 타르트형 비스킷+초콜릿잼"},
+    {icon:"i-bag", id:"m_chips", item:"스미스 칩스 · 트위스티스 · 버거링", desc:"각 약 $2.70. 한국 포카칩과 비슷하거나 호주 한정 스낵"},
+    {icon:"i-honey", id:"m_violet", item:"바이올렛 크럼블", desc:"약 $7. 초콜릿코팅 허니콤(호주판 달고나)"},
+    {icon:"i-honey", id:"m_cadbury", item:"카드버리(Cadbury)", desc:"마트가 면세점보다 저렴. 데어리밀크·프레도 등"},
+    {icon:"i-honey", id:"m_gaytime", item:"골든게이타임", sig:"아이스크림", desc:"바닐라+토피+초콜릿크럼. 1970년부터 이어진 국민 아이스크림"},
+    {icon:"i-leaf", id:"m_macadamia", item:"마카다미아", desc:"호주 원산, 껍질째 로스팅해 고소함 진함"}
   ];
   var MART_HEALTH = [
-    {icon:"i-leaf", item:"트윙스(Twinings)", desc:"티 코너 필수템, 다양한 블렌드"},
-    {icon:"i-leaf", item:"T2 티", desc:"선물용 틴 포장 인기, 전문매장이 더 다양"},
-    {icon:"i-pill", item:"블랙모어스 · 스위스", desc:"오메가3·멀티비타민, 한국 직구 대비 최대 50%+ 저렴"},
-    {icon:"i-pill", item:"마더네스트 · 세노비스", desc:"블랙모어스·스위스와 함께 3대 인기 영양제 브랜드"},
-    {icon:"i-cart", item:"케미스트 웨어하우스", sig:"매장", desc:"매주 브랜드 로테이션 '반값할인' — 영양제·화장품 구매 최적"}
+    {icon:"i-leaf", id:"m_twinings", item:"트윙스(Twinings)", desc:"티 코너 필수템, 다양한 블렌드"},
+    {icon:"i-leaf", id:"m_t2", item:"T2 티", desc:"선물용 틴 포장 인기, 전문매장이 더 다양"},
+    {icon:"i-pill", id:"m_blackmores", item:"블랙모어스 · 스위스", desc:"오메가3·멀티비타민, 한국 직구 대비 최대 50%+ 저렴"},
+    {icon:"i-pill", id:"m_cenovis", item:"마더네스트 · 세노비스", desc:"블랙모어스·스위스와 함께 3대 인기 영양제 브랜드"},
+    {icon:"i-cart", id:"m_chemist", item:"케미스트 웨어하우스", sig:"매장", desc:"매주 브랜드 로테이션 '반값할인' — 영양제·화장품 구매 최적"}
   ];
   var MART_BEAUTY = [
-    {icon:"i-honey", item:"루카스 포포 크림", desc:"$8~12. \"호주 국민크림\", 파파야 추출 멀티유즈 연고. 빨간 용기가 정품"},
-    {icon:"i-sun", item:"선크림(Cancer Council 등)", desc:"$15~25. 호주 SPF 기준이 엄격해 차단력 확실"},
-    {icon:"i-leaf", item:"수킨(Sukin)", desc:"호주 내추럴 스킨케어, 중저가"},
+    {icon:"i-honey", id:"m_pawpaw", item:"루카스 포포 크림", desc:"$8~12. \"호주 국민크림\", 파파야 추출 멀티유즈 연고. 빨간 용기가 정품"},
+    {icon:"i-sun", id:"m_sunscreen", item:"선크림(Cancer Council 등)", desc:"$15~25. 호주 SPF 기준이 엄격해 차단력 확실"},
+    {icon:"i-leaf", id:"m_sukin", item:"수킨(Sukin)", desc:"호주 내추럴 스킨케어, 중저가"},
     {icon:"i-leaf", item:"버블(Bubble)", desc:"최근 젊은층 인기 스킨케어"}
   ];
   var MART_KIDS = [
-    {icon:"i-honey", item:"타이니 테디(Tiny Teddy)", desc:"곰돌이모양 국민 어린이쿠키"},
+    {icon:"i-honey", id:"m_tinyteddy", item:"타이니 테디(Tiny Teddy)", desc:"곰돌이모양 국민 어린이쿠키"},
     {icon:"i-pill", item:"어린이 영양제", desc:"Bioglan Kids 등 비타민C/아연 구미"},
     {icon:"i-sun", item:"아이용 징크스틱 선크림", desc:"얼굴용, 초등학생 자외선 차단에 인기"},
-    {icon:"i-pill", item:"베판텐(Bepanthen)", desc:"상처·발진 연고, 상비용으로 좋음"},
-    {icon:"i-pill", item:"파나돌/뉴로펜 키즈", desc:"아이용 해열진통제 시럽"}
+    {icon:"i-pill", id:"m_bepanthen", item:"베판텐(Bepanthen)", desc:"상처·발진 연고, 상비용으로 좋음"},
+    {icon:"i-pill", id:"m_panadol", item:"파나돌/뉴로펜 키즈", desc:"아이용 해열진통제 시럽"}
   ];
   var MART_SPOTS = [
-    {icon:"i-bag", item:"QVB(퀸빅토리아빌딩)", desc:"역사적 건축물, 패션·주얼리·홈웨어. 럭셔리 위주"},
-    {icon:"i-bag", item:"피트 스트리트 몰", desc:"Myer·David Jones 백화점 아동복/장난감/문구까지 원스톱. 아이 옷 사기 가장 편한 곳"},
-    {icon:"i-bag", item:"웨스트필드 파라마타", desc:"근교 대형몰, 498개 매장, 대형마트+영화관 포함"},
+    {icon:"i-bag", id:"qvb", item:"QVB(퀸빅토리아빌딩)", desc:"역사적 건축물, 패션·주얼리·홈웨어. 럭셔리 위주"},
+    {icon:"i-bag", id:"m_pittst", item:"피트 스트리트 몰", desc:"Myer·David Jones 백화점 아동복/장난감/문구까지 원스톱. 아이 옷 사기 가장 편한 곳"},
+    {icon:"i-bag", id:"m_westfield", item:"웨스트필드 파라마타", desc:"근교 대형몰, 498개 매장, 대형마트+영화관 포함"},
     {icon:"i-cart", item:"코스모스 식품점(Cosmos Grocery)", desc:"Pitt St, 시드니 CBD. 아시안 식료품 전문, 08:00~23:00 늦게까지 영업"}
   ];
   var BRING = [
@@ -666,6 +667,7 @@
     try { saved = JSON.parse(localStorage.getItem("au_prep")||"{}"); } catch(e){}
     saved[id] = checked;
     try { localStorage.setItem("au_prep", JSON.stringify(saved)); } catch(e){}
+    pushGuide();
     var el = document.querySelector('.prep-item[data-id="'+id+'"]');
     if (el) el.classList.toggle("checked", checked);
   };
@@ -675,6 +677,35 @@
   }
   function savePicks(key, obj){
     try { localStorage.setItem(key, JSON.stringify(obj)); } catch(e){}
+    pushGuide();
+  }
+  // 담아둔 장소·맛집·체크리스트를 공유 저장소(trip/guide)에도 저장해 기기 간에 맞춤
+  var guideRef = null;
+  var GUIDE_KEYS = {prep:"au_prep", places:"au_places", food:"au_food"};
+  function pushGuide(){
+    if (!guideRef) return;
+    var data = {updatedAt: Date.now()};
+    for (var k in GUIDE_KEYS) data[k] = loadPicks(GUIDE_KEYS[k]);
+    guideRef.set(data).catch(function(){ /* 이 기기 저장은 유지 */ });
+  }
+  function pullGuide(snap){
+    if (!snap.exists || !snap.data()) return;
+    var d = snap.data();
+    for (var k in GUIDE_KEYS){
+      if (d[k]) { try { localStorage.setItem(GUIDE_KEYS[k], JSON.stringify(d[k])); } catch(e){} }
+    }
+    renderPrep(); renderPlaces(); renderFood();
+  }
+  async function initGuideStore(){
+    try {
+      if (!(window.claude && window.claude.use)) return;
+      var db = await window.claude.use("db");
+      if (!db) return;
+      guideRef = db.doc("trip/guide");
+      var snap = await guideRef.get();
+      if (snap.exists && snap.data()) pullGuide(snap); else pushGuide();
+      guideRef.onSnapshot(pullGuide, function(){});
+    } catch(e){ /* 저장소 없이도 이 기기에서는 동작 */ }
   }
 
   var PHOTOS = {"wombattour": 1, "bondi": 1, "icebergs": 1, "coastalwalk": 1, "coogee": 1, "clovelly": 1, "bbq": 1, "manlybeach": 1, "shellybeach": 1, "thegap": 1, "balmoral": 1, "taronga": 1, "fireworks": 1, "agnsw": 1, "circularquay": 1, "darlingharbour": 1, "barangaroo": 1, "fishmarket": 1, "powerhouse": 1, "northsydneypool": 1, "lunapark": 1, "wendysgarden": 1, "tumbalong": 1, "mrsmacquarie": 1, "paddingtonres": 1, "paddingtonmkt": 1, "centennial": 1, "camperdown": 1, "hosierlane": 1, "degravesst": 1, "acmi": 1, "statelibrary": 1, "eurekaskydeck": 1, "sealifemelb": 1, "melbournemuseum": 1, "melbournezoo": 1, "fitzroygardens": 1, "collingwoodfarm": 1, "scienceworks": 1, "healesville": 1, "puffingbilly": 1, "grotto": 1, "londonbridge": 1, "twelveapostles": 1, "kennettriver": 1};
@@ -826,10 +857,12 @@
 
   function renderShop(arr, elId){
     document.getElementById(elId).innerHTML = arr.map(function(m){
-      return '<div class="shop-card"><span class="sic">'+svgUse(m.icon)+'</span><div><b>'+esc(m.item)+'</b><span>'+esc(m.desc)+'</span>'+(m.sig?'<span class="price">'+esc(m.sig)+'</span>':'')+'</div></div>';
+      var pic = m.id && PHOTOS[m.id] ? '<img class="sph" src="img/'+m.id+'.jpg" alt="'+esc(m.item)+'" loading="lazy">' : '<span class="sic">'+svgUse(m.icon)+'</span>';
+      return '<div class="shop-card">'+pic+'<div><b>'+esc(m.item)+'</b><span>'+esc(m.desc)+'</span>'+(m.sig?'<span class="price">'+esc(m.sig)+'</span>':'')+'</div></div>';
     }).join("");
   }
 
+  initGuideStore();
   renderPrep();
   renderPlaces();
   renderFood();

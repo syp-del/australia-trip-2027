@@ -200,4 +200,43 @@
   if (h) window.goTab(h, true);
 })();
 </script>
+<script>
+// 아티팩트 밖(예: Vercel 배포)에서는 Supabase 테이블(trip_docs)을 저장소로 사용. 공개 읽기·쓰기 전용 키.
+(function(){
+  if (window.claude && window.claude.use) return;
+  var URL_ = "https://xirclohwurvtschwrtxw.supabase.co/rest/v1/trip_docs";
+  var KEY = "sb_publishable_97VPBM0syPSyG2r1S6ScMg_azkVXgdN";
+  var H = {"apikey":KEY, "Authorization":"Bearer "+KEY, "Content-Type":"application/json"};
+  function snap(row){ return {exists: !!row, data: function(){ return row ? row.data : null; }}; }
+  function doc(id){
+    var last = null, timer = null;
+    function read(){
+      return fetch(URL_+"?select=data&id=eq."+encodeURIComponent(id), {headers:H, cache:"no-store"})
+        .then(function(r){ if (!r.ok) throw new Error("load "+r.status); return r.json(); })
+        .then(function(rows){ return rows[0] || null; });
+    }
+    return {
+      get: function(){ return read().then(function(row){ last = row ? JSON.stringify(row.data) : null; return snap(row); }); },
+      set: function(data){
+        last = JSON.stringify(data);
+        return fetch(URL_+"?on_conflict=id", {method:"POST",
+          headers:Object.assign({"Prefer":"resolution=merge-duplicates,return=minimal"}, H),
+          body:JSON.stringify({id:id, data:data, updated_at:new Date().toISOString()})})
+          .then(function(r){ if (!r.ok) throw new Error("save "+r.status); window.dispatchEvent(new CustomEvent("trip-saved")); });
+      },
+      onSnapshot: function(cb, onErr){
+        timer = setInterval(function(){
+          if (document.hidden) return;
+          read().then(function(row){
+            var cur = row ? JSON.stringify(row.data) : null;
+            if (cur !== last){ last = cur; cb(snap(row)); }
+          }).catch(function(e){ if (onErr) onErr(e); });
+        }, 15000);
+        return function(){ clearInterval(timer); };
+      }
+    };
+  }
+  window.claude = {use: function(name){ return Promise.resolve(name==="db" ? {doc: doc} : null); }};
+})();
+</script>
 <!--PANE_SCRIPTS-->
