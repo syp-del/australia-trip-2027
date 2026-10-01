@@ -112,6 +112,24 @@
   .itag.light{background:var(--good-soft); color:var(--good);}
   .itag.cost{background:var(--bg); color:var(--ink-faint); border:1px solid var(--surface-line);}
   .itag.area{background:var(--gold-soft); color:var(--gold);}
+  .choice.blocked{opacity:.62; cursor:not-allowed; border-style:dashed; background:var(--bg);}
+  .choice.blocked:hover{border-color:var(--surface-line);}
+  .choice.blocked .cic{color:var(--ink-faint);}
+  .choice .hours{display:block; margin-top:6px; font-size:10.5px; color:var(--ink-faint); line-height:1.4;}
+  .choice .why{display:block; margin-top:6px; font-size:11px; font-weight:700; color:var(--low); line-height:1.4;}
+  .choice .caution, .slot .picked-body .caution{display:block; margin-top:5px; font-size:11px; font-weight:600; color:var(--mid); line-height:1.4;}
+  .choice .no-badge{position:absolute; top:-9px; right:10px; font-size:9.5px; font-weight:800; background:var(--low); color:#fff; padding:2px 8px; border-radius:999px;}
+  .slot .picked-body .hours{display:block; margin-top:3px; font-size:11px; color:var(--ink-faint);}
+  .slot .picked-body .why{display:block; margin-top:5px; font-size:11.5px; font-weight:700; color:var(--low);}
+  .slot.picked.conflict{border-color:var(--low);}
+  .slot .day-tip{font-size:11.5px; color:var(--gold); margin:0 0 10px;}
+  .blocked-head{font-size:11.5px; font-weight:700; color:var(--ink-faint); margin:14px 0 8px;}
+  .ov-card .ov-theme.conflict{color:var(--low);}
+  .check-list{margin:14px 0 0; padding:12px 14px; border-radius:12px; background:rgba(255,255,255,.08); font-size:12px; line-height:1.55; color:#EAF3F1;}
+  .check-list b{display:block; margin-bottom:4px;}
+  .check-list ul{margin:0; padding-left:18px;}
+  .check-list li.bad{color:#FFC2B8; font-weight:700;}
+  .check-list .asof{display:block; margin-top:8px; opacity:.75; font-size:11px;}
 
   .slot.locked{display:flex; align-items:center; gap:12px; padding:13px 18px; opacity:.55;}
   .slot.locked .datechip .dom, .slot.locked .datechip .dow{color:var(--ink-faint);}
@@ -257,6 +275,52 @@
     ]
   };
 
+  // 요일별 운영 제약 (2026.10 확인값). only: 이 요일에만 가능, closed: 휴무 요일, caution: 갈 수는 있지만 알고 가야 할 것
+  var RULES = {
+    wombat:{hours:"투어사마다 출발 요일이 다름(화·금 / 화·목·토·일 등) — 예약 가능한 날짜부터 확인", caution:{"*":"투어사 미확정 — 출발 요일을 먼저 확인하세요"}},
+    bluemtn:{hours:"페더데일 매일 08:00~17:00 · 시닉월드 매일 09:00~17:00"},
+    taronga:{hours:"매일 09:30~17:00 (입장 마감 16:30)"},
+    bondi:{hours:"해변은 상시 · 구조대 깃발 구역 안에서만 수영", caution:{"목":"본다이 아이스버그 수영장은 목요일 청소 휴장"}},
+    jogbbq:{hours:"해변은 상시 · 마트(콜스·울워스) 매일 영업", caution:{"목":"본다이 아이스버그 수영장은 목요일 청소 휴장"}},
+    marketcruise:{hours:"캐리지웍스 파머스마켓 토 08:00~13:00 · 더록스 마켓 토·일 10:00~17:00",
+      only:{days:["토","일"], why:"마켓이 주말에만 열려요 (캐리지웍스 토요일, 더록스 토·일)"},
+      caution:{"일":"일요일엔 캐리지웍스가 없어요 — 더록스 마켓(10~17시)으로 대체"}},
+    portstephens:{hours:"돌고래 크루즈·모래썰매 매일 운영, 출발 시간 지정 예약"},
+    jervisbay:{hours:"돌고래 크루즈 매일 운영, 출발 시간 지정 예약"},
+    huntervalley:{hours:"셀러도어 대체로 10:00~17:00", caution:{"월":"일부 소규모 와이너리·레스토랑이 월·화 휴무 — 방문지 미리 확인", "화":"일부 소규모 와이너리·레스토랑이 월·화 휴무 — 방문지 미리 확인"}},
+    kiama:{hours:"블로우홀 상시 개방 · 남동 너울이 있을 때만 크게 솟구침"},
+    portstephenslite:{hours:"오스트레일리안 렙타일파크 기준 매일 09:00~17:00"},
+    royalnp:{hours:"공원 게이트 07:00~20:30 · 차량 입장료 있음"},
+    gerringong:{hours:"다오를란도 화요일 휴무 · 해변은 상시", closed:{"화":"다오를란도(화덕피자)가 화요일 휴무예요"}},
+    gor:{hours:"당일 투어 매일 출발 (약 07:30~20:30, 12~13시간)"},
+    phillip:{hours:"펭귄퍼레이드 매일 일몰 무렵(2월 20:30 전후) · 사전예약 필수, 숙소 복귀 23시경"},
+    qvmarket:{hours:"화·목·금 06:00~15:00 · 토 06:00~16:00 · 일 09:00~16:00",
+      closed:{"월":"퀸빅토리아마켓은 월요일 휴무예요", "수":"퀸빅토리아마켓은 수요일 낮 휴무예요 (여름 수요일 밤 나이트마켓은 별도, 운영 여부 확인)"}},
+    stkilda:{hours:"해변 상시 · 야라강 크루즈 매일 운항"},
+    botanic:{hours:"정원 매일 07:30~일몰", caution:{"월":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방", "화":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방"}},
+    healesville:{hours:"생추어리 매일 09:00~17:00 (입장 마감 15:30)"},
+    puffingbilly:{hours:"매일 운행 · 벨그레이브 출발 10:00 / 11:00 / 12:30 / 14:15, 좌석 예약제", caution:{"*":"월~목은 레이크사이드까지만 운행 (젬브룩 연장은 금·토·일)"}},
+    melbournezoo:{hours:"매일 09:00~17:00"},
+    lanewalk:{hours:"골목은 상시 · ACMI 매일 10:00~17:00"},
+    sealifemel:{hours:"평일 10:00~17:00 (입장 마감 16:00)"},
+    collingwoodfarm:{hours:"매일 09:30~16:30 (입장 마감 16:00)"},
+    eureka:{hours:"매일 12:00~22:00 (입장 마감 21:30)", caution:{"*":"정오에 열어요 — 오전 일정으로는 못 넣어요"}}
+  };
+  var DAY_TIPS = {"2/13":"토요일 밤 달링하버 불꽃놀이가 있는 날이에요 (시즌별 운영 여부 확인)"};
+
+  function availability(themeId, dow){
+    var r = RULES[themeId] || {};
+    if (r.only && r.only.days.indexOf(dow)===-1) return {ok:false, why:r.only.why, hours:r.hours||""};
+    if (r.closed && r.closed[dow]) return {ok:false, why:r.closed[dow], hours:r.hours||""};
+    var c = r.caution ? (r.caution[dow] || r.caution["*"] || "") : "";
+    return {ok:true, caution:c, hours:r.hours||""};
+  }
+  function slotByDate(date){
+    var slots = MODES[state.mode].slots;
+    for (var i=0;i<slots.length;i++){ if (slots[i].date===date) return slots[i]; }
+    return null;
+  }
+
   var MODES = {
     WITH_MEL: {
       label:"시드니 4박 + 멜버른 4박",
@@ -344,7 +408,8 @@
         var pickedId = state.picks[d.date];
         if (pickedId){
           var t = themeById(pickedId);
-          themeHtml = '<span class="ov-theme">'+esc(t.title)+'</span>';
+          var av = availability(pickedId, d.dow);
+          themeHtml = '<span class="ov-theme'+(av.ok?'':' conflict')+'">'+esc(t.title)+(av.ok?'':' · 휴무')+'</span>';
         } else {
           themeHtml = '<span class="ov-theme empty">미정</span>';
         }
@@ -362,10 +427,10 @@
   var PRESETS = {
     WITH_MEL: {
       A: {"2/11":"wombat","2/12":"bondi","2/13":"bluemtn","2/15":"gor","2/16":"qvmarket","2/17":"phillip"},
-      B: {"2/11":"taronga","2/12":"jogbbq","2/13":"marketcruise","2/15":"qvmarket","2/16":"stkilda","2/17":"phillip"}
+      B: {"2/11":"taronga","2/12":"jogbbq","2/13":"marketcruise","2/15":"stkilda","2/16":"qvmarket","2/17":"phillip"}
     },
     SYD_ONLY: {
-      C: {"2/11":"wombat","2/12":"bondi","2/13":"portstephens","2/14":"jogbbq","2/15":"huntervalley","2/16":"taronga","2/17":"kiama","2/18":"marketcruise"}
+      C: {"2/11":"wombat","2/12":"bondi","2/13":"marketcruise","2/14":"portstephens","2/15":"taronga","2/16":"kiama","2/17":"huntervalley","2/18":"jogbbq"}
     }
   };
 
@@ -409,10 +474,14 @@
 
     if (picked){
       var t = themeById(picked);
-      return '<div class="slot picked">'
+      var pav = availability(picked, slot.dow);
+      var extra = (pav.hours?'<span class="hours">운영 · '+esc(pav.hours)+'</span>':'')
+        + (pav.ok ? (pav.caution?'<span class="caution">주의 · '+esc(pav.caution)+'</span>':'')
+                  : '<span class="why">이 날은 헛걸음이에요 · '+esc(pav.why)+' — 다시 선택해 주세요</span>');
+      return '<div class="slot picked'+(pav.ok?'':' conflict')+'">'
         + '<div class="datechip"><span class="dow">'+slot.dow+'</span><span class="dom">'+slot.date+'</span></div>'
         + '<div class="picked-ic">'+svgUse(t.icon)+'</div>'
-        + '<div class="picked-body"><b>'+esc(t.title)+'</b><span>'+esc(t.desc)+'</span></div>'
+        + '<div class="picked-body"><b>'+esc(t.title)+'</b><span>'+esc(t.desc)+'</span>'+extra+'</div>'
         + '<button class="change-btn" onclick="changeFrom(\''+slot.city+'\',\''+slot.date+'\')">다시 선택</button>'
         + '</div>';
     }
@@ -428,18 +497,29 @@
     var options = THEMES[slot.city].filter(function(t){ return used.indexOf(t.id)===-1; });
     var recLevel = recommendedIntensity(slot.city, slot.date);
 
-    var cards = options.map(function(t){
-      var rec = isRecommended(t, recLevel);
+    function card(t){
+      var av = availability(t.id, slot.dow);
+      var rec = av.ok && isRecommended(t, recLevel);
       var costTxt = (t.cost[0]===t.cost[1]) ? (t.cost[0]===0?"무료":t.cost[0]+"만원") : (t.cost[0]+"~"+t.cost[1]+"만원");
-      return '<button class="choice'+(rec?" recommended":"")+'" onclick="pick(\''+slot.city+'\',\''+slot.date+'\',\''+t.id+'\')">'
+      var open = av.ok
+        ? '<button class="choice'+(rec?" recommended":"")+'" onclick="pick(\''+slot.city+'\',\''+slot.date+'\',\''+t.id+'\')">'
+        : '<button class="choice blocked" disabled aria-disabled="true">';
+      return open
         + (rec?'<span class="rec-badge">추천</span>':'')
+        + (av.ok?'':'<span class="no-badge">'+slot.dow+'요일 불가</span>')
         + '<span class="cic">'+svgUse(t.icon)+'</span>'
         + '<span class="ctext"><b>'+esc(t.title)+'</b><p>'+esc(t.desc)+'</p>'
         + '<span class="cmeta"><span class="itag '+t.intensity+'">'+({heavy:"풀데이",medium:"중간",light:"가벼움"}[t.intensity])+'</span>'
         + (t.area?'<span class="itag area">'+esc(t.area)+'</span>':'')
         + '<span class="itag cost">'+costTxt+'</span></span>'
+        + (av.ok ? (av.hours?'<span class="hours">운영 · '+esc(av.hours)+'</span>':'') + (av.caution?'<span class="caution">주의 · '+esc(av.caution)+'</span>':'')
+                 : '<span class="why">'+esc(av.why)+'</span>')
         + '</span></button>';
-    }).join("");
+    }
+    var okOpts = options.filter(function(t){ return availability(t.id, slot.dow).ok; });
+    var noOpts = options.filter(function(t){ return !availability(t.id, slot.dow).ok; });
+    var cards = okOpts.map(card).join("");
+    var blockedCards = noOpts.map(card).join("");
 
     var hint = recLevel==="heavy" ? "체력이 남아있을 때라 풀데이 테마를 추천해요"
       : recLevel==="light-medium" ? "전날이 풀데이였어서 가볍거나 중간 강도를 추천해요"
@@ -447,7 +527,9 @@
 
     return '<div class="slot open">'
       + '<div class="slot-head"><span class="datechip2">'+slot.dow+' '+slot.date+' · '+cityLabel+'</span>'+(hint?'<span class="hint">· '+hint+'</span>':'')+'</div>'
+      + (DAY_TIPS[slot.date]?'<p class="day-tip">'+esc(DAY_TIPS[slot.date])+'</p>':'')
       + '<div class="choice-grid">'+cards+'</div>'
+      + (blockedCards?'<div class="blocked-head">'+slot.dow+'요일엔 문을 닫거나 운영하지 않아 고를 수 없는 테마</div><div class="choice-grid">'+blockedCards+'</div>':'')
       + '</div>';
   }
 
@@ -506,6 +588,21 @@
         + '<div class="stat"><b>'+b.picked+' / '+b.total+'</b><span>테마 선택 완료</span></div>'
         + '</div>';
     }
+    var notes = [];
+    cfg.slots.forEach(function(s){
+      var id = state.picks[s.date];
+      if (!id) return;
+      var av = availability(id, s.dow), t = themeById(id);
+      if (!av.ok) notes.push('<li class="bad">'+s.date+'('+s.dow+') '+esc(t.title)+' — '+esc(av.why)+'</li>');
+      else if (av.caution) notes.push('<li>'+s.date+'('+s.dow+') '+esc(t.title)+' — '+esc(av.caution)+'</li>');
+    });
+    if (notes.length){
+      html += '<div class="check-list"><b>헛걸음 방지 체크</b><ul>'+notes.join("")+'</ul>'
+        + '<span class="asof">운영 요일·시간은 2026.10 확인값이에요. 예약 직전에 공식 사이트에서 한 번 더 확인하세요.</span></div>';
+    } else if (b.picked>0){
+      html += '<div class="check-list"><b>헛걸음 방지 체크</b>고른 날짜에 휴무·미운영으로 걸리는 테마가 없어요.'
+        + '<span class="asof">운영 요일·시간은 2026.10 확인값이에요. 예약 직전에 공식 사이트에서 한 번 더 확인하세요.</span></div>';
+    }
     html += '</div>';
     return html;
   }
@@ -544,6 +641,8 @@
   }
 
   window.pick = function(city, date, themeId){
+    var sl = slotByDate(date);
+    if (sl && !availability(themeId, sl.dow).ok) return;
     state.picks[date] = themeId;
     render();
     persist();
