@@ -1,0 +1,203 @@
+<title>호주 가족여행 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --s-bg:#EFF6F4; --s-surface:#FFFFFF; --s-line:#DCE7E2;
+    --s-ink:#0C2B2F; --s-ink-soft:#3F5D5C; --s-ink-faint:#6F8B89;
+    --s-ocean:#0F7A93; --s-ocean-deep:#063240; --s-ocean-soft:#DCEEF1;
+    --s-coral:#FF6F4D; --s-coral-ink:#8A3018; --s-coral-soft:#FFE4DA;
+    --s-euca:#3F7A4A; --s-euca-soft:#E4EFE0;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --s-bg:#07181A; --s-surface:#122A26; --s-line:#1E3D38;
+      --s-ink:#EAF3EF; --s-ink-soft:#AFC9C4; --s-ink-faint:#7A9793;
+      --s-ocean:#7FD8E8; --s-ocean-deep:#0B3540; --s-ocean-soft:#123A42;
+      --s-coral:#FF9270; --s-coral-ink:#FFD9C9; --s-coral-soft:#3A2018;
+      --s-euca:#8FC298; --s-euca-soft:#1B3320;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --s-bg:#07181A; --s-surface:#122A26; --s-line:#1E3D38;
+    --s-ink:#EAF3EF; --s-ink-soft:#AFC9C4; --s-ink-faint:#7A9793;
+    --s-ocean:#7FD8E8; --s-ocean-deep:#0B3540; --s-ocean-soft:#123A42;
+    --s-coral:#FF9270; --s-coral-ink:#FFD9C9; --s-coral-soft:#3A2018;
+    --s-euca:#8FC298; --s-euca-soft:#1B3320;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--s-bg); color:var(--s-ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;}
+  .s-wrap{max-width:1040px; margin:0 auto; padding-inline:20px;}
+
+  /* Global hero */
+  .s-hero{position:relative; background:#063240 url("img/hero.jpg") center 55% / cover no-repeat; color:#fff;}
+  .s-hero::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,28,38,.62) 0%, rgba(4,28,38,.18) 45%, rgba(4,28,38,.72) 100%);}
+  .s-hero .s-wrap{position:relative; padding-block:26px 34px; display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between; min-height:300px;}
+  .s-eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.16); backdrop-filter:blur(4px); padding:6px 13px; border-radius:999px;}
+  .s-eyebrow svg{width:18px; height:12px; border-radius:2px;}
+  .s-hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-size:clamp(32px,6.4vw,56px); font-weight:800; line-height:1.05; margin:14px 0 0; text-wrap:balance; text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  .s-hero p{margin:10px 0 0; font-size:15px; max-width:46ch; line-height:1.55; color:#EAF6F4; text-shadow:0 1px 8px rgba(0,0,0,.4);}
+  .s-fx{background:rgba(4,34,44,.6); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.24); border-radius:14px; padding:12px 15px; min-width:190px; font-size:12px; color:#DCEEF1;}
+  .s-fx .hd{font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#fff; margin-bottom:6px;}
+  .s-fx .row{display:flex; justify-content:space-between; gap:14px; padding:3px 0;}
+  .s-fx .row b{font-family:'Bricolage Grotesque',sans-serif; font-size:14px; color:#fff; font-variant-numeric:tabular-nums;}
+  .s-fx .dt{margin-top:6px; font-size:10px; color:rgba(255,255,255,.62);}
+
+  /* Global tabs */
+  .s-tabs{position:sticky; top:env(safe-area-inset-top, 0px); z-index:20; background:var(--s-surface); border-bottom:1px solid var(--s-line);}
+  .s-tabs .s-wrap{display:flex; gap:4px; overflow-x:auto; padding-block:8px;}
+  .gtab{flex:none; border:none; background:none; font-family:inherit; font-weight:800; font-size:13.5px; color:var(--s-ink-faint); padding:10px 16px; border-radius:999px; cursor:pointer; white-space:nowrap;}
+  .gtab:hover{color:var(--s-ink);}
+  .gtab.active{background:var(--s-ocean-deep); color:#fff;}
+  .gtab:focus-visible{outline:2px solid var(--s-coral); outline-offset:2px;}
+
+  .pane{display:none;}
+  .pane.on{display:block;}
+
+  /* Home pane */
+  .hm{padding-block:30px 60px;}
+  .hm h2{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-size:clamp(21px,3.4vw,27px); font-weight:700; margin:0; text-wrap:balance;}
+  .hm .sub{margin:8px 0 0; color:var(--s-ink-soft); font-size:14px; max-width:64ch; line-height:1.6;}
+  .hm section{margin-top:40px;}
+  .hm section:first-child{margin-top:0;}
+  .hm-facts{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:16px;}
+  .hm-fact{background:var(--s-surface); border:1px solid var(--s-line); border-radius:16px; padding:16px 18px;}
+  .hm-fact .k{font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--s-ink-faint);}
+  .hm-fact .v{font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:700; margin-top:5px;}
+  .hm-fact .d{font-size:12.5px; color:var(--s-ink-soft); margin-top:4px; line-height:1.5;}
+  .hm-pill{display:inline-block; font-size:10.5px; font-weight:800; padding:2px 9px; border-radius:999px; margin-top:8px;}
+  .hm-pill.ok{background:var(--s-euca-soft); color:var(--s-euca);}
+  .hm-pill.todo{background:var(--s-coral-soft); color:var(--s-coral-ink);}
+
+  .hm-nav{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px; margin-top:16px;}
+  .hm-go{position:relative; overflow:hidden; text-align:left; border:none; cursor:pointer; border-radius:18px; min-height:170px; padding:18px; color:#fff; font-family:inherit; background:#063240 center / cover no-repeat; display:flex; flex-direction:column; justify-content:flex-end;}
+  .hm-go::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,28,38,.05) 20%, rgba(4,28,38,.82) 100%); transition:background .2s;}
+  .hm-go:hover::before{background:linear-gradient(180deg, rgba(4,28,38,.2) 0%, rgba(4,28,38,.88) 100%);}
+  .hm-go > *{position:relative;}
+  .hm-go b{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:700;}
+  .hm-go span{font-size:12.5px; margin-top:4px; color:#E4F2EF; line-height:1.45;}
+  .hm-go:focus-visible{outline:3px solid var(--s-coral); outline-offset:2px;}
+
+  .hm-gallery{display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:150px; gap:10px; margin-top:16px;}
+  .hm-shot{position:relative; margin:0; border-radius:14px; overflow:hidden; background:var(--s-ocean-soft);}
+  .hm-shot.wide{grid-column:span 2;}
+  .hm-shot.tall{grid-row:span 2;}
+  .hm-shot img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hm-shot figcaption{position:absolute; left:0; right:0; bottom:0; padding:22px 12px 9px; font-size:12px; font-weight:700; color:#fff; background:linear-gradient(180deg, transparent, rgba(4,28,38,.78));}
+  @media (max-width:720px){ .hm-gallery{grid-template-columns:repeat(2, 1fr); grid-auto-rows:130px;} }
+
+  .s-credits{margin-top:40px; font-size:12px; color:var(--s-ink-faint);}
+  .s-credits summary{cursor:pointer; font-weight:700; color:var(--s-ink-soft);}
+  .s-credits ul{margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:4px; line-height:1.5;}
+  .s-credits a{color:var(--s-ocean);}
+
+<!--PANE_CSS-->
+  /* Pane fixes after merge */
+  #p-guide .tabbar, #p-tracker .tabbar{margin-top:20px;}
+</style>
+
+<!--SPRITE-->
+
+<div class="s-hero">
+  <div class="s-wrap">
+    <div>
+      <span class="s-eyebrow"><svg viewBox="0 0 24 16" aria-hidden="true"><use href="#i-ausflag"/></svg>2027.02.09 – 02.19 · 가족 4인</span>
+      <h1>호주 가족여행</h1>
+      <p>시드니 하버의 노을, 해변까지 내려오는 캥거루, 매일 한 번의 수영. 계획부터 예약까지 여기 한곳에 모았어요.</p>
+    </div>
+    <div class="s-fx">
+      <div class="hd">호주 지금</div>
+      <div class="row"><span>1 AUD</span><b>945원</b></div>
+      <div class="row"><span>시드니</span><b>18℃ 맑음</b></div>
+      <div class="row"><span>멜버른</span><b>14℃ 구름</b></div>
+      <div class="dt">2026.10.01 확인값 · 자동 갱신 아님</div>
+    </div>
+  </div>
+</div>
+
+<nav class="s-tabs" aria-label="여행 계획 섹션">
+  <div class="s-wrap">
+    <button class="gtab active" data-tab="home" onclick="goTab('home')">홈</button>
+    <button class="gtab" data-tab="builder" onclick="goTab('builder')">루트 빌더</button>
+    <button class="gtab" data-tab="plan" onclick="goTab('plan')">여정표 A/B</button>
+    <button class="gtab" data-tab="guide" onclick="goTab('guide')">가이드</button>
+    <button class="gtab" data-tab="tracker" onclick="goTab('tracker')">예약 · 비상연락</button>
+  </div>
+</nav>
+
+<div class="pane on" id="p-home">
+  <div class="s-wrap hm">
+    <section>
+      <h2>확정된 것과 남은 것</h2>
+      <div class="hm-facts">
+        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
+        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
+        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50</div><span class="hm-pill ok">예약 완료</span></div>
+        <div class="hm-fact"><div class="k">2/14 이후</div><div class="v">숙소 · 국내선 · 투어</div><div class="d">멜버른을 갈지, 시드니 근교만 돌지에 따라 달라져요</div><span class="hm-pill todo">미예약</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>어디부터 볼까요</h2>
+      <div class="hm-nav">
+        <button class="hm-go" style="background-image:url('img/bluemountains.jpg')" onclick="goTab('builder')"><b>루트 빌더</b><span>하루씩 테마를 골라 우리 가족 루트 완성하기</span></button>
+        <button class="hm-go" style="background-image:url('img/twelveapostles.jpg')" onclick="goTab('plan')"><b>여정표 A/B</b><span>모험형과 여유형, 미리 짜둔 두 가지 코스</span></button>
+        <button class="hm-go" style="background-image:url('img/bondi.jpg')" onclick="goTab('guide')"><b>가이드</b><span>가볼만한곳, 맛집·카페, 마트, 출발 전 유의사항</span></button>
+        <button class="hm-go" style="background-image:url('img/circularquay.jpg')" onclick="goTab('tracker')"><b>예약 · 비상연락</b><span>예약 진행 체크와 총영사관·응급 연락처</span></button>
+      </div>
+    </section>
+
+    <section>
+      <h2>이번 여행에서 만날 것들</h2>
+      <p class="sub">아이들이 기다리는 동물과 수영, 그리고 어른들이 기다리는 풍경이에요.</p>
+      <div class="hm-gallery">
+        <figure class="hm-shot wide tall"><img src="img/hero_koala.jpg" alt="유칼립투스 잎을 먹는 코알라" loading="lazy"><figcaption>코알라</figcaption></figure>
+        <figure class="hm-shot"><img src="img/wombattour.jpg" alt="웜뱃" loading="lazy"><figcaption>웜뱃</figcaption></figure>
+        <figure class="hm-shot"><img src="img/hero_quokka.jpg" alt="쿼카" loading="lazy"><figcaption>쿼카</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/phillip.jpg" alt="해변을 걷는 리틀펭귄 무리" loading="lazy"><figcaption>필립아일랜드 리틀펭귄</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/northsydneypool.jpg" alt="하버브리지 아래 노스 시드니 올림픽 풀" loading="lazy"><figcaption>노스 시드니 올림픽 풀 · 필수 일정</figcaption></figure>
+        <figure class="hm-shot"><img src="img/murramarang.jpg" alt="머라마랑 해변 풀밭의 캥거루" loading="lazy"><figcaption>해변의 캥거루</figcaption></figure>
+        <figure class="hm-shot"><img src="img/icebergs.jpg" alt="본다이 아이스버그스 수영장" loading="lazy"><figcaption>본다이 아이스버그스</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/greatoceanroad.jpg" alt="그레이트오션로드 해안 절벽" loading="lazy"><figcaption>그레이트오션로드</figcaption></figure>
+        <figure class="hm-shot"><img src="img/jervisbay.jpg" alt="저비스베이 하이엄스비치" loading="lazy"><figcaption>저비스베이</figcaption></figure>
+        <figure class="hm-shot"><img src="img/mrsmacquarie.jpg" alt="미세스 매쿼리스 포인트의 노을" loading="lazy"><figcaption>하버 노을</figcaption></figure>
+      </div>
+    </section>
+
+    <details class="s-credits">
+      <summary>사진 출처 (위키미디어 커먼즈, 자유 라이선스)</summary>
+      <ul>
+<!--CREDITS-->
+      </ul>
+    </details>
+  </div>
+</div>
+
+<div class="pane" id="p-builder"><!--PANE:builder--></div>
+<div class="pane" id="p-plan"><!--PANE:plan--></div>
+<div class="pane" id="p-guide"><!--PANE:guide--></div>
+<div class="pane" id="p-tracker"><!--PANE:tracker--></div>
+
+<script>
+(function(){
+  var TABS = ["home","builder","plan","guide","tracker"];
+  window.goTab = function(name, keepScroll){
+    if (TABS.indexOf(name) === -1) name = "home";
+    document.querySelectorAll(".gtab").forEach(function(b){ b.classList.toggle("active", b.dataset.tab === name); });
+    document.querySelectorAll(".pane").forEach(function(p){ p.classList.toggle("on", p.id === "p-" + name); });
+    try { history.replaceState(null, "", "#" + name); } catch(e){}
+    if (!keepScroll){
+      var nav = document.querySelector(".s-tabs");
+      var y = nav.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > y) window.scrollTo(0, y);
+    }
+  };
+  var h = (location.hash || "").replace("#","");
+  if (h) window.goTab(h, true);
+})();
+</script>
+<!--PANE_SCRIPTS-->

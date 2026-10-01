@@ -1,0 +1,2252 @@
+<title>호주 가족여행 2027</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --s-bg:#EFF6F4; --s-surface:#FFFFFF; --s-line:#DCE7E2;
+    --s-ink:#0C2B2F; --s-ink-soft:#3F5D5C; --s-ink-faint:#6F8B89;
+    --s-ocean:#0F7A93; --s-ocean-deep:#063240; --s-ocean-soft:#DCEEF1;
+    --s-coral:#FF6F4D; --s-coral-ink:#8A3018; --s-coral-soft:#FFE4DA;
+    --s-euca:#3F7A4A; --s-euca-soft:#E4EFE0;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --s-bg:#07181A; --s-surface:#122A26; --s-line:#1E3D38;
+      --s-ink:#EAF3EF; --s-ink-soft:#AFC9C4; --s-ink-faint:#7A9793;
+      --s-ocean:#7FD8E8; --s-ocean-deep:#0B3540; --s-ocean-soft:#123A42;
+      --s-coral:#FF9270; --s-coral-ink:#FFD9C9; --s-coral-soft:#3A2018;
+      --s-euca:#8FC298; --s-euca-soft:#1B3320;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --s-bg:#07181A; --s-surface:#122A26; --s-line:#1E3D38;
+    --s-ink:#EAF3EF; --s-ink-soft:#AFC9C4; --s-ink-faint:#7A9793;
+    --s-ocean:#7FD8E8; --s-ocean-deep:#0B3540; --s-ocean-soft:#123A42;
+    --s-coral:#FF9270; --s-coral-ink:#FFD9C9; --s-coral-soft:#3A2018;
+    --s-euca:#8FC298; --s-euca-soft:#1B3320;
+    color-scheme: dark;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--s-bg); color:var(--s-ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif;}
+  .s-wrap{max-width:1040px; margin:0 auto; padding-inline:20px;}
+
+  /* Global hero */
+  .s-hero{position:relative; background:#063240 url("img/hero.jpg") center 55% / cover no-repeat; color:#fff;}
+  .s-hero::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,28,38,.62) 0%, rgba(4,28,38,.18) 45%, rgba(4,28,38,.72) 100%);}
+  .s-hero .s-wrap{position:relative; padding-block:26px 34px; display:flex; flex-wrap:wrap; gap:18px; align-items:flex-end; justify-content:space-between; min-height:300px;}
+  .s-eyebrow{display:inline-flex; align-items:center; gap:8px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; background:rgba(255,255,255,.16); backdrop-filter:blur(4px); padding:6px 13px; border-radius:999px;}
+  .s-eyebrow svg{width:18px; height:12px; border-radius:2px;}
+  .s-hero h1{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-size:clamp(32px,6.4vw,56px); font-weight:800; line-height:1.05; margin:14px 0 0; text-wrap:balance; text-shadow:0 2px 18px rgba(0,0,0,.35);}
+  .s-hero p{margin:10px 0 0; font-size:15px; max-width:46ch; line-height:1.55; color:#EAF6F4; text-shadow:0 1px 8px rgba(0,0,0,.4);}
+  .s-fx{background:rgba(4,34,44,.6); backdrop-filter:blur(8px); border:1px solid rgba(255,255,255,.24); border-radius:14px; padding:12px 15px; min-width:190px; font-size:12px; color:#DCEEF1;}
+  .s-fx .hd{font-size:10.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:#fff; margin-bottom:6px;}
+  .s-fx .row{display:flex; justify-content:space-between; gap:14px; padding:3px 0;}
+  .s-fx .row b{font-family:'Bricolage Grotesque',sans-serif; font-size:14px; color:#fff; font-variant-numeric:tabular-nums;}
+  .s-fx .dt{margin-top:6px; font-size:10px; color:rgba(255,255,255,.62);}
+
+  /* Global tabs */
+  .s-tabs{position:sticky; top:env(safe-area-inset-top, 0px); z-index:20; background:var(--s-surface); border-bottom:1px solid var(--s-line);}
+  .s-tabs .s-wrap{display:flex; gap:4px; overflow-x:auto; padding-block:8px;}
+  .gtab{flex:none; border:none; background:none; font-family:inherit; font-weight:800; font-size:13.5px; color:var(--s-ink-faint); padding:10px 16px; border-radius:999px; cursor:pointer; white-space:nowrap;}
+  .gtab:hover{color:var(--s-ink);}
+  .gtab.active{background:var(--s-ocean-deep); color:#fff;}
+  .gtab:focus-visible{outline:2px solid var(--s-coral); outline-offset:2px;}
+
+  .pane{display:none;}
+  .pane.on{display:block;}
+
+  /* Home pane */
+  .hm{padding-block:30px 60px;}
+  .hm h2{font-family:'Bricolage Grotesque',system-ui,sans-serif; font-size:clamp(21px,3.4vw,27px); font-weight:700; margin:0; text-wrap:balance;}
+  .hm .sub{margin:8px 0 0; color:var(--s-ink-soft); font-size:14px; max-width:64ch; line-height:1.6;}
+  .hm section{margin-top:40px;}
+  .hm section:first-child{margin-top:0;}
+  .hm-facts{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:12px; margin-top:16px;}
+  .hm-fact{background:var(--s-surface); border:1px solid var(--s-line); border-radius:16px; padding:16px 18px;}
+  .hm-fact .k{font-size:11px; font-weight:800; letter-spacing:.05em; text-transform:uppercase; color:var(--s-ink-faint);}
+  .hm-fact .v{font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:700; margin-top:5px;}
+  .hm-fact .d{font-size:12.5px; color:var(--s-ink-soft); margin-top:4px; line-height:1.5;}
+  .hm-pill{display:inline-block; font-size:10.5px; font-weight:800; padding:2px 9px; border-radius:999px; margin-top:8px;}
+  .hm-pill.ok{background:var(--s-euca-soft); color:var(--s-euca);}
+  .hm-pill.todo{background:var(--s-coral-soft); color:var(--s-coral-ink);}
+
+  .hm-nav{display:grid; grid-template-columns:repeat(auto-fit, minmax(230px,1fr)); gap:14px; margin-top:16px;}
+  .hm-go{position:relative; overflow:hidden; text-align:left; border:none; cursor:pointer; border-radius:18px; min-height:170px; padding:18px; color:#fff; font-family:inherit; background:#063240 center / cover no-repeat; display:flex; flex-direction:column; justify-content:flex-end;}
+  .hm-go::before{content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(4,28,38,.05) 20%, rgba(4,28,38,.82) 100%); transition:background .2s;}
+  .hm-go:hover::before{background:linear-gradient(180deg, rgba(4,28,38,.2) 0%, rgba(4,28,38,.88) 100%);}
+  .hm-go > *{position:relative;}
+  .hm-go b{font-family:'Bricolage Grotesque',sans-serif; font-size:19px; font-weight:700;}
+  .hm-go span{font-size:12.5px; margin-top:4px; color:#E4F2EF; line-height:1.45;}
+  .hm-go:focus-visible{outline:3px solid var(--s-coral); outline-offset:2px;}
+
+  .hm-gallery{display:grid; grid-template-columns:repeat(4, 1fr); grid-auto-rows:150px; gap:10px; margin-top:16px;}
+  .hm-shot{position:relative; margin:0; border-radius:14px; overflow:hidden; background:var(--s-ocean-soft);}
+  .hm-shot.wide{grid-column:span 2;}
+  .hm-shot.tall{grid-row:span 2;}
+  .hm-shot img{width:100%; height:100%; object-fit:cover; display:block;}
+  .hm-shot figcaption{position:absolute; left:0; right:0; bottom:0; padding:22px 12px 9px; font-size:12px; font-weight:700; color:#fff; background:linear-gradient(180deg, transparent, rgba(4,28,38,.78));}
+  @media (max-width:720px){ .hm-gallery{grid-template-columns:repeat(2, 1fr); grid-auto-rows:130px;} }
+
+  .s-credits{margin-top:40px; font-size:12px; color:var(--s-ink-faint);}
+  .s-credits summary{cursor:pointer; font-weight:700; color:var(--s-ink-soft);}
+  .s-credits ul{margin:10px 0 0; padding-left:18px; display:flex; flex-direction:column; gap:4px; line-height:1.5;}
+  .s-credits a{color:var(--s-ocean);}
+
+/* builder */
+#p-builder{--bg:#F3F7F6; --bg-alt:#E7F0EE; --surface:#FFFFFF; --surface-line:#D9E6E3;
+    --ink:#12262A; --ink-soft:#4E6669; --ink-faint:#7C9294;
+    --accent:#FF6B4A; --accent-ink:#7A2E1C; --accent-soft:#FFE4DB;
+    --teal:#0E4F4F; --teal-soft:#DCEEEC;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    --good:#1E8A6E; --good-soft:#DDF1E8;
+    --mid:#C4860F; --mid-soft:#F7EAD1;
+    --low:#C1473C; --low-soft:#F7DEDA;
+    --sage:#5B8A63; --sage-ink:#2F4A34; --sage-soft:#E3EFE1;
+    color-scheme: light;}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) #p-builder{--bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+      --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+      --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+      --teal:#8FD6CE; --teal-soft:#173736;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      --good:#4FCBA3; --good-soft:#123330;
+      --mid:#E4B550; --mid-soft:#3A2E13;
+      --low:#F0847A; --low-soft:#3A1B17;
+      --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+      color-scheme: dark;}
+}
+:root[data-theme="dark"] #p-builder{--bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+    --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+    --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+    --teal:#8FD6CE; --teal-soft:#173736;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    --good:#4FCBA3; --good-soft:#123330;
+    --mid:#E4B550; --mid-soft:#3A2E13;
+    --low:#F0847A; --low-soft:#3A1B17;
+    --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+    color-scheme: dark;}
+#p-builder *{box-sizing:border-box;}
+#p-builder{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:20px; padding-block:32px 64px;}
+#p-builder .wrap{max-width:900px; margin:0 auto;}
+#p-builder h1, #p-builder h2, #p-builder h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0;}
+#p-builder button{font-family:inherit;}
+#p-builder svg.ic{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+#p-builder header{margin-bottom:22px;}
+#p-builder .eyebrow{display:inline-flex; align-items:center; gap:6px; font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); background:var(--teal-soft); padding:5px 12px; border-radius:999px; margin-bottom:12px;}
+#p-builder h1{font-size:clamp(25px,4.5vw,36px); font-weight:600; line-height:1.16;}
+#p-builder .lede{font-size:14.5px; color:var(--ink-soft); max-width:64ch; margin-top:9px; line-height:1.6;}
+#p-builder .mode-toggle{display:inline-flex; background:var(--surface); border:1px solid var(--surface-line); border-radius:999px; padding:4px; margin-top:18px; gap:2px;}
+#p-builder .mode-btn{border:none; background:none; padding:9px 16px; border-radius:999px; font-size:13px; font-weight:700; color:var(--ink-faint); cursor:pointer;}
+#p-builder .mode-btn.active{background:var(--teal); color:#fff;}
+#p-builder .mode-note{font-size:12px; color:var(--ink-faint); margin-top:8px;}
+#p-builder .presets{display:flex; gap:10px; margin-top:14px; flex-wrap:wrap;}
+#p-builder .preset-btn{display:flex; align-items:center; gap:8px; font-size:13px; font-weight:700;
+    padding:9px 16px; border-radius:999px; border:1.5px solid var(--surface-line);
+    background:var(--surface); color:var(--ink); cursor:pointer;}
+#p-builder .preset-btn.a{border-color:color-mix(in srgb, var(--accent) 50%, transparent); color:var(--accent-ink);}
+#p-builder .preset-btn.b{border-color:color-mix(in srgb, var(--sage) 50%, transparent); color:var(--sage-ink);}
+#p-builder .preset-btn.c{border-color:color-mix(in srgb, var(--gold) 55%, transparent); color:var(--gold);}
+#p-builder .preset-btn:hover{filter:brightness(0.97);}
+#p-builder .reset-btn{font-size:12.5px; font-weight:700; color:var(--ink-faint); background:none; border:none; cursor:pointer; text-decoration:underline; padding:9px 4px;}
+#p-builder section{margin-top:38px;}
+#p-builder .section-head{margin-bottom:16px; display:flex; align-items:baseline; justify-content:space-between; gap:10px; flex-wrap:wrap;}
+#p-builder .section-head h2{font-size:clamp(19px,3vw,23px); font-weight:600;}
+#p-builder .section-head .cnt{font-size:12.5px; color:var(--ink-faint); font-weight:700;}
+#p-builder .slot{border-radius:16px; border:1px solid var(--surface-line); background:var(--surface); overflow:hidden; margin-bottom:12px;}
+#p-builder .slot.picked{display:flex; align-items:center; gap:14px; padding:14px 18px;}
+#p-builder .slot .datechip{flex:none; width:56px; text-align:center;}
+#p-builder .slot .datechip .dow{font-size:10px; font-weight:700; color:var(--ink-faint); text-transform:uppercase;}
+#p-builder .slot .datechip .dom{font-family:'Fraunces',serif; font-size:18px; font-weight:600;}
+#p-builder .slot .picked-ic{flex:none; width:42px; height:42px; border-radius:12px; background:var(--teal-soft); color:var(--teal); display:flex; align-items:center; justify-content:center;}
+#p-builder .slot .picked-body{flex:1; min-width:0;}
+#p-builder .slot .picked-body b{font-size:14.5px; display:block;}
+#p-builder .slot .picked-body span{font-size:12px; color:var(--ink-faint);}
+#p-builder .change-btn{flex:none; font-size:12px; font-weight:700; color:var(--ink-soft); background:var(--bg-alt); border:none; border-radius:999px; padding:7px 13px; cursor:pointer;}
+#p-builder .change-btn:hover{background:var(--surface-line);}
+#p-builder .slot.open{padding:16px 18px 18px;}
+#p-builder .slot.open .slot-head{display:flex; align-items:center; gap:10px; margin-bottom:12px; flex-wrap:wrap;}
+#p-builder .slot.open .datechip2{font-family:'Fraunces',serif; font-size:15px; font-weight:600; color:var(--ink);}
+#p-builder .slot.open .hint{font-size:12px; color:var(--ink-faint);}
+#p-builder .choice-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(230px,1fr)); gap:10px;}
+#p-builder .choice{text-align:left; border:1.5px solid var(--surface-line); background:var(--bg-alt); border-radius:12px;
+    padding:12px 13px; cursor:pointer; display:flex; gap:10px; align-items:flex-start; position:relative;}
+#p-builder .choice:hover{border-color:var(--teal);}
+#p-builder .choice.recommended{border-color:color-mix(in srgb, var(--good) 55%, transparent); background:var(--good-soft);}
+#p-builder .choice .rec-badge{position:absolute; top:-9px; right:10px; font-size:9.5px; font-weight:800; background:var(--good); color:#fff; padding:2px 8px; border-radius:999px; letter-spacing:.02em;}
+#p-builder .choice .cic{flex:none; width:34px; height:34px; border-radius:9px; background:var(--surface); color:var(--teal); display:flex; align-items:center; justify-content:center;}
+#p-builder .choice .ctext b{display:block; font-size:13px; font-weight:700; color:var(--ink);}
+#p-builder .choice .ctext p{margin:3px 0 0; font-size:11.5px; color:var(--ink-soft); line-height:1.4;}
+#p-builder .choice .cmeta{display:flex; gap:5px; margin-top:6px; flex-wrap:wrap;}
+#p-builder .itag{font-size:9.5px; font-weight:700; padding:1.5px 6px; border-radius:999px;}
+#p-builder .itag.heavy{background:var(--low-soft); color:var(--low);}
+#p-builder .itag.medium{background:var(--mid-soft); color:var(--mid);}
+#p-builder .itag.light{background:var(--good-soft); color:var(--good);}
+#p-builder .itag.cost{background:var(--bg); color:var(--ink-faint); border:1px solid var(--surface-line);}
+#p-builder .itag.area{background:var(--gold-soft); color:var(--gold);}
+#p-builder .slot.locked{display:flex; align-items:center; gap:12px; padding:13px 18px; opacity:.55;}
+#p-builder .slot.locked .datechip .dom, #p-builder .slot.locked .datechip .dow{color:var(--ink-faint);}
+#p-builder .slot.locked p{margin:0; font-size:12.5px; color:var(--ink-faint);}
+#p-builder .summary{background:var(--teal); border-radius:18px; padding:24px 26px; color:#fff;}
+#p-builder .summary h2{color:#fff; font-size:20px;}
+#p-builder .route-line{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
+#p-builder .route-chip{display:flex; align-items:center; gap:6px; background:rgba(255,255,255,.1); border:1px solid rgba(255,255,255,.18); border-radius:999px; padding:6px 12px 6px 8px; font-size:12px;}
+#p-builder .route-chip .rcic{width:22px; height:22px; border-radius:50%; background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center;}
+#p-builder .route-chip svg{width:13px; height:13px;}
+#p-builder .route-chip.empty{background:rgba(255,255,255,.05); border-style:dashed; color:rgba(255,255,255,.5);}
+#p-builder .stat-row{display:flex; gap:22px; margin-top:20px; flex-wrap:wrap; border-top:1px solid rgba(255,255,255,.18); padding-top:16px;}
+#p-builder .stat b{display:block; font-family:'Fraunces',serif; font-size:22px; font-weight:600;}
+#p-builder .stat span{font-size:11.5px; color:#CFE7E3;}
+#p-builder .empty-note{font-size:12.5px; color:#CFE7E3; margin-top:14px;}
+#p-builder footer{margin-top:44px; font-size:12px; color:var(--ink-faint); text-align:center;}
+#p-builder .skeleton{padding:30px; text-align:center; color:var(--ink-faint); font-size:13px;}
+#p-builder .fx-bar{display:flex; align-items:center; gap:16px; flex-wrap:wrap;
+    background:var(--surface); border:1px solid var(--surface-line); border-radius:14px;
+    padding:12px 18px; margin-bottom:18px;}
+#p-builder .fx-bar .fx-rate{font-family:'Fraunces',serif; font-size:19px; font-weight:600; font-variant-numeric:tabular-nums;}
+#p-builder .fx-bar .fx-label{font-size:11.5px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.04em;}
+#p-builder .fx-bar .fx-sep{width:1px; height:24px; background:var(--surface-line);}
+#p-builder .fx-bar .fx-sub{font-size:12px; color:var(--ink-soft);}
+#p-builder .fx-bar .fx-date{margin-left:auto; font-size:11px; color:var(--ink-faint);}
+#p-builder .overview-scroll{overflow-x:auto; padding-bottom:6px; margin:0 -20px; padding-left:20px; padding-right:20px;}
+#p-builder .overview-row{display:flex; gap:8px; min-width:max-content;}
+#p-builder .ov-card{flex:none; width:112px; border-radius:14px; border:1px solid var(--surface-line); background:var(--surface);
+    padding:10px 11px; display:flex; flex-direction:column; gap:6px;}
+#p-builder .ov-card.fixed{background:var(--bg-alt);}
+#p-builder .ov-card .ov-date{font-size:10px; font-weight:700; color:var(--ink-faint); text-transform:uppercase;}
+#p-builder .ov-card .ov-dom{font-family:'Fraunces',serif; font-size:16px; font-weight:600;}
+#p-builder .ov-stay{font-size:10px; padding:2px 6px; border-radius:999px; font-weight:700; display:inline-flex; align-self:flex-start;}
+#p-builder .ov-stay.booked{background:var(--good-soft); color:var(--good);}
+#p-builder .ov-stay.unbooked{background:var(--low-soft); color:var(--low);}
+#p-builder .ov-stay.none{background:var(--bg-alt); color:var(--ink-faint);}
+#p-builder .ov-card .ov-hotel{font-size:10.5px; color:var(--ink-soft); line-height:1.3;}
+#p-builder .ov-card .ov-theme{font-size:11.5px; font-weight:700; color:var(--ink); line-height:1.3; margin-top:auto;}
+#p-builder .ov-card .ov-theme.empty{color:var(--ink-faint); font-weight:600;}
+/* plan */
+#p-plan{--bg:#F3F7F6; --bg-alt:#E7F0EE; --surface:#FFFFFF; --surface-line:#D9E6E3;
+    --ink:#12262A; --ink-soft:#4E6669; --ink-faint:#7C9294;
+    --accent:#FF6B4A; --accent-ink:#7A2E1C; --accent-soft:#FFE4DB;
+    --teal:#0E4F4F; --teal-soft:#DCEEEC;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    --good:#1E8A6E; --good-soft:#DDF1E8;
+    --mid:#C4860F; --mid-soft:#F7EAD1;
+    --low:#C1473C; --low-soft:#F7DEDA;
+    --sage:#5B8A63; --sage-ink:#2F4A34; --sage-soft:#E3EFE1;
+    --sunset:#E08A3C;
+    color-scheme: light;}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) #p-plan{--bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+      --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+      --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+      --teal:#8FD6CE; --teal-soft:#173736;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      --good:#4FCBA3; --good-soft:#123330;
+      --mid:#E4B550; --mid-soft:#3A2E13;
+      --low:#F0847A; --low-soft:#3A1B17;
+      --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+      --sunset:#F0A860;
+      color-scheme: dark;}
+}
+:root[data-theme="dark"] #p-plan{--bg:#0B1C1E; --bg-alt:#0F2426; --surface:#122A2C; --surface-line:#1E3C3E;
+    --ink:#EAF3F1; --ink-soft:#A9C2C1; --ink-faint:#7C9294;
+    --accent:#FF8563; --accent-ink:#FFD9CB; --accent-soft:#3A2018;
+    --teal:#8FD6CE; --teal-soft:#173736;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    --good:#4FCBA3; --good-soft:#123330;
+    --mid:#E4B550; --mid-soft:#3A2E13;
+    --low:#F0847A; --low-soft:#3A1B17;
+    --sage:#8FC298; --sage-ink:#D9EEDC; --sage-soft:#1C3120;
+    --sunset:#F0A860;
+    color-scheme: dark;}
+#p-plan *{box-sizing:border-box;}
+#p-plan{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:20px; padding-block:36px 64px;}
+#p-plan .wrap{max-width:1060px; margin:0 auto;}
+#p-plan h1, #p-plan h2, #p-plan h3{font-family:'Fraunces',Georgia,serif; text-wrap:balance; margin:0;}
+#p-plan svg.ic{width:22px; height:22px; stroke:currentColor; fill:none; stroke-width:2.1; stroke-linecap:round; stroke-linejoin:round;}
+#p-plan header{margin-bottom:26px;}
+#p-plan .eyebrow{display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--teal); background:var(--teal-soft); padding:5px 12px; border-radius:999px; margin-bottom:14px;}
+#p-plan h1{font-size:clamp(27px,4.8vw,40px); font-weight:600; line-height:1.16;}
+#p-plan .lede{font-size:15.5px; color:var(--ink-soft); max-width:66ch; margin-top:10px; line-height:1.6;}
+#p-plan .flight-strip{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+#p-plan .flight-card{flex:1; min-width:220px; background:var(--surface); border:1px solid var(--surface-line); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:4px;}
+#p-plan .flight-card .route{font-size:12px; font-weight:700; color:var(--ink-faint); text-transform:uppercase; letter-spacing:.04em;}
+#p-plan .flight-card .num{font-family:'Fraunces',serif; font-size:16px; font-weight:600;}
+#p-plan .flight-card .time{font-size:12.5px; color:var(--ink-soft);}
+#p-plan section{margin-top:48px;}
+#p-plan .section-head{margin-bottom:20px;}
+#p-plan .section-head h2{font-size:clamp(21px,3.2vw,27px); font-weight:600;}
+#p-plan .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:14px; max-width:68ch;}
+#p-plan .plan-choice{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media (max-width:620px){
+#p-plan .plan-choice{grid-template-columns:1fr;}
+}
+#p-plan .plan-card{border-radius:18px; padding:22px; display:flex; flex-direction:column; gap:12px;}
+#p-plan .plan-card.a{background:var(--accent-soft); border:1.5px solid color-mix(in srgb, var(--accent) 45%, transparent);}
+#p-plan .plan-card.b{background:var(--sage-soft); border:1.5px solid color-mix(in srgb, var(--sage) 45%, transparent);}
+#p-plan .plan-card .tag{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase;}
+#p-plan .plan-card.a .tag{color:var(--accent-ink);}
+#p-plan .plan-card.b .tag{color:var(--sage-ink);}
+#p-plan .plan-card h3{font-size:19px; font-weight:600;}
+#p-plan .plan-card p{margin:0; font-size:13.5px; line-height:1.55; color:var(--ink-soft);}
+#p-plan .plan-icons{display:flex; gap:8px; flex-wrap:wrap; margin-top:2px;}
+#p-plan .pi{width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;}
+#p-plan .plan-card.a .pi{background:#fff; color:var(--accent-ink);}
+:root[data-theme="dark"] #p-plan .plan-card.a .pi{background:rgba(255,255,255,.08); color:var(--accent-ink);}
+#p-plan .plan-card.b .pi{background:#fff; color:var(--sage-ink);}
+:root[data-theme="dark"] #p-plan .plan-card.b .pi{background:rgba(255,255,255,.08); color:var(--sage-ink);}
+#p-plan .pi svg{width:18px; height:18px;}
+#p-plan .plan-stat{display:flex; justify-content:space-between; font-size:12.5px; padding-top:10px; border-top:1px dashed color-mix(in srgb, var(--ink) 20%, transparent); color:var(--ink-soft);}
+#p-plan .plan-stat b{color:var(--ink); font-family:'Fraunces',serif; font-size:15px; font-weight:600;}
+#p-plan .daywrap{display:flex; flex-direction:column; gap:14px;}
+#p-plan .day{border-radius:16px; padding:18px 20px; border:1px solid var(--surface-line); background:var(--surface); display:grid; grid-template-columns:52px 74px 1fr; gap:14px; align-items:start;}
+@media (max-width:520px){
+#p-plan .day{grid-template-columns:44px 1fr;}
+#p-plan .day .day-date{grid-column:2; order:-1;}
+#p-plan .day .icon-badge{grid-row:1 / span 2;}
+}
+#p-plan .icon-badge{width:52px; height:52px; border-radius:14px; display:flex; align-items:center; justify-content:center; flex:none;}
+#p-plan .a .icon-badge{background:var(--accent-soft); color:var(--accent-ink);}
+#p-plan .b .icon-badge{background:var(--sage-soft); color:var(--sage-ink);}
+#p-plan .icon-badge svg{width:28px; height:28px;}
+#p-plan .day-date{display:flex; flex-direction:column; gap:3px;}
+#p-plan .day-date .dow{font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:uppercase;}
+#p-plan .day-date .dom{font-family:'Fraunces',serif; font-size:20px; font-weight:600;}
+#p-plan .city-tag{font-size:10px; font-weight:700; padding:2px 7px; border-radius:999px; align-self:flex-start;}
+#p-plan .city-tag.syd{background:var(--teal-soft); color:var(--teal);}
+#p-plan .city-tag.mel{background:var(--gold-soft); color:var(--gold);}
+#p-plan .day-body h3{font-size:16px; font-weight:600; margin-bottom:8px;}
+#p-plan .day-plan{display:flex; flex-direction:column; gap:6px;}
+#p-plan .plan-row{display:flex; gap:10px; font-size:13.3px; line-height:1.55; color:var(--ink-soft);}
+#p-plan .plan-row .tod{flex:none; width:44px; font-weight:700; color:var(--ink-faint); font-size:11px; text-transform:uppercase; padding-top:2px;}
+#p-plan .plan-row b{color:var(--ink); font-weight:700;}
+#p-plan .day-note{margin-top:8px; font-size:12px; color:var(--ink-faint); background:var(--bg-alt); border-radius:8px; padding:7px 10px;}
+#p-plan .tagrow{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px;}
+#p-plan .mini-tag{font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--teal-soft); color:var(--teal); display:inline-flex; align-items:center; gap:4px;}
+#p-plan .mini-tag svg.ic{width:11px; height:11px;}
+#p-plan .a-line{display:flex; flex-direction:column; gap:10px;}
+#p-plan .a-row{display:grid; grid-template-columns:74px 40px 1fr; gap:12px; align-items:center; padding:12px 16px; background:var(--surface); border:1px solid var(--surface-line); border-radius:12px;}
+#p-plan .a-row .d{font-family:'Fraunces',serif; font-weight:600; font-size:14px; color:var(--ink-soft);}
+#p-plan .a-row .ic{width:40px; height:40px; border-radius:10px; background:var(--accent-soft); color:var(--accent-ink); display:flex; align-items:center; justify-content:center;}
+#p-plan .a-row .ic svg{width:22px; height:22px;}
+#p-plan .a-row .tx b{color:var(--ink); font-weight:700; font-size:13.5px;}
+#p-plan .a-row .tx span{display:block; font-size:12px; color:var(--ink-faint); margin-top:2px;}
+#p-plan .budget-compare{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+@media (max-width:620px){
+#p-plan .budget-compare{grid-template-columns:1fr;}
+}
+#p-plan .bc-card{border-radius:18px; padding:22px; color:#fff;}
+#p-plan .bc-card.a{background:var(--accent-ink);}
+#p-plan .bc-card.b{background:var(--sage-ink);}
+#p-plan .bc-card .tag{font-size:11px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; opacity:.75;}
+#p-plan .bc-card .big{font-family:'Fraunces',serif; font-size:clamp(24px,4vw,32px); font-weight:600; margin-top:6px; font-variant-numeric:tabular-nums;}
+#p-plan .bc-card .sub{font-size:12px; opacity:.8; margin-top:4px;}
+#p-plan .bc-list{margin-top:14px; display:flex; flex-direction:column; gap:6px; border-top:1px solid rgba(255,255,255,.2); padding-top:12px;}
+#p-plan .bc-list div{display:flex; justify-content:space-between; font-size:12.5px; opacity:.9;}
+#p-plan .bc-list b{font-variant-numeric:tabular-nums; font-weight:700;}
+#p-plan .prep-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:14px;}
+#p-plan .prep-card{background:var(--surface); border:1px solid var(--surface-line); border-radius:14px; padding:16px 18px;}
+#p-plan .prep-card h4{margin:0 0 8px; font-family:'Fraunces',serif; font-weight:600; font-size:15px;}
+#p-plan .prep-card ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:5px;}
+#p-plan .prep-card li{font-size:13px; color:var(--ink-soft); line-height:1.5;}
+#p-plan .book-list{display:flex; flex-direction:column; gap:10px;}
+#p-plan .book-item{display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--surface-line); border-radius:12px; padding:12px 14px;}
+#p-plan .book-item .pri{flex:none; width:26px; height:26px; border-radius:50%; background:var(--low-soft); color:var(--low); font-weight:700; font-size:12px; display:flex; align-items:center; justify-content:center;}
+#p-plan .book-item p{margin:0; font-size:13.5px; color:var(--ink-soft); line-height:1.5;}
+#p-plan .book-item b{color:var(--ink);}
+#p-plan footer{margin-top:44px; font-size:12px; color:var(--ink-faint); text-align:center;}
+/* guide */
+#p-guide{--bg:#EFF6F4; --surface:#FBF6E9; --surface-alt:#F3EEDD; --line:#DCE7E2;
+    --ink:#0C2B2F; --ink-soft:#3F5D5C; --ink-faint:#6F8B89;
+    --ocean:#0F7A93; --ocean-deep:#063240; --ocean-soft:#DCEEF1;
+    --coral:#FF6F4D; --coral-ink:#8A3018; --coral-soft:#FFE4DA;
+    --euca:#5E8F63; --euca-ink:#2E4A31; --euca-soft:#E4EFE0;
+    --ochre:#C06B3A; --ochre-soft:#F5E3D3;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    color-scheme: light;}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) #p-guide{--bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+      --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+      --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+      --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+      --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+      --ochre:#E2965F; --ochre-soft:#3A2617;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      color-scheme: dark;}
+}
+:root[data-theme="dark"] #p-guide{--bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+    --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+    --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+    --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+    --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+    --ochre:#E2965F; --ochre-soft:#3A2617;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    color-scheme: dark;}
+#p-guide *{box-sizing:border-box;}
+#p-guide{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:0; padding-block:0 60px;}
+#p-guide .wrap{max-width:1000px; margin:0 auto; padding-inline:20px;}
+#p-guide h1, #p-guide h2, #p-guide h3{font-family:'Bricolage Grotesque',system-ui,sans-serif; text-wrap:balance; margin:0;}
+#p-guide a{color:var(--ocean);}
+#p-guide svg.ic{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+#p-guide button{font-family:inherit;}
+#p-guide .hero{background:linear-gradient(180deg, var(--ocean-deep), #0A4A5C 65%, var(--ocean)); position:relative; overflow:hidden; padding:44px 0 64px;}
+#p-guide .hero .wrap{position:relative; z-index:2;}
+#p-guide .hero-eyebrow{display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#CFF3EE; background:rgba(255,255,255,.12); padding:6px 14px; border-radius:999px;}
+#p-guide .hero h1{color:#fff; font-size:clamp(30px,5.5vw,44px); font-weight:700; line-height:1.12; margin-top:16px;}
+#p-guide .hero p{color:#CFE9E5; font-size:15px; max-width:60ch; margin-top:12px; line-height:1.6;}
+#p-guide .hero-waves{position:absolute; left:0; right:0; bottom:-2px; height:70px; z-index:1;}
+#p-guide .hero-sun{position:absolute; top:-40px; right:6%; width:150px; height:150px; border-radius:50%; background:radial-gradient(circle at 40% 40%, #FFD9A0, var(--coral) 70%); opacity:.85; filter:blur(1px);}
+#p-guide .hero-stars{position:absolute; inset:0; z-index:1; pointer-events:none;}
+#p-guide .hero-stars circle{fill:#fff;}
+#p-guide .hero-icons{display:flex; gap:10px; margin-top:20px; position:relative; z-index:2;}
+#p-guide .hero-icons .hic{width:38px; height:38px; border-radius:50%; background:rgba(255,255,255,.14); display:flex; align-items:center; justify-content:center; color:#fff;}
+#p-guide .hero-icons .hic svg{width:21px; height:21px;}
+#p-guide .fx-widget{position:absolute; top:18px; right:20px; z-index:3;
+    background:rgba(6,50,64,.55); backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.22); border-radius:14px;
+    padding:11px 14px; min-width:168px;
+    font-size:11.5px; color:#DCEEF1;}
+#p-guide .fx-widget .fx-flag{display:flex; align-items:center; gap:6px; font-size:10.5px; font-weight:800; letter-spacing:.04em; text-transform:uppercase; color:#fff; margin-bottom:7px;}
+#p-guide .fx-widget .fx-flag svg{width:16px; height:12px; border-radius:2px;}
+#p-guide .fx-row{display:flex; justify-content:space-between; align-items:baseline; padding:3px 0;}
+#p-guide .fx-row b{font-family:'Bricolage Grotesque',serif; font-size:13.5px; color:#fff; font-variant-numeric:tabular-nums;}
+#p-guide .fx-widget .fx-date{margin-top:6px; font-size:9.5px; color:rgba(255,255,255,.55); line-height:1.4;}
+@media (max-width:560px){
+#p-guide .fx-widget{position:static; margin-top:16px; width:100%; max-width:260px;}
+}
+#p-guide section{margin-top:40px;}
+#p-guide .section-head{margin-bottom:16px;}
+#p-guide .section-head .eyebrow2{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--euca-ink); background:var(--euca-soft); padding:4px 11px; border-radius:999px; margin-bottom:8px;}
+#p-guide .section-head h2{font-size:clamp(20px,3.2vw,26px); font-weight:700;}
+#p-guide .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:13.5px; max-width:70ch;}
+#p-guide .tabbar{display:flex; gap:5px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:5px; margin-top:-30px; position:relative; z-index:3; box-shadow:0 8px 24px rgba(0,0,0,.12); overflow-x:auto;}
+#p-guide .tab-btn{flex:1; white-space:nowrap; text-align:center; padding:11px 12px; border:none; background:none; border-radius:999px; font-family:'Manrope',sans-serif; font-weight:800; font-size:12.5px; color:var(--ink-faint); cursor:pointer;}
+#p-guide .tab-btn.active{background:var(--ocean); color:#fff;}
+#p-guide .tabpanel{display:none;}
+#p-guide .tabpanel.active{display:block;}
+#p-guide .feature{display:grid; grid-template-columns:96px 1fr; gap:18px;
+    background:var(--surface); border:1px solid var(--line); border-radius:20px; padding:22px;
+    margin-bottom:16px;}
+@media (max-width:520px){
+#p-guide .feature{grid-template-columns:1fr;}
+}
+#p-guide .feature .ficon{width:96px; height:96px; border-radius:18px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center;}
+#p-guide .feature .ficon svg{width:48px; height:48px;}
+#p-guide .feature h3{font-size:18px; font-weight:700; margin-bottom:6px;}
+#p-guide .feature p{margin:0 0 10px; font-size:13.5px; color:var(--ink-soft); line-height:1.6;}
+#p-guide .feature .fmeta{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px;}
+#p-guide .ftag{font-size:11px; font-weight:700; padding:3px 10px; border-radius:999px;}
+#p-guide .ftag.ocean{background:var(--ocean-soft); color:var(--ocean);}
+#p-guide .ftag.coral{background:var(--coral-soft); color:var(--coral-ink);}
+#p-guide .ftag.ochre{background:var(--ochre-soft); color:var(--ochre);}
+#p-guide .fcaution{font-size:12.5px; background:var(--coral-soft); color:var(--coral-ink); border-radius:10px; padding:9px 12px; margin-top:6px; line-height:1.55;}
+#p-guide .flink{display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--ocean); text-decoration:none;}
+#p-guide .ftable{width:100%; border-collapse:collapse; font-size:12px; margin-top:8px;}
+#p-guide .ftable th, #p-guide .ftable td{padding:6px 8px; text-align:left; border-bottom:1px solid var(--line);}
+#p-guide .ftable th{color:var(--ink-faint); font-weight:700; font-size:10.5px; text-transform:uppercase;}
+#p-guide .ftable td{color:var(--ink-soft); font-variant-numeric:tabular-nums;}
+#p-guide .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:12px;}
+#p-guide .card{background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:15px 16px; display:flex; flex-direction:column; gap:8px; position:relative;}
+#p-guide .card.picked{border-color:var(--euca);}
+#p-guide .card{overflow:hidden;}
+#p-guide .card-photo{display:block; width:calc(100% + 32px); max-width:none; height:150px; margin:-15px -16px 4px; object-fit:cover; background:var(--surface-alt);}
+#p-guide .feature-photo{display:block; width:100%; height:190px; object-fit:cover; border-radius:14px; margin-bottom:12px;}
+#p-guide .card-top{display:flex; align-items:center; gap:10px;}
+#p-guide .card-ic{width:36px; height:36px; border-radius:10px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center; flex:none;}
+#p-guide .card h4{font-size:14px; font-weight:700; margin:0;}
+#p-guide .card .sub{font-size:10.5px; color:var(--ink-faint); font-weight:700;}
+#p-guide .card p{margin:0; font-size:12px; color:var(--ink-soft); line-height:1.5;}
+#p-guide .card .badge{align-self:flex-start; font-size:10px; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--coral-soft); color:var(--coral-ink);}
+#p-guide .card .metarow{display:flex; gap:5px; flex-wrap:wrap;}
+#p-guide .mtag{font-size:9.5px; font-weight:700; padding:1.5px 7px; border-radius:999px; background:var(--bg); border:1px solid var(--line); color:var(--ink-faint);}
+#p-guide .mtag.must{background:var(--coral); border-color:var(--coral); color:#fff;}
+#p-guide .card-bottom{margin-top:auto; display:flex; align-items:center; justify-content:space-between; gap:8px; padding-top:6px;}
+#p-guide .maplink{font-size:11px; font-weight:700; color:var(--ocean); text-decoration:none; display:inline-flex; align-items:center; gap:4px;}
+#p-guide .pick-btn{flex:none; width:28px; height:28px; border-radius:50%; border:1.5px solid var(--line); background:var(--bg); color:var(--ink-faint); cursor:pointer; display:flex; align-items:center; justify-content:center;}
+#p-guide .pick-btn.on{background:var(--euca); border-color:var(--euca); color:#fff;}
+#p-guide .pick-btn svg{width:15px; height:15px;}
+#p-guide .picked-summary{background:var(--euca-soft); border-radius:14px; padding:14px 16px; margin-top:14px; font-size:12.5px; color:var(--euca-ink);}
+#p-guide .picked-summary b{display:block; margin-bottom:6px; font-size:12px;}
+#p-guide .picked-chips{display:flex; flex-wrap:wrap; gap:6px;}
+#p-guide .picked-chip{background:#fff; border-radius:999px; padding:3px 10px; font-size:11px; font-weight:700;}
+:root[data-theme="dark"] #p-guide .picked-chip{background:rgba(255,255,255,.1);}
+#p-guide .note-box{background:var(--ochre-soft); border-radius:12px; padding:12px 15px; font-size:12.5px; color:var(--ink); line-height:1.6; margin-top:14px;}
+#p-guide .note-box b{color:var(--ochre);}
+#p-guide .prep-list{display:flex; flex-direction:column; gap:8px;}
+#p-guide .prep-item{display:flex; gap:12px; align-items:flex-start; background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:13px 16px; cursor:pointer;}
+#p-guide .prep-item input{width:19px; height:19px; margin-top:2px; accent-color:var(--euca); flex:none;}
+#p-guide .prep-item .pic{flex:none; width:34px; height:34px; border-radius:9px; background:var(--euca-soft); color:var(--euca); display:flex; align-items:center; justify-content:center;}
+#p-guide .prep-item .ptext b{font-size:13.5px; display:block;}
+#p-guide .prep-item .ptext span{font-size:12px; color:var(--ink-soft); line-height:1.5;}
+#p-guide .prep-item.checked{opacity:.5;}
+#p-guide .prep-item.checked .ptext b{text-decoration:line-through;}
+#p-guide .shop-grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(210px,1fr)); gap:10px;}
+#p-guide .shop-card{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:13px 15px; display:flex; gap:10px; align-items:flex-start;}
+#p-guide .shop-card .sic{width:32px; height:32px; border-radius:8px; background:var(--coral-soft); color:var(--coral-ink); display:flex; align-items:center; justify-content:center; flex:none;}
+#p-guide .shop-card b{font-size:13px; display:block;}
+#p-guide .shop-card span{font-size:11.5px; color:var(--ink-soft); line-height:1.45;}
+#p-guide .shop-card .price{font-size:10.5px; color:var(--ochre); font-weight:700; display:block; margin-top:2px;}
+#p-guide .subhead{font-size:13px; font-weight:800; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em; margin:22px 0 10px;}
+#p-guide .customs-table{width:100%; border-collapse:collapse; font-size:12px; margin-top:10px;}
+#p-guide .customs-table th, #p-guide .customs-table td{padding:9px 10px; text-align:left; border-bottom:1px solid var(--line); vertical-align:top;}
+#p-guide .customs-table th{background:var(--surface-alt); color:var(--ink-soft); font-weight:700; font-size:10.5px; text-transform:uppercase;}
+#p-guide .ok-tag{font-size:10px; font-weight:800; padding:2px 8px; border-radius:999px;}
+#p-guide .ok-tag.yes{background:var(--euca-soft); color:var(--euca-ink);}
+#p-guide .ok-tag.cond{background:var(--gold-soft); color:var(--gold);}
+#p-guide .ok-tag.no{background:var(--coral-soft); color:var(--coral-ink);}
+#p-guide footer{margin-top:48px; font-size:12px; color:var(--ink-faint); text-align:center;}
+#p-guide .footer-wrap{max-width:1000px; margin:0 auto; padding-inline:20px;}
+/* tracker */
+#p-tracker{--bg:#EFF6F4; --surface:#FBF6E9; --surface-alt:#F3EEDD; --line:#DCE7E2;
+    --ink:#0C2B2F; --ink-soft:#3F5D5C; --ink-faint:#6F8B89;
+    --ocean:#0F7A93; --ocean-deep:#063240; --ocean-soft:#DCEEF1;
+    --coral:#FF6F4D; --coral-ink:#8A3018; --coral-soft:#FFE4DA;
+    --euca:#5E8F63; --euca-ink:#2E4A31; --euca-soft:#E4EFE0;
+    --gold:#B8860B; --gold-soft:#F6ECD2;
+    --grey:#7B84A8; --grey-soft:#E7E9F2;
+    color-scheme: light;}
+@media (prefers-color-scheme: dark){
+:root:not([data-theme="light"]) #p-tracker{--bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+      --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+      --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+      --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+      --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+      --gold:#E0B84B; --gold-soft:#3A2E13;
+      --grey:#9AA3CC; --grey-soft:#1B2440;
+      color-scheme: dark;}
+}
+:root[data-theme="dark"] #p-tracker{--bg:#07181A; --surface:#122A26; --surface-alt:#0E2320; --line:#1E3D38;
+    --ink:#EAF3EF; --ink-soft:#AFC9C4; --ink-faint:#7A9793;
+    --ocean:#7FD8E8; --ocean-deep:#0B3540; --ocean-soft:#123A42;
+    --coral:#FF9270; --coral-ink:#FFD9C9; --coral-soft:#3A2018;
+    --euca:#8FC298; --euca-ink:#D9EEDC; --euca-soft:#1B3320;
+    --gold:#E0B84B; --gold-soft:#3A2E13;
+    --grey:#9AA3CC; --grey-soft:#1B2440;
+    color-scheme: dark;}
+#p-tracker *{box-sizing:border-box;}
+#p-tracker{margin:0; background:var(--bg); color:var(--ink); font-family:'Manrope',-apple-system,BlinkMacSystemFont,sans-serif; padding-inline:0; padding-block:0 60px;}
+#p-tracker .wrap{max-width:900px; margin:0 auto; padding-inline:20px;}
+#p-tracker h1, #p-tracker h2, #p-tracker h3{font-family:'Bricolage Grotesque',system-ui,sans-serif; text-wrap:balance; margin:0;}
+#p-tracker a{color:var(--ocean);}
+#p-tracker svg.ic{width:20px; height:20px; stroke:currentColor; fill:none; stroke-width:2; stroke-linecap:round; stroke-linejoin:round; flex:none;}
+#p-tracker button, #p-tracker input{font-family:inherit;}
+#p-tracker .hero{background:linear-gradient(180deg, var(--ocean-deep), #0A4A5C 65%, var(--ocean)); padding:40px 0 56px;}
+#p-tracker .hero-eyebrow{display:inline-flex; align-items:center; gap:7px; font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:#CFF3EE; background:rgba(255,255,255,.12); padding:6px 14px; border-radius:999px;}
+#p-tracker .hero h1{color:#fff; font-size:clamp(27px,5vw,38px); font-weight:700; line-height:1.15; margin-top:14px;}
+#p-tracker .hero p{color:#CFE9E5; font-size:14.5px; max-width:60ch; margin-top:10px; line-height:1.6;}
+#p-tracker .tabbar{display:flex; gap:5px; background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:5px; margin-top:-26px; position:relative; z-index:3; box-shadow:0 8px 22px rgba(0,0,0,.12);}
+#p-tracker .tab-btn{flex:1; text-align:center; padding:11px 12px; border:none; background:none; border-radius:999px; font-family:'Manrope',sans-serif; font-weight:800; font-size:13px; color:var(--ink-faint); cursor:pointer;}
+#p-tracker .tab-btn.active{background:var(--ocean); color:#fff;}
+#p-tracker .tabpanel{display:none;}
+#p-tracker .tabpanel.active{display:block;}
+#p-tracker section{margin-top:34px;}
+#p-tracker .section-head{margin-bottom:16px;}
+#p-tracker .section-head .eyebrow2{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--euca-ink); background:var(--euca-soft); padding:4px 11px; border-radius:999px; margin-bottom:8px;}
+#p-tracker .section-head h2{font-size:clamp(20px,3.2vw,25px); font-weight:700;}
+#p-tracker .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:13.5px; max-width:68ch;}
+#p-tracker .progress-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
+#p-tracker .progress-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;}
+#p-tracker .progress-top b{font-family:'Bricolage Grotesque',serif; font-size:20px;}
+#p-tracker .progress-track{height:10px; background:var(--surface-alt); border-radius:999px; overflow:hidden;}
+#p-tracker .progress-fill{height:100%; background:linear-gradient(90deg, var(--gold), var(--euca)); border-radius:999px; transition:width .3s;}
+#p-tracker .progress-legend{display:flex; gap:14px; margin-top:10px; font-size:11.5px; color:var(--ink-faint);}
+#p-tracker .progress-legend span{display:inline-flex; align-items:center; gap:5px;}
+#p-tracker .dot{width:8px; height:8px; border-radius:50%;}
+#p-tracker .booking-list{display:flex; flex-direction:column; gap:10px;}
+#p-tracker .booking-row{background:var(--surface); border:1px solid var(--line); border-radius:14px; padding:14px 16px; display:flex; flex-direction:column; gap:8px;}
+#p-tracker .booking-top{display:flex; align-items:center; gap:12px;}
+#p-tracker .booking-ic{width:38px; height:38px; border-radius:10px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center; flex:none;}
+#p-tracker .booking-title{flex:1; min-width:0;}
+#p-tracker .booking-title b{font-size:14px; display:block;}
+#p-tracker .booking-title span{font-size:11.5px; color:var(--ink-faint);}
+#p-tracker .prio{font-size:9.5px; font-weight:800; padding:2px 8px; border-radius:999px; flex:none;}
+#p-tracker .prio.high{background:var(--coral-soft); color:var(--coral-ink);}
+#p-tracker .prio.mid{background:var(--gold-soft); color:var(--gold);}
+#p-tracker .status-btn{flex:none; font-size:11.5px; font-weight:800; padding:6px 13px; border-radius:999px; border:none; cursor:pointer;}
+#p-tracker .status-btn.todo{background:var(--grey-soft); color:var(--grey);}
+#p-tracker .status-btn.progress{background:var(--gold-soft); color:var(--gold);}
+#p-tracker .status-btn.done{background:var(--euca-soft); color:var(--euca-ink);}
+#p-tracker .booking-note{font-size:12px; color:var(--ink-soft); line-height:1.5; background:var(--surface-alt); border-radius:9px; padding:8px 11px;}
+#p-tracker .booking-input{width:100%; border:1px solid var(--line); background:var(--bg); border-radius:9px; padding:8px 11px; font-size:12.5px; color:var(--ink);}
+#p-tracker .booking-input::placeholder{color:var(--ink-faint);}
+#p-tracker .ecard{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:20px 22px; margin-bottom:14px;}
+#p-tracker .ecard h3{font-size:15px; font-weight:700; margin-bottom:10px; display:flex; align-items:center; gap:8px;}
+#p-tracker .ecard h3 svg{width:20px; height:20px; color:var(--coral);}
+#p-tracker .erow{display:flex; justify-content:space-between; align-items:center; gap:10px; padding:9px 0; border-bottom:1px dashed var(--line);}
+#p-tracker .erow:last-child{border-bottom:none;}
+#p-tracker .erow .elabel{font-size:12.5px; color:var(--ink-faint);}
+#p-tracker .erow .eval{font-size:13px; font-weight:700; font-variant-numeric:tabular-nums;}
+#p-tracker .copy-btn{font-size:10.5px; font-weight:700; color:var(--ocean); background:var(--ocean-soft); border:none; border-radius:999px; padding:4px 10px; cursor:pointer; margin-left:8px;}
+#p-tracker .ecard p.small{margin:8px 0 0; font-size:11.5px; color:var(--ink-faint); line-height:1.5;}
+#p-tracker .fill-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+@media (max-width:520px){
+#p-tracker .fill-grid{grid-template-columns:1fr;}
+}
+#p-tracker .fill-field label{display:block; font-size:11.5px; font-weight:700; color:var(--ink-soft); margin-bottom:5px;}
+#p-tracker .fill-field input{width:100%; border:1px solid var(--line); background:var(--bg); border-radius:9px; padding:9px 11px; font-size:13px; color:var(--ink);}
+#p-tracker .save-note{font-size:11.5px; color:var(--ink-faint); margin-top:10px; display:flex; align-items:center; gap:6px;}
+#p-tracker footer{margin-top:44px; font-size:12px; color:var(--ink-faint); text-align:center;}
+#p-tracker .footer-wrap{max-width:900px; margin:0 auto; padding-inline:20px;}
+  /* Pane fixes after merge */
+  #p-guide .tabbar, #p-tracker .tabbar{margin-top:20px;}
+</style>
+
+<svg style="display:none" aria-hidden="true">
+<symbol id="i-koala" viewBox="0 0 48 48"><circle cx="14" cy="12" r="7"/><circle cx="34" cy="12" r="7"/><circle cx="24" cy="26" r="14"/><circle cx="19" cy="24" r="1.6" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.6" fill="currentColor" stroke="none"/><path d="M20 31c1.5 1.5 6.5 1.5 8 0"/></symbol>
+<symbol id="i-roo" viewBox="0 0 48 48"><path d="M10 40c0-6 3-9 3-14 0-7-3-9-3-14 3-1 7 1 8 5 1-2 3-3 5-3 6 0 9 5 9 10 0 3-1 5-1 8l2 8"/><path d="M22 24c2 0 4 1 5 3"/><circle cx="27" cy="15" r="1.3" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-quokka" viewBox="0 0 48 48"><circle cx="24" cy="26" r="13"/><circle cx="15" cy="16" r="5"/><circle cx="33" cy="16" r="5"/><path d="M18 29c2 3 10 3 12 0" /><circle cx="19" cy="24" r="1.4" fill="currentColor" stroke="none"/><circle cx="29" cy="24" r="1.4" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-penguin" viewBox="0 0 48 48"><path d="M24 8c8 0 12 8 12 18 0 9-5 14-12 14S12 35 12 26C12 16 16 8 24 8z"/><path d="M24 14c4 0 6 5 6 11 0 6-3 9-6 9s-6-3-6-9c0-6 2-11 6-11z"/><circle cx="21" cy="17" r="1.2" fill="currentColor" stroke="none"/><path d="M24 38l-3 5M24 38l3 5"/></symbol>
+<symbol id="i-ferry" viewBox="0 0 48 48"><path d="M8 30h32l-4 9H12l-4-9z"/><path d="M14 30V16h20v14"/><path d="M24 16V8"/><path d="M24 8c4 0 6 3 6 6h-6"/><path d="M4 38c3 2 6 2 9 0s6-2 9 0 6 2 9 0 6-2 9 0"/></symbol>
+<symbol id="i-bridge" viewBox="0 0 48 48"><path d="M4 34c6-14 14-22 20-22s14 8 20 22"/><path d="M4 34h40"/><path d="M12 34V22M20 34v-9M28 34v-9M36 34V22"/></symbol>
+<symbol id="i-picnic" viewBox="0 0 48 48"><rect x="8" y="18" width="32" height="14" rx="2"/><path d="M8 25h32"/><path d="M16 18v-4h16v4"/><circle cx="16" cy="12" r="2"/><path d="M6 38h36"/></symbol>
+<symbol id="i-run" viewBox="0 0 48 48"><circle cx="28" cy="9" r="4"/><path d="M20 40l6-10-4-6 6-5 4 6 8 2"/><path d="M22 24l-8 4 2 8"/><path d="M10 40c6-10 10-26 22-26"/></symbol>
+<symbol id="i-market" viewBox="0 0 48 48"><path d="M6 16l4-8h28l4 8"/><path d="M6 16c0 3 3 5 5 5s5-2 5-5c0 3 3 5 5 5s5-2 5-5c0 3 3 5 5 5s5-2 5-5"/><path d="M10 21v19h28V21"/><path d="M20 40v-9h8v9"/></symbol>
+<symbol id="i-sunset" viewBox="0 0 48 48"><path d="M4 34h40"/><path d="M14 34a10 10 0 0120 0"/><path d="M24 16v-6M13 24l-4-4M35 24l4-4M8 34h4M36 34h4"/></symbol>
+<symbol id="i-plane" viewBox="0 0 48 48"><path d="M6 26l36-14-14 36-4-14-14-4 18-8"/></symbol>
+<symbol id="i-tour" viewBox="0 0 48 48"><path d="M6 40l10-24 8 6 8-14 10 32z"/><circle cx="16" cy="10" r="4"/></symbol>
+<symbol id="i-wave" viewBox="0 0 48 48"><path d="M4 20c4-4 8-4 12 0s8 4 12 0 8-4 12 0 8 4 12 0"/><path d="M4 30c4-4 8-4 12 0s8 4 12 0 8-4 12 0 8 4 12 0"/></symbol>
+<symbol id="i-grape" viewBox="0 0 48 48"><circle cx="18" cy="20" r="5"/><circle cx="28" cy="20" r="5"/><circle cx="23" cy="28" r="5"/><circle cx="14" cy="30" r="5"/><circle cx="32" cy="30" r="5"/><circle cx="23" cy="10" r="4"/><path d="M23 6v4"/></symbol>
+<symbol id="i-bbq" viewBox="0 0 48 48"><path d="M24 6c-3 4-5 6-5 9a5 5 0 0010 0c0-2-1-3-2-5 1 2 3 3 3 6a6 6 0 01-12 0c0-5 3-7 6-10z"/><ellipse cx="24" cy="34" rx="14" ry="6"/><path d="M10 34v4a14 6 0 0028 0v-4"/></symbol>
+<symbol id="i-coffee" viewBox="0 0 48 48"><path d="M10 18h22v12a11 11 0 01-22 0V18z"/><path d="M32 20h4a5 5 0 010 10h-4"/><path d="M16 10c0 2-2 2-2 4M23 10c0 2-2 2-2 4M30 10c0 2-2 2-2 4"/></symbol>
+<symbol id="i-passport" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="36" rx="3"/><circle cx="24" cy="20" r="6"/><path d="M16 34c1-4 4-6 8-6s7 2 8 6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 48 48"><path d="M24 5l16 6v11c0 11-7 18-16 21-9-3-16-10-16-21V11z"/><path d="M17 24l5 5 9-11"/></symbol>
+<symbol id="i-plug" viewBox="0 0 48 48"><path d="M16 6v12M32 6v12"/><rect x="10" y="18" width="28" height="14" rx="3"/><path d="M24 32v6a6 6 0 01-12 0v-2"/></symbol>
+<symbol id="i-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="9"/><path d="M24 4v6M24 38v6M4 24h6M38 24h6M9 9l4 4M35 35l4 4M39 9l-4 4M13 35l-4 4"/></symbol>
+<symbol id="i-pill" viewBox="0 0 48 48"><rect x="8" y="20" width="32" height="14" rx="7" transform="rotate(-30 24 27)"/><path d="M22 18l6 12"/></symbol>
+<symbol id="i-bug" viewBox="0 0 48 48"><ellipse cx="24" cy="26" rx="10" ry="13"/><path d="M24 13v-6M17 17l-6-5M31 17l6-5M16 26H6M42 26H32M17 35l-6 5M31 35l6 5"/></symbol>
+<symbol id="i-coin" viewBox="0 0 48 48"><circle cx="24" cy="24" r="17"/><path d="M24 15v18M19 19c0-3 2-4 5-4s5 1.5 5 4-2 3.5-5 4-5 1-5 4 2 4 5 4 5-1 5-4"/></symbol>
+<symbol id="i-car" viewBox="0 0 48 48"><path d="M6 30l4-11c1-3 3-4 6-4h16c3 0 5 1 6 4l4 11"/><rect x="4" y="30" width="40" height="10" rx="3"/><circle cx="13" cy="40" r="3"/><circle cx="35" cy="40" r="3"/></symbol>
+<symbol id="i-boomerang" viewBox="0 0 48 48"><path d="M8 34c2-14 10-24 22-24 2 6-1 10-6 12 8 0 14 5 16 12-8-3-14-1-17 4-5-1-9-2-15-4z"/></symbol>
+<symbol id="i-opera" viewBox="0 0 48 48"><path d="M4 40h40"/><path d="M8 40V26c4-6 8-9 10-9s2 3 0 5-6 4-6 9v9"/><path d="M18 40V24c5-8 9-11 11-11s2 4-1 7-7 5-7 11v9"/><path d="M30 40V27c4-6 7-8 9-8s2 3 0 5-5 4-5 8v8"/></symbol>
+<symbol id="i-ausflag" viewBox="0 0 24 16"><rect width="24" height="16" fill="#00247D"/><circle cx="18" cy="4" r="1.3" fill="#fff"/><circle cx="20.5" cy="7" r="1.6" fill="#fff"/><circle cx="19.5" cy="10.5" r="1.1" fill="#fff"/><circle cx="16.5" cy="9" r="0.9" fill="#fff"/><circle cx="21.5" cy="11.5" r="0.8" fill="#fff"/></symbol>
+<symbol id="i-firework" viewBox="0 0 48 48"><path d="M24 6v10M24 32v10M6 24h10M32 24h10M11 11l7 7M30 30l7 7M37 11l-7 7M18 30l-7 7"/><circle cx="24" cy="24" r="4"/></symbol>
+<symbol id="i-palette" viewBox="0 0 48 48"><path d="M24 6c-11 0-18 8-18 17 0 6 4 9 8 9 2 0 3-1 3-3s-1-2-1-4c0-4 4-6 8-6 7 0 12-4 12-10 0-2-1-3-2-3z"/><circle cx="16" cy="20" r="2" fill="currentColor" stroke="none"/><circle cx="24" cy="15" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="19" r="2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-croissant" viewBox="0 0 48 48"><path d="M6 30c4-14 16-22 30-18-3 3-4 6-3 9 3-1 6 0 8 3-12 2-18 10-19 18C15 42 8 38 6 30z"/></symbol>
+<symbol id="i-ribs" viewBox="0 0 48 48"><path d="M8 14c0-4 3-6 6-6s5 2 6 5c1-3 3-5 6-5s6 2 6 6l4 26H12z"/><path d="M14 18v20M22 15v25M30 18v20"/></symbol>
+<symbol id="i-pizza" viewBox="0 0 48 48"><path d="M24 6l18 34H6z"/><circle cx="20" cy="24" r="2" fill="currentColor" stroke="none"/><circle cx="27" cy="28" r="2" fill="currentColor" stroke="none"/><circle cx="24" cy="18" r="2" fill="currentColor" stroke="none"/></symbol>
+<symbol id="i-cart" viewBox="0 0 48 48"><path d="M6 8h5l4 24h22l4-16H15"/><circle cx="19" cy="38" r="3"/><circle cx="33" cy="38" r="3"/></symbol>
+<symbol id="i-honey" viewBox="0 0 48 48"><path d="M16 8h16l3 6-3 6 3 6-3 6 3 6H16l-3-6 3-6-3-6 3-6z"/></symbol>
+<symbol id="i-leaf" viewBox="0 0 48 48"><path d="M8 40C8 20 24 6 42 6c0 18-14 34-34 34z"/><path d="M12 40c8-10 16-18 26-28"/></symbol>
+<symbol id="i-bag" viewBox="0 0 48 48"><path d="M10 16h28l-2 26H12z"/><path d="M17 16v-2a7 7 0 0114 0v2"/></symbol>
+<symbol id="i-bed" viewBox="0 0 48 48"><path d="M6 40V20a4 4 0 014-4h28a4 4 0 014 4v20"/><path d="M6 32h36"/><circle cx="14" cy="22" r="3"/><path d="M20 22h14"/></symbol>
+<symbol id="i-train" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="26" rx="6"/><path d="M10 22h28"/><circle cx="16" cy="27" r="2" fill="currentColor" stroke="none"/><circle cx="32" cy="27" r="2" fill="currentColor" stroke="none"/><path d="M14 32l-5 10M34 32l5 10"/></symbol>
+<symbol id="i-map" viewBox="0 0 48 48"><path d="M24 6c7 0 12 5 12 12 0 9-12 24-12 24S12 27 12 18C12 11 17 6 24 6z"/><circle cx="24" cy="18" r="4"/></symbol>
+<symbol id="i-check" viewBox="0 0 48 48"><path d="M10 25l9 9 19-20"/></symbol>
+<symbol id="i-plus" viewBox="0 0 48 48"><path d="M24 10v28M10 24h28"/></symbol>
+<symbol id="i-ferris" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16"/><circle cx="24" cy="24" r="3" fill="currentColor" stroke="none"/><path d="M24 8v32M8 24h32M13 13l22 22M35 13L13 35"/></symbol>
+<symbol id="i-bridge2" viewBox="0 0 48 48"><path d="M4 34c6-14 14-22 20-22s14 8 20 22"/><path d="M4 34h40"/><path d="M12 34V22M20 34v-9M28 34v-9M36 34V22"/></symbol>
+<symbol id="i-farm" viewBox="0 0 48 48"><path d="M8 40V20l16-12 16 12v20z"/><path d="M20 40V28h8v12"/><circle cx="24" cy="20" r="3"/></symbol>
+<symbol id="i-noodle" viewBox="0 0 48 48"><ellipse cx="24" cy="34" rx="16" ry="6"/><path d="M12 34c0-10 2-18 4-24M20 34c0-12 1-20 2-26M28 34c0-12-1-20-2-26M36 34c-2-6-4-14-4-24"/></symbol>
+<symbol id="i-seaweed" viewBox="0 0 48 48"><rect x="8" y="6" width="32" height="36" rx="2"/><path d="M8 16h32M8 26h32M8 36h32"/></symbol>
+<symbol id="i-siren" viewBox="0 0 48 48"><path d="M10 40V26a14 14 0 0128 0v14"/><path d="M6 40h36"/><path d="M24 6v6M14 10l3 5M34 10l-3 5"/></symbol>
+<symbol id="i-building" viewBox="0 0 48 48"><rect x="10" y="6" width="28" height="38"/><path d="M16 14h4M28 14h4M16 22h4M28 22h4M16 30h4M28 30h4M20 44v-8h8v8"/></symbol>
+<symbol id="i-phone" viewBox="0 0 48 48"><path d="M10 8h8l3 8-5 4c2 6 6 10 12 12l4-5 8 3v8c0 2-2 4-4 4-16-1-28-13-29-29 0-2 1-5 3-5z"/></symbol>
+</svg>
+
+<div class="s-hero">
+  <div class="s-wrap">
+    <div>
+      <span class="s-eyebrow"><svg viewBox="0 0 24 16" aria-hidden="true"><use href="#i-ausflag"/></svg>2027.02.09 – 02.19 · 가족 4인</span>
+      <h1>호주 가족여행</h1>
+      <p>시드니 하버의 노을, 해변까지 내려오는 캥거루, 매일 한 번의 수영. 계획부터 예약까지 여기 한곳에 모았어요.</p>
+    </div>
+    <div class="s-fx">
+      <div class="hd">호주 지금</div>
+      <div class="row"><span>1 AUD</span><b>945원</b></div>
+      <div class="row"><span>시드니</span><b>18℃ 맑음</b></div>
+      <div class="row"><span>멜버른</span><b>14℃ 구름</b></div>
+      <div class="dt">2026.10.01 확인값 · 자동 갱신 아님</div>
+    </div>
+  </div>
+</div>
+
+<nav class="s-tabs" aria-label="여행 계획 섹션">
+  <div class="s-wrap">
+    <button class="gtab active" data-tab="home" onclick="goTab('home')">홈</button>
+    <button class="gtab" data-tab="builder" onclick="goTab('builder')">루트 빌더</button>
+    <button class="gtab" data-tab="plan" onclick="goTab('plan')">여정표 A/B</button>
+    <button class="gtab" data-tab="guide" onclick="goTab('guide')">가이드</button>
+    <button class="gtab" data-tab="tracker" onclick="goTab('tracker')">예약 · 비상연락</button>
+  </div>
+</nav>
+
+<div class="pane on" id="p-home">
+  <div class="s-wrap hm">
+    <section>
+      <h2>확정된 것과 남은 것</h2>
+      <div class="hm-facts">
+        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
+        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
+        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50</div><span class="hm-pill ok">예약 완료</span></div>
+        <div class="hm-fact"><div class="k">2/14 이후</div><div class="v">숙소 · 국내선 · 투어</div><div class="d">멜버른을 갈지, 시드니 근교만 돌지에 따라 달라져요</div><span class="hm-pill todo">미예약</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>어디부터 볼까요</h2>
+      <div class="hm-nav">
+        <button class="hm-go" style="background-image:url('img/bluemountains.jpg')" onclick="goTab('builder')"><b>루트 빌더</b><span>하루씩 테마를 골라 우리 가족 루트 완성하기</span></button>
+        <button class="hm-go" style="background-image:url('img/twelveapostles.jpg')" onclick="goTab('plan')"><b>여정표 A/B</b><span>모험형과 여유형, 미리 짜둔 두 가지 코스</span></button>
+        <button class="hm-go" style="background-image:url('img/bondi.jpg')" onclick="goTab('guide')"><b>가이드</b><span>가볼만한곳, 맛집·카페, 마트, 출발 전 유의사항</span></button>
+        <button class="hm-go" style="background-image:url('img/circularquay.jpg')" onclick="goTab('tracker')"><b>예약 · 비상연락</b><span>예약 진행 체크와 총영사관·응급 연락처</span></button>
+      </div>
+    </section>
+
+    <section>
+      <h2>이번 여행에서 만날 것들</h2>
+      <p class="sub">아이들이 기다리는 동물과 수영, 그리고 어른들이 기다리는 풍경이에요.</p>
+      <div class="hm-gallery">
+        <figure class="hm-shot wide tall"><img src="img/hero_koala.jpg" alt="유칼립투스 잎을 먹는 코알라" loading="lazy"><figcaption>코알라</figcaption></figure>
+        <figure class="hm-shot"><img src="img/wombattour.jpg" alt="웜뱃" loading="lazy"><figcaption>웜뱃</figcaption></figure>
+        <figure class="hm-shot"><img src="img/hero_quokka.jpg" alt="쿼카" loading="lazy"><figcaption>쿼카</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/phillip.jpg" alt="해변을 걷는 리틀펭귄 무리" loading="lazy"><figcaption>필립아일랜드 리틀펭귄</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/northsydneypool.jpg" alt="하버브리지 아래 노스 시드니 올림픽 풀" loading="lazy"><figcaption>노스 시드니 올림픽 풀 · 필수 일정</figcaption></figure>
+        <figure class="hm-shot"><img src="img/murramarang.jpg" alt="머라마랑 해변 풀밭의 캥거루" loading="lazy"><figcaption>해변의 캥거루</figcaption></figure>
+        <figure class="hm-shot"><img src="img/icebergs.jpg" alt="본다이 아이스버그스 수영장" loading="lazy"><figcaption>본다이 아이스버그스</figcaption></figure>
+        <figure class="hm-shot wide"><img src="img/greatoceanroad.jpg" alt="그레이트오션로드 해안 절벽" loading="lazy"><figcaption>그레이트오션로드</figcaption></figure>
+        <figure class="hm-shot"><img src="img/jervisbay.jpg" alt="저비스베이 하이엄스비치" loading="lazy"><figcaption>저비스베이</figcaption></figure>
+        <figure class="hm-shot"><img src="img/mrsmacquarie.jpg" alt="미세스 매쿼리스 포인트의 노을" loading="lazy"><figcaption>하버 노을</figcaption></figure>
+      </div>
+    </section>
+
+    <details class="s-credits">
+      <summary>사진 출처 (위키미디어 커먼즈, 자유 라이선스)</summary>
+      <ul>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Koala_m%C3%A2chonnant_une_feuille_d%27eucalyptus,_Queensland,_Australie,_2014.jpg" target="_blank" rel="noopener">Koala mâchonnant une feuille d&#x27;eucalyptus, Queensland, Australie, 2014</a> · cuatrok77 · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Pebbly_Beach_Escape_kangaroo_basking.jpg" target="_blank" rel="noopener">Pebbly Beach Escape kangaroo basking</a> · Kylz22 · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Quokka_and_Joey_at_the_Rottnest_Bakery,_July_2026.jpg" target="_blank" rel="noopener">Quokka and Joey at the Rottnest Bakery, July 2026</a> · JamesHenstridge · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Vombatus_ursinus_-Maria_Island_National_Park.jpg" target="_blank" rel="noopener">Vombatus ursinus -Maria Island National Park</a> · JJ Harrison (jjharrison89@facebook.com) · CC BY-SA 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Bondi_Beach_--_2019_--_2354.jpg" target="_blank" rel="noopener">Sydney (AU), Bondi Beach -- 2019 -- 2354</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Icebergs_Club_and_Bondi_Beach.JPG" target="_blank" rel="noopener">Icebergs Club and Bondi Beach</a> · Tim Grubb · CC BY-SA 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Bondi_coastal_walk_-_panoramio.jpg" target="_blank" rel="noopener">Bondi coastal walk - panoramio</a> · Maurice van Creij · CC BY 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:AUS_Sydney,_Randwick,_Coogee_Beach_001.jpg" target="_blank" rel="noopener">AUS Sydney, Randwick, Coogee Beach 001</a> · -wuppertaler · CC BY 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Clovelly_2.JPG" target="_blank" rel="noopener">Clovelly 2</a> · J Bar · CC BY 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Clovelly_Bay_-_panoramio.jpg" target="_blank" rel="noopener">Clovelly Bay - panoramio</a> · Maurice van Creij · CC BY 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:2020-10-24_Manly_Beach_5.jpg" target="_blank" rel="noopener">2020-10-24 Manly Beach 5</a> · Maksym Kozlenko · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Looking_over_Shelly_Beach_and_Cabbage_Tree_Bay_in_Sydney.jpg" target="_blank" rel="noopener">Looking over Shelly Beach and Cabbage Tree Bay in Sydney</a> · Hardlinerr · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:The_Gap,_Watsons_Bay,_Sydney,_2021.jpg" target="_blank" rel="noopener">The Gap, Watsons Bay, Sydney, 2021</a> · Leoxiong · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Balmoral_Mosman_in_Sydney.jpg" target="_blank" rel="noopener">Balmoral Mosman in Sydney</a> · Junekingsyd · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Taronga_zoo,_Sydney,_Australia_(193338219).jpg" target="_blank" rel="noopener">Taronga zoo, Sydney, Australia (193338219)</a> · pelican from Tokyo, Japan · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Darling_Harbour_Fireworks.jpg" target="_blank" rel="noopener">Darling Harbour Fireworks</a> · JustARandomEditor123 · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Art_Gallery_of_New_South_Wales_--_2019_--_3103.jpg" target="_blank" rel="noopener">Sydney (AU), Art Gallery of New South Wales -- 2019 -- 3103</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_Opera_House_from_Circular_Quay,_2023,_10.jpg" target="_blank" rel="noopener">Sydney Opera House from Circular Quay, 2023, 10</a> · Kgbo · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_(AU),_Darling_Harbour_--_2019_--_2064-9.jpg" target="_blank" rel="noopener">Sydney (AU), Darling Harbour -- 2019 -- 2064-9</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Barangaroo_Reserve_View1_201708.jpg" target="_blank" rel="noopener">Barangaroo Reserve View1 201708</a> · Wpcpey · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_Fish_Market_north.jpg" target="_blank" rel="noopener">Sydney Fish Market north</a> · Riedsa · CC0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:The_Powerhouse_Museum_,_Science_-_Design_,_Sydney_Australia_was_taken_on_the_Tuesday,_8th_October_2013_@_12-30pm._-_panoramio.jpg" target="_blank" rel="noopener">The Powerhouse Museum , Science - Design , Sydney Australia was taken on the Tuesday, 8th October 2013 @ 12-30pm. - panoramio</a> · Christopher Wood · CC BY-SA 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Olimpic_Swimming_pool_Sydney.JPG" target="_blank" rel="noopener">Olimpic Swimming pool Sydney</a> · Dinkum · CC0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Luna_Park-Sydney-Australia.JPG" target="_blank" rel="noopener">Luna Park-Sydney-Australia</a> · No machine-readable author provided. Joanjoc~commonswiki assumed (based on copyr · Public domain</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Wendys_Secret_Garden_MRD_04.jpg" target="_blank" rel="noopener">Wendys Secret Garden MRD 04</a> · Mike Dickison · CC BY 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Darling_Harbour_and_Tumbalong_Park_with_Sydney_Skyline_2019.jpg" target="_blank" rel="noopener">Darling Harbour and Tumbalong Park with Sydney Skyline 2019</a> · Believetheswype · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Amazing_sunset_view_from_Macquarie%27s_Chair.jpg" target="_blank" rel="noopener">Amazing sunset view from Macquarie&#x27;s Chair</a> · Prajwal433 · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Paddington_Reservoir_Gardens_2010.jpg" target="_blank" rel="noopener">Paddington Reservoir Gardens 2010</a> · Twistie.man (talk) · CC BY-SA 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Part_of_Paddington_Markets_April_2026.jpg" target="_blank" rel="noopener">Part of Paddington Markets April 2026</a> · Nick-D · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Centennial_park_in_Sydney_(20).jpg" target="_blank" rel="noopener">Centennial park in Sydney (20)</a> · Batsv · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:(1)Camperdown_Memorial_Rest_Park.jpg" target="_blank" rel="noopener">(1)Camperdown Memorial Rest Park</a> · Sardaka · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Hosier_Lane_Melbourne._(21380271866).jpg" target="_blank" rel="noopener">Hosier Lane Melbourne. (21380271866)</a> · Bernard Spragg. NZ from Christchurch, New Zealand · CC0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Degraves_Street,_Melbourne,_February_2022.jpg" target="_blank" rel="noopener">Degraves Street, Melbourne, February 2022</a> · Philip Mallis · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:ACMI,_aerial_view_(photo_by_Phoebe_Powell).jpg" target="_blank" rel="noopener">ACMI, aerial view (photo by Phoebe Powell)</a> · Ravalight · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Trobe_Reading_Room_State_Library_of_Victoria_interior.jpg" target="_blank" rel="noopener">Trobe Reading Room State Library of Victoria interior</a> · Bhullargraphic · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Skyline_of_Melbourne_(Feb_2021).jpg" target="_blank" rel="noopener">Skyline of Melbourne (Feb 2021)</a> · Ricardo Gonclaves · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sea_Life_Melbourne_Aquarium-Southbank_view.jpg" target="_blank" rel="noopener">Sea Life Melbourne Aquarium-Southbank view</a> · Shkuru Afshar · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:AUS_Melbourne,_Melbourne,_Carlton_Gardens_018.jpg" target="_blank" rel="noopener">AUS Melbourne, Melbourne, Carlton Gardens 018</a> · -wuppertaler · CC BY 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Melbourne_Zoo_Carousel_KH1.jpg" target="_blank" rel="noopener">Melbourne Zoo Carousel KH1</a> · sophbax22 · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:AUS_Melbourne,_Melbourne,_Fitzroy_Gardens_014.jpg" target="_blank" rel="noopener">AUS Melbourne, Melbourne, Fitzroy Gardens 014</a> · -wuppertaler · CC BY 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Collingwood_Children%27s_Farm_-_goats.JPG" target="_blank" rel="noopener">Collingwood Children&#x27;s Farm - goats</a> · me (w:User:pfctdayelise) · CC BY-SA 2.5</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Spotswood_Pumping_Station,Spotswood,_Victoria_Australia.jpg" target="_blank" rel="noopener">Spotswood Pumping Station,Spotswood, Victoria Australia</a> · Rexness · CC BY-SA 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Healesville_Tachyglossus_aculeatus_in_Healesville_Sanctuary_05.jpg" target="_blank" rel="noopener">Healesville Tachyglossus aculeatus in Healesville Sanctuary 05</a> · Ymblanter · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Puffing_Billy_Railway_12A_on_the_Monbulk_Creek_Trestle_Bridge_-_October_2015_-_03.jpg" target="_blank" rel="noopener">Puffing Billy Railway 12A on the Monbulk Creek Trestle Bridge - October 2015 - 03</a> · Alan Samuel · CC BY 2.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Peterborough_(AU),_Port_Campbell_National_Park,_The_Grotto_--_2019_--_0889.jpg" target="_blank" rel="noopener">Peterborough (AU), Port Campbell National Park, The Grotto -- 2019 -- 0889</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:The_London_Arch,_Port_Campbell_National_Park,_Australia.jpg" target="_blank" rel="noopener">The London Arch, Port Campbell National Park, Australia</a> · Aman Srivastava · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Princetown_(AU),_Port_Campbell_National_Park,_Twelve_Apostles_--_2019_--_1017.jpg" target="_blank" rel="noopener">Princetown (AU), Port Campbell National Park, Twelve Apostles -- 2019 -- 1017</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Koala_in_eucalyptus.jpg" target="_blank" rel="noopener">Koala in eucalyptus</a> · KobiWiki · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Hyams_Beach_-_Jervis_Bay_Marine_Park.jpg" target="_blank" rel="noopener">Hyams Beach - Jervis Bay Marine Park</a> · Charliekay · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Pebbly_Beach_Escape_kangaroo_basking.jpg" target="_blank" rel="noopener">Pebbly Beach Escape kangaroo basking</a> · Kylz22 · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Island_Archway,_Great_Ocean_Rd,_Victoria,_Australia_-_Nov_08.jpg" target="_blank" rel="noopener">Island Archway, Great Ocean Rd, Victoria, Australia - Nov 08</a> · Diliff · CC BY-SA 3.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Phillip_Island_banner.jpg" target="_blank" rel="noopener">Phillip Island banner</a> · Phillipislandtourism · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Blue_mountains_-_three_sisters.jpg" target="_blank" rel="noopener">Blue mountains - three sisters</a> · 작가 미상 · CC BY-SA 2.5</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Melbourne_(AU),_St_Kilda_Pier,_Pavilion_--_2019_--_1594.jpg" target="_blank" rel="noopener">Melbourne (AU), St Kilda Pier, Pavilion -- 2019 -- 1594</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Melbourne_(AU),_Queen_Victoria_Market_--_2019_--_1535.jpg" target="_blank" rel="noopener">Melbourne (AU), Queen Victoria Market -- 2019 -- 1535</a> · Dietmar Rabich · CC BY-SA 4.0</li>
+        <li><a href="https://commons.wikimedia.org/wiki/File:Sydney_Harbour_including_Harbour_bridge_and_Opera_House.jpg" target="_blank" rel="noopener">Sydney Harbour including Harbour bridge and Opera House</a> · Gibrate1 · CC0</li>
+      </ul>
+    </details>
+  </div>
+</div>
+
+<div class="pane" id="p-builder"><div class="wrap">
+
+  <div class="fx-bar">
+    <span class="fx-label">AUD → KRW</span>
+    <span class="fx-rate">1 AUD ≈ 993원</span>
+    <div class="fx-sep"></div>
+    <span class="fx-sub">시드니 호텔 예약분 AUD 1,867.50 ≈ 약 185만원</span>
+    <span class="fx-date">2026.09.28 기준 · 환전 시점에 재확인 필요</span>
+  </div>
+
+  <header>
+    <span class="eyebrow">2027.02.09 ~ 02.19 · 가족 4인 · 인터랙티브 루트 빌더</span>
+    <h1>하루씩 테마를 골라 루트 완성하기</h1>
+    <p class="lede" id="lede-text">시드니 3일 · 멜버른 3일, 각 날짜마다 테마를 하나씩 고르세요. 고른 테마는 다른 날짜 선택지에서 빠지고, 전날 강도에 따라 다음 날 추천 테마가 바뀌어요. 선택은 저장되니 나중에 다시 열어도 이어집니다.</p>
+
+    <div class="mode-toggle">
+      <button class="mode-btn" id="mode-btn-MEL" onclick="setMode('WITH_MEL')">시드니 + 멜버른</button>
+      <button class="mode-btn" id="mode-btn-SYD" onclick="setMode('SYD_ONLY')">시드니 중심(멜버른 없이)</button>
+    </div>
+    <div class="mode-note" id="mode-note"></div>
+
+    <div class="presets" id="preset-row"></div>
+  </header>
+
+  <section style="margin-top:26px;">
+    <div class="section-head">
+      <h2>전체 개요</h2>
+      <span class="cnt">숙소 예약 현황 + 대표 일정</span>
+    </div>
+    <div class="overview-scroll"><div class="overview-row" id="overview-row"></div></div>
+  </section>
+
+  <div id="root"><div class="skeleton">불러오는 중…</div></div>
+
+  <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 선택 상태는 이 아티팩트에 저장됩니다</footer>
+</div></div>
+<div class="pane" id="p-plan"><!-- Icon symbol sprite -->
+
+
+<div class="wrap">
+
+  <header>
+    <span class="eyebrow">2027.02.09 ~ 02.19 · 가족 4인</span>
+    <h1>시드니 · 멜버른, 두 갈래 코스</h1>
+    <p class="lede">발권된 국제선(인천↔시드니)과 예약된 시드니 호텔은 그대로 두고, 성향이 다른 두 가지 코스를 나란히 짰습니다. <b>플랜 A</b>는 특별한 동물체험과 자연 스케일을 최대화한 모험형, <b>플랜 B</b>는 동물원·유람선·피크닉·노을처럼 여유를 최대화한 라이프스타일형이에요.</p>
+
+    <div class="flight-strip">
+      <div class="flight-card">
+        <span class="route">국제선 · 가는 편</span>
+        <span class="num">OZ601</span>
+        <span class="time">2/9(화) 20:00 인천 → 2/10(수) 약 08:30 시드니</span>
+      </div>
+      <div class="flight-card">
+        <span class="route">국제선 · 오는 편</span>
+        <span class="num">OZ602</span>
+        <span class="time">2/19(금) 10:20 시드니 출발</span>
+      </div>
+      <div class="flight-card">
+        <span class="route">숙소</span>
+        <span class="num">메리턴 스위트 월드타워</span>
+        <span class="time">2/10~2/14, 4박 예약 완료 (AUD 1,867.50 ≈ 약 185만원)</span>
+      </div>
+    </div>
+
+    <div style="margin-top:16px; background:var(--low-soft); border:1px solid color-mix(in srgb, var(--low) 40%, transparent); border-radius:14px; padding:14px 18px; font-size:13px; color:var(--ink); line-height:1.6;">
+      <b style="color:var(--low);">읽고 시작하세요:</b> 이 문서는 <b>멜버른을 포함하는 시나리오 전용</b>이에요. 멜버른 없이 시드니 근교만 도는 안을 고려 중이면 <a href="#builder" onclick="goTab('builder');return false;" style="color:var(--low); font-weight:700;">루트 빌더의 "시드니 중심" 모드</a>를 참고하세요. 또한 <b>Plan A(모험형, 738~958만원)는 예산 상한(500~800만원)을 초과할 수 있어요</b> — 예산이 최우선이면 Plan B(564~704만원)를 추천해요.
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <h2>플랜 A vs 플랜 B</h2>
+      <p>같은 항공권·같은 호텔에서 출발하지만, 하루를 채우는 방식이 달라요.</p>
+    </div>
+    <div class="plan-choice">
+      <div class="plan-card a">
+        <span class="tag">Plan A · 모험형</span>
+        <h3>특별한 동물체험 + 자연 스케일</h3>
+        <p>웜뱃을 직접 안고, 블루마운틴·그레이트오션로드의 압도적 풍경을 본다. 이동은 길지만 "평생 기억에 남을 장면"이 많다.</p>
+        <div class="plan-icons">
+          <span class="pi"><svg class="ic"><use href="#i-quokka"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-tour"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-penguin"/></svg></span>
+        </div>
+        <div class="plan-stat"><span>예상 경비(4인, 항공료 제외)</span><b>738~958만원</b></div>
+        <p style="margin-top:2px; font-size:11.5px; color:var(--low);">주의: 9일 중 명시적 수영은 2/12(본다이) 단 하루뿐 — "수영+새동물" 우선순위 중 동물 쪽에 치우쳐 있어요.</p>
+      </div>
+      <div class="plan-card b">
+        <span class="tag">Plan B · 라이프스타일형</span>
+        <h3>동물원 + 유람선 + 피크닉 + 노을</h3>
+        <p>동물은 가까운 동물원에서 여유 있게 보고, 나머지는 조깅·마켓·집밥·노을처럼 현지인처럼 사는 하루하루. 이동이 적어 아이들 체력 부담이 훨씬 적다.</p>
+        <div class="plan-icons">
+          <span class="pi"><svg class="ic"><use href="#i-picnic"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-ferry"/></svg></span>
+          <span class="pi"><svg class="ic"><use href="#i-sunset"/></svg></span>
+        </div>
+        <div class="plan-stat"><span>예상 경비(4인, 항공료 제외)</span><b>564~704만원</b></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Plan A · 모험형 요약</h2>
+      <p>이전에 확정했던 안 그대로예요 — 자세한 시간표는 아래 Plan B와 같은 형식으로 참고만 하시고, 핵심만 축약했습니다.</p>
+    </div>
+    <div class="a-line">
+      <div class="a-row"><span class="d">2/10 수</span><span class="ic"><svg class="ic"><use href="#i-ferry"/></svg></span><span class="tx"><b>도착 · 시차 적응</b><span>달링하버, 호텔 체크인</span></span></div>
+      <div class="a-row"><span class="d">2/11 목</span><span class="ic"><svg class="ic"><use href="#i-quokka"/></svg></span><span class="tx"><b>웜뱃투어</b><span>웜뱃 직접 안기 + 코알라·쿼카 관찰, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/12 금</span><span class="ic"><svg class="ic"><use href="#i-run"/></svg></span><span class="tx"><b>시티 + 본다이비치</b><span>회복일, 시티워킹 + 해변 수영</span></span></div>
+      <div class="a-row"><span class="d">2/13 토</span><span class="ic"><svg class="ic"><use href="#i-roo"/></svg></span><span class="tx"><b>블루마운틴 + 페더데일</b><span>코알라·캥거루 근접체험 + 전망대, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/14 일</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>멜버른 이동</b><span>국내선, 저녁 레인웨이 식사</span></span></div>
+      <div class="a-row"><span class="d">2/15 월</span><span class="ic"><svg class="ic"><use href="#i-market"/></svg></span><span class="tx"><b>멜버른 시티</b><span>퀸빅토리아마켓, 보타닉가든</span></span></div>
+      <div class="a-row"><span class="d">2/16 화</span><span class="ic"><svg class="ic"><use href="#i-tour"/></svg></span><span class="tx"><b>그레이트오션로드</b><span>12사도 + 야생 코알라 관찰, 풀데이</span></span></div>
+      <div class="a-row"><span class="d">2/17 수</span><span class="ic"><svg class="ic"><use href="#i-penguin"/></svg></span><span class="tx"><b>필립아일랜드</b><span>오전 휴식 + 저녁 펭귄퍼레이드</span></span></div>
+      <div class="a-row"><span class="d">2/18 목</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>시드니 복귀</b><span>공항 인근 1박</span></span></div>
+      <div class="a-row"><span class="d">2/19 금</span><span class="ic"><svg class="ic"><use href="#i-plane"/></svg></span><span class="tx"><b>귀국</b><span>10:20 OZ602</span></span></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Plan B · 라이프스타일형 상세</h2>
+      <p>동물원(코알라·캥거루·왈라비), 브릿지 뷰 피크닉, 유람선, 해변 조깅, 마켓, 집밥, 카페, 노을 — 요청하신 요소를 하루하루에 풀어 담았어요.</p>
+    </div>
+
+    <div class="daywrap">
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-sunset"/></svg></div>
+        <div class="day-date"><span class="dow">Wed</span><span class="dom">2/10</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>도착 · 첫 노을</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>08:30 도착 → 짐 보관 → 달링하버 가볍게 산책, 근처 카페에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>체크인, 근처 마트(울월스)에서 장보기 — 이번 트립 첫 집밥 재료</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>달링하버에서 <b>첫 노을</b> 감상 후 숙소에서 가볍게 저녁</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-ferry"/></svg></div>
+        <div class="day-date"><span class="dow">Thu</span><span class="dom">2/11</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>타롱가동물원 + 옵저버토리힐 피크닉</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>써큘러키에서 <b>페리(유람선)</b>를 타고 타롱가동물원으로 — 하버브리지·오페라하우스를 바다에서 감상</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>코알라·캥거루·왈라비 근접 관찰 (쿼카 전시는 방문 전 홈페이지 확인 추천)</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>더록스 <b>옵저버토리힐 파크</b>에서 하버브리지가 보이는 잔디밭에 돗자리 펴고 피크닉</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-koala"/></svg>코알라</span><span class="mini-tag"><svg class="ic"><use href="#i-roo"/></svg>캥거루</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span><span class="mini-tag"><svg class="ic"><use href="#i-picnic"/></svg>피크닉</span><span class="mini-tag"><svg class="ic"><use href="#i-bridge"/></svg>브릿지뷰</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-run"/></svg></div>
+        <div class="day-date"><span class="dow">Fri</span><span class="dom">2/12</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>해변 조깅 + 장보기 + 집밥</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">아침</span><span>본다이비치~쿠지비치 <b>해안 조깅</b>(3.5km, 유모차·아이 페이스면 절반만 걸어도 충분히 예쁨)</span></div>
+            <div class="plan-row"><span class="tod">오전</span><span>본다이 근처 <b>카페</b>에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>본다이비치 수영, 돌아오는 길에 장보기(스테이크·해산물)</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>숙소에서 <b>고기 구워먹기</b> — 취사 가능 객실 활용</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-run"/></svg>조깅</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span><span class="mini-tag"><svg class="ic"><use href="#i-bbq"/></svg>집밥</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-market"/></svg></div>
+        <div class="day-date"><span class="dow">Sat</span><span class="dom">2/13</span><span class="city-tag syd">시드니</span></div>
+        <div class="day-body">
+          <h3>마켓 + 시내 + 선셋 하버크루즈</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span><b>캐리지웍스 마켓</b>(08:00~13:00) — 로컬 파머스마켓, 커피·페이스트리</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>QVB·시티 여유롭게 쇼핑</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span><b>선셋 하버크루즈</b> — 유람선에서 노을+하버브리지 야경을 동시에</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-market"/></svg>마켓</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Sun</span><span class="dom">2/14</span><span class="city-tag syd">이동</span></div>
+        <div class="day-body">
+          <h3>시드니 → 멜버른</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>체크아웃, 마지막 짐 정리</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>국내선 이동(약 1시간 25분), 멜버른 취사 가능 숙소 체크인</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>레인웨이(골목길) 카페에서 가볍게 첫 저녁</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-market"/></svg></div>
+        <div class="day-date"><span class="dow">Mon</span><span class="dom">2/15</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>퀸빅토리아마켓 + 보타닉가든 피크닉 + 집밥</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span><b>퀸빅토리아마켓</b>에서 장보기 — 델리·치즈·과일까지 다 여기서</span></div>
+            <div class="plan-row"><span class="tod">낮</span><span>로열보타닉가든에서 여유로운 피크닉</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span>숙소에서 마켓에서 사온 재료로 <b>고기 구워먹기</b></span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-market"/></svg>마켓</span><span class="mini-tag"><svg class="ic"><use href="#i-picnic"/></svg>피크닉</span><span class="mini-tag"><svg class="ic"><use href="#i-bbq"/></svg>집밥</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-run"/></svg></div>
+        <div class="day-date"><span class="dow">Tue</span><span class="dom">2/16</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>세인트킬다 조깅 + 야라강 유람선</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">아침</span><span>세인트킬다비치 해안 <b>조깅</b> + 부두 산책(야생 리틀펭귄 서식지, 운 좋으면 낮에도 흔적 관찰)</span></div>
+            <div class="plan-row"><span class="tod">오전</span><span>근처 <b>카페</b>에서 브런치</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>야라강 <b>유람선</b> 투어 — 도심을 물 위에서 여유롭게</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-run"/></svg>조깅</span><span class="mini-tag"><svg class="ic"><use href="#i-coffee"/></svg>카페</span><span class="mini-tag"><svg class="ic"><use href="#i-ferry"/></svg>유람선</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-penguin"/></svg></div>
+        <div class="day-date"><span class="dow">Wed</span><span class="dom">2/17</span><span class="city-tag mel">멜버른</span></div>
+        <div class="day-body">
+          <h3>여유로운 오전 + 필립아일랜드 펭귄퍼레이드</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>숙소 근처 카페·수영장에서 느긋하게</span></div>
+            <div class="plan-row"><span class="tod">오후</span><span>필립아일랜드 이동, 가는 길 해안 노을 감상</span></div>
+            <div class="plan-row"><span class="tod">저녁</span><span><b>야생 리틀펭귄 퍼레이드</b> — Plan B에서 유일하게 남겨둔 풀데이급 하이라이트</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-penguin"/></svg>펭귄</span><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Thu</span><span class="dom">2/18</span><span class="city-tag syd">이동</span></div>
+        <div class="day-body">
+          <h3>멜버른 → 시드니</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>체크아웃, 국내선으로 시드니 복귀</span></div>
+            <div class="plan-row"><span class="tod">오후~밤</span><span>공항 인근 숙소, 마지막 기념품 쇼핑 + 마지막 노을</span></div>
+          </div>
+          <div class="tagrow"><span class="mini-tag"><svg class="ic"><use href="#i-sunset"/></svg>노을</span></div>
+        </div>
+      </div>
+
+      <div class="day b">
+        <div class="icon-badge"><svg class="ic"><use href="#i-plane"/></svg></div>
+        <div class="day-date"><span class="dow">Fri</span><span class="dom">2/19</span><span class="city-tag syd">귀국</span></div>
+        <div class="day-body">
+          <h3>귀국</h3>
+          <div class="day-plan">
+            <div class="plan-row"><span class="tod">오전</span><span>10:20 OZ602 시드니 출발 → 인천</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>예산 비교</h2>
+      <p>항공료는 두 플랜 모두 이미 마일리지로 해결돼 있어 제외했습니다. 숙박·국내선은 거의 동일하고, 차이는 투어·입장료와 식비에서 갈려요.</p>
+    </div>
+    <div class="budget-compare">
+      <div class="bc-card a">
+        <span class="tag">Plan A · 모험형</span>
+        <div class="big">738~958만원</div>
+        <div class="sub">4인 총액, 항공료 제외</div>
+        <div class="bc-list">
+          <div><span>투어·입장료</span><b>232~307만원</b></div>
+          <div><span>식비</span><b>97~146만원</b></div>
+          <div><span>숙박+국내선+교통+기타</span><b>409~505만원</b></div>
+        </div>
+      </div>
+      <div class="bc-card b">
+        <span class="tag">Plan B · 라이프스타일형</span>
+        <div class="big">564~704만원</div>
+        <div class="sub">4인 총액, 항공료 제외</div>
+        <div class="bc-list">
+          <div><span>투어·입장료(동물원+크루즈×2+필립아일랜드)</span><b>88~118만원</b></div>
+          <div><span>식비(집밥 비중↑)</span><b>80~120만원</b></div>
+          <div><span>숙박+국내선+교통+기타</span><b>396~466만원</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>준비물 & 팁</h2>
+    </div>
+    <div class="prep-grid">
+      <div class="prep-card">
+        <h4>매일 기본</h4>
+        <ul>
+          <li>수영복 + 빠르게 마르는 수건</li>
+          <li>자외선차단제 SPF50+, 조깅용 모자</li>
+          <li>돗자리 또는 피크닉 매트(옵저버토리힐·보타닉가든용)</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>집밥 · 장보기</h4>
+        <ul>
+          <li>숙소에 그릴/인덕션 화구 있는지 예약 전 확인</li>
+          <li>울월스·콜스 앱 미리 설치하면 재고·가격 확인 편함</li>
+          <li>캐리지웍스·퀸빅토리아마켓은 현금보다 카드 결제가 대부분 편함</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>유람선 · 크루즈</h4>
+        <ul>
+          <li>선셋크루즈는 성수기 저녁 시간대 조기 마감 — 미리 예약</li>
+          <li>페리(타롱가행)는 오팔카드로 바로 탑승 가능</li>
+          <li>바람이 강할 수 있어 얇은 겉옷 챙기기</li>
+        </ul>
+      </div>
+      <div class="prep-card">
+        <h4>필립아일랜드(공통)</h4>
+        <ul>
+          <li>촬영 금지 구역 있음 — 아이들에게 미리 설명</li>
+          <li>저녁 바닷바람 쌀쌀 — 겉옷 필수</li>
+          <li>소규모 투어라 성수기엔 조기 마감, 최우선 예약</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>지금 예약해야 할 것</h2>
+      <p>어느 플랜으로 가든 공통으로 서두를 항목이에요.</p>
+    </div>
+    <div class="book-list">
+      <div class="book-item"><span class="pri">1</span><p><b>시드니⇄멜버른 국내선</b> — 두 플랜 모두 동일하게 필요, 확정되는 대로 예약.</p></div>
+      <div class="book-item"><span class="pri">2</span><p><b>필립아일랜드 펭귄퍼레이드</b> — 두 플랜 공통 하이라이트, 소규모라 조기 마감.</p></div>
+      <div class="book-item"><span class="pri">3</span><p><b>(Plan A 선택 시) 웜뱃투어</b> — 성수기 좌석 여유 없음.</p></div>
+      <div class="book-item"><span class="pri">4</span><p><b>(Plan B 선택 시) 선셋 하버크루즈, 타롱가동물원 페리 콤보</b> — 저녁 시간대 인기 슬롯부터 마감.</p></div>
+      <div class="book-item"><span class="pri">5</span><p><b>멜버른 숙소</b> — 취사 시설(그릴 포함) 있는 곳으로, 두 플랜 모두 필요.</p></div>
+    </div>
+  </section>
+
+  <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 국제선·시드니 호텔은 예약 완료, 금액은 최근 시세 기반 추정치입니다</footer>
+
+</div></div>
+<div class="pane" id="p-guide"><div class="wrap">
+  <div class="tabbar">
+    <button class="tab-btn active" data-tab="prep" onclick="guideTab('prep')">유의사항</button>
+    <button class="tab-btn" data-tab="places" onclick="guideTab('places')">가볼만한곳</button>
+    <button class="tab-btn" data-tab="food" onclick="guideTab('food')">맛집·카페</button>
+    <button class="tab-btn" data-tab="mart" onclick="guideTab('mart')">마트&amp;쇼핑</button>
+  </div>
+
+  <!-- TAB 1: PREP -->
+  <div class="tabpanel active" id="tab-prep">
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">체크리스트</span>
+        <h2>출발 전 유의사항</h2>
+        <p>탭하면 체크돼요 — 이 기기에 저장되니 짐 쌀 때 다시 열어서 이어서 확인하세요.</p>
+      </div>
+      <div class="prep-list" id="prep-list"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">★ 중요 — 입국 시 세관신고</span>
+        <h2>음식물 반입, 신고하면 안전해요</h2>
+        <p>호주는 생물보안 규정이 엄격해요. 핵심은 하나 — <b>가능/불가능을 스스로 판단하지 말고, 갖고 있으면 무조건 입국신고서에 체크</b>하는 거예요. 신고하면 불이익이 없지만, 미신고 적발 시 벌금(최대 $2,600+)이 부과돼요.</p>
+      </div>
+      <div class="table-scroll" style="overflow-x:auto;">
+        <table class="customs-table">
+          <thead><tr><th>품목</th><th>가능 여부</th><th>조건</th></tr></thead>
+          <tbody>
+            <tr><td>라면(건면+분말스프)</td><td><span class="ok-tag cond">조건부</span></td><td>밀봉 포장·완전 건조 상태. 육수분말에 육류 성분 있으면 더 까다로움. 컵라면 건더기스프 주의</td></tr>
+            <tr><td>김·조미김</td><td><span class="ok-tag yes">대체로 가능</span></td><td>일반 김밥용·조미김은 갈조류 규정과 무관한 경우가 많음. 그래도 신고 필수</td></tr>
+            <tr><td>즉석밥(햇반류)</td><td><span class="ok-tag cond">조건부</span></td><td>밀폐 가공식품은 가능. 생쌀·콩류는 별도 규정이라 원칙적 제한</td></tr>
+            <tr><td>김치</td><td><span class="ok-tag cond">조건부</span></td><td>밀봉 상업포장 권장, 발효식품이라 검역관 판단에 따라 갈릴 수 있음</td></tr>
+            <tr><td>봉지과자·스낵</td><td><span class="ok-tag yes">대체로 가능</span></td><td>육류·유제품·신선성분 없으면 대체로 무난</td></tr>
+            <tr><td>신선육류·햄·소시지</td><td><span class="ok-tag no">원칙 금지</span></td><td>구제역 등 우려로 대부분 압수. 벌금 가장 큰 항목</td></tr>
+            <tr><td>신선과일·채소</td><td><span class="ok-tag no">원칙 금지</span></td><td>해충·식물병 우려</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="note-box"><b>실무 팁:</b> 헷갈리면 무조건 "신고함"으로 체크하고 검역관에게 직접 보여주세요. 최신 규정은 출발 전 <a href="https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods" target="_blank" rel="noopener">호주 농림부(DAFF) 공식 페이지</a>에서 한 번 더 확인하는 걸 추천해요.</div>
+    </section>
+  </div>
+
+  <!-- TAB 2: PLACES -->
+  <div class="tabpanel" id="tab-places">
+
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">특별한 숙박, 딱 하루</span>
+        <h2>와일드라이프 리트릿 앳 타롱가</h2>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg class="ic"><use href="#i-koala"/></svg></div>
+        <div>
+          <h3>타롱가동물원 안에서 자는 하룻밤</h3>
+          <p>타롱가동물원 부지 안 부티크 호텔. 창밖으로 코알라·에키드나가 다니는 방사 구역과 시드니 하버를 동시에 볼 수 있어요. 조식·동물원 무료입장·"The Sanctuary" 30분 가이드 투어·주차·와이파이가 기본 포함돼요.</p>
+          <table class="ftable">
+            <thead><tr><th>객실</th><th>1박(2성인+1아동)</th></tr></thead>
+            <tbody>
+              <tr><td>Bushland Room</td><td>AU$748</td></tr>
+              <tr><td>Animal View Room</td><td>AU$848</td></tr>
+              <tr><td>Harbour View Room</td><td>AU$1,058</td></tr>
+              <tr><td>Treetop Suite</td><td>AU$1,208</td></tr>
+            </tbody>
+          </table>
+          <div class="fmeta">
+            <span class="ftag coral">4인 = 객실 2개 필수(전 객실 최대 3인)</span>
+            <span class="ftag ocean">2객실 합산 1박 약 AU$1,450~2,450</span>
+          </div>
+          <div class="fcaution"><b>확인된 것:</b> 커넥팅룸은 실제로 존재하지만 온라인 예약엔진엔 지정 옵션이 없어요 — 예약 후 <b>+61 2 9978 4791</b>로 직접 전화해 커넥팅 배정을 요청해야 해요. 만 8세 미만은 리트리트 전용 페리 픽업 서비스 이용이 안 된다는 점도 참고하세요.<br><br>
+          가격이 지금 예약된 메리턴(1박 약 42만원)보다 3~5배 비싸서, 9박 내내는 부담이에요. <b>타롱가동물원 테마를 고른 날 하루만 이곳으로 바꾸는 "스플러지 하루"</b>로 제안해요.<br><br>
+          <b>날짜 주의:</b> "시드니+멜버른" 모드에서는 시드니 픽 가능일(2/11·12·13)이 전부 이미 결제 완료한 메리턴 4박 기간 안에 있어서, 이 기간에 리트리트를 넣으면 메리턴 숙박비를 날리거나 이중 지불하게 돼요. 이 모드라면 <b>2/18(멜버른에서 돌아온 마지막 밤, 미예약 상태)</b>에 넣는 걸 추천해요 — 그날은 타롱가 테마가 없어도 페리로 오전에 잠깐 들르는 정도로 충분히 스플러지가 성립해요. "시드니만" 모드라면 미예약 구간(2/14~18) 중 타롱가 테마를 고른 날에 자연스럽게 넣을 수 있어요.</div>
+          <a class="flink" href="https://stay.taronga.org.au/wildlife-retreat/" target="_blank" rel="noopener">공식 예약페이지에서 보기 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">근교 데이트립</span>
+        <h2>타스만 드라이브 · 게링공 · 워리비치</h2>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg class="ic"><use href="#i-map"/></svg></div>
+        <div>
+          <h3>"호주에서 가장 예쁜 거리" + 화덕피자 피크닉</h3>
+          <p>타스만 드라이브는 굽이치는 초록 언덕과 바다가 함께 보여 SNS에서 화제가 된 게링공(Gerringong)의 뷰포인트예요.</p>
+          <table class="ftable">
+            <thead><tr><th>구간</th><th>수단</th><th>소요시간</th></tr></thead>
+            <tbody>
+              <tr><td>센트럴역 → 게링공역</td><td>기차(카이아마 환승, 오팔카드 가능)</td><td>약 2시간25분~2시간39분, 편도 $11~</td></tr>
+              <tr><td>게링공역 → 워리비치</td><td>도보(직선)</td><td>약 13분(993m)</td></tr>
+              <tr><td>울런공 → 게링공</td><td>렌터카</td><td>약 37분 ★대중교통은 비효율적</td></tr>
+              <tr><td>울런공 → 게링공</td><td>기차(키아마 환승)</td><td>약 1시간18분(권장 안 함)</td></tr>
+            </tbody>
+          </table>
+          <p><b>다오를란도 화덕피자 관련:</b> Da Orlando(348 Keira St, Wollongong)는 게링공이 아니라 울런공에 있어요. 기차로 두 곳을 묶기엔 대중교통이 부실해서 <b>렌터카가 사실상 필수</b>예요. 화요일은 휴무라 요일 선택에 주의하세요(영업시간은 출처마다 달라 방문 전 전화 +61 2 4298 3011로 재확인 추천).</p>
+          <p><b>추천 동선:</b> 시드니 → (그랜드퍼시픽드라이브·시클리프브리지 경유) 울런공 약 1.5시간 → Da Orlando 피자 픽업 → 게링공/워리비치 약 37분 → 워리비치 남단(무료주차·화장실·바베큐·놀이터 있어 가족 피크닉 최적) → 시드니 복귀 약 2시간10분. 전체 약 8~9시간.</p>
+          <div class="fcaution"><b>한국인 가이드 투어 옵션:</b> 마이리얼트립 등에서 게링공·볼드힐·키아마 묶음 투어(1인 약 9.2만~14.4만원, 화/금 또는 화/목/토/일 출발, 9~10시간)가 있어요. 다만 정형 관광코스라 "워리비치 도보+피자 피크닉"이라는 자유로운 느낌과는 결이 달라요 — 이동 스트레스 없이 여러 곳을 보고 싶으면 투어, 여유있게 도보+피크닉을 원하면 렌터카를 추천해요.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">캠핑 좋아하는 가족이라면</span>
+        <h2>캠퍼밴 렌탈 + 2박3일 캠핑</h2>
+      </div>
+      <div class="feature">
+        <div class="ficon"><svg class="ic"><use href="#i-koala"/></svg></div>
+        <div>
+          <img class="feature-photo" src="img/murramarang.jpg" alt="머라마랑 국립공원 해변 풀밭의 캥거루" loading="lazy">
+          <h3>해변까지 내려오는 야생 캥거루 옆에서 캠핑</h3>
+          <p>국립공원 오지 캠핑장 대신 전기·샤워·풀장을 갖춘 <b>정식 홀리데이파크</b> 위주로 골랐어요. 캠퍼밴에 필수인 전기 사이트(파워드 사이트)가 있어야 냉장고·에어컨을 쓸 수 있어서, 특히 2월 한여름엔 이쪽이 아이와 훨씬 편해요.</p>
+          <table class="ftable">
+            <thead><tr><th>홀리데이파크</th><th>거리</th><th>특징</th></tr></thead>
+            <tbody>
+              <tr><td><b>NRMA 머라마랑 비치프론트 리조트</b></td><td>약 4시간(사우스더라스, 배터맨스베이 인근)</td><td>정식 리조트인데 야생 캥거루가 부지 안을 자유롭게 돌아다니고 해변까지 이어짐. 파워드·언파워드·앙수이트 사이트 60개, 수영장·카페·놀이터 완비. 바로 옆이 페블리비치라 캥거루 밀도가 비슷.</td></tr>
+              <tr><td>NRMA 시드니 레이크사이드 홀리데이파크</td><td>약 30~40분(노스나라빈)</td><td>가장 가까운 정식 파크. 호수+해변 도보권, 이동 부담 최소화하고 싶을 때.</td></tr>
+              <tr><td>저비스베이 인근 홀리데이파크(예: 화이트샌즈)</td><td>약 2.5~3시간</td><td>세계적으로 유명한 새하얀 모래사장(하이엄스비치)과 가까움. 캥거루보다 수영·스노클링 중심.</td></tr>
+            </tbody>
+          </table>
+          <div class="fmeta">
+            <span class="ftag ocean">캠퍼밴 4인승 2박3일 약 60~90만원(2월 성수기 기준)</span>
+            <span class="ftag coral">파워드 사이트 1박 약 $60~80(4인)</span>
+          </div>
+          <div class="fcaution"><b>예약:</b> NRMA 파크는 nrmaparksandresorts.com.au에서 직접 예약(성수기·학교방학엔 필수). 캠퍼밴은 브리츠·마우이·아폴로·저씨 등에서 렌탈하며, 한국어 예약대행(mycampervan.co.kr, campervan.co.kr)을 쓰면 편해요. 2월은 최성수기라 가격이 가장 비싼 시즌(1일 최대 30만원대)이라는 점 참고하세요.<br><br>
+          <b>주의:</b> 캥거루는 야생동물이라 먹이 주지 않기, 새벽·해질녘 도로 주행 시 캥거루 튀어나올 위험 있어 감속 운전 필요.</div>
+          <a class="flink" href="https://www.nrmaparksandresorts.com.au/murramarang/" target="_blank" rel="noopener">NRMA 머라마랑 공식 예약페이지 →</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">한국인에게 인기 · 체크해서 담아두세요</span>
+        <h2>가볼만한곳</h2>
+        <p>시드니 15개 지역 + 멜버른 6개 지역, 총 40여 곳을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
+      </div>
+      <div id="place-grid"></div>
+      <div class="picked-summary" id="place-summary"></div>
+      <div class="note-box"><b>혹등고래 크루즈는?</b> 시드니 웨일와칭 시즌은 5~11월이에요. 2월은 시즌이 아니라 이번 여행에서는 제외하는 게 맞아요.</div>
+    </section>
+  </div>
+
+  <!-- TAB 3: FOOD -->
+  <div class="tabpanel" id="tab-food">
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">체크해서 담아두세요</span>
+        <h2>맛집 · 카페</h2>
+        <p>시드니 10개 지역 + 멜버른 4개 지역, 30여 곳. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
+      </div>
+      <div id="food-grid"></div>
+      <div class="picked-summary" id="food-summary"></div>
+    </section>
+  </div>
+
+  <!-- TAB 4: MART -->
+  <div class="tabpanel" id="tab-mart">
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">현지 쇼핑</span>
+        <h2>울월스 · 콜스에서 꼭 사올 것</h2>
+      </div>
+      <div class="subhead">과자 · 초콜릿</div>
+      <div class="shop-grid" id="mart-snack"></div>
+      <div class="subhead">차 · 건강기능식품</div>
+      <div class="shop-grid" id="mart-health"></div>
+      <div class="subhead">뷰티 · 바디케어</div>
+      <div class="shop-grid" id="mart-beauty"></div>
+      <div class="subhead">아이(8세) 동반이면 추가로</div>
+      <div class="shop-grid" id="mart-kids"></div>
+      <div class="note-box"><b>UGG 부츠 주의:</b> 정품가는 약 AU$120~200. $50~70 이하는 가품 의심. 마트에선 안 팔고 UGG Australia·EMU Australia 정식매장에서 구매하세요.<br><b>마누카 허니:</b> UMF(또는 MGO) 등급 표기를 확인하세요. UMF 20+ 이상은 전체 생산량의 1% 미만이라 고가예요.</div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">쇼핑 스팟</span>
+        <h2>아이 옷·장난감은 여기서</h2>
+      </div>
+      <div class="shop-grid" id="mart-spots"></div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="eyebrow2">짐 쌀 때</span>
+        <h2>한국에서 챙겨가면 좋은 것</h2>
+      </div>
+      <div class="shop-grid" id="bring-grid"></div>
+    </section>
+  </div>
+</div>
+
+<footer><div class="footer-wrap">가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 장소·가격·규정 정보는 최근 조사 기준이며 방문 전 재확인을 권장합니다</div></footer></div>
+<div class="pane" id="p-tracker"><div class="wrap">
+  <div class="tabbar">
+    <button class="tab-btn active" data-tab="booking" onclick="trackerTab('booking')">예약 트래커</button>
+    <button class="tab-btn" data-tab="emergency" onclick="trackerTab('emergency')">비상연락처</button>
+  </div>
+
+  <!-- TAB 1: BOOKING TRACKER -->
+  <div class="tabpanel active" id="tab-booking">
+    <section style="margin-top:28px;">
+      <div class="progress-card">
+        <div class="progress-top"><span style="font-size:13px; color:var(--ink-soft); font-weight:700;">예약 진행률</span><b id="progress-text">0 / 0 완료</b></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
+        <div class="progress-legend">
+          <span><span class="dot" style="background:var(--grey);"></span>미정</span>
+          <span><span class="dot" style="background:var(--gold);"></span>진행중</span>
+          <span><span class="dot" style="background:var(--euca);"></span>완료</span>
+        </div>
+      </div>
+      <div class="section-head">
+        <span class="eyebrow2">상태를 탭하면 바뀌어요</span>
+        <h2>예약해야 할 것들</h2>
+        <p>2월은 호주 성수기라 소규모 투어(웜뱃·필립아일랜드)부터 조기 마감돼요. 메모칸에 예약처·가격·확인번호를 적어두면 나중에 한눈에 보여요.</p>
+      </div>
+      <div class="booking-list" id="booking-list"></div>
+    </section>
+  </div>
+
+  <!-- TAB 2: EMERGENCY -->
+  <div class="tabpanel" id="tab-emergency">
+    <section style="margin-top:28px;">
+      <div class="section-head">
+        <span class="eyebrow2">만약을 위해</span>
+        <h2>비상연락처</h2>
+        <p>인쇄하거나 스크린샷으로 저장해서 가족 모두의 휴대폰에 넣어두는 걸 추천해요.</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-siren"/></svg>호주 응급 신고</h3>
+        <div class="erow"><span class="elabel">경찰·소방·구급 (긴급)</span><span class="eval">000</span></div>
+        <div class="erow"><span class="elabel">경찰 비긴급</span><span class="eval">131 444</span></div>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-building"/></svg>주시드니 대한민국 총영사관 (NSW 관할)</h3>
+        <div class="erow"><span class="elabel">주소</span><span class="eval" style="font-weight:600; font-size:12px;">Level 10, 44 Market St, Sydney NSW 2000</span></div>
+        <div class="erow"><span class="elabel">대표전화(근무시간)</span><span class="eval">+61 2 9210 0200</span></div>
+        <div class="erow"><span class="elabel">영사콜센터(24시간)</span><span class="eval">+82 2 3210 0404</span></div>
+        <div class="erow"><span class="elabel">긴급연락처(사건사고)</span><span class="eval">+61 403 546 058</span></div>
+        <p class="small">여권 분실·사건사고 등 긴급 상황엔 24시간 영사콜센터로 먼저 연락하세요. 무료 연결: +800-2100-0404 (현지 유선전화 기준, 호텔 전화 등에서 시도)</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-building"/></svg>주호주연방 대한민국 대사관 멜버른 분관 (VIC 관할)</h3>
+        <div class="erow"><span class="elabel">주소</span><span class="eval" style="font-weight:600; font-size:12px;">Level 10, 636 St Kilda Rd, Melbourne VIC 3004</span></div>
+        <div class="erow"><span class="elabel">대표전화(근무시간)</span><span class="eval">+61 3 9533 3800</span></div>
+        <div class="erow"><span class="elabel">긴급전화(근무시간외)</span><span class="eval">+61 418 435 915</span></div>
+        <p class="small">멜버른 체류 중 사건사고는 이쪽이 담당 공관이에요. 근무시간(월~금 09:00~17:00, 점심 12~13시) 외에는 긴급전화로.</p>
+      </div>
+
+      <div class="ecard">
+        <h3><svg class="ic"><use href="#i-shield"/></svg>내 정보 채워두기</h3>
+        <div class="fill-grid">
+          <div class="fill-field"><label>여행자보험사</label><input type="text" id="f-insurer" placeholder="예: OO화재" onchange="saveField('insurer', this.value)"></div>
+          <div class="fill-field"><label>보험 비상연락처</label><input type="text" id="f-insurerphone" placeholder="24시간 해외비상 전화번호" onchange="saveField('insurerphone', this.value)"></div>
+          <div class="fill-field"><label>보험증권번호</label><input type="text" id="f-policyno" placeholder="증권번호" onchange="saveField('policyno', this.value)"></div>
+          <div class="fill-field"><label>국내 비상연락처</label><input type="text" id="f-homecontact" placeholder="한국에 있는 비상연락처" onchange="saveField('homecontact', this.value)"></div>
+        </div>
+        <div class="save-note" id="save-status">입력하면 자동 저장돼요</div>
+      </div>
+    </section>
+  </div>
+</div>
+
+<footer><div class="footer-wrap">가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 총영사관 연락처는 2026년 9월 조사 기준, 출발 전 mofa.go.kr에서 재확인 권장</div></footer></div>
+
+<script>
+(function(){
+  var TABS = ["home","builder","plan","guide","tracker"];
+  window.goTab = function(name, keepScroll){
+    if (TABS.indexOf(name) === -1) name = "home";
+    document.querySelectorAll(".gtab").forEach(function(b){ b.classList.toggle("active", b.dataset.tab === name); });
+    document.querySelectorAll(".pane").forEach(function(p){ p.classList.toggle("on", p.id === "p-" + name); });
+    try { history.replaceState(null, "", "#" + name); } catch(e){}
+    if (!keepScroll){
+      var nav = document.querySelector(".s-tabs");
+      var y = nav.getBoundingClientRect().top + window.scrollY;
+      if (window.scrollY > y) window.scrollTo(0, y);
+    }
+  };
+  var h = (location.hash || "").replace("#","");
+  if (h) window.goTab(h, true);
+})();
+</script>
+<script id="app-state" type="application/json">{"mode":"WITH_MEL","picks":{}}</script>
+<script>
+(function(){
+  "use strict";
+
+  var THEMES = {
+    SYD: [
+      {id:"wombat", title:"웜뱃투어", desc:"웜뱃 직접 안기 + 코알라·쿼카 관찰, 로컬 파이 맛집", intensity:"heavy", tags:["animal"], icon:"i-quokka", cost:[63,81], area:"근교"},
+      {id:"bluemtn", title:"블루마운틴 + 페더데일", desc:"코알라·캥거루 근접체험 + 대협곡 전망대", intensity:"heavy", tags:["animal","nature"], icon:"i-roo", cost:[59,77], area:"근교"},
+      {id:"taronga", title:"타롱가동물원 + 피크닉", desc:"페리로 이동, 코알라·캥거루·왈라비 + 브릿지뷰 피크닉", intensity:"medium", tags:["animal","swim"], icon:"i-ferry", cost:[18,25], area:"시내"},
+      {id:"bondi", title:"시티 + 본다이비치", desc:"오페라하우스·하버브리지 워킹 + 해변 수영", intensity:"light", tags:["swim"], icon:"i-bridge", cost:[3,6], area:"시내"},
+      {id:"jogbbq", title:"해변조깅 + 장보기 + 집밥", desc:"본다이~쿠지 조깅, 장봐서 숙소에서 고기 굽기", intensity:"light", tags:["swim","food"], icon:"i-run", cost:[0,3], area:"시내"},
+      {id:"marketcruise", title:"마켓 + 선셋 하버크루즈", desc:"캐리지웍스 마켓 + 노을 유람선", intensity:"medium", tags:["market","sunset"], icon:"i-market", cost:[15,22], area:"시내"},
+      {id:"portstephens", title:"포트스테판", desc:"사막 모래썰매 + 야생 돌고래 크루즈", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-tour", cost:[40,55], area:"근교(2.5시간)"},
+      {id:"jervisbay", title:"저비스베이", desc:"새하얀 모래사장 화이트헤이븐 + 야생 돌고래 관찰", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-wave", cost:[25,40], area:"근교(2.5시간)"},
+      {id:"huntervalley", title:"헌터밸리 와이너리", desc:"포도밭 피크닉 + 치즈테이스팅 + 목장 체험", intensity:"medium", tags:["nature","food"], icon:"i-grape", cost:[20,35], area:"근교(2시간)"},
+      {id:"kiama", title:"카이아마 블로우홀", desc:"바닷물이 솟구치는 블로우홀 + 사우스코스트 드라이브", intensity:"light", tags:["nature"], icon:"i-bridge", cost:[8,15], area:"근교(1.5시간)"},
+      {id:"portstephenslite", title:"센트럴코스트", desc:"코알라 보호구역 + 한적한 해변 반나절", intensity:"medium", tags:["animal","swim"], icon:"i-koala", cost:[15,25], area:"근교(1.5시간)"},
+      {id:"royalnp", title:"로열내셔널파크", desc:"해안 트레킹 + 한적한 비치, 시드니에서 가장 가까운 국립공원", intensity:"light", tags:["nature","swim"], icon:"i-run", cost:[5,10], area:"근교(1시간)"},
+      {id:"gerringong", title:"타스만드라이브 · 게링공", desc:"워리비치 도보+피크닉, 다오를란도 화덕피자(울런공, 렌터카 권장)", intensity:"heavy", tags:["nature","swim","food"], icon:"i-wave", cost:[30,45], area:"근교(렌터카 2시간+)"}
+    ],
+    MEL: [
+      {id:"gor", title:"그레이트오션로드", desc:"12사도 절벽 + 야생 코알라 관찰(케넷강)", intensity:"heavy", tags:["animal","nature"], icon:"i-tour", cost:[50,68]},
+      {id:"phillip", title:"필립아일랜드 펭귄퍼레이드", desc:"야생 리틀펭귄, 저녁 투어", intensity:"heavy", tags:["animal"], icon:"i-penguin", cost:[43,59]},
+      {id:"qvmarket", title:"퀸빅토리아마켓 + 시티", desc:"장보기 + 페더레이션스퀘어", intensity:"medium", tags:["market","food"], icon:"i-market", cost:[0,3]},
+      {id:"stkilda", title:"세인트킬다 조깅 + 야라강크루즈", desc:"해안 조깅 + 카페 + 유람선", intensity:"medium", tags:["swim","nature"], icon:"i-run", cost:[8,12]},
+      {id:"botanic", title:"보타닉가든 피크닉 + 집밥", desc:"여유로운 피크닉 + 숙소에서 저녁", intensity:"light", tags:["food","nature"], icon:"i-picnic", cost:[0,3]},
+      {id:"healesville", title:"힐스빌 생추어리 + 야라밸리 초콜릿공장", desc:"코알라·웜뱃·플래티푸스 등 호주 고유종 + 무료시식 초콜릿공장(아이 쇼콜라티에 클래스도)", intensity:"heavy", tags:["animal","nature"], icon:"i-koala", cost:[35,55]},
+      {id:"puffingbilly", title:"퍼핑빌리 증기기차", desc:"댄더농산맥, 다리 밖으로 내놓고 타는 증기기관차. 가족요금 할인, BBQ·놀이터 있음", intensity:"medium", tags:["nature"], icon:"i-tour", cost:[14,20]},
+      {id:"melbournezoo", title:"멜버른동물원", desc:"1862년 개장, 호주 최초 동물원. 코알라 설명·미어캣 먹이주기 타임드 프로그램", intensity:"medium", tags:["animal"], icon:"i-roo", cost:[10,14]},
+      {id:"lanewalk", title:"레인웨이 도보투어", desc:"호시어레인 그래피티 + 디그레이브스 노천카페 골목 + ACMI 무료 체험전시", intensity:"light", tags:["market"], icon:"i-market", cost:[2,5]},
+      {id:"sealifemel", title:"씨라이프 멜버른 아쿠아리움", desc:"펭귄 서식지 워크 체험(스노우장비 착용), 실내라 우천 대비 좋음", intensity:"medium", tags:["animal"], icon:"i-wave", cost:[13,16]},
+      {id:"collingwoodfarm", title:"콜링우드 칠드런스팜", desc:"야라강변 체험농장, 동물 만지기·먹이주기, 유기농 텃밭+카페", intensity:"light", tags:["animal","nature"], icon:"i-picnic", cost:[3,8]},
+      {id:"eureka", title:"유레카 스카이덱", desc:"88층 전망대, MCG·페더레이션스퀘어 조망. 우천 대비 실내 옵션", intensity:"light", tags:["market"], icon:"i-bridge", cost:[8,14]}
+    ]
+  };
+
+  var MODES = {
+    WITH_MEL: {
+      label:"시드니 4박 + 멜버른 4박",
+      lede:"시드니 3일 · 멜버른 3일, 각 날짜마다 테마를 하나씩 고르세요. 고른 테마는 다른 날짜 선택지에서 빠지고, 전날 강도에 따라 다음 날 추천 테마가 바뀌어요.",
+      slots:[
+        {date:"2/11", dow:"목", city:"SYD"},
+        {date:"2/12", dow:"금", city:"SYD"},
+        {date:"2/13", dow:"토", city:"SYD"},
+        {date:"2/15", dow:"월", city:"MEL"},
+        {date:"2/16", dow:"화", city:"MEL"},
+        {date:"2/17", dow:"수", city:"MEL"}
+      ],
+      fixed:{low:185+79+18+70+27+97+36, high:185+101+25+80+41+146+54},
+      fixedNote:"시드니숙소(185, AUD1,867.50 확정)+멜버른숙소+시드니 마지막밤+국내선(70~80)+현지교통+식비+기타"
+    },
+    SYD_ONLY: {
+      label:"시드니 9박, 멜버른 없이 근교만",
+      lede:"시드니에 계속 머물며 근교 소도시로 당일치기를 다닙니다. 8일 모두 시드니 기준이라 테마 폭이 넓어요 — 국내선이 없어 이동 부담과 경비 모두 가장 낮습니다. 캠핑을 좋아하는 가족이라면 개별 테마 2~3개 대신 캠퍼밴 렌탈+NRMA 머라마랑 리조트 캠핑(가이드 참고, 정식 홀리데이파크인데 야생 캥거루가 부지를 돌아다님) 2박3일로 통째로 바꿔도 좋아요.",
+      slots:[
+        {date:"2/11", dow:"목", city:"SYD"},
+        {date:"2/12", dow:"금", city:"SYD"},
+        {date:"2/13", dow:"토", city:"SYD"},
+        {date:"2/14", dow:"일", city:"SYD"},
+        {date:"2/15", dow:"월", city:"SYD"},
+        {date:"2/16", dow:"화", city:"SYD"},
+        {date:"2/17", dow:"수", city:"SYD"},
+        {date:"2/18", dow:"목", city:"SYD"}
+      ],
+      fixed:{low:185+140+27+97+36, high:185+190+41+146+54},
+      fixedNote:"시드니숙소 4박(185, AUD1,867.50 확정)+추가 5박(140~190)+현지교통+식비+기타 — 국내선 없음"
+    }
+  };
+
+  var ALL_DAYS = {
+    WITH_MEL: [
+      {date:"2/10", dow:"수", type:"arrival", label:"도착 · 시차적응"},
+      {date:"2/11", dow:"목", type:"pick", city:"SYD"},
+      {date:"2/12", dow:"금", type:"pick", city:"SYD"},
+      {date:"2/13", dow:"토", type:"pick", city:"SYD"},
+      {date:"2/14", dow:"일", type:"travel", label:"시드니→멜버른"},
+      {date:"2/15", dow:"월", type:"pick", city:"MEL"},
+      {date:"2/16", dow:"화", type:"pick", city:"MEL"},
+      {date:"2/17", dow:"수", type:"pick", city:"MEL"},
+      {date:"2/18", dow:"목", type:"travel", label:"멜버른→시드니"},
+      {date:"2/19", dow:"금", type:"depart", label:"귀국(10:20)"}
+    ],
+    SYD_ONLY: [
+      {date:"2/10", dow:"수", type:"arrival", label:"도착 · 시차적응"},
+      {date:"2/11", dow:"목", type:"pick", city:"SYD"},
+      {date:"2/12", dow:"금", type:"pick", city:"SYD"},
+      {date:"2/13", dow:"토", type:"pick", city:"SYD"},
+      {date:"2/14", dow:"일", type:"pick", city:"SYD"},
+      {date:"2/15", dow:"월", type:"pick", city:"SYD"},
+      {date:"2/16", dow:"화", type:"pick", city:"SYD"},
+      {date:"2/17", dow:"수", type:"pick", city:"SYD"},
+      {date:"2/18", dow:"목", type:"pick", city:"SYD"},
+      {date:"2/19", dow:"금", type:"depart", label:"귀국(10:20)"}
+    ]
+  };
+
+  var ACCOM = {
+    WITH_MEL: function(date){
+      if (["2/10","2/11","2/12","2/13"].indexOf(date)!==-1) return {name:"메리턴 스위트 월드타워", status:"booked"};
+      if (["2/14","2/15","2/16","2/17"].indexOf(date)!==-1) return {name:"멜버른 숙소", status:"unbooked"};
+      if (date==="2/18") return {name:"시드니 공항 인근 숙소", status:"unbooked"};
+      return null;
+    },
+    SYD_ONLY: function(date){
+      if (["2/10","2/11","2/12","2/13"].indexOf(date)!==-1) return {name:"메리턴 스위트 월드타워", status:"booked"};
+      if (["2/14","2/15","2/16","2/17","2/18"].indexOf(date)!==-1) return {name:"시드니 숙소 연장", status:"unbooked"};
+      return null;
+    }
+  };
+
+  function renderOverview(){
+    var days = ALL_DAYS[state.mode];
+    var row = document.getElementById("overview-row");
+    var html = days.map(function(d){
+      var accom = ACCOM[state.mode](d.date);
+      var stayHtml = accom
+        ? '<span class="ov-stay '+accom.status+'">'+(accom.status==="booked"?"예약완료":"미예약")+'</span><span class="ov-hotel">'+esc(accom.name)+'</span>'
+        : '<span class="ov-stay none">숙박없음</span>';
+      var themeHtml;
+      if (d.type==="pick"){
+        var pickedId = state.picks[d.date];
+        if (pickedId){
+          var t = themeById(pickedId);
+          themeHtml = '<span class="ov-theme">'+esc(t.title)+'</span>';
+        } else {
+          themeHtml = '<span class="ov-theme empty">미정</span>';
+        }
+      } else {
+        themeHtml = '<span class="ov-theme">'+esc(d.label)+'</span>';
+      }
+      return '<div class="ov-card'+(d.type!=="pick"?" fixed":"")+'">'
+        + '<span class="ov-date">'+d.dow+'</span><span class="ov-dom">'+d.date+'</span>'
+        + stayHtml + themeHtml
+        + '</div>';
+    }).join("");
+    row.innerHTML = html;
+  }
+
+  var PRESETS = {
+    WITH_MEL: {
+      A: {"2/11":"wombat","2/12":"bondi","2/13":"bluemtn","2/15":"gor","2/16":"qvmarket","2/17":"phillip"},
+      B: {"2/11":"taronga","2/12":"jogbbq","2/13":"marketcruise","2/15":"qvmarket","2/16":"stkilda","2/17":"phillip"}
+    },
+    SYD_ONLY: {
+      C: {"2/11":"wombat","2/12":"bondi","2/13":"portstephens","2/14":"jogbbq","2/15":"huntervalley","2/16":"taronga","2/17":"kiama","2/18":"marketcruise"}
+    }
+  };
+
+  var state = {mode:"WITH_MEL", picks:{}};
+  var dbRef = null;
+  var root = document.getElementById("root");
+
+  function currentConfig(){ return MODES[state.mode]; }
+  function themeById(id){
+    for (var c in THEMES){ for (var i=0;i<THEMES[c].length;i++){ if (THEMES[c][i].id===id) return THEMES[c][i]; } }
+    return null;
+  }
+  function citySlots(city){ return currentConfig().slots.filter(function(s){return s.city===city;}); }
+  function usedIds(city){
+    return citySlots(city).map(function(s){return state.picks[s.date];}).filter(Boolean);
+  }
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function svgUse(icon){ return '<svg class="ic"><use href="#'+icon+'"/></svg>'; }
+
+  function recommendedIntensity(city, slotDate){
+    var slots = citySlots(city);
+    var idx = -1;
+    for (var i=0;i<slots.length;i++){ if (slots[i].date===slotDate) idx=i; }
+    if (idx<=0) return "heavy";
+    var prevId = state.picks[slots[idx-1].date];
+    var prev = themeById(prevId);
+    if (!prev) return null;
+    if (prev.intensity==="heavy") return "light-medium";
+    return "heavy";
+  }
+  function isRecommended(theme, recLevel){
+    if (!recLevel) return false;
+    if (recLevel==="heavy") return theme.intensity==="heavy";
+    if (recLevel==="light-medium") return theme.intensity==="light" || theme.intensity==="medium";
+    return false;
+  }
+
+  function renderSlot(slot, idx, firstOpenIdx){
+    var picked = state.picks[slot.date];
+    var cityLabel = slot.city==="SYD" ? "시드니" : "멜버른";
+
+    if (picked){
+      var t = themeById(picked);
+      return '<div class="slot picked">'
+        + '<div class="datechip"><span class="dow">'+slot.dow+'</span><span class="dom">'+slot.date+'</span></div>'
+        + '<div class="picked-ic">'+svgUse(t.icon)+'</div>'
+        + '<div class="picked-body"><b>'+esc(t.title)+'</b><span>'+esc(t.desc)+'</span></div>'
+        + '<button class="change-btn" onclick="changeFrom(\''+slot.city+'\',\''+slot.date+'\')">다시 선택</button>'
+        + '</div>';
+    }
+
+    if (idx !== firstOpenIdx){
+      return '<div class="slot locked">'
+        + '<div class="datechip"><span class="dow">'+slot.dow+'</span><span class="dom">'+slot.date+'</span></div>'
+        + '<p>이전 날짜를 먼저 선택하면 여기 열려요</p>'
+        + '</div>';
+    }
+
+    var used = usedIds(slot.city);
+    var options = THEMES[slot.city].filter(function(t){ return used.indexOf(t.id)===-1; });
+    var recLevel = recommendedIntensity(slot.city, slot.date);
+
+    var cards = options.map(function(t){
+      var rec = isRecommended(t, recLevel);
+      var costTxt = (t.cost[0]===t.cost[1]) ? (t.cost[0]===0?"무료":t.cost[0]+"만원") : (t.cost[0]+"~"+t.cost[1]+"만원");
+      return '<button class="choice'+(rec?" recommended":"")+'" onclick="pick(\''+slot.city+'\',\''+slot.date+'\',\''+t.id+'\')">'
+        + (rec?'<span class="rec-badge">추천</span>':'')
+        + '<span class="cic">'+svgUse(t.icon)+'</span>'
+        + '<span class="ctext"><b>'+esc(t.title)+'</b><p>'+esc(t.desc)+'</p>'
+        + '<span class="cmeta"><span class="itag '+t.intensity+'">'+({heavy:"풀데이",medium:"중간",light:"가벼움"}[t.intensity])+'</span>'
+        + (t.area?'<span class="itag area">'+esc(t.area)+'</span>':'')
+        + '<span class="itag cost">'+costTxt+'</span></span>'
+        + '</span></button>';
+    }).join("");
+
+    var hint = recLevel==="heavy" ? "체력이 남아있을 때라 풀데이 테마를 추천해요"
+      : recLevel==="light-medium" ? "전날이 풀데이였어서 가볍거나 중간 강도를 추천해요"
+      : "";
+
+    return '<div class="slot open">'
+      + '<div class="slot-head"><span class="datechip2">'+slot.dow+' '+slot.date+' · '+cityLabel+'</span>'+(hint?'<span class="hint">· '+hint+'</span>':'')+'</div>'
+      + '<div class="choice-grid">'+cards+'</div>'
+      + '</div>';
+  }
+
+  function renderCityBlock(city, label){
+    var slots = citySlots(city);
+    if (slots.length===0) return "";
+    var firstOpenIdx = -1;
+    for (var i=0;i<slots.length;i++){ if (!state.picks[slots[i].date]){ firstOpenIdx=i; break; } }
+    var doneCount = slots.filter(function(s){return !!state.picks[s.date];}).length;
+    var html = '<section><div class="section-head"><h2>'+label+'</h2><span class="cnt">'+doneCount+' / '+slots.length+' 완료</span></div>';
+    slots.forEach(function(s,i){ html += renderSlot(s, i, firstOpenIdx); });
+    html += '</section>';
+    return html;
+  }
+
+  function budget(){
+    var cfg = currentConfig();
+    var lo=cfg.fixed.low, hi=cfg.fixed.high, animalDays=0, swimDays=0, picked=0, total=cfg.slots.length;
+    cfg.slots.forEach(function(s){
+      var id = state.picks[s.date];
+      if (!id) return;
+      var t = themeById(id);
+      picked++;
+      lo += t.cost[0]; hi += t.cost[1];
+      if (t.tags.indexOf("animal")!==-1) animalDays++;
+      if (t.tags.indexOf("swim")!==-1) swimDays++;
+    });
+    return {lo:lo, hi:hi, animalDays:animalDays, swimDays:swimDays, picked:picked, total:total};
+  }
+
+  function renderSummary(){
+    var cfg = currentConfig();
+    var b = budget();
+    var chips = cfg.slots.map(function(s){
+      var id = state.picks[s.date];
+      if (!id) return '<span class="route-chip empty">'+s.date+' 미정</span>';
+      var t = themeById(id);
+      return '<span class="route-chip"><span class="rcic">'+svgUse(t.icon)+'</span>'+s.date+' '+esc(t.title)+'</span>';
+    }).join("");
+
+    var edgeChips = '<span class="route-chip">2/10 도착</span>' + chips;
+    if (state.mode==="WITH_MEL"){
+      edgeChips += '<span class="route-chip">2/14 시드니→멜버른 이동</span><span class="route-chip">2/18 멜버른→시드니 이동</span>';
+    }
+    edgeChips += '<span class="route-chip">2/19 귀국</span>';
+
+    var html = '<div class="summary"><h2>완성된 루트</h2>';
+    html += '<div class="route-line">'+edgeChips+'</div>';
+    if (b.picked===0){
+      html += '<div class="empty-note">아직 선택한 테마가 없어요 — 위에서 하루씩 골라보시거나 추천 세트를 한번에 적용해보세요.</div>';
+    } else {
+      html += '<div class="stat-row">'
+        + '<div class="stat"><b>'+b.lo+'~'+b.hi+'만원</b><span>4인 예상경비(항공료 제외)</span></div>'
+        + '<div class="stat"><b>'+b.animalDays+' / '+b.total+'</b><span>동물체험 포함 일수</span></div>'
+        + '<div class="stat"><b>'+b.swimDays+' / '+b.total+'</b><span>수영 포함 일수</span></div>'
+        + '<div class="stat"><b>'+b.picked+' / '+b.total+'</b><span>테마 선택 완료</span></div>'
+        + '</div>';
+    }
+    html += '</div>';
+    return html;
+  }
+
+  function renderPresets(){
+    var row = document.getElementById("preset-row");
+    var html = "";
+    if (state.mode==="WITH_MEL"){
+      html += '<button class="preset-btn a" onclick="applyPreset(\'A\')">'+svgUse("i-quokka")+'플랜A 모험형 한번에 적용</button>';
+      html += '<button class="preset-btn b" onclick="applyPreset(\'B\')">'+svgUse("i-picnic")+'플랜B 여유형 한번에 적용</button>';
+    } else {
+      html += '<button class="preset-btn c" onclick="applyPreset(\'C\')">'+svgUse("i-tour")+'시드니 로드트립 추천안 적용</button>';
+    }
+    html += '<button class="reset-btn" onclick="resetAll()">전체 초기화</button>';
+    row.innerHTML = html;
+  }
+
+  function renderModeUI(){
+    document.getElementById("mode-btn-MEL").className = "mode-btn"+(state.mode==="WITH_MEL"?" active":"");
+    document.getElementById("mode-btn-SYD").className = "mode-btn"+(state.mode==="SYD_ONLY"?" active":"");
+    document.getElementById("lede-text").textContent = currentConfig().lede;
+    document.getElementById("mode-note").textContent = "고정비: " + currentConfig().fixedNote;
+    renderPresets();
+  }
+
+  function render(){
+    renderModeUI();
+    renderOverview();
+    root.innerHTML = renderCityBlock("SYD","시드니") + renderCityBlock("MEL","멜버른") + renderSummary();
+  }
+
+  async function persist(){
+    if (!dbRef) return;
+    try { await dbRef.set({mode: state.mode, picks: state.picks, updatedAt: Date.now()}); }
+    catch(e){ /* keep local state; will retry on next change */ }
+  }
+
+  window.pick = function(city, date, themeId){
+    state.picks[date] = themeId;
+    render();
+    persist();
+  };
+  window.changeFrom = function(city, date){
+    var slots = citySlots(city);
+    var idx = -1;
+    for (var i=0;i<slots.length;i++){ if (slots[i].date===date) idx=i; }
+    for (var j=idx;j<slots.length;j++){ delete state.picks[slots[j].date]; }
+    render();
+    persist();
+  };
+  window.applyPreset = function(name){
+    var p = PRESETS[state.mode][name];
+    state.picks = Object.assign({}, p);
+    render();
+    persist();
+  };
+  window.resetAll = function(){
+    state.picks = {};
+    render();
+    persist();
+  };
+  window.setMode = function(mode){
+    if (state.mode===mode) return;
+    state.mode = mode;
+    state.picks = {};
+    render();
+    persist();
+  };
+
+  async function init(){
+    try {
+      var seed = document.getElementById("app-state");
+      if (seed && seed.textContent){
+        var parsed = JSON.parse(seed.textContent);
+        if (parsed){
+          if (parsed.mode) state.mode = parsed.mode;
+          if (parsed.picks) state.picks = parsed.picks;
+        }
+      }
+    } catch(e){}
+
+    render();
+
+    try {
+      if (window.claude && window.claude.use){
+        var db = await window.claude.use("db");
+        if (db){
+          dbRef = db.doc("trip/picks");
+          var snap = await dbRef.get();
+          if (snap.exists && snap.data()){
+            if (snap.data().mode) state.mode = snap.data().mode;
+            if (snap.data().picks) state.picks = snap.data().picks;
+            render();
+          }
+          dbRef.onSnapshot(function(s){
+            if (s.exists && s.data()){
+              if (s.data().mode) state.mode = s.data().mode;
+              state.picks = s.data().picks || {};
+              render();
+            }
+          }, function(err){ /* ignore live-sync errors, local state still works */ });
+        }
+      }
+    } catch(e){ /* db unavailable: page still works locally for this view */ }
+  }
+
+  init();
+})();
+</script>
+
+<script>
+(function(){
+  "use strict";
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function svgUse(icon){ return '<svg class="ic"><use href="#'+icon+'"/></svg>'; }
+  function mapLink(q){ return 'https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(q); }
+
+  window.guideTab = function(name){
+    document.querySelectorAll("#p-guide .tab-btn").forEach(function(b){ b.classList.toggle("active", b.dataset.tab===name); });
+    document.querySelectorAll("#p-guide .tabpanel").forEach(function(p){ p.classList.toggle("active", p.id==="tab-"+name); });
+  };
+
+  var PREP = [
+    {id:"eta", icon:"i-passport", title:"ETA 관광비자 신청", desc:"전용 앱으로 약 AUD20(약 1.8만원), 발급 후 1년간 유효·1회 최대 90일 체류. 여권 정보 오탈자는 탑승 거부 사유가 되니 출국 1주일 전 여유있게 신청."},
+    {id:"passport", icon:"i-passport", title:"여권 유효기간 확인", desc:"호주 도착 시점 기준 잔여 유효기간 6개월 이상 필요."},
+    {id:"insurance", icon:"i-shield", title:"여행자보험 가입", desc:"호주는 한국과 의료협정이 없어 의료비 부담이 커요. 의료·상해·휴대품·항공지연 보장 확인."},
+    {id:"plug", icon:"i-plug", title:"전기 어댑터(Type I)", desc:"호주 전용 콘센트 모양(V자형 2핀+접지)이 한국과 달라요. 230V/50Hz라 대부분 한국 전자기기는 어댑터만 있으면 사용 가능. 헤어드라이어 등 고전력 기기는 변압기 필요 여부 확인."},
+    {id:"season", icon:"i-sun", title:"옷차림 — 남반구 한여름", desc:"2월은 호주 한여름. 다만 블루마운틴 등 고지대와 멜버른은 일교차가 커서 얇은 겉옷 필수(레이어드룩 추천)."},
+    {id:"meds", icon:"i-pill", title:"상비약 준비", desc:"감기약·지사제·소화제·해열진통제(성인+어린이용)·멀미약·밴드는 미개봉 영문 패키지로. 처방약은 영문 처방전 동반, 입국 시 세관신고서에 기재."},
+    {id:"bug", icon:"i-bug", title:"벌레 기피제", desc:"강한 자외선과 함께 모기·진드기도 주의. 기피제나 벌레 퇴치 밴드 챙기기."},
+    {id:"tip", icon:"i-coin", title:"팁 문화", desc:"호주는 팁이 의무가 아니에요. 서비스가 좋았다면 소액을 선택적으로."},
+    {id:"drive", icon:"i-car", title:"좌측통행", desc:"렌터카를 고려한다면 호주는 좌측통행·우핸들이라는 점 미리 숙지."},
+    {id:"customs", icon:"i-seaweed", title:"식품 세관신고", desc:"라면·김·즉석밥 등을 챙긴다면 입국신고서에 반드시 체크. 아래 표 참고."}
+  ];
+
+  var PLACES = [
+    {id:"wombattour", region:"시그니처 데이투어 (운영사 확인 필요)", icon:"i-koala", title:"웜뱃투어", sub:"웜뱃 직접 안기, 호주 유일", desc:"목적지 결정과 여정표 모두에서 최우선으로 꼽은 체험인데, 정작 운영사·정확한 가격·예약 링크를 아직 확정 못 했어요. Klook·마이리얼트립·Viator에서 \"wombat hug tour Sydney\"로 검색해 후기 많은 곳으로 예약하고, 확정되면 이 카드에 채워 넣을게요.", q:"Wombat hug tour Sydney", tags:["동물","예약정보 미확정"]},
+    {id:"bondi", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이비치", sub:"수영 + 해안 워킹", desc:"빨강-노랑 깃발 사이에서만 수영. 노스본다이(North Bondi)에 아동용 조수풀이 있어 파도가 잔잔하고 가장 안전해요. 성수기 인명구조요원 06:00~19:00 상주.", q:"Bondi Beach Sydney", tags:["수영","가족추천"]},
+    {id:"icebergs", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이 아이스버그스 풀", sub:"성인풀+아동풀", desc:"50m 성인풀 옆에 얕은 아동풀이 따로 있어요. 입장료 성인 $10 / 아동 $7 / 가족 $30 수준(확인 필요).", q:"Bondi Icebergs Pool", tags:["수영"]},
+    {id:"coastalwalk", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이~쿠지 해안 산책로", sub:"구간만 추천", desc:"세계적으로 유명한 코스탈워크. 전체 왕복은 초등학생 체력엔 부담될 수 있어 구간만 걷는 걸 추천.", q:"Bondi to Coogee Coastal Walk", tags:["걷기"]},
+    {id:"coogee", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"쿠지비치 & 그랜트 보호구역", sub:"본다이보다 안전한 물놀이", desc:"파도 잔잔, 잔디밭+어린이 놀이터. 본다이보다 한적하고 아이와 물놀이하기 더 편해요.", q:"Coogee Beach Sydney", tags:["수영","가족추천"]},
+    {id:"clovelly", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"클로벨리비치", sub:"천연 수영장 형태", desc:"좁은 만 안쪽을 콘크리트로 막아 파도가 거의 없어요. 아이·스노클링 입문에 최고, 관광객도 적음. 추천 방문시간 오전 9~12시.", q:"Clovelly Beach Sydney", tags:["수영","한적함"]},
+    {id:"bbq", region:"본다이 · 쿠지 · 클로벨리", icon:"i-bbq", title:"해변 무료 바베큐장", sub:"본다이~브론테~쿠지", desc:"코스탈워크 구간 공원마다 무료 바베큐 시설. 장봐서 해변에서 바로 구워먹기 좋아요.", q:"Bronte Park BBQ Sydney", tags:["무료","바베큐"]},
+
+    {id:"manlybeach", region:"맨리", icon:"i-wave", title:"맨리비치 & 코르소", sub:"페리 30분", desc:"3km 백사장, 서핑스쿨 있음. 주말엔 야외마켓도 열려요. 서큘러키에서 페리로 접근.", q:"Manly Beach Sydney", tags:["수영","페리"]},
+    {id:"shellybeach", region:"맨리", icon:"i-wave", title:"셸리비치 & 페어리 바워풀", sub:"아이와 물놀이 최적", desc:"파도 잔잔, 얕은 모래해변. 탈의실·샤워실 있어 아이 동반에 편해요.", q:"Shelly Beach Manly", tags:["수영","가족추천"]},
+    {id:"northhead", region:"맨리", icon:"i-bridge2", title:"노스헤드 전망대", sub:"무료 절벽 산책로", desc:"시드니 하버 입구를 조망하는 절벽 산책로. 고래시즌(5~11월)엔 고래도 관찰 가능.", q:"North Head Lookout Manly", tags:["무료","전망"]},
+
+    {id:"thegap", region:"왓슨스베이 · 발모랄", icon:"i-bridge2", title:"더 갭(The Gap)", sub:"절벽 전망대", desc:"왓슨스베이의 하버뷰 절벽 전망대. 서큘러키에서 페리 약 20분.", q:"The Gap Watsons Bay", tags:["무료","전망"]},
+    {id:"balmoral", region:"왓슨스베이 · 발모랄", icon:"i-wave", title:"발모랄비치", sub:"본다이보다 한적", desc:"파도 잔잔, 그늘 많고 놀이터·무료 실내 샤워시설 있음. 아이 동반 가족에 인기, 관광객 적음.", q:"Balmoral Beach Mosman", tags:["수영","한적함"]},
+
+    {id:"taronga", region:"타롱가 · 모스만", icon:"i-koala", title:"타롱가동물원", sub:"페리 15분", desc:"서큘러키에서 페리 15분. 코알라·캥거루·웜뱃 등 호주 고유종, 실쇼·버드쇼, 아동 놀이터.", q:"Taronga Zoo Sydney", tags:["동물","가족추천"]},
+
+    {id:"fireworks", region:"시티 · 서큘러키 · 달링하버", icon:"i-firework", title:"달링하버 불꽃축제", sub:"매주 토요일 밤, 무료", desc:"약 5~10분, Pyrmont Bridge가 명당. 2027년 2월은 설날 연계로 매주 토요일 진행될 가능성(확정은 아니라 출발 전 재확인). 이번 여행 토요일(2/13) 저녁에 넣기 좋아요.", q:"Pyrmont Bridge Darling Harbour", tags:["무료","저녁"]},
+    {id:"agnsw", region:"시티 · 서큘러키 · 달링하버", icon:"i-palette", title:"아트갤러리 오브 뉴사우스웨일즈", sub:"무료입장 · 어린이 프로그램", desc:"Kids access workshop(예약제), 화/목 Australian landscapes 가이드투어, 수요일 Yiribana 갤러리 투어, 일요일 Family guided tour·로빙 아트메이킹 등 무료 프로그램 다수. 방문 전 그 주 캘린더 확인 추천.", q:"Art Gallery of New South Wales", tags:["무료","어린이체험"]},
+    {id:"circularquay", region:"시티 · 서큘러키 · 달링하버", icon:"i-bridge2", title:"오페라하우스 & 서큘러키", sub:"무료 산책", desc:"하버브리지와 함께 조망하는 무료 산책 코스. 아이와 걷기 좋은 평지.", q:"Circular Quay Sydney", tags:["무료","걷기"]},
+    {id:"darlingharbour", region:"시티 · 서큘러키 · 달링하버", icon:"i-wave", title:"달링하버 + 와일드라이프 + 씨라이프", sub:"실내 위주", desc:"유모차 이동 편리, 우천 시 대안으로도 좋아요.", q:"Darling Harbour Sydney", tags:["실내","우천대비"]},
+    {id:"barangaroo", region:"시티 · 서큘러키 · 달링하버", icon:"i-leaf", title:"바랑가루 리저브", sub:"무료 하버뷰 공원", desc:"차량통행 금지라 아이와 산책·자전거 안전. 원주민 문화투어(90분)도 가능. 윈야드역/바랑가루 메트로역.", q:"Barangaroo Reserve Sydney", tags:["무료","공원"]},
+    {id:"fishmarket", region:"시티 · 서큘러키 · 달링하버", icon:"i-cart", title:"시드니 피쉬마켓", sub:"세계 3위 규모", desc:"랍스터·게·성게 즉석조리, 피시앤칩스, 펠리칸 구경. 2025년경 신축 이전 진행 중이라 방문 전 최신 위치 확인 필요.", q:"Sydney Fish Market", tags:["확인필요"]},
+    {id:"powerhouse", region:"시티 · 서큘러키 · 달링하버", icon:"i-palette", title:"파워하우스 뮤지엄", sub:"50만점 이상 소장", desc:"달링하버·차이나타운에서 도보 가능. 가이드 투어 프로그램 있음.", q:"Powerhouse Museum Ultimo", tags:["실내","우천대비"]},
+
+    {id:"northsydneypool", region:"밀슨스포인트 · 커리빌리", icon:"i-wave", title:"노스 시드니 올림픽 풀", sub:"하버브리지 바로 아래", desc:"1936년 개장한 야외 50m 수영장, 하버브리지 조망이 압권. 가족이 꼭 넣고 싶어한 필수 일정.", q:"North Sydney Olympic Pool", tags:["수영","필수"]},
+    {id:"lunapark", region:"밀슨스포인트 · 커리빌리", icon:"i-ferris", title:"루나파크 시드니", sub:"놀이공원 + 하버뷰", desc:"관람차·롤러코스터 등, 하버뷰와 함께 즐기는 가족여행 단골 코스.", q:"Luna Park Sydney", tags:["놀이공원"]},
+    {id:"wendysgarden", region:"밀슨스포인트 · 커리빌리", icon:"i-leaf", title:"웬디스 시크릿가든", sub:"무료, 하버브리지 숨은 전망대", desc:"예술가의 아내가 수십 년 가꾼 동화 같은 무료 정원(Lavender Bay). 밀슨스포인트 산책과 묶기 좋아요.", q:"Wendy's Secret Garden Sydney", tags:["무료","한적함"]},
+    {id:"tumbalong", region:"시티 · 서큘러키 · 달링하버", icon:"i-farm", title:"텀바롱 공원", sub:"달링하버 내 가족공원", desc:"놀이터·분수광장 있는 가족형 공원, 달링하버 일정과 자연스럽게 연결.", q:"Tumbalong Park Darling Harbour", tags:["무료","놀이터"]},
+    {id:"mrsmacquarie", region:"시티 · 서큘러키 · 달링하버", icon:"i-sunset", title:"Mrs Macquaries Point", sub:"노을 명당", desc:"로열보타닉가든 끝자락 반도, 오페라하우스·하버브리지를 한 프레임에 담는 노을 스팟.", q:"Mrs Macquaries Point Sydney", tags:["무료","노을"]},
+
+    {id:"paddingtonres", region:"패딩턴 · 센테니얼파크", icon:"i-leaf", title:"패딩턴 저수지 정원", sub:"무료, 08:00~20:00", desc:"1864년 건설된 역사적 공공정원. 251-255 Oxford St.", q:"Paddington Reservoir Gardens", tags:["무료"]},
+    {id:"paddingtonmkt", region:"패딩턴 · 센테니얼파크", icon:"i-cart", title:"패딩턴 마켓", sub:"매주 토요일 10~16시", desc:"1973년부터 운영, 신진 디자이너 수공예품.", q:"Paddington Markets Sydney", tags:["마켓"]},
+    {id:"centennial", region:"패딩턴 · 센테니얼파크", icon:"i-leaf", title:"센테니얼 파크", sub:"200헥타르", desc:"이언포터 어린이 와일드플레이 가든(나무오르기 시설), 자전거 대여 가능.", q:"Centennial Park Sydney", tags:["무료","놀이터"]},
+
+    {id:"camperdown", region:"뉴타운", icon:"i-farm", title:"캠퍼다운 기념공원", sub:"피크닉 + 놀이터", desc:"킹스트리트 인근, 아이와 쉬어가기 좋은 동네 공원.", q:"Camperdown Memorial Rest Park", tags:["무료","놀이터"]},
+
+    {id:"parramattapark", region:"파라마타 · 알렉산드리아", icon:"i-leaf", title:"파라마타 공원", sub:"80헥타르 세계문화유산", desc:"넓은 잔디밭 피크닉, 놀이터, 역사적 건물.", q:"Parramatta Park", tags:["무료","공원"]},
+    {id:"grounds", region:"파라마타 · 알렉산드리아", icon:"i-farm", title:"더 그라운즈 오브 알렉산드리아", sub:"카페+농장+정원", desc:"살아있는 농장동물과 교감 가능한 복합공간. 주소: Building 7A, 2 Huntley St, Alexandria.", q:"The Grounds of Alexandria", tags:["동물","카페"]},
+
+    {id:"hosierlane", region:"멜버른 · CBD 레인웨이", icon:"i-palette", title:"호시어 레인", sub:"그래피티 거리", desc:"Flinders St역에서 도보 5분. 계속 새로 그려지는 벽화 거리. 옆 골목까지 돌면 30분~1시간.", q:"Hosier Lane Melbourne", tags:["무료","포토스팟"]},
+    {id:"degravesst", region:"멜버른 · CBD 레인웨이", icon:"i-coffee", title:"디그레이브스 스트리트", sub:"노천카페 골목", desc:"평일 오전 9시 이전 방문하면 관광객 적고 로컬 분위기.", q:"Degraves Street Melbourne", tags:["카페"]},
+    {id:"acmi", region:"멜버른 · CBD 레인웨이", icon:"i-ferris", title:"ACMI", sub:"무료 체험형 전시", desc:"Federation Square 내. 마인크래프트 플레이, 그림자인형극 체험 등 아이 참여형 콘텐츠 많음 — 우천 대비 강력 추천.", q:"ACMI Federation Square Melbourne", tags:["무료","실내","우천대비"]},
+    {id:"statelibrary", region:"멜버른 · CBD 레인웨이", icon:"i-palette", title:"State Library Victoria", sub:"무료, 우천 대비", desc:"1854년 설립된 호주 최초 무료 공공도서관. 팔각형 돔의 라트로브 열람실이 인상적.", q:"State Library Victoria", tags:["무료","실내","우천대비"]},
+
+    {id:"eurekaskydeck", region:"멜버른 · 사우스뱅크", icon:"i-bridge2", title:"유레카 스카이덱 88", sub:"88층 전망대", desc:"MCG·페더레이션스퀘어·플린더스스트리트역 조망. 추가요금으로 유리큐브 'The Edge' 체험 가능.", q:"Eureka Skydeck Melbourne", tags:["전망","실내"]},
+    {id:"sealifemelb", region:"멜버른 · 사우스뱅크", icon:"i-wave", title:"씨라이프 멜버른 아쿠아리움", sub:"펭귄 서식지 워크", desc:"스노우 장비 착용하고 펭귄 서식지 체험. 규모는 작은 편, 30분~1시간 권장.", q:"SEA LIFE Melbourne Aquarium", tags:["동물","실내","우천대비"]},
+
+    {id:"melbournemuseum", region:"멜버른 · 칼튼 · 파크빌", icon:"i-palette", title:"멜버른 뮤지엄 + IMAX", sub:"어린이 갤러리(3~8세)", desc:"공룡화석, 참여형 전시 다수, 4~6시간 소요 가능. 지하 IMAX(세계 최대급 스크린)도 같은 건물.", q:"Melbourne Museum Carlton", tags:["실내","우천대비"]},
+    {id:"melbournezoo", region:"멜버른 · 칼튼 · 파크빌", icon:"i-koala", title:"멜버른동물원", sub:"호주 최초 동물원(1862)", desc:"Elliott Ave, Parkville. 오전 11:30 코알라 설명, 11:45 미어캣 먹이주기 등 타임드 프로그램. 아침 일찍 방문 시 동물이 더 활동적.", q:"Melbourne Zoo Parkville", tags:["동물","가족추천"]},
+
+    {id:"fitzroygardens", region:"멜버른 · 피츠로이 · 콜링우드", icon:"i-leaf", title:"피츠로이 가든", sub:"쿡의 오두막 + 무료 워킹투어", desc:"Captain Cook's Cottage, 튜더마을.", q:"Fitzroy Gardens Melbourne", tags:["무료","공원"]},
+    {id:"collingwoodfarm", region:"멜버른 · 피츠로이 · 콜링우드", icon:"i-farm", title:"콜링우드 칠드런스팜", sub:"도심형 체험농장", desc:"야라강변, 동물 만지기·먹이주기, 유기농 텃밭+카페. 연중무휴, 초등 저학년에 적합.", q:"Collingwood Children's Farm", tags:["동물","가족추천"]},
+
+    {id:"scienceworks", region:"멜버른 · 근교", icon:"i-ferris", title:"Scienceworks", sub:"체험형 과학관", desc:"Spotswood. 플라네타리움 별도, 취학전 전용 구역 우수. 기차 접근 가능.", q:"Scienceworks Spotswood", tags:["실내","우천대비"]},
+    {id:"legoland", region:"멜버른 · 근교", icon:"i-ferris", title:"레고랜드 디스커버리 센터", sub:"채드스톤몰 내", desc:"세계 7번째 레고랜드, 미니랜드·4D시네마 등 12개 어트랙션. 우천 시 훌륭한 대안.", q:"LEGOLAND Discovery Centre Melbourne", tags:["실내","우천대비"]},
+    {id:"healesville", region:"멜버른 · 근교", icon:"i-koala", title:"힐스빌 생추어리 + 야라밸리 초콜릿공장", sub:"멜버른서 약 1시간", desc:"코알라·캥거루·웜뱃·플래티푸스 등 호주 고유종. 초콜릿공장은 무료입장+무료시식, 6~12세 대상 쇼콜라티에 클래스(방학중 화·수)도 있어요.", q:"Healesville Sanctuary", tags:["동물","가족추천"]},
+    {id:"puffingbilly", region:"멜버른 · 근교", icon:"i-train", title:"퍼핑빌리 증기기차", sub:"댄더농산맥", desc:"멜버른서 40km, 다리를 밖으로 내놓고 타는 증기기관차. 가족요금 할인, BBQ·놀이터·보트대여 가능.", q:"Puffing Billy Railway", tags:["가족추천"]},
+
+    {id:"grotto", region:"멜버른 · 그레이트오션로드", icon:"i-bridge2", title:"The Grotto", sub:"포트캠벨 인근", desc:"파도가 뚫어놓은 원형 동굴+아치, 계단 내려가면 바다와 하늘이 원 안에 담기는 독특한 뷰포인트.", q:"The Grotto Great Ocean Road", tags:["전망"]},
+    {id:"londonbridge", region:"멜버른 · 그레이트오션로드", icon:"i-bridge2", title:"런던 브리지", sub:"포트캠벨 국립공원", desc:"바다 위에 떠 있는 듯한 아치형 바위, 예전엔 육지와 연결돼 있었으나 붕괴로 섬이 됨.", q:"London Bridge Great Ocean Road", tags:["전망"]},
+    {id:"twelveapostles", region:"멜버른 · 그레이트오션로드", icon:"i-bridge2", title:"12사도(Twelve Apostles)", sub:"그레이트오션로드 하이라이트", desc:"석회암 기둥들이 바다 위에 늘어선 그레이트오션로드 대표 뷰포인트. 해질녘이 가장 아름다움.", q:"Twelve Apostles Viewpoint", tags:["전망","필수"]},
+    {id:"kennettriver", region:"멜버른 · 그레이트오션로드", icon:"i-koala", title:"케넷 리버 네이쳐 워크", sub:"야생 코알라", desc:"나무 위에서 자연 상태로 서식하는 야생 코알라를 볼 수 있는 짧은 산책로. 그레이트오션로드 투어에 보통 포함.", q:"Kennett River Nature Walk", tags:["동물","무료"]},
+    {id:"daysyhill", region:"멜버른 · 그레이트오션로드", icon:"i-bed", title:"Daysy Hill Country Cottages", sub:"숙소(4성급)", desc:"그레이트오션로드 구간에서 1박하고 싶을 때 고려할 만한 컨트리 코티지.", q:"Daysy Hill Country Cottages", tags:["숙소"]},
+
+    {id:"peninsulahot", region:"멜버른 · 모닝턴반도", icon:"i-wave", title:"Peninsula Hot Springs", sub:"온천 스파", desc:"멜버른서 약 1.5시간, 모닝턴반도의 온천 스파 단지. 가족탕보다는 성인 위주 구역이 많아 방문 전 키즈존 여부 확인 필요.", q:"Peninsula Hot Springs", tags:["확인필요"]},
+
+    {id:"bayandbush", region:"저비스베이", icon:"i-bed", title:"Bay and Bush Jervis Bay - Nature Retreat", sub:"숙소(4성급)", desc:"화이트헤이븐비치로 유명한 저비스베이에서 1박할 때 고려할 자연친화형 숙소.", q:"Bay and Bush Jervis Bay Nature Retreat", tags:["숙소"]}
+  ];
+
+  var FOOD = [
+    {id:"tottis", region:"본다이", icon:"i-pizza", title:"Totti's 본다이비치점", sig:"화덕빵 · 람라구 파파르델레", desc:"283 Bondi Rd. 피자 $24~30, 예약 필수(02 9114 7371).", q:"Totti's Bondi Beach"},
+    {id:"speedos", region:"본다이", icon:"i-coffee", title:"Speedo's Cafe", sig:"브런치", desc:"126 Ramsgate Ave, North Bondi. 해변 바로 앞, 가족 동반 환영. $18~25.", q:"Speedo's Cafe North Bondi"},
+    {id:"nbfish", region:"본다이", icon:"i-wave", title:"North Bondi Fish", sig:"해산물 · 키즈메뉴", desc:"North Bondi. 아이와 가기 좋은 해산물 전문점.", q:"North Bondi Fish"},
+
+    {id:"bourke", region:"서리힐스 · 달링허스트", icon:"i-croissant", title:"Bourke Street Bakery", sig:"진저 브륄레 타르트 ($5~5.5)", desc:"633 Bourke St, Surry Hills. 소시지롤도 유명. 워크인 가능.", q:"Bourke Street Bakery Surry Hills"},
+    {id:"paramount", region:"서리힐스 · 달링허스트", icon:"i-coffee", title:"Paramount Coffee Project", sig:"커피 · 브런치", desc:"80 Commonwealth St, Surry Hills. 커피 $6~10 / 메인 $20~40.", q:"Paramount Coffee Project Sydney"},
+    {id:"ellu", region:"서리힐스 · 달링허스트", icon:"i-coffee", title:"Ellu Cafe", sig:"바스크 치즈케이크", desc:"288 Crown St, Surry Hills. 한국인 셰프 운영, 사워도우 토스트류. 워크인.", q:"Ellu Cafe Surry Hills"},
+    {id:"169darlinghurst", region:"서리힐스 · 달링허스트", icon:"i-coffee", title:"169 달링허스트", sig:"올데이브런치 · 크로크마담", desc:"169 Darlinghurst Rd. 식물 가득한 코너 카페. 브런치 $20~40.", q:"169 Darlinghurst Rd Sydney"},
+
+    {id:"hurricanes", region:"시티 · 서큘러키 · 차이나타운", icon:"i-ribs", title:"Hurricane's Grill 서큘러키점", sig:"6시간 슬로우쿡 BBQ 립", desc:"1 Macquarie Place, Sydney. 립 단품 약 $42. 예약 권장(02 9211 2210).", q:"Hurricane's Grill Circular Quay"},
+    {id:"chatthai", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Chat Thai", sig:"팟타이 등 태국음식", desc:"20 Campbell St, Haymarket 외 5개 지점 (서큘러키점도 있음). 웨이팅 있을 수 있음(피크 45분+).", q:"Chat Thai Circular Quay Sydney"},
+    {id:"sixhead", region:"시티 · 서큘러키 · 차이나타운", icon:"i-ribs", title:"6HEAD", sig:"스테이크 · 해산물(캐비어 $220, 굴 $58/12개)", desc:"더록스, 1839년 건물의 워터프론트 레스토랑. 오페라하우스·하버브리지 뷰 테라스, 특별한 저녁용.", q:"6HEAD Restaurant The Rocks Sydney"},
+    {id:"metropita", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Metro Pita Kebab", sig:"터키식 케밥", desc:"849-855 George St, Ultimo. 캐주얼하게 먹기 좋은 중동식 케밥집.", q:"Metro Pita Kebab Ultimo Sydney"},
+    {id:"spicealley", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Spice Alley", sig:"아시안 호커 푸드코트", desc:"Chippendale. 한국식 포함 다양한 아시안 요리, $15~25, 워크인.", q:"Spice Alley Chippendale"},
+    {id:"mrwong", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Mr. Wong", sig:"미슐랭 딤섬 · 베이징덕", desc:"3 Bridge Lane. 1인 $60~120, 점심시간 예약 권장.", q:"Mr Wong Restaurant Sydney"},
+    {id:"mamak", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Mamak", sig:"말레이시아 로티 · 나시고랭", desc:"15 Goulburn St, Haymarket. 로티 $7~, 예약불가라 웨이팅 항상 있음.", q:"Mamak Haymarket Sydney"},
+    {id:"dintaifung", region:"시티 · 서큘러키 · 차이나타운", icon:"i-noodle", title:"Din Tai Fung", sig:"만두 · 국수", desc:"World Square 1층. 만두 $10.8~.", q:"Din Tai Fung World Square Sydney"},
+
+    {id:"pizzabros", region:"뉴타운", icon:"i-pizza", title:"Pizza Bros", sig:"Cacio e Pepe, Joey Pepperoni", desc:"35 Erskineville Rd, Erskineville(임페리얼호텔 루프탑). 피자 $24~28.", q:"Pizza Bros Erskineville Sydney"},
+    {id:"blackstar", region:"뉴타운", icon:"i-honey", title:"Black Star Pastry", sig:"딸기-수박 케이크", desc:"325 King St. 시드니 대표 인스타 디저트, 1조각 $9~10, 웨이팅 잦음.", q:"Black Star Pastry Newtown"},
+    {id:"bellabrutta", region:"뉴타운", icon:"i-pizza", title:"Bella Brutta", sig:"나폴리-로마 하이브리드 화덕피자", desc:"King St, Newtown. 평일 밤도 만석, 예약 권장.", q:"Bella Brutta Newtown"},
+
+    {id:"padrecoffee", region:"패딩턴", icon:"i-coffee", title:"Padre Coffee", sig:"포르투갈 에그타르트", desc:"241A Glenmore Rd, Paddington. 콜롬비아 싱글오리진 커피.", q:"Padre Coffee Paddington"},
+    {id:"10williamst", region:"패딩턴", icon:"i-pizza", title:"10 William Street", sig:"이탈리아식 제철요리", desc:"Paddington. 파스타·해산물, 중~고가, 예약 권장.", q:"10 William Street Paddington"},
+
+    {id:"hugosmanly", region:"맨리", icon:"i-pizza", title:"Hugo's Manly", sig:"고급 피자 · 해산물", desc:"맨리 워프 옆. 중~고가, 가족석 원하면 예약 권장.", q:"Hugo's Manly"},
+    {id:"fratellifresh", region:"맨리", icon:"i-pizza", title:"Fratelli Fresh Manly", sig:"이탈리안", desc:"맨리 워프 맞은편, 약180석 야외공간. 중가.", q:"Fratelli Fresh Manly"},
+
+    {id:"doylestakeaway", region:"왓슨스베이 · 발모랄", icon:"i-wave", title:"Doyles Takeaway", sig:"피시앤칩스", desc:"왓슨스베이 부두. 레스토랑 절반 가격, 가성비 좋아 아이와 방문에 추천, 워크인.", q:"Doyles Takeaway Watsons Bay"},
+    {id:"boathouse", region:"왓슨스베이 · 발모랄", icon:"i-wave", title:"The Boathouse Balmoral", sig:"신선 해산물", desc:"발모랄비치. 예약 불가(워크인만), 주말 대기 약 30분.", q:"The Boathouse Balmoral Beach"},
+
+    {id:"sweetbelem", region:"피터샴", icon:"i-honey", title:"Sweet Belem", sig:"포르투갈 에그타르트", desc:"New Canterbury Rd, Petersham(리틀포르투갈). 저렴, 주말 600~1000개 판매, 항상 줄서 있음.", q:"Sweet Belem Petersham"},
+
+    {id:"koreatown", region:"한인타운(채스우드 · 스트라스필드)", icon:"i-noodle", title:"스트라스필드 · 이스트우드 한인타운", sig:"짜장면 · 냉면 · 만두", desc:"장기 여행 중 한식이 그리울 때. 비원, 레드페퍼 등.", q:"Strathfield Koreatown Sydney"},
+    {id:"joomak", region:"한인타운(채스우드 · 스트라스필드)", icon:"i-noodle", title:"주막 채스우드", sig:"한식", desc:"늦은 시간까지 영업. 노스쇼어 한인타운 인근.", q:"Joomak Chatswood"},
+
+    {id:"universitycafe", region:"멜버른 · 칼튼(리틀이탈리아)", icon:"i-pizza", title:"University Cafe", sig:"이탈리안 에스프레소 · 피자 · 파스타", desc:"Lygon St, Carlton. 1952년부터 이어진 노포.", q:"University Cafe Lygon Street Carlton"},
+    {id:"brunetti", region:"멜버른 · 칼튼(리틀이탈리아)", icon:"i-honey", title:"Brunetti", sig:"케이크 · 패스트리", desc:"Lygon St 인근. 밤 10시까지 영업(멜버른 카페치고 늦음).", q:"Brunetti Carlton Melbourne"},
+
+    {id:"ilovepho", region:"멜버른 · 리치몬드(베트남타운)", icon:"i-noodle", title:"I Love Pho", sig:"쌀국수", desc:"Victoria St, Richmond. 가성비 좋은 정통 쌀국수, 가족경영.", q:"I Love Pho Victoria Street Richmond"},
+    {id:"superbowl", region:"멜버른 · 리치몬드(베트남타운)", icon:"i-noodle", title:"Super Bowl", sig:"분보후에(매운 쌀국수)", desc:"Victoria St, Richmond. 시그니처 메뉴.", q:"Super Bowl Victoria Street Richmond"},
+
+    {id:"pellegrinis", region:"멜버른 · CBD", icon:"i-pizza", title:"Pellegrini's Espresso Bar", sig:"이탈리안 홈스타일 요리", desc:"Bourke St. 1954년 개업, 멜버른 최고(最古) 에스프레소바, 헤리티지 등재.", q:"Pellegrini's Espresso Bar Melbourne"},
+    {id:"sevenseeds", region:"멜버른 · CBD", icon:"i-coffee", title:"Seven Seeds Coffee Roasters", sig:"싱글오리진 · 블렌드", desc:"Carlton. 100석 규모 대형 로스터리 카페.", q:"Seven Seeds Coffee Roasters Melbourne"},
+    {id:"pidapipo", region:"멜버른 · CBD", icon:"i-honey", title:"Pidapipo Gelato", sig:"젤라또", desc:"8 Degraves St. '멜버른 젤라또 성지'로 불림.", q:"Pidapipo Gelato Melbourne"},
+    {id:"chinchin", region:"멜버른 · CBD", icon:"i-noodle", title:"Chin Chin", sig:"아시안퓨전(딤섬 · 쌀국수 · 팟타이)", desc:"247 Flinders Ln. 중~상가, 예약 권장.", q:"Chin Chin Melbourne"},
+    {id:"hutong", region:"멜버른 · CBD", icon:"i-noodle", title:"HuTong Dumpling Bar", sig:"샤오롱바오 · 완탕", desc:"14-16 Market Ln. 웨이팅 있음, 평일 추천.", q:"HuTong Dumpling Bar Melbourne"},
+
+    {id:"lunecroissanterie", region:"멜버른 · 피츠로이 · 콜링우드", icon:"i-croissant", title:"Lune Croissanterie", sig:"크루아상", desc:"119 Rose St, Fitzroy(CBD점도 있음). 세계적으로 유명, 오픈런 필수(오픈 7:30 전 7:15 도착 권장).", q:"Lune Croissanterie Fitzroy"},
+    {id:"industrybeans", region:"멜버른 · 피츠로이 · 콜링우드", icon:"i-coffee", title:"Industry Beans", sig:"브런치", desc:"70-76 Westgarth St, Fitzroy. Lonely Planet 선정 '세계 최고의 브런치'.", q:"Industry Beans Fitzroy"},
+    {id:"proudmary", region:"멜버른 · 피츠로이 · 콜링우드", icon:"i-coffee", title:"Proud Mary", sig:"브런치 · 커피", desc:"Oxford St, Collingwood. 웨이팅 필수 수준으로 인기.", q:"Proud Mary Collingwood"}
+  ];
+
+  var MART_SNACK = [
+    {icon:"i-honey", item:"팀탐(Tim Tam)", desc:"$4~6/박스. 민트초코·솔티드카라멜 등 한국에 없는 맛 다수"},
+    {icon:"i-honey", item:"팟츠(Pods)", desc:"약 $5. 타르트형 비스킷+초콜릿잼"},
+    {icon:"i-bag", item:"스미스 칩스 · 트위스티스 · 버거링", desc:"각 약 $2.70. 한국 포카칩과 비슷하거나 호주 한정 스낵"},
+    {icon:"i-honey", item:"바이올렛 크럼블", desc:"약 $7. 초콜릿코팅 허니콤(호주판 달고나)"},
+    {icon:"i-honey", item:"카드버리(Cadbury)", desc:"마트가 면세점보다 저렴. 데어리밀크·프레도 등"},
+    {icon:"i-honey", item:"골든게이타임", sig:"아이스크림", desc:"바닐라+토피+초콜릿크럼. 1970년부터 이어진 국민 아이스크림"},
+    {icon:"i-leaf", item:"마카다미아", desc:"호주 원산, 껍질째 로스팅해 고소함 진함"}
+  ];
+  var MART_HEALTH = [
+    {icon:"i-leaf", item:"트윙스(Twinings)", desc:"티 코너 필수템, 다양한 블렌드"},
+    {icon:"i-leaf", item:"T2 티", desc:"선물용 틴 포장 인기, 전문매장이 더 다양"},
+    {icon:"i-pill", item:"블랙모어스 · 스위스", desc:"오메가3·멀티비타민, 한국 직구 대비 최대 50%+ 저렴"},
+    {icon:"i-pill", item:"마더네스트 · 세노비스", desc:"블랙모어스·스위스와 함께 3대 인기 영양제 브랜드"},
+    {icon:"i-cart", item:"케미스트 웨어하우스", sig:"매장", desc:"매주 브랜드 로테이션 '반값할인' — 영양제·화장품 구매 최적"}
+  ];
+  var MART_BEAUTY = [
+    {icon:"i-honey", item:"루카스 포포 크림", desc:"$8~12. \"호주 국민크림\", 파파야 추출 멀티유즈 연고. 빨간 용기가 정품"},
+    {icon:"i-sun", item:"선크림(Cancer Council 등)", desc:"$15~25. 호주 SPF 기준이 엄격해 차단력 확실"},
+    {icon:"i-leaf", item:"수킨(Sukin)", desc:"호주 내추럴 스킨케어, 중저가"},
+    {icon:"i-leaf", item:"버블(Bubble)", desc:"최근 젊은층 인기 스킨케어"}
+  ];
+  var MART_KIDS = [
+    {icon:"i-honey", item:"타이니 테디(Tiny Teddy)", desc:"곰돌이모양 국민 어린이쿠키"},
+    {icon:"i-pill", item:"어린이 영양제", desc:"Bioglan Kids 등 비타민C/아연 구미"},
+    {icon:"i-sun", item:"아이용 징크스틱 선크림", desc:"얼굴용, 초등학생 자외선 차단에 인기"},
+    {icon:"i-pill", item:"베판텐(Bepanthen)", desc:"상처·발진 연고, 상비용으로 좋음"},
+    {icon:"i-pill", item:"파나돌/뉴로펜 키즈", desc:"아이용 해열진통제 시럽"}
+  ];
+  var MART_SPOTS = [
+    {icon:"i-bag", item:"QVB(퀸빅토리아빌딩)", desc:"역사적 건축물, 패션·주얼리·홈웨어. 럭셔리 위주"},
+    {icon:"i-bag", item:"피트 스트리트 몰", desc:"Myer·David Jones 백화점 아동복/장난감/문구까지 원스톱. 아이 옷 사기 가장 편한 곳"},
+    {icon:"i-bag", item:"웨스트필드 파라마타", desc:"근교 대형몰, 498개 매장, 대형마트+영화관 포함"},
+    {icon:"i-cart", item:"코스모스 식품점(Cosmos Grocery)", desc:"Pitt St, 시드니 CBD. 아시안 식료품 전문, 08:00~23:00 늦게까지 영업"}
+  ];
+  var BRING = [
+    {icon:"i-pill", item:"상비약 세트", desc:"지사제·해열진통제(성인+아동)·멀미약·소화제·감기약·밴드, 영문 패키지"},
+    {icon:"i-bug", item:"모기·벌레 기피제", desc:"현지 구매도 가능하나 아이용은 익숙한 제품 추천"},
+    {icon:"i-plug", item:"호주용 어댑터(Type I)", desc:"숙소마다 부족할 수 있어 멀티탭 겸용 2개 이상"},
+    {icon:"i-sun", item:"아이용 저자극 자외선차단제", desc:"익숙한 제품이 편할 수 있음, 부족하면 현지 조달"},
+    {icon:"i-noodle", item:"즉석밥·라면·밑반찬", desc:"밀봉 포장으로, 세관신고서에 체크. 집밥(바베큐) 계획과 병행하면 식비 절감"},
+    {icon:"i-bag", item:"실내화 · 슬리퍼", desc:"자가취사 숙소에서 편하게"},
+    {icon:"i-bag", item:"세탁망 · 소용량 세제", desc:"9박 장기 일정 대비 여벌옷 세탁용"}
+  ];
+
+  function renderPrep(){
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("au_prep")||"{}"); } catch(e){}
+    document.getElementById("prep-list").innerHTML = PREP.map(function(p){
+      var checked = !!saved[p.id];
+      return '<label class="prep-item'+(checked?" checked":"")+'" data-id="'+p.id+'">'
+        + '<input type="checkbox" '+(checked?"checked":"")+' onchange="togglePrep(\''+p.id+'\',this.checked)">'
+        + '<span class="pic">'+svgUse(p.icon)+'</span>'
+        + '<span class="ptext"><b>'+esc(p.title)+'</b><span>'+esc(p.desc)+'</span></span>'
+        + '</label>';
+    }).join("");
+  }
+  window.togglePrep = function(id, checked){
+    var saved = {};
+    try { saved = JSON.parse(localStorage.getItem("au_prep")||"{}"); } catch(e){}
+    saved[id] = checked;
+    try { localStorage.setItem("au_prep", JSON.stringify(saved)); } catch(e){}
+    var el = document.querySelector('.prep-item[data-id="'+id+'"]');
+    if (el) el.classList.toggle("checked", checked);
+  };
+
+  function loadPicks(key){
+    try { return JSON.parse(localStorage.getItem(key)||"{}"); } catch(e){ return {}; }
+  }
+  function savePicks(key, obj){
+    try { localStorage.setItem(key, JSON.stringify(obj)); } catch(e){}
+  }
+
+  var PHOTOS = {"wombattour": 1, "bondi": 1, "icebergs": 1, "coastalwalk": 1, "coogee": 1, "clovelly": 1, "bbq": 1, "manlybeach": 1, "shellybeach": 1, "thegap": 1, "balmoral": 1, "taronga": 1, "fireworks": 1, "agnsw": 1, "circularquay": 1, "darlingharbour": 1, "barangaroo": 1, "fishmarket": 1, "powerhouse": 1, "northsydneypool": 1, "lunapark": 1, "wendysgarden": 1, "tumbalong": 1, "mrsmacquarie": 1, "paddingtonres": 1, "paddingtonmkt": 1, "centennial": 1, "camperdown": 1, "hosierlane": 1, "degravesst": 1, "acmi": 1, "statelibrary": 1, "eurekaskydeck": 1, "sealifemelb": 1, "melbournemuseum": 1, "melbournezoo": 1, "fitzroygardens": 1, "collingwoodfarm": 1, "scienceworks": 1, "healesville": 1, "puffingbilly": 1, "grotto": 1, "londonbridge": 1, "twelveapostles": 1, "kennettriver": 1};
+
+  function groupByRegion(items){
+    var groups = [], map = {};
+    items.forEach(function(it){
+      if (!map[it.region]){ map[it.region] = {region: it.region, items: []}; groups.push(map[it.region]); }
+      map[it.region].items.push(it);
+    });
+    return groups;
+  }
+
+  function renderPlaces(){
+    var picks = loadPicks("au_places");
+    var groups = groupByRegion(PLACES);
+    document.getElementById("place-grid").innerHTML = groups.map(function(g){
+      var cards = g.items.map(function(s){
+        var on = !!picks[s.id];
+        return '<div class="card'+(on?" picked":"")+'" data-id="'+s.id+'">'
+          + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
+          + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub)+'</span></div></div>'
+          + '<p>'+esc(s.desc)+'</p>'
+          + '<div class="metarow">'+s.tags.map(function(t){return '<span class="mtag'+(t==="필수"?" must":"")+'">'+esc(t)+'</span>';}).join("")+'</div>'
+          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(s.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'지도</a>'
+          + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
+          + '</div>';
+      }).join("");
+      return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+    }).join("");
+    renderPlaceSummary();
+  }
+  function renderPlaceSummary(){
+    var picks = loadPicks("au_places");
+    var chosen = PLACES.filter(function(p){ return picks[p.id]; });
+    var box = document.getElementById("place-summary");
+    if (chosen.length===0){ box.innerHTML = '<b>담아둔 곳이 아직 없어요</b>카드 우측 하단 + 버튼을 눌러 관심있는 곳을 담아보세요.'; return; }
+    box.innerHTML = '<b>담아둔 곳 '+chosen.length+'곳</b><div class="picked-chips">'+chosen.map(function(p){return '<span class="picked-chip">'+esc(p.title)+'</span>';}).join("")+'</div>';
+  }
+  window.togglePlace = function(id){
+    var picks = loadPicks("au_places");
+    picks[id] = !picks[id];
+    savePicks("au_places", picks);
+    renderPlaces();
+  };
+
+  function renderFood(){
+    var picks = loadPicks("au_food");
+    var groups = groupByRegion(FOOD);
+    document.getElementById("food-grid").innerHTML = groups.map(function(g){
+      var cards = g.items.map(function(f){
+        var on = !!picks[f.id];
+        return '<div class="card'+(on?" picked":"")+'" data-id="'+f.id+'">'
+          + '<div class="card-top"><span class="card-ic">'+svgUse(f.icon)+'</span><div><h4>'+esc(f.title)+'</h4></div></div>'
+          + '<span class="badge">'+esc(f.sig)+'</span>'
+          + '<p>'+esc(f.desc)+'</p>'
+          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(f.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'지도</a>'
+          + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
+          + '</div>';
+      }).join("");
+      return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+    }).join("");
+    renderFoodSummary();
+  }
+  function renderFoodSummary(){
+    var picks = loadPicks("au_food");
+    var chosen = FOOD.filter(function(f){ return picks[f.id]; });
+    var box = document.getElementById("food-summary");
+    if (chosen.length===0){ box.innerHTML = '<b>담아둔 맛집이 아직 없어요</b>카드 우측 하단 + 버튼을 눌러 가고싶은 곳을 담아보세요.'; return; }
+    box.innerHTML = '<b>담아둔 맛집 '+chosen.length+'곳</b><div class="picked-chips">'+chosen.map(function(f){return '<span class="picked-chip">'+esc(f.title)+'</span>';}).join("")+'</div>';
+  }
+  window.toggleFood = function(id){
+    var picks = loadPicks("au_food");
+    picks[id] = !picks[id];
+    savePicks("au_food", picks);
+    renderFood();
+  };
+
+  function renderShop(arr, elId){
+    document.getElementById(elId).innerHTML = arr.map(function(m){
+      return '<div class="shop-card"><span class="sic">'+svgUse(m.icon)+'</span><div><b>'+esc(m.item)+'</b><span>'+esc(m.desc)+'</span>'+(m.sig?'<span class="price">'+esc(m.sig)+'</span>':'')+'</div></div>';
+    }).join("");
+  }
+
+  renderPrep();
+  renderPlaces();
+  renderFood();
+  renderShop(MART_SNACK, "mart-snack");
+  renderShop(MART_HEALTH, "mart-health");
+  renderShop(MART_BEAUTY, "mart-beauty");
+  renderShop(MART_KIDS, "mart-kids");
+  renderShop(MART_SPOTS, "mart-spots");
+  renderShop(BRING, "bring-grid");
+})();
+</script>
+<script>
+(function(){
+  "use strict";
+
+  function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
+  function svgUse(icon){ return '<svg class="ic"><use href="#'+icon+'"/></svg>'; }
+
+  window.trackerTab = function(name){
+    document.querySelectorAll("#p-tracker .tab-btn").forEach(function(b){ b.classList.toggle("active", b.dataset.tab===name); });
+    document.querySelectorAll("#p-tracker .tabpanel").forEach(function(p){ p.classList.toggle("active", p.id==="tab-"+name); });
+  };
+
+  var BOOKINGS = [
+    {id:"domestic", icon:"i-plane", title:"시드니 ⇄ 멜버른 국내선", sub:"또는 게링공 렌터카", prio:"high"},
+    {id:"wombat", icon:"i-koala", title:"웜뱃투어", sub:"웜뱃 안기, 소규모·조기마감", prio:"high"},
+    {id:"phillip", icon:"i-penguin", title:"필립아일랜드 펭귄퍼레이드", sub:"소규모 투어, 조기마감", prio:"high"},
+    {id:"bluemtn", icon:"i-tour", title:"블루마운틴 + 페더데일 투어", sub:"", prio:"mid"},
+    {id:"gor", icon:"i-tour", title:"그레이트오션로드 투어", sub:"", prio:"mid"},
+    {id:"melhotel", icon:"i-bed", title:"멜버른 숙소 (4박)", sub:"취사 가능한 곳 추천", prio:"high"},
+    {id:"lasthotel", icon:"i-bed", title:"시드니 마지막밤 숙소", sub:"또는 타롱가 리트릿 스플러지", prio:"mid"},
+    {id:"tarongacombo", icon:"i-ferry", title:"타롱가동물원 페리+입장 콤보", sub:"Plan B 선택 시", prio:"mid"},
+    {id:"sunsetcruise", icon:"i-sunset", title:"선셋 하버크루즈", sub:"Plan B 선택 시, 저녁시간대 인기", prio:"mid"},
+    {id:"insurance", icon:"i-shield", title:"여행자보험", sub:"4인 전원", prio:"high"},
+    {id:"eta", icon:"i-passport", title:"ETA 관광비자", sub:"4인 전원, 출발 1주일 전 신청", prio:"high"},
+    {id:"rentalcar", icon:"i-car", title:"렌터카 + 국제운전면허증", sub:"게링공 데이트립 선택 시", prio:"mid"},
+    {id:"gerringong", icon:"i-map", title:"게링공 데이트립(투어 또는 렌터카)", sub:"다오를란도는 화요일 휴무", prio:"mid"},
+    {id:"campervan", icon:"i-car", title:"캠퍼밴 렌탈 + 캠핑장 예약", sub:"페블리비치 등, 성수기라 서둘러야 함", prio:"mid"}
+  ];
+
+  var state = {status:{}, notes:{}, fields:{}};
+  var dbRef = null;
+
+  function renderBooking(){
+    var list = document.getElementById("booking-list");
+    list.innerHTML = BOOKINGS.map(function(b){
+      var st = state.status[b.id] || "todo";
+      var label = st==="done" ? "완료" : st==="progress" ? "진행중" : "미정";
+      var note = state.notes[b.id] || "";
+      return '<div class="booking-row">'
+        + '<div class="booking-top">'
+        + '<span class="booking-ic">'+svgUse(b.icon)+'</span>'
+        + '<span class="booking-title"><b>'+esc(b.title)+'</b>'+(b.sub?'<span>'+esc(b.sub)+'</span>':'')+'</span>'
+        + '<span class="prio '+b.prio+'">'+(b.prio==="high"?"최우선":"보통")+'</span>'
+        + '<button class="status-btn '+st+'" onclick="cycleStatus(\''+b.id+'\')">'+label+'</button>'
+        + '</div>'
+        + '<input class="booking-input" placeholder="메모: 예약처 · 가격 · 확인번호" value="'+esc(note)+'" onchange="saveNote(\''+b.id+'\', this.value)">'
+        + '</div>';
+    }).join("");
+    renderProgress();
+  }
+  function renderProgress(){
+    var done = BOOKINGS.filter(function(b){ return state.status[b.id]==="done"; }).length;
+    document.getElementById("progress-text").textContent = done+" / "+BOOKINGS.length+" 완료";
+    document.getElementById("progress-fill").style.width = (BOOKINGS.length? (done/BOOKINGS.length*100) : 0)+"%";
+  }
+
+  window.cycleStatus = function(id){
+    var order = ["todo","progress","done"];
+    var cur = state.status[id] || "todo";
+    var next = order[(order.indexOf(cur)+1) % order.length];
+    state.status[id] = next;
+    renderBooking();
+    persist();
+  };
+  window.saveNote = function(id, val){
+    state.notes[id] = val;
+    persist();
+  };
+  window.saveField = function(key, val){
+    state.fields[key] = val;
+    document.getElementById("save-status").textContent = "저장됨";
+    persist();
+    setTimeout(function(){ document.getElementById("save-status").textContent = "입력하면 자동 저장돼요"; }, 1500);
+  };
+
+  function renderFields(){
+    var f = state.fields || {};
+    ["insurer","insurerphone","policyno","homecontact"].forEach(function(k){
+      var el = document.getElementById("f-"+k);
+      if (el && f[k]) el.value = f[k];
+    });
+  }
+
+  async function persist(){
+    if (!dbRef) return;
+    try { await dbRef.set({status: state.status, notes: state.notes, fields: state.fields, updatedAt: Date.now()}); }
+    catch(e){ /* keep local state */ }
+  }
+
+  async function init(){
+    renderBooking();
+    try {
+      if (window.claude && window.claude.use){
+        var db = await window.claude.use("db");
+        if (db){
+          dbRef = db.doc("trip/tracker");
+          var snap = await dbRef.get();
+          if (snap.exists && snap.data()){
+            state.status = snap.data().status || {};
+            state.notes = snap.data().notes || {};
+            state.fields = snap.data().fields || {};
+            renderBooking();
+            renderFields();
+          }
+          dbRef.onSnapshot(function(s){
+            if (s.exists && s.data()){
+              state.status = s.data().status || {};
+              state.notes = s.data().notes || {};
+              state.fields = s.data().fields || {};
+              renderBooking();
+              renderFields();
+            }
+          }, function(err){});
+        }
+      }
+    } catch(e){}
+  }
+
+  init();
+})();
+</script>

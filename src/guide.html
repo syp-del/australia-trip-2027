@@ -108,6 +108,9 @@
   .grid{display:grid; grid-template-columns:repeat(auto-fill, minmax(240px,1fr)); gap:12px;}
   .card{background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:15px 16px; display:flex; flex-direction:column; gap:8px; position:relative;}
   .card.picked{border-color:var(--euca);}
+  .card{overflow:hidden;}
+  .card-photo{display:block; width:calc(100% + 32px); max-width:none; height:150px; margin:-15px -16px 4px; object-fit:cover; background:var(--surface-alt);}
+  .feature-photo{display:block; width:100%; height:190px; object-fit:cover; border-radius:14px; margin-bottom:12px;}
   .card-top{display:flex; align-items:center; gap:10px;}
   .card-ic{width:36px; height:36px; border-radius:10px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center; flex:none;}
   .card h4{font-size:14px; font-weight:700; margin:0;}
@@ -343,6 +346,7 @@
       <div class="feature">
         <div class="ficon"><svg class="ic"><use href="#i-koala"/></svg></div>
         <div>
+          <img class="feature-photo" src="img/murramarang.jpg" alt="머라마랑 국립공원 해변 풀밭의 캥거루" loading="lazy">
           <h3>해변까지 내려오는 야생 캥거루 옆에서 캠핑</h3>
           <p>국립공원 오지 캠핑장 대신 전기·샤워·풀장을 갖춘 <b>정식 홀리데이파크</b> 위주로 골랐어요. 캠퍼밴에 필수인 전기 사이트(파워드 사이트)가 있어야 냉장고·에어컨을 쓸 수 있어서, 특히 2월 한여름엔 이쪽이 아이와 훨씬 편해요.</p>
           <table class="ftable">
@@ -651,6 +655,8 @@
     try { localStorage.setItem(key, JSON.stringify(obj)); } catch(e){}
   }
 
+  var PHOTOS = {"wombattour": 1, "bondi": 1, "icebergs": 1, "coastalwalk": 1, "coogee": 1, "clovelly": 1, "bbq": 1, "manlybeach": 1, "shellybeach": 1, "thegap": 1, "balmoral": 1, "taronga": 1, "fireworks": 1, "agnsw": 1, "circularquay": 1, "darlingharbour": 1, "barangaroo": 1, "fishmarket": 1, "powerhouse": 1, "northsydneypool": 1, "lunapark": 1, "wendysgarden": 1, "tumbalong": 1, "mrsmacquarie": 1, "paddingtonres": 1, "paddingtonmkt": 1, "centennial": 1, "camperdown": 1, "hosierlane": 1, "degravesst": 1, "acmi": 1, "statelibrary": 1, "eurekaskydeck": 1, "sealifemelb": 1, "melbournemuseum": 1, "melbournezoo": 1, "fitzroygardens": 1, "collingwoodfarm": 1, "scienceworks": 1, "healesville": 1, "puffingbilly": 1, "grotto": 1, "londonbridge": 1, "twelveapostles": 1, "kennettriver": 1};
+
   function groupByRegion(items){
     var groups = [], map = {};
     items.forEach(function(it){
@@ -667,6 +673,7 @@
       var cards = g.items.map(function(s){
         var on = !!picks[s.id];
         return '<div class="card'+(on?" picked":"")+'" data-id="'+s.id+'">'
+          + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
           + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub)+'</span></div></div>'
           + '<p>'+esc(s.desc)+'</p>'
           + '<div class="metarow">'+s.tags.map(function(t){return '<span class="mtag'+(t==="필수"?" must":"")+'">'+esc(t)+'</span>';}).join("")+'</div>'
