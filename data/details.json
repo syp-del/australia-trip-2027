@@ -1876,5 +1876,409 @@
   "lng": 144.9695,
   "verified": "official",
   "src": "https://gimlet.melbourne/visit"
+ },
+ "tottis": {
+  "hours": "월~토 11:30~24:00 · 일 11:30~22:00",
+  "closed": [],
+  "price": "가격대 $$$ (셰어 스타일, 캐주얼 상위)",
+  "note": "예약 권장(Merivale 온라인 예약). The Royal 펍 뒤편 283 Bondi Rd, 리스팅상 가족 동반 가능. 공식 사이트 접속 불가로 리스팅 기준 시간.",
+  "lat": -33.89483,
+  "lng": 151.26864,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/sydney/restaurants/tottis"
+ },
+ "speedos": {
+  "hours": "일~목 06:00~15:00 · 금·토 06:00~19:00",
+  "closed": [],
+  "price": "브런치 메뉴 약 A$27, 에그 온 토스트 A$15",
+  "note": "예약 없이 워크인(주말 오전 대기 가능). 캐주얼 해변 카페로 아이 동반 무난.",
+  "lat": -33.89064,
+  "lng": 151.28277,
+  "verified": "official",
+  "src": "https://www.speedoscafe.com.au/"
+ },
+ "nbfish": {
+  "hours": "월~목 12:00~21:30 · 금·토 12:00~23:00 · 일 12:00~20:30",
+  "closed": [],
+  "price": "",
+  "note": "온라인 예약 가능(권장), 키즈 메뉴 있음. 일부 리스팅은 월·화 휴무/단축으로 표기하니 방문 전 확인.",
+  "lat": -33.89043,
+  "lng": 151.28253,
+  "verified": "official",
+  "src": "https://www.northbondifish.com.au/"
+ },
+ "bourke": {
+  "hours": "월~금 07:00~18:00 · 토·일 07:00~17:00",
+  "closed": [],
+  "price": "",
+  "note": "633 Bourke St 서리힐스 본점 기준. 예약 없는 소형 베이커리(주말 줄 가능), 아이 동반 무난.",
+  "lat": -33.88943,
+  "lng": 151.21492,
+  "verified": "official",
+  "src": "https://bourkestreetbakery.com.au/?p=9938"
+ },
+ "paramount": {
+  "hours": "매일 07:00~16:00 (평일 주방 15:00 마감)",
+  "closed": [],
+  "price": "",
+  "note": "80 Commonwealth St. 예약 정보 없음 — 워크인 카페, 주말 브런치 대기 가능.",
+  "lat": -33.87931,
+  "lng": 151.21105,
+  "verified": "official",
+  "src": "https://paramountcoffeeproject.com.au/"
+ },
+ "ellu": {
+  "hours": "월~금 10:00~17:00 · 토·일 08:00~17:00",
+  "closed": [],
+  "price": "",
+  "note": "288 Crown St 브런치·말차 카페. 공식 사이트 확인 불가, 대관 리스팅 기준 시간이라 방문 전 확인 권장. 좌표는 인접 번지 기준 근사치.",
+  "lat": -33.8801,
+  "lng": 151.2152,
+  "verified": "secondary",
+  "src": "https://www.tagvenue.com/au/venues/surry-hills/61412/ellu-cafe"
+ },
+ "169darlinghurst": {
+  "hours": "미확인 — 방문 전 확인",
+  "closed": [],
+  "price": "",
+  "note": "주의: 폐업 가능성 높음 — OpenTable에 영구 폐업으로 표기된 것으로 검색되며 2018년 이후 최신 영업 정보를 찾지 못함. Tatler 바 위층 카페·바·나이트클럽 형태였음(좌표 근사치).",
+  "lat": -33.8775,
+  "lng": 151.22038,
+  "verified": "unconfirmed",
+  "src": "https://www.opentable.com.au/r/169-darlinghurst-darlinghurst"
+ },
+ "hurricanes": {
+  "hours": "매일 12:00~15:00 · 17:00~늦게",
+  "closed": [],
+  "price": "",
+  "note": "Gateway 빌딩 L2(1 Macquarie Place) 서큘러키점 기준. 예약 권장(02 9211 2210), 키즈 메뉴 여부는 공식 페이지에서 확인 못함.",
+  "lat": -33.86213,
+  "lng": 151.20988,
+  "verified": "official",
+  "src": "https://hurricanesgrillrestaurants.com.au/circular-quay/"
+ },
+ "chatthai": {
+  "hours": "미확인 — 방문 전 확인 (리스팅상 일~목 11:00~21:00 · 금·토 11:00~21:30)",
+  "closed": [],
+  "price": "",
+  "note": "주의: 공식 사이트 지점 목록에 서큘러키(Gateway)점이 없음(Thaitown·Manly Wharf·Randwick만 표기) — 폐점 가능성. 대안: Thaitown 본점 20 Campbell St, 일~목 10:00~22:00 · 금·토 10:00~02:00(공식).",
+  "lat": -33.86213,
+  "lng": 151.20988,
+  "verified": "unconfirmed",
+  "src": "https://www.chatthai.com.au/contact/"
+ },
+ "sixhead": {
+  "hours": "월 17:00~21:30 · 화~목·일 12:00~21:30 · 금·토 12:00~22:30",
+  "closed": [],
+  "price": "스테이크 A$78~139 (필레 200g A$78, 립아이 400g A$110)",
+  "note": "예약 권장(워크인은 자리 있을 때만). 어린이 환영·12세 이하 키즈 메뉴·하이체어 있음, 스마트 캐주얼 드레스코드.",
+  "lat": -33.85676,
+  "lng": 151.20902,
+  "verified": "official",
+  "src": "https://6head.com.au/contact/"
+ },
+ "metropita": {
+  "hours": "월~수 07:00~04:00 · 목~일 07:00~05:00",
+  "closed": [],
+  "price": "피데 약 A$22.5, 메인 A$17~25",
+  "note": "849 George St, Ultimo. 예약 없이 워크인하는 케밥집, 키즈 메뉴 있음. 심야 영업.",
+  "lat": -33.88356,
+  "lng": 151.20278,
+  "verified": "official",
+  "src": "https://www.metropitakebab.com.au/"
+ },
+ "spicealley": {
+  "hours": "일~수 11:00~21:30 · 목~토 11:00~22:00",
+  "closed": [],
+  "price": "",
+  "note": "Kensington St 야외 호커 푸드코트, 예약 없이 워크인(매장 식사·포장). 결제 방식은 공식 페이지에 명시 없음.",
+  "lat": -33.88517,
+  "lng": 151.20195,
+  "verified": "official",
+  "src": "https://www.spicealley.com.au/"
+ },
+ "mrwong": {
+  "hours": "점심 매일 12:00~15:00(토·일 10:30~) · 저녁 일 17:30~22:00, 월~수 17:30~23:00, 목~토 17:30~23:45",
+  "closed": [],
+  "price": "",
+  "note": "예약 강력 권장(Merivale/OpenTable). 공식 사이트 접속 불가로 OpenTable 리스팅 기준 시간, 어린이 정책 미확인.",
+  "lat": -33.86411,
+  "lng": 151.2083,
+  "verified": "secondary",
+  "src": "https://www.opentable.co.uk/r/mr-wong-sydney"
+ },
+ "mamak": {
+  "hours": "월~금 11:30~14:30 · 17:30~22:00 · 토 11:30~24:00 · 일 11:30~22:00",
+  "closed": [],
+  "price": "로티 차나이 A$11.50, 무르타박 A$20",
+  "note": "Haymarket점(15 Goulburn St) 기준. 예약 불가 — 워크인 줄서기, 피크 시간 대기.",
+  "lat": -33.87772,
+  "lng": 151.20423,
+  "verified": "official",
+  "src": "https://mamak.com.au/contact"
+ },
+ "dintaifung": {
+  "hours": "영업 종료(폐점)",
+  "closed": [
+   "월",
+   "화",
+   "수",
+   "목",
+   "금",
+   "토",
+   "일"
+  ],
+  "price": "",
+  "note": "주의: 월드스퀘어점 폐점 — Time Out에 CLOSED 표기, 딘타이펑은 호주 프랜차이즈 종료 후 매장들이 Double Chin Eats로 교체됨. 대안: Double Chin Eats Westfield Sydney(188 Pitt St) 등, 영업시간은 별도 확인.",
+  "lat": -33.87729,
+  "lng": 151.20726,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/sydney/restaurants/din-tai-fung-world-square"
+ },
+ "pizzabros": {
+  "hours": "월~금 16:00~22:00 · 토·일 12:00~22:00",
+  "closed": [],
+  "price": "",
+  "note": "주의: The Imperial Erskineville 펍(드래그쇼 바) 옥상 매장 — 미성년자 입장 조건 미확인, 방문 전 문의. 예약 필수에 가까움(워크인 자리 적음).",
+  "lat": -33.89917,
+  "lng": 151.18262,
+  "verified": "official",
+  "src": "https://imperialerskineville.com.au/"
+ },
+ "blackstar": {
+  "hours": "월~수 09:30~17:00 · 목·일 09:30~20:00 · 금·토 09:30~22:00",
+  "closed": [],
+  "price": "",
+  "note": "뉴타운점(Shop 1, 325 King St) 기준. 예약 없이 워크인, 아이 동반 무난.",
+  "lat": -33.89724,
+  "lng": 151.17893,
+  "verified": "official",
+  "src": "https://www.blackstarpastry.com/pages/locations"
+ },
+ "bellabrutta": {
+  "hours": "월~목 17:30~늦게 · 금 17:00~늦게 · 토·일 12:00~16:30, 17:00~늦게",
+  "closed": [],
+  "price": "뱅큇 A$65/인",
+  "note": "매장 식사는 135 King St(포장은 170-172 Missenden Rd). 평일 점심 없음, SevenRooms 예약 권장. 키즈 메뉴 정보 없음.",
+  "lat": -33.89314,
+  "lng": 151.18353,
+  "verified": "official",
+  "src": "https://www.bellabrutta.com.au/"
+ },
+ "padrecoffee": {
+  "hours": "월~금 07:00~14:00 · 토 07:00~15:00 · 일 07:00~14:00",
+  "closed": [],
+  "price": "",
+  "note": "241A-241B Glenmore Rd. 커피와 페이스트리 위주(식사 메뉴 거의 없음), 워크인.",
+  "lat": -33.88226,
+  "lng": 151.22863,
+  "verified": "official",
+  "src": "https://www.padrecoffee.com.au/pages/paddington"
+ },
+ "10williamst": {
+  "hours": "월~목 17:00~늦게 · 금·토 12:00~늦게",
+  "closed": [
+   "일"
+  ],
+  "price": "",
+  "note": "주의: 소규모 와인바 — 키즈 메뉴 정보 없고 평일은 저녁만 영업, 7세 동반엔 부적합할 수 있음. 온라인 예약(6인 이상은 이메일).",
+  "lat": -33.88579,
+  "lng": 151.22912,
+  "verified": "official",
+  "src": "https://www.10williamst.com.au/contact"
+ },
+ "hugosmanly": {
+  "hours": "월~금 12:00~늦게 · 토·일 11:30~늦게",
+  "closed": [],
+  "price": "피자 A$33~39",
+  "note": "Manly Wharf Shop 1. 예약 권장(온라인), 키즈 메뉴 있음.",
+  "lat": -33.79981,
+  "lng": 151.28387,
+  "verified": "official",
+  "src": "https://hugosmanly.com.au/"
+ },
+ "fratellifresh": {
+  "hours": "월~목 12:00~21:00 · 금·토 12:00~22:00 · 일 11:30~20:30",
+  "closed": [],
+  "price": "",
+  "note": "54 West Esplanade 맨리점 기준. 키즈 메뉴 있는 가족형 이탈리안, 예약 가능.",
+  "lat": -33.79894,
+  "lng": 151.2843,
+  "verified": "official",
+  "src": "https://www.fratellifresh.com.au/location/manly/"
+ },
+ "doylestakeaway": {
+  "hours": "일~목 10:30~약 17:00 · 금·토 10:30~17:00",
+  "closed": [],
+  "price": "",
+  "note": "Fishermans Wharf 테이크어웨이 매장 기준(레스토랑 Doyles on the Beach와 별개). 예약·사전주문 불가, 줄서서 주문.",
+  "lat": -33.84344,
+  "lng": 151.28159,
+  "verified": "official",
+  "src": "https://www.doyles.com.au/"
+ },
+ "boathouse": {
+  "hours": "매일 07:00~17:00 · 금·토는 20:00까지",
+  "closed": [],
+  "price": "",
+  "note": "2 The Esplanade, Balmoral. 기본 워크인(공식 페이지에 예약 안내가 혼재 — 방문 전 확인), 키즈 메뉴 있음.",
+  "lat": -33.82785,
+  "lng": 151.25328,
+  "verified": "official",
+  "src": "https://www.theboathousegroup.com.au/venues/the-boathouse-balmoral"
+ },
+ "sweetbelem": {
+  "hours": "월~토 08:30~17:00 · 일 09:00~16:00",
+  "closed": [],
+  "price": "아몬드 타르트 A$5.70, 아몬드 크루아상 A$8",
+  "note": "피터샴 본점(35 New Canterbury Rd) 기준, Barangaroo에 2호점 있음. 워크인 베이커리.",
+  "lat": -33.89619,
+  "lng": 151.15379,
+  "verified": "official",
+  "src": "https://www.sweetbelem.com.au/petersham"
+ },
+ "koreatown": {
+  "hours": "업소별 상이 — 대체로 11:00경~21:30, BBQ집은 17:00~24:00",
+  "closed": [],
+  "price": "",
+  "note": "지역 안내 항목(좌표는 Strathfield역). 예: Jang Ta Bal 매일 17:00~24:00, Biwon 11:00~21:30 — 가려는 식당별로 개별 확인 필요.",
+  "lat": -33.8717,
+  "lng": 151.09423,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/sydney/restaurants/jang-ta-bal-strathfield"
+ },
+ "joomak": {
+  "hours": "월~금 11:30~15:00 · 17:00~24:00 · 토 11:30~24:00 · 일 11:30~22:30",
+  "closed": [],
+  "price": "",
+  "note": "18/26 Anderson St, Chatswood(OSM 표기 'New Joomak'). 리스팅상 가족 식사 가능한 한식당이나 밤에는 술집 분위기 — 이른 저녁 권장. joomak.com.au는 멜버른 다른 업소.",
+  "lat": -33.79516,
+  "lng": 151.18252,
+  "verified": "secondary",
+  "src": "https://atmosfy.io/location/chatswood/joomak-korean-restaurant-chatswood"
+ },
+ "universitycafe": {
+  "hours": "화~일 12:00~21:30",
+  "closed": [
+   "월"
+  ],
+  "price": "",
+  "note": "257 Lygon St. 공식 사이트 접속 불가로 AGFG 리스팅 기준 — 조식 영업 여부 불명, 방문 전 확인.",
+  "lat": -37.79945,
+  "lng": 144.96689,
+  "verified": "secondary",
+  "src": "https://www.agfg.com.au/restaurant/university-cafe-148494"
+ },
+ "brunetti": {
+  "hours": "일~목 05:00~22:00 · 금·토 05:00~23:00",
+  "closed": [],
+  "price": "",
+  "note": "칼튼 본점(380 Lygon St) 기준. 예약 없이 카운터 주문, 넓어서 아이 동반 편함.",
+  "lat": -37.79815,
+  "lng": 144.96789,
+  "verified": "official",
+  "src": "https://brunetticlassico.com.au/carlton/"
+ },
+ "ilovepho": {
+  "hours": "매일 09:00~21:00 (일부 리스팅 22:00까지)",
+  "closed": [],
+  "price": "",
+  "note": "264 Victoria St. 예약 불가 — 워크인, 포장·배달 가능. 결제 방식 미확인.",
+  "lat": -37.81075,
+  "lng": 145.00001,
+  "verified": "secondary",
+  "src": "https://www.broadsheet.com.au/melbourne/richmond/restaurants/i-love-pho"
+ },
+ "superbowl": {
+  "hours": "매일 11:00~20:30 (일부 리스팅 22:00까지)",
+  "closed": [],
+  "price": "",
+  "note": "252 Victoria St의 베트남 쌀국수집(Super Bowl Pho & Bun Bo Hue). 워크인, 가족 동반 무난. 좌표는 번지 기준 근사치.",
+  "lat": -37.8107,
+  "lng": 144.9996,
+  "verified": "secondary",
+  "src": "https://wanderlog.com/place/details/4069418/super-bowl-pho--bun-bo-hue"
+ },
+ "pellegrinis": {
+  "hours": "월~목 08:00~21:00 · 금·토 08:00~22:00",
+  "closed": [
+   "일"
+  ],
+  "price": "",
+  "note": "66 Bourke St. 예약 없는 카운터석 위주 소형 에스프레소 바 — 4인 나란히 앉기 어려울 수 있음. 결제 방식 미확인.",
+  "lat": -37.81172,
+  "lng": 144.97121,
+  "verified": "secondary",
+  "src": "https://whatson.melbourne.vic.gov.au/eat-and-drink/pellegrinis-espresso-bar"
+ },
+ "sevenseeds": {
+  "hours": "월~금 07:00~17:00 · 토·일 08:00~17:00 (주방 16:00 마감)",
+  "closed": [],
+  "price": "",
+  "note": "칼튼 본점(114 Berkeley St) 기준. 예약 불가, 약 100석이라 워크인 수월.",
+  "lat": -37.80283,
+  "lng": 144.95904,
+  "verified": "official",
+  "src": "https://sevenseeds.com.au/pages/seven-seeds-carlton"
+ },
+ "pidapipo": {
+  "hours": "매일 12:00~23:00",
+  "closed": [],
+  "price": "",
+  "note": "CBD점(8 Degraves St) 기준, 칼튼(299 Lygon St)에도 매장. 공식 사이트 접속 불가·출처가 오래돼 방문 전 확인 권장.",
+  "lat": -37.81761,
+  "lng": 144.96596,
+  "verified": "secondary",
+  "src": "https://www.timeout.com/melbourne/restaurants/pidapipo-cbd"
+ },
+ "chinchin": {
+  "hours": "매일 11:00~늦게",
+  "closed": [],
+  "price": "",
+  "note": "125 Flinders Lane. 온라인 예약 가능(권장), 워크인은 피크 시간 대기 김. 음식이 매운 편 — 아이용 순한 메뉴 요청 필요.",
+  "lat": -37.81558,
+  "lng": 144.97034,
+  "verified": "official",
+  "src": "https://www.chinchin.melbourne/"
+ },
+ "hutong": {
+  "hours": "월~토 12:00~14:30 · 17:30~21:30 · 일 12:00~15:00 · 17:30~20:30",
+  "closed": [],
+  "price": "",
+  "note": "CBD점(14-16 Market Lane) 기준, Prahran에도 지점. 예약 권장(03 9886 6999), 브레이크타임 주의.",
+  "lat": -37.81187,
+  "lng": 144.9694,
+  "verified": "official",
+  "src": "https://www.hutong.com.au/"
+ },
+ "lunecroissanterie": {
+  "hours": "월~금 07:30~15:00 · 토·일 08:00~15:00 (품절 시 조기 마감)",
+  "closed": [],
+  "price": "",
+  "note": "피츠로이 본점(119 Rose St) 기준. 예약 없이 줄서기, 오후엔 품절 가능 — 오전 방문 권장. 공휴일은 08:00 오픈.",
+  "lat": -37.79596,
+  "lng": 144.97994,
+  "verified": "official",
+  "src": "https://lunecroissanterie.com/contact"
+ },
+ "industrybeans": {
+  "hours": "월~금 07:00~15:30 · 토·일 08:00~15:30",
+  "closed": [],
+  "price": "식사 메뉴 A$26~36",
+  "note": "현재 주소 70-76 Westgarth St, Fitzroy(구 Rose St 매장에서 이전). 예약 가능, 주말 브런치 대기.",
+  "lat": -37.79477,
+  "lng": 144.97814,
+  "verified": "official",
+  "src": "https://industrybeans.com/pages/fitzroy-cafe-and-roastery"
+ },
+ "proudmary": {
+  "hours": "월~금 07:00~15:00 · 토·일 08:00~15:00",
+  "closed": [],
+  "price": "",
+  "note": "콜링우드 카페(172 Oxford St) 기준 — Aunty Peg's(매일 08:00~17:00)는 별도 매장. 워크인, 주말 대기.",
+  "lat": -37.80234,
+  "lng": 144.98525,
+  "verified": "official",
+  "src": "https://www.proudmarycoffee.com.au/pages/cafe"
  }
 }
