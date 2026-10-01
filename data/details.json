@@ -1937,16 +1937,6 @@
   "verified": "secondary",
   "src": "https://www.tagvenue.com/au/venues/surry-hills/61412/ellu-cafe"
  },
- "169darlinghurst": {
-  "hours": "미확인 — 방문 전 확인",
-  "closed": [],
-  "price": "",
-  "note": "주의: 폐업 가능성 높음 — OpenTable에 영구 폐업으로 표기된 것으로 검색되며 2018년 이후 최신 영업 정보를 찾지 못함. Tatler 바 위층 카페·바·나이트클럽 형태였음(좌표 근사치).",
-  "lat": -33.8775,
-  "lng": 151.22038,
-  "verified": "unconfirmed",
-  "src": "https://www.opentable.com.au/r/169-darlinghurst-darlinghurst"
- },
  "hurricanes": {
   "hours": "매일 12:00~15:00 · 17:00~늦게",
   "closed": [],
@@ -2016,24 +2006,6 @@
   "lng": 151.20423,
   "verified": "official",
   "src": "https://mamak.com.au/contact"
- },
- "dintaifung": {
-  "hours": "영업 종료(폐점)",
-  "closed": [
-   "월",
-   "화",
-   "수",
-   "목",
-   "금",
-   "토",
-   "일"
-  ],
-  "price": "",
-  "note": "주의: 월드스퀘어점 폐점 — Time Out에 CLOSED 표기, 딘타이펑은 호주 프랜차이즈 종료 후 매장들이 Double Chin Eats로 교체됨. 대안: Double Chin Eats Westfield Sydney(188 Pitt St) 등, 영업시간은 별도 확인.",
-  "lat": -33.87729,
-  "lng": 151.20726,
-  "verified": "secondary",
-  "src": "https://www.timeout.com/sydney/restaurants/din-tai-fung-world-square"
  },
  "pizzabros": {
   "hours": "월~금 16:00~22:00 · 토·일 12:00~22:00",
