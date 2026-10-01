@@ -121,6 +121,25 @@
   .mtag{font-size:9.5px; font-weight:700; padding:1.5px 7px; border-radius:999px; background:var(--bg); border:1px solid var(--line); color:var(--ink-faint);}
   .mtag.must{background:var(--coral); border-color:var(--coral); color:#fff;}
   .shop-card .sph{width:64px; height:64px; border-radius:10px; object-fit:cover; flex:none; background:var(--surface-alt);}
+  .lv.mine{background:var(--ocean-soft); color:var(--ocean);}
+  .card-actions{display:flex; align-items:center; gap:6px;}
+  .del-btn{font:inherit; font-size:11px; font-weight:700; color:var(--ink-faint); background:none; border:1.5px solid var(--line); border-radius:999px; padding:4px 10px; cursor:pointer;}
+  .del-btn:hover{color:var(--coral-ink); border-color:var(--coral);}
+  .add-box{border:1.5px dashed var(--line); border-radius:14px; padding:12px 14px; margin:0 0 16px; background:var(--surface);}
+  .add-box summary{cursor:pointer; font-size:13px; font-weight:700; color:var(--ocean); list-style:none;}
+  .add-box summary::-webkit-details-marker{display:none;}
+  .add-form{display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:10px; margin-top:12px;}
+  .add-form label{display:flex; flex-direction:column; gap:4px; font-size:11px; font-weight:700; color:var(--ink-faint);}
+  .add-form input[type=text]{font:inherit; font-size:13px; padding:8px 10px; border:1.5px solid var(--line); border-radius:9px; background:var(--bg); color:var(--ink); min-width:0;}
+  .add-form .wide{grid-column:1 / -1;}
+  .add-form .dows{display:flex; gap:6px; flex-wrap:wrap; font-weight:600; color:var(--ink-soft);}
+  .add-form .dows label{flex-direction:row; align-items:center; gap:3px; font-size:12px; color:var(--ink-soft);}
+  .add-btn{font:inherit; font-size:13px; font-weight:700; padding:9px 18px; border-radius:999px; border:0; background:var(--ocean-deep); color:#fff; cursor:pointer; justify-self:start;}
+  .add-msg{font-size:12px; color:var(--coral-ink); align-self:center;}
+  .removed-bar{margin-top:14px; padding:12px 14px; border-radius:12px; background:var(--surface); border:1.5px solid var(--line); font-size:12px; color:var(--ink-soft);}
+  .removed-bar b{display:block; margin-bottom:8px; font-size:12px; color:var(--ink);}
+  .removed-bar button{font:inherit; font-size:11px; font-weight:700; margin:0 6px 6px 0; padding:4px 10px; border-radius:999px; border:1.5px solid var(--line); background:var(--bg); color:var(--ink-soft); cursor:pointer;}
+  .shop-card .metarow{display:flex; gap:4px; flex-wrap:wrap; margin-top:5px;}
   .lv{align-self:flex-start; font-size:10px; font-weight:800; padding:2px 9px; border-radius:999px; letter-spacing:.01em;}
   .lv.must{background:var(--coral); color:#fff;}
   .lv.rec{background:var(--euca-soft); color:var(--euca-ink);}
@@ -398,7 +417,9 @@
         <p>시드니 15개 지역 + 멜버른 6개 지역, 총 40여 곳을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
       </div>
       <div class="filter-row" id="place-filter"></div>
+      <div id="place-add"></div>
       <div id="place-grid"></div>
+      <div id="place-removed"></div>
       <div class="picked-summary" id="place-summary"></div>
       <div class="note-box"><b>혹등고래 크루즈는?</b> 시드니 웨일와칭 시즌은 5~11월이에요. 2월은 시즌이 아니라 이번 여행에서는 제외하는 게 맞아요.</div>
     </section>
@@ -413,7 +434,9 @@
         <p>시드니 10개 지역 + 멜버른 4개 지역, 30여 곳. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
       </div>
       <div class="filter-row" id="food-filter"></div>
+      <div id="food-add"></div>
       <div id="food-grid"></div>
+      <div id="food-removed"></div>
       <div class="picked-summary" id="food-summary"></div>
     </section>
   </div>
@@ -625,12 +648,12 @@
     {icon:"i-honey", id:"m_pawpaw", item:"루카스 포포 크림", desc:"$8~12. \"호주 국민크림\", 파파야 추출 멀티유즈 연고. 빨간 용기가 정품"},
     {icon:"i-sun", id:"m_sunscreen", item:"선크림(Cancer Council 등)", desc:"$15~25. 호주 SPF 기준이 엄격해 차단력 확실"},
     {icon:"i-leaf", id:"m_sukin", item:"수킨(Sukin)", desc:"호주 내추럴 스킨케어, 중저가"},
-    {icon:"i-leaf", item:"버블(Bubble)", desc:"최근 젊은층 인기 스킨케어"}
+    {icon:"i-leaf", id:"m_bubble", item:"버블(Bubble)", desc:"최근 젊은층 인기 스킨케어"}
   ];
   var MART_KIDS = [
     {icon:"i-honey", id:"m_tinyteddy", item:"타이니 테디(Tiny Teddy)", desc:"곰돌이모양 국민 어린이쿠키"},
-    {icon:"i-pill", item:"어린이 영양제", desc:"Bioglan Kids 등 비타민C/아연 구미"},
-    {icon:"i-sun", item:"아이용 징크스틱 선크림", desc:"얼굴용, 초등학생 자외선 차단에 인기"},
+    {icon:"i-pill", id:"m_kidsvita", item:"어린이 영양제", desc:"Bioglan Kids 등 비타민C/아연 구미"},
+    {icon:"i-sun", id:"m_zinc", item:"아이용 징크스틱 선크림", desc:"얼굴용, 초등학생 자외선 차단에 인기"},
     {icon:"i-pill", id:"m_bepanthen", item:"베판텐(Bepanthen)", desc:"상처·발진 연고, 상비용으로 좋음"},
     {icon:"i-pill", id:"m_panadol", item:"파나돌/뉴로펜 키즈", desc:"아이용 해열진통제 시럽"}
   ];
@@ -638,7 +661,7 @@
     {icon:"i-bag", id:"qvb", item:"QVB(퀸빅토리아빌딩)", desc:"역사적 건축물, 패션·주얼리·홈웨어. 럭셔리 위주"},
     {icon:"i-bag", id:"m_pittst", item:"피트 스트리트 몰", desc:"Myer·David Jones 백화점 아동복/장난감/문구까지 원스톱. 아이 옷 사기 가장 편한 곳"},
     {icon:"i-bag", id:"m_westfield", item:"웨스트필드 파라마타", desc:"근교 대형몰, 498개 매장, 대형마트+영화관 포함"},
-    {icon:"i-cart", item:"코스모스 식품점(Cosmos Grocery)", desc:"Pitt St, 시드니 CBD. 아시안 식료품 전문, 08:00~23:00 늦게까지 영업"}
+    {icon:"i-cart", id:"m_cosmos", item:"코스모스 식품점(Cosmos Grocery)", desc:"Pitt St, 시드니 CBD. 아시안 식료품 전문, 08:00~23:00 늦게까지 영업"}
   ];
   var BRING = [
     {icon:"i-pill", item:"상비약 세트", desc:"지사제·해열진통제(성인+아동)·멀미약·소화제·감기약·밴드, 영문 패키지"},
@@ -681,11 +704,11 @@
   }
   // 담아둔 장소·맛집·체크리스트를 공유 저장소(trip/guide)에도 저장해 기기 간에 맞춤
   var guideRef = null;
-  var GUIDE_KEYS = {prep:"au_prep", places:"au_places", food:"au_food"};
+  var GUIDE_KEYS = {prep:"au_prep", places:"au_places", food:"au_food", removed:"au_removed", custom:"au_custom"};
   function pushGuide(){
     if (!guideRef) return;
     var data = {updatedAt: Date.now()};
-    for (var k in GUIDE_KEYS) data[k] = loadPicks(GUIDE_KEYS[k]);
+    for (var k in GUIDE_KEYS) data[k] = k==="custom" ? loadList(GUIDE_KEYS[k]) : loadPicks(GUIDE_KEYS[k]);
     guideRef.set(data).catch(function(){ /* 이 기기 저장은 유지 */ });
   }
   function pullGuide(snap){
@@ -724,10 +747,85 @@
   var DETAILS = window.GUIDE_DETAILS || {};
   (window.GUIDE_PHOTOS || []).forEach(function(id){ PHOTOS[id] = 1; });
   EXTRA.forEach(function(e){ (e.kind==="food" ? FOOD : PLACES).push(e); });
+  var GTAGS = window.GUIDE_TAGS || {};
+  var BASE = {place: PLACES, food: FOOD};
+  function tagsOf(it){ return (GTAGS[it.id] || it.tags || []).filter(function(t){ return t!=="필수"; }); }
+  function tagRow(it){
+    var t = tagsOf(it);
+    return t.length ? '<div class="metarow">'+t.map(function(x){return '<span class="mtag">'+esc(x)+'</span>';}).join("")+'</div>' : '';
+  }
+  // 직접 추가한 곳(au_custom)과 삭제한 곳(au_removed) — 공유 저장소에도 함께 저장
+  function loadList(key){
+    try { var v = JSON.parse(localStorage.getItem(key)||"[]"); return Array.isArray(v) ? v : []; } catch(e){ return []; }
+  }
+  function allSpots(kind){ return BASE[kind].concat(loadList("au_custom").filter(function(c){ return c && c.kind===kind; })); }
+  function spots(kind){
+    var rm = loadPicks("au_removed");
+    return allSpots(kind).filter(function(it){ return !rm[it.id]; });
+  }
+  function rerender(kind){ if (kind==="place") renderPlaces(); else renderFood(); }
+  function cut(v, n){ return String(v||"").trim().slice(0, n); }
+  window.removeSpot = function(kind, id){
+    var rm = loadPicks("au_removed");
+    rm[id] = true;
+    savePicks("au_removed", rm);
+    rerender(kind);
+  };
+  window.restoreSpot = function(kind, id){
+    var rm = loadPicks("au_removed");
+    delete rm[id];
+    savePicks("au_removed", rm);
+    rerender(kind);
+  };
+  window.addSpot = function(kind){
+    var f = function(n){ var el = document.getElementById(kind+"-new-"+n); return el ? el.value : ""; };
+    var msg = document.getElementById(kind+"-new-msg");
+    var title = cut(f("title"), 60);
+    if (!title){ msg.textContent = "이름을 입력해 주세요."; return; }
+    var closed = DOWS.filter(function(d){ var el = document.getElementById(kind+"-new-dow-"+d); return el && el.checked; });
+    var item = {id:"c_"+Date.now().toString(36), kind:kind, custom:true, icon:(kind==="food"?"i-coffee":"i-map"),
+      region: cut(f("region"), 30) || "직접 추가한 곳", title:title, sub:"", sig:"", desc: cut(f("desc"), 200),
+      q: cut(f("q"), 120) || title, tags: f("tags").split(/[,，\s]+/).map(function(t){return cut(t,8);}).filter(Boolean).slice(0,6),
+      hours: cut(f("hours"), 80), closed: closed, price:"", note:"", verified:""};
+    var list = loadList("au_custom");
+    list.push(item);
+    savePicks("au_custom", list);
+    renderAddForm(kind);
+    document.getElementById(kind+"-new-msg").textContent = "'"+title+"' 추가됨";
+    rerender(kind);
+  };
+  function renderAddForm(kind){
+    var regions = [];
+    allSpots(kind).forEach(function(it){ if (regions.indexOf(it.region)===-1) regions.push(it.region); });
+    var id = function(n){ return kind+"-new-"+n; };
+    var wasOpen = (document.querySelector("#"+kind+"-add details")||{}).open;
+    document.getElementById(kind+"-add").innerHTML = '<details class="add-box"'+(wasOpen?" open":"")+'><summary>+ '+(kind==="food"?"맛집·카페":"가볼만한곳")+' 직접 추가</summary>'
+      + '<div class="add-form">'
+      + '<label>이름 (필수)<input type="text" id="'+id("title")+'" maxlength="60" placeholder="예: 타롱가 동물원"></label>'
+      + '<label>지역<input type="text" id="'+id("region")+'" maxlength="30" list="'+id("regions")+'" placeholder="기존 지역 선택 또는 새로 입력"></label>'
+      + '<datalist id="'+id("regions")+'">'+regions.map(function(r){return '<option value="'+esc(r)+'">';}).join("")+'</datalist>'
+      + '<label class="wide">한 줄 설명<input type="text" id="'+id("desc")+'" maxlength="200"></label>'
+      + '<label>태그 (쉼표로 구분)<input type="text" id="'+id("tags")+'" placeholder="예: 수영, 무료, 피크닉"></label>'
+      + '<label>운영시간<input type="text" id="'+id("hours")+'" maxlength="80" placeholder="예: 매일 09:00~17:00"></label>'
+      + '<label>구글 지도 검색어<input type="text" id="'+id("q")+'" maxlength="120" placeholder="비우면 이름으로 검색"></label>'
+      + '<div class="wide"><label>휴무 요일</label><div class="dows">'+DOWS.map(function(d){return '<label><input type="checkbox" id="'+id("dow-"+d)+'">'+d+'</label>';}).join("")+'</div></div>'
+      + '<button class="add-btn" onclick="addSpot(\''+kind+'\')">리스트에 추가</button><span class="add-msg" id="'+id("msg")+'"></span>'
+      + '</div></details>';
+  }
+  function renderRemoved(kind){
+    var rm = loadPicks("au_removed");
+    var gone = allSpots(kind).filter(function(it){ return rm[it.id]; });
+    document.getElementById(kind+"-removed").innerHTML = gone.length
+      ? '<div class="removed-bar"><b>삭제한 곳 '+gone.length+'곳 — 누르면 되돌려요</b>'+gone.map(function(it){
+          return '<button onclick="restoreSpot(\''+kind+'\',\''+it.id+'\')">'+esc(it.title)+' ↩</button>';
+        }).join("")+'</div>'
+      : '';
+  }
   var FILTER = {place:"all", food:"all"};
   var DOWS = ["월","화","수","목","금","토","일"];
 
   function levelOf(it){
+    if (it.custom) return "직접 추가";
     if (it.tags && it.tags.indexOf("필수")!==-1) return "필수";
     return it.badge || "추천";
   }
@@ -745,7 +843,7 @@
   var VERIFIED = {official:"공식 사이트 확인", secondary:"예매·안내 사이트 기준", blog:"블로그 후기 기준 — 재확인 필요", unconfirmed:"확인 못함 — 방문 전 확인"};
   function levelHtml(it, d){
     var lv = levelOf(it);
-    var cls = lv==="필수" ? "must" : lv==="검토필요" ? "chk" : "rec";
+    var cls = lv==="필수" ? "must" : lv==="검토필요" ? "chk" : lv==="직접 추가" ? "mine" : "rec";
     var ct = closedText(d.closed);
     return '<div class="lv-row"><span class="lv '+cls+'">'+lv+'</span>'+(ct?'<span class="lv off">'+esc(ct)+'</span>':'')+'</div>';
   }
@@ -785,20 +883,24 @@
 
   function renderPlaces(){
     var picks = loadPicks("au_places");
-    renderFilter("place", PLACES);
-    var groups = groupByRegion(applyFilter("place", PLACES));
+    var list = spots("place");
+    renderFilter("place", list);
+    if (!document.getElementById("place-new-title")) renderAddForm("place");
+    renderRemoved("place");
+    var groups = groupByRegion(applyFilter("place", list));
     document.getElementById("place-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(s){
         var on = !!picks[s.id], d = detailOf(s);
         return '<div class="card'+(on?" picked":"")+'" data-id="'+s.id+'">'
           + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
           + levelHtml(s, d)
-          + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub)+'</span></div></div>'
-          + '<p>'+esc(s.desc)+'</p>'
-          + '<div class="metarow">'+s.tags.filter(function(t){return t!=="필수";}).map(function(t){return '<span class="mtag">'+esc(t)+'</span>';}).join("")+'</div>'
+          + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub||"")+'</span></div></div>'
+          + (s.desc?'<p>'+esc(s.desc)+'</p>':'')
+          + tagRow(s)
           + detailHtml(d)
           + '<div class="card-bottom"><a class="maplink" href="'+mapLink(s.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
-          + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
+          + '<span class="card-actions"><button class="del-btn" onclick="removeSpot(\'place\',\''+s.id+'\')">삭제</button>'
+          + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
           + '</div>';
       }).join("");
       return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
@@ -807,7 +909,7 @@
   }
   function renderPlaceSummary(){
     var picks = loadPicks("au_places");
-    var chosen = PLACES.filter(function(p){ return picks[p.id]; });
+    var chosen = spots("place").filter(function(p){ return picks[p.id]; });
     var box = document.getElementById("place-summary");
     if (chosen.length===0){ box.innerHTML = '<b>담아둔 곳이 아직 없어요</b>카드 우측 하단 + 버튼을 눌러 관심있는 곳을 담아보세요.'; return; }
     box.innerHTML = '<b>담아둔 곳 '+chosen.length+'곳</b><div class="picked-chips">'+chosen.map(function(p){return '<span class="picked-chip">'+esc(p.title)+'</span>';}).join("")+'</div>';
@@ -821,8 +923,11 @@
 
   function renderFood(){
     var picks = loadPicks("au_food");
-    renderFilter("food", FOOD);
-    var groups = groupByRegion(applyFilter("food", FOOD));
+    var list = spots("food");
+    renderFilter("food", list);
+    if (!document.getElementById("food-new-title")) renderAddForm("food");
+    renderRemoved("food");
+    var groups = groupByRegion(applyFilter("food", list));
     document.getElementById("food-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(f){
         var on = !!picks[f.id], d = detailOf(f);
@@ -830,11 +935,13 @@
           + (PHOTOS[f.id] ? '<img class="card-photo" src="img/'+f.id+'.jpg" alt="'+esc(f.title)+'" loading="lazy">' : '')
           + levelHtml(f, d)
           + '<div class="card-top"><span class="card-ic">'+svgUse(f.icon)+'</span><div><h4>'+esc(f.title)+'</h4></div></div>'
-          + '<span class="badge">'+esc(f.sig)+'</span>'
-          + '<p>'+esc(f.desc)+'</p>'
+          + (f.sig?'<span class="badge">'+esc(f.sig)+'</span>':'')
+          + (f.desc?'<p>'+esc(f.desc)+'</p>':'')
+          + tagRow(f)
           + detailHtml(d)
           + '<div class="card-bottom"><a class="maplink" href="'+mapLink(f.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
-          + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
+          + '<span class="card-actions"><button class="del-btn" onclick="removeSpot(\'food\',\''+f.id+'\')">삭제</button>'
+          + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
           + '</div>';
       }).join("");
       return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
@@ -843,7 +950,7 @@
   }
   function renderFoodSummary(){
     var picks = loadPicks("au_food");
-    var chosen = FOOD.filter(function(f){ return picks[f.id]; });
+    var chosen = spots("food").filter(function(f){ return picks[f.id]; });
     var box = document.getElementById("food-summary");
     if (chosen.length===0){ box.innerHTML = '<b>담아둔 맛집이 아직 없어요</b>카드 우측 하단 + 버튼을 눌러 가고싶은 곳을 담아보세요.'; return; }
     box.innerHTML = '<b>담아둔 맛집 '+chosen.length+'곳</b><div class="picked-chips">'+chosen.map(function(f){return '<span class="picked-chip">'+esc(f.title)+'</span>';}).join("")+'</div>';
@@ -858,7 +965,7 @@
   function renderShop(arr, elId){
     document.getElementById(elId).innerHTML = arr.map(function(m){
       var pic = m.id && PHOTOS[m.id] ? '<img class="sph" src="img/'+m.id+'.jpg" alt="'+esc(m.item)+'" loading="lazy">' : '<span class="sic">'+svgUse(m.icon)+'</span>';
-      return '<div class="shop-card">'+pic+'<div><b>'+esc(m.item)+'</b><span>'+esc(m.desc)+'</span>'+(m.sig?'<span class="price">'+esc(m.sig)+'</span>':'')+'</div></div>';
+      return '<div class="shop-card">'+pic+'<div><b>'+esc(m.item)+'</b><span>'+esc(m.desc)+'</span>'+(m.sig?'<span class="price">'+esc(m.sig)+'</span>':'')+tagRow(m)+'</div></div>';
     }).join("");
   }
 

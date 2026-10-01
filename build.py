@@ -110,12 +110,19 @@ def main():
     shell = shell.replace("<!--CREDITS-->", "\n".join(items))
     extra = json.loads((ROOT / "data" / "extra.json").read_text())
     details = json.loads((ROOT / "data" / "details.json").read_text())
+    tags = json.loads((ROOT / "data" / "tags.json").read_text())
     photos = sorted(f.stem for f in (ROOT / "img").glob("*.jpg"))
-    data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;</script>" % tuple(
-        json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos))
+    data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;window.GUIDE_TAGS=%s;</script>" % tuple(
+        json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos, tags))
     shell = shell.replace("<!--PANE_SCRIPTS-->", data + "\n" + "\n".join(pane_scripts))
-    (ROOT / "index.html").write_text(shell)
-    print(f"index.html: {len(shell) / 1024:.0f} KB, {len(sprite)} icons, {len(items)} photo credits")
+    # artifact.html: 아티팩트 게시용 조각(게시 시 문서 뼈대가 덧씌워짐). index.html: 웹 배포용 완전한 문서.
+    (ROOT / "artifact.html").write_text(shell)
+    head_end = shell.index("</style>") + len("</style>")
+    page = ('<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8">\n'
+            '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+            + shell[:head_end] + "\n</head>\n<body>\n" + shell[head_end:] + "\n</body>\n</html>\n")
+    (ROOT / "index.html").write_text(page)
+    print(f"index.html: {len(page) / 1024:.0f} KB, {len(sprite)} icons, {len(items)} photo credits")
 
 
 if __name__ == "__main__":
