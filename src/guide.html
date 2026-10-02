@@ -995,6 +995,7 @@
                            [{id, kind:"place"|"food", title, region, icon, tags, q, lat, lng, picked}]
                            lat/lng는 data/details.json 값(없으면 undefined), picked는 + 버튼으로 담았는지
      window.GUIDE.show(id) → 가이드 안쪽 탭을 가볼만한곳/맛집으로 바꾸고 해당 카드로 스크롤 (찾으면 true)
+     window.GUIDE.toggle(id) → + 버튼과 똑같이 담기/담기 취소 (togglePlace·toggleFood 호출, 찾으면 true)
      window 이벤트 "guide-change" → 담기·삭제·직접 추가가 바뀔 때(공유 저장소 동기화 포함)와 초기화 직후 1회 */
   function publicItem(it, kind, picks){
     var d = DETAILS[it.id] || {};
@@ -1003,17 +1004,27 @@
             lat: typeof d.lat==="number" ? d.lat : undefined, lng: typeof d.lng==="number" ? d.lng : undefined,
             picked: !!picks[it.id]};
   }
+  function kindOfId(id){
+    var kind = null;
+    ["place","food"].forEach(function(k){
+      if (!kind && spots(k).some(function(it){ return it.id===id; })) kind = k;
+    });
+    return kind;
+  }
   window.GUIDE = {
     all: function(){
       var pp = loadPicks("au_places"), fp = loadPicks("au_food");
       return spots("place").map(function(it){ return publicItem(it, "place", pp); })
         .concat(spots("food").map(function(it){ return publicItem(it, "food", fp); }));
     },
+    toggle: function(id){
+      var kind = kindOfId(id);
+      if (!kind) return false;
+      if (kind==="place") window.togglePlace(id); else window.toggleFood(id);
+      return true;
+    },
     show: function(id){
-      var kind = null;
-      ["place","food"].forEach(function(k){
-        if (!kind && spots(k).some(function(it){ return it.id===id; })) kind = k;
-      });
+      var kind = kindOfId(id);
       if (!kind) return false;
       if (FILTER[kind]!=="all"){ FILTER[kind] = "all"; rerender(kind); }
       window.showTab(kind==="place" ? "places" : "food");
