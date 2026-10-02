@@ -201,8 +201,10 @@
 })();
 </script>
 <script>
-// 아티팩트 밖(예: Vercel 배포)에서는 Supabase 테이블(trip_docs)을 저장소로 사용. 공개 읽기·쓰기 전용 키.
+// 선택·일정 저장소: Supabase 테이블(trip_docs). 공개 읽기·쓰기 전용 키.
 (function(){
+  // ?nostore=1 로 열면 서버에 저장하지 않음 (테스트용)
+  if (/[?&]nostore=1/.test(location.search)){ window.claude = {use: function(){ return Promise.resolve(null); }}; return; }
   if (window.claude && window.claude.use) return;
   var URL_ = "https://xirclohwurvtschwrtxw.supabase.co/rest/v1/trip_docs";
   var KEY = "sb_publishable_97VPBM0syPSyG2r1S6ScMg_azkVXgdN";

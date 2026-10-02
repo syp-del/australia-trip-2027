@@ -115,8 +115,6 @@ def main():
     data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;window.GUIDE_TAGS=%s;</script>" % tuple(
         json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos, tags))
     shell = shell.replace("<!--PANE_SCRIPTS-->", data + "\n" + "\n".join(pane_scripts))
-    # artifact.html: 아티팩트 게시용 조각(게시 시 문서 뼈대가 덧씌워짐). index.html: 웹 배포용 완전한 문서.
-    (ROOT / "artifact.html").write_text(shell)
     head_end = shell.index("</style>") + len("</style>")
     page = ('<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8">\n'
             '<meta name="viewport" content="width=device-width, initial-scale=1">\n'
