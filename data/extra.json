@@ -299,7 +299,7 @@
  {
   "id": "sharkbeach",
   "kind": "place",
-  "region": "왓슨스베이 · 발모랄",
+  "region": "왓슨스베이",
   "icon": "i-wave",
   "title": "샤크 비치 (닐슨 파크)",
   "sub": "그물 쳐진 잔잔한 하버 비치",
@@ -321,7 +321,7 @@
  {
   "id": "campcove",
   "kind": "place",
-  "region": "왓슨스베이 · 발모랄",
+  "region": "왓슨스베이",
   "icon": "i-wave",
   "title": "캠프 코브",
   "sub": "왓슨스베이 페리에서 도보",
@@ -844,7 +844,7 @@
  {
   "id": "murrayrose",
   "kind": "place",
-  "region": "왓슨스베이 · 발모랄",
+  "region": "왓슨스베이",
   "icon": "i-wave",
   "title": "머레이 로즈 풀 (레드리프)",
   "sub": "더블베이 무료 하버 수영장",
@@ -1175,7 +1175,7 @@
  {
   "id": "featherdale",
   "kind": "place",
-  "region": "블루마운틴",
+  "region": "시드니 서부 · 올림픽파크",
   "icon": "i-koala",
   "title": "페더데일 야생동물공원",
   "sub": "코알라 사진 · 캥거루 먹이주기",
@@ -1908,7 +1908,7 @@
  {
   "id": "southmelbmarket",
   "kind": "place",
-  "region": "멜버른 · 사우스뱅크",
+  "region": "멜버른 · 사우스멜버른",
   "icon": "i-cart",
   "title": "사우스 멜버른 마켓",
   "sub": "더 깔끔한 로컬 마켓",
@@ -2295,7 +2295,7 @@
  {
   "id": "phillipisland",
   "kind": "place",
-  "region": "멜버른 · 근교",
+  "region": "멜버른 · 모닝턴반도",
   "icon": "i-koala",
   "title": "필립 아일랜드 펭귄 퍼레이드",
   "sub": "야생 리틀펭귄 · 데이투어",
