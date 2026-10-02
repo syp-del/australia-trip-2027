@@ -123,7 +123,6 @@
   <div class="s-wrap">
     <button class="gtab active" data-tab="home" onclick="goTab('home')">홈</button>
     <button class="gtab" data-tab="builder" onclick="goTab('builder')">루트 빌더</button>
-    <button class="gtab" data-tab="plan" onclick="goTab('plan')">여정표 A/B</button>
     <button class="gtab" data-tab="guide" onclick="goTab('guide')">가이드</button>
     <button class="gtab" data-tab="tracker" onclick="goTab('tracker')">예약 · 비상연락</button>
   </div>
@@ -144,8 +143,7 @@
     <section>
       <h2>어디부터 볼까요</h2>
       <div class="hm-nav">
-        <button class="hm-go" style="background-image:url('img/bluemountains.jpg')" onclick="goTab('builder')"><b>루트 빌더</b><span>하루씩 테마를 골라 우리 가족 루트 완성하기</span></button>
-        <button class="hm-go" style="background-image:url('img/twelveapostles.jpg')" onclick="goTab('plan')"><b>여정표 A/B</b><span>모험형과 여유형, 미리 짜둔 두 가지 코스</span></button>
+        <button class="hm-go" style="background-image:url('img/bluemountains.jpg')" onclick="goTab('builder')"><b>루트 빌더</b><span>하루씩 테마를 골라 루트 완성하기 · 모험형(플랜 A)·여유형(플랜 B) 추천 세트와 하루 흐름까지</span></button>
         <button class="hm-go" style="background-image:url('img/bondi.jpg')" onclick="goTab('guide')"><b>가이드</b><span>가볼만한곳, 맛집·카페, 마트, 출발 전 유의사항</span></button>
         <button class="hm-go" style="background-image:url('img/circularquay.jpg')" onclick="goTab('tracker')"><b>예약 · 비상연락</b><span>예약 진행 체크와 총영사관·응급 연락처</span></button>
       </div>
@@ -178,14 +176,14 @@
 </div>
 
 <div class="pane" id="p-builder"><!--PANE:builder--></div>
-<div class="pane" id="p-plan"><!--PANE:plan--></div>
 <div class="pane" id="p-guide"><!--PANE:guide--></div>
 <div class="pane" id="p-tracker"><!--PANE:tracker--></div>
 
 <script>
 (function(){
-  var TABS = ["home","builder","plan","guide","tracker"];
+  var TABS = ["home","builder","guide","tracker"];
   window.goTab = function(name, keepScroll){
+    if (name === "plan") name = "builder"; // 예전 여정표 탭(#plan)은 루트 빌더로 합쳐졌어요
     if (TABS.indexOf(name) === -1) name = "home";
     document.querySelectorAll(".gtab").forEach(function(b){ b.classList.toggle("active", b.dataset.tab === name); });
     document.querySelectorAll(".pane").forEach(function(p){ p.classList.toggle("on", p.id === "p-" + name); });

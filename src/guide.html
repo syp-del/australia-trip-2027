@@ -168,6 +168,8 @@
   .pick-btn.on{background:var(--euca); border-color:var(--euca); color:#fff;}
   .pick-btn svg{width:15px; height:15px;}
 
+  .card.flash{outline:3px solid var(--coral); outline-offset:2px;}
+
   .picked-summary{background:var(--euca-soft); border-radius:14px; padding:14px 16px; margin-top:14px; font-size:12.5px; color:var(--euca-ink);}
   .picked-summary b{display:block; margin-bottom:6px; font-size:12px;}
   .picked-chips{display:flex; flex-wrap:wrap; gap:6px;}
@@ -263,7 +265,7 @@
     </div>
     <span class="hero-eyebrow">2027.02.09 ~ 02.19 · 가족 4인</span>
     <h1>호주 여행 가이드</h1>
-    <p>출발 전 챙길 것부터 한국인에게 사랑받는 스팟·맛집·쇼핑리스트까지, 여정표에 다 담기엔 아까운 디테일을 여기 모았어요. 마음에 드는 곳은 체크해서 담아두세요.</p>
+    <p>출발 전 챙길 것부터 한국인에게 사랑받는 스팟·맛집·쇼핑리스트까지, 루트 빌더에 다 담기엔 아까운 디테일을 여기 모았어요. 마음에 드는 곳은 체크해서 담아두세요.</p>
     <div class="hero-icons">
       <span class="hic"><svg class="ic"><use href="#i-koala"/></svg></span>
       <span class="hic"><svg class="ic"><use href="#i-roo"/></svg></span>
@@ -367,7 +369,7 @@
           <table class="ftable">
             <thead><tr><th>구간</th><th>수단</th><th>소요시간</th></tr></thead>
             <tbody>
-              <tr><td>센트럴역 → 게링공역</td><td>기차(카이아마 환승, 오팔카드 가능)</td><td>약 2시간25분~2시간39분, 편도 $11~</td></tr>
+              <tr><td>센트럴역 → 게링공역</td><td>기차(키아마 환승, 오팔카드 가능)</td><td>약 2시간25분~2시간39분, 편도 $11~</td></tr>
               <tr><td>게링공역 → 워리비치</td><td>도보(직선)</td><td>약 13분(993m)</td></tr>
               <tr><td>울런공 → 게링공</td><td>렌터카</td><td>약 37분 ★대중교통은 비효율적</td></tr>
               <tr><td>울런공 → 게링공</td><td>기차(키아마 환승)</td><td>약 1시간18분(권장 안 함)</td></tr>
@@ -414,7 +416,7 @@
       <div class="section-head">
         <span class="eyebrow2">한국인에게 인기 · 체크해서 담아두세요</span>
         <h2>가볼만한곳</h2>
-        <p>시드니 15개 지역 + 멜버른 6개 지역, 총 40여 곳을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
+        <p><span id="place-count">여러 지역의 가볼만한곳</span>을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
       </div>
       <div class="filter-row" id="place-filter"></div>
       <div id="place-add"></div>
@@ -431,7 +433,7 @@
       <div class="section-head">
         <span class="eyebrow2">체크해서 담아두세요</span>
         <h2>맛집 · 카페</h2>
-        <p>시드니 10개 지역 + 멜버른 4개 지역, 30여 곳. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
+        <p><span id="food-count">지역별 맛집·카페</span>. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
       </div>
       <div class="filter-row" id="food-filter"></div>
       <div id="food-add"></div>
@@ -454,7 +456,7 @@
       <div class="shop-grid" id="mart-health"></div>
       <div class="subhead">뷰티 · 바디케어</div>
       <div class="shop-grid" id="mart-beauty"></div>
-      <div class="subhead">아이(8세) 동반이면 추가로</div>
+      <div class="subhead">아이(7세) 동반이면 추가로</div>
       <div class="shop-grid" id="mart-kids"></div>
       <div class="note-box"><b>UGG 부츠 주의:</b> 정품가는 약 AU$120~200. $50~70 이하는 가품 의심. 마트에선 안 팔고 UGG Australia·EMU Australia 정식매장에서 구매하세요.<br><b>마누카 허니:</b> UMF(또는 MGO) 등급 표기를 확인하세요. UMF 20+ 이상은 전체 생산량의 1% 미만이라 고가예요.</div>
     </section>
@@ -506,7 +508,7 @@
   ];
 
   var PLACES = [
-    {id:"wombattour", region:"시그니처 데이투어 (운영사 확인 필요)", icon:"i-koala", title:"웜뱃투어", sub:"웜뱃 직접 안기, 호주 유일", desc:"목적지 결정과 여정표 모두에서 최우선으로 꼽은 체험인데, 정작 운영사·정확한 가격·예약 링크를 아직 확정 못 했어요. Klook·마이리얼트립·Viator에서 \"wombat hug tour Sydney\"로 검색해 후기 많은 곳으로 예약하고, 확정되면 이 카드에 채워 넣을게요.", q:"Wombat hug tour Sydney", tags:["동물","예약정보 미확정"]},
+    {id:"wombattour", region:"시그니처 데이투어 (운영사 확인 필요)", icon:"i-koala", title:"웜뱃투어", sub:"웜뱃 직접 안기, 호주 유일", desc:"목적지 결정과 루트 빌더(플랜 A) 모두에서 최우선으로 꼽은 체험인데, 정작 운영사·정확한 가격·예약 링크를 아직 확정 못 했어요. Klook·마이리얼트립·Viator에서 \"wombat hug tour Sydney\"로 검색해 후기 많은 곳으로 예약하고, 확정되면 이 카드에 채워 넣을게요.", q:"Wombat hug tour Sydney", tags:["동물","예약정보 미확정"]},
     {id:"bondi", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이비치", sub:"수영 + 해안 워킹", desc:"빨강-노랑 깃발 사이에서만 수영. 노스본다이(North Bondi)에 아동용 조수풀이 있어 파도가 잔잔하고 가장 안전해요. 성수기 인명구조요원 06:00~19:00 상주.", q:"Bondi Beach Sydney", tags:["수영","가족추천"]},
     {id:"icebergs", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이 아이스버그스 풀", sub:"성인풀+아동풀", desc:"50m 성인풀 옆에 얕은 아동풀이 따로 있어요. 입장료 성인 $10 / 아동 $7 / 가족 $30 수준(확인 필요).", q:"Bondi Icebergs Pool", tags:["수영"]},
     {id:"coastalwalk", region:"본다이 · 쿠지 · 클로벨리", icon:"i-wave", title:"본다이~쿠지 해안 산책로", sub:"구간만 추천", desc:"세계적으로 유명한 코스탈워크. 전체 왕복은 초등학생 체력엔 부담될 수 있어 구간만 걷는 걸 추천.", q:"Bondi to Coogee Coastal Walk", tags:["걷기"]},
@@ -521,15 +523,15 @@
     {id:"thegap", region:"왓슨스베이 · 발모랄", icon:"i-bridge2", title:"더 갭(The Gap)", sub:"절벽 전망대", desc:"왓슨스베이의 하버뷰 절벽 전망대. 서큘러키에서 페리 약 20분.", q:"The Gap Watsons Bay", tags:["무료","전망"]},
     {id:"balmoral", region:"왓슨스베이 · 발모랄", icon:"i-wave", title:"발모랄비치", sub:"본다이보다 한적", desc:"파도 잔잔, 그늘 많고 놀이터·무료 실내 샤워시설 있음. 아이 동반 가족에 인기, 관광객 적음.", q:"Balmoral Beach Mosman", tags:["수영","한적함"]},
 
-    {id:"taronga", region:"타롱가 · 모스만", icon:"i-koala", title:"타롱가동물원", sub:"페리 15분", desc:"서큘러키에서 페리 15분. 코알라·캥거루·웜뱃 등 호주 고유종, 실쇼·버드쇼, 아동 놀이터.", q:"Taronga Zoo Sydney", tags:["동물","가족추천"]},
+    {id:"taronga", region:"타롱가 · 모스만", icon:"i-koala", title:"타롱가동물원", sub:"페리 12분", desc:"서큘러키에서 페리 12분. 코알라·캥거루·웜뱃 등 호주 고유종, 실쇼·버드쇼, 아동 놀이터.", q:"Taronga Zoo Sydney", tags:["동물","가족추천"]},
 
-    {id:"fireworks", region:"시티 · 서큘러키 · 달링하버", icon:"i-firework", title:"달링하버 불꽃축제", sub:"매주 토요일 밤, 무료", desc:"약 5~10분, Pyrmont Bridge가 명당. 2027년 2월은 설날 연계로 매주 토요일 진행될 가능성(확정은 아니라 출발 전 재확인). 이번 여행 토요일(2/13) 저녁에 넣기 좋아요.", q:"Pyrmont Bridge Darling Harbour", tags:["무료","저녁"]},
+    {id:"fireworks", region:"시티 · 서큘러키 · 달링하버", icon:"i-firework", title:"달링하버 불꽃축제", sub:"지정된 토요일 밤, 무료", desc:"약 5~10분, Pyrmont Bridge가 명당. 매주가 아니라 지정된 토요일에만 열려요 — 2027년 2월 일정은 아직 공지 전이라 2/13(토) 개최 여부는 출발 전 재확인. 열린다면 그날 저녁에 넣기 좋아요.", q:"Pyrmont Bridge Darling Harbour", tags:["무료","저녁"]},
     {id:"agnsw", region:"시티 · 서큘러키 · 달링하버", icon:"i-palette", title:"아트갤러리 오브 뉴사우스웨일즈", sub:"무료입장 · 어린이 프로그램", desc:"Kids access workshop(예약제), 화/목 Australian landscapes 가이드투어, 수요일 Yiribana 갤러리 투어, 일요일 Family guided tour·로빙 아트메이킹 등 무료 프로그램 다수. 방문 전 그 주 캘린더 확인 추천.", q:"Art Gallery of New South Wales", tags:["무료","어린이체험"]},
     {id:"circularquay", region:"시티 · 서큘러키 · 달링하버", icon:"i-bridge2", title:"오페라하우스 & 서큘러키", sub:"무료 산책", desc:"하버브리지와 함께 조망하는 무료 산책 코스. 아이와 걷기 좋은 평지.", q:"Circular Quay Sydney", tags:["무료","걷기"]},
     {id:"darlingharbour", region:"시티 · 서큘러키 · 달링하버", icon:"i-wave", title:"달링하버 + 와일드라이프 + 씨라이프", sub:"실내 위주", desc:"유모차 이동 편리, 우천 시 대안으로도 좋아요.", q:"Darling Harbour Sydney", tags:["실내","우천대비"]},
     {id:"barangaroo", region:"시티 · 서큘러키 · 달링하버", icon:"i-leaf", title:"바랑가루 리저브", sub:"무료 하버뷰 공원", desc:"차량통행 금지라 아이와 산책·자전거 안전. 원주민 문화투어(90분)도 가능. 윈야드역/바랑가루 메트로역.", q:"Barangaroo Reserve Sydney", tags:["무료","공원"]},
     {id:"fishmarket", region:"시티 · 서큘러키 · 달링하버", icon:"i-cart", title:"시드니 피쉬마켓", sub:"세계 3위 규모", desc:"랍스터·게·성게 즉석조리, 피시앤칩스, 펠리칸 구경. 2025년경 신축 이전 진행 중이라 방문 전 최신 위치 확인 필요.", q:"Sydney Fish Market", tags:["확인필요"]},
-    {id:"powerhouse", region:"시티 · 서큘러키 · 달링하버", icon:"i-palette", title:"파워하우스 뮤지엄", sub:"50만점 이상 소장", desc:"달링하버·차이나타운에서 도보 가능. 가이드 투어 프로그램 있음.", q:"Powerhouse Museum Ultimo", tags:["실내","우천대비"]},
+    {id:"powerhouse", region:"시티 · 서큘러키 · 달링하버", icon:"i-palette", title:"파워하우스 뮤지엄", sub:"50만점 이상 소장", desc:"리노베이션으로 휴관 중이고 재개관일이 정해지지 않았어요. 2027년 2월에도 닫혀 있을 가능성이 높아요.", q:"Powerhouse Museum Ultimo", tags:["실내","우천대비"]},
 
     {id:"northsydneypool", region:"밀슨스포인트 · 커리빌리", icon:"i-wave", title:"노스 시드니 올림픽 풀", sub:"하버브리지 바로 아래", desc:"1936년 개장한 야외 50m 수영장, 하버브리지 조망이 압권. 가족이 꼭 넣고 싶어한 필수 일정. 5년 재단장을 마치고 2026년 8월 재개장(키즈풀·스플래시패드 신설).", q:"North Sydney Olympic Pool", tags:["수영","필수"]},
     {id:"lunapark", region:"밀슨스포인트 · 커리빌리", icon:"i-ferris", title:"루나파크 시드니", sub:"놀이공원 + 하버뷰", desc:"관람차·롤러코스터 등, 하버뷰와 함께 즐기는 가족여행 단골 코스.", q:"Luna Park Sydney", tags:["놀이공원"]},
@@ -573,7 +575,7 @@
 
     {id:"peninsulahot", region:"멜버른 · 모닝턴반도", icon:"i-wave", title:"Peninsula Hot Springs", sub:"온천 스파", desc:"멜버른서 약 1.5시간, 모닝턴반도의 온천 스파 단지. 가족탕보다는 성인 위주 구역이 많아 방문 전 키즈존 여부 확인 필요.", q:"Peninsula Hot Springs", tags:["확인필요"]},
 
-    {id:"bayandbush", region:"저비스베이", icon:"i-bed", title:"Bay and Bush Jervis Bay - Nature Retreat", sub:"숙소(4성급)", desc:"화이트헤이븐비치로 유명한 저비스베이에서 1박할 때 고려할 자연친화형 숙소.", q:"Bay and Bush Jervis Bay Nature Retreat", tags:["숙소"]}
+    {id:"bayandbush", region:"저비스베이", icon:"i-bed", title:"Bay and Bush Jervis Bay - Nature Retreat", sub:"숙소(4성급)", desc:"새하얀 하이암스 비치로 유명한 저비스베이에서 1박할 때 고려할 자연친화형 숙소.", q:"Bay and Bush Jervis Bay Nature Retreat", tags:["숙소"]}
   ];
 
   var FOOD = [
@@ -701,6 +703,11 @@
   function savePicks(key, obj){
     try { localStorage.setItem(key, JSON.stringify(obj)); } catch(e){}
     pushGuide();
+    emitGuideChange();
+  }
+  // 담기(au_places·au_food)·삭제(au_removed)·직접 추가(au_custom)가 바뀔 때마다 알림 — 루트 빌더·지도가 받아서 다시 그림
+  function emitGuideChange(){
+    try { window.dispatchEvent(new CustomEvent("guide-change")); } catch(e){}
   }
   // 담아둔 장소·맛집·체크리스트를 공유 저장소(trip/guide)에도 저장해 기기 간에 맞춤
   var guideRef = null;
@@ -718,6 +725,7 @@
       if (d[k]) { try { localStorage.setItem(GUIDE_KEYS[k], JSON.stringify(d[k])); } catch(e){} }
     }
     renderPrep(); renderPlaces(); renderFood();
+    emitGuideChange();
   }
   async function initGuideStore(){
     try {
@@ -764,6 +772,17 @@
     return allSpots(kind).filter(function(it){ return !rm[it.id]; });
   }
   function rerender(kind){ if (kind==="place") renderPlaces(); else renderFood(); }
+  // 제목 아래 "N개 지역, 총 M곳" 문구를 실제 목록에서 계산
+  function renderCount(kind, list){
+    var el = document.getElementById(kind+"-count");
+    if (!el) return;
+    var syd = {}, mel = {}, ns = 0, nm = 0;
+    list.forEach(function(it){
+      if (String(it.region).indexOf("멜버른")===0){ if (!mel[it.region]){ mel[it.region] = 1; nm++; } }
+      else if (!syd[it.region]){ syd[it.region] = 1; ns++; }
+    });
+    el.textContent = "시드니·근교 "+ns+"개 지역 + 멜버른 "+nm+"개 지역, 총 "+list.length+"곳";
+  }
   function cut(v, n){ return String(v||"").trim().slice(0, n); }
   window.removeSpot = function(kind, id){
     var rm = loadPicks("au_removed");
@@ -884,6 +903,7 @@
   function renderPlaces(){
     var picks = loadPicks("au_places");
     var list = spots("place");
+    renderCount("place", list);
     renderFilter("place", list);
     if (!document.getElementById("place-new-title")) renderAddForm("place");
     renderRemoved("place");
@@ -924,6 +944,7 @@
   function renderFood(){
     var picks = loadPicks("au_food");
     var list = spots("food");
+    renderCount("food", list);
     renderFilter("food", list);
     if (!document.getElementById("food-new-title")) renderAddForm("food");
     renderRemoved("food");
@@ -969,6 +990,43 @@
     }).join("");
   }
 
+  /* 공유 인터페이스 (루트 빌더·지도가 사용)
+     window.GUIDE.all()  → 지금 보이는 모든 항목(기본 + 직접 추가 − 삭제)
+                           [{id, kind:"place"|"food", title, region, icon, tags, q, lat, lng, picked}]
+                           lat/lng는 data/details.json 값(없으면 undefined), picked는 + 버튼으로 담았는지
+     window.GUIDE.show(id) → 가이드 안쪽 탭을 가볼만한곳/맛집으로 바꾸고 해당 카드로 스크롤 (찾으면 true)
+     window 이벤트 "guide-change" → 담기·삭제·직접 추가가 바뀔 때(공유 저장소 동기화 포함)와 초기화 직후 1회 */
+  function publicItem(it, kind, picks){
+    var d = DETAILS[it.id] || {};
+    return {id: it.id, kind: kind, title: it.title, region: it.region, icon: it.icon,
+            tags: (GTAGS[it.id] || it.tags || []).slice(), q: it.q,
+            lat: typeof d.lat==="number" ? d.lat : undefined, lng: typeof d.lng==="number" ? d.lng : undefined,
+            picked: !!picks[it.id]};
+  }
+  window.GUIDE = {
+    all: function(){
+      var pp = loadPicks("au_places"), fp = loadPicks("au_food");
+      return spots("place").map(function(it){ return publicItem(it, "place", pp); })
+        .concat(spots("food").map(function(it){ return publicItem(it, "food", fp); }));
+    },
+    show: function(id){
+      var kind = null;
+      ["place","food"].forEach(function(k){
+        if (!kind && spots(k).some(function(it){ return it.id===id; })) kind = k;
+      });
+      if (!kind) return false;
+      if (FILTER[kind]!=="all"){ FILTER[kind] = "all"; rerender(kind); }
+      window.showTab(kind==="place" ? "places" : "food");
+      var cards = document.getElementById(kind+"-grid").querySelectorAll(".card"), card = null;
+      for (var i=0;i<cards.length;i++){ if (cards[i].getAttribute("data-id")===id){ card = cards[i]; break; } }
+      if (!card) return false;
+      card.scrollIntoView({block:"center"});
+      card.classList.add("flash");
+      setTimeout(function(){ card.classList.remove("flash"); }, 1800);
+      return true;
+    }
+  };
+
   initGuideStore();
   renderPrep();
   renderPlaces();
@@ -979,5 +1037,6 @@
   renderShop(MART_KIDS, "mart-kids");
   renderShop(MART_SPOTS, "mart-spots");
   renderShop(BRING, "bring-grid");
+  emitGuideChange();
 })();
 </script>

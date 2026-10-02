@@ -182,6 +182,49 @@
   .ov-card .ov-hotel{font-size:10.5px; color:var(--ink-soft); line-height:1.3;}
   .ov-card .ov-theme{font-size:11.5px; font-weight:700; color:var(--ink); line-height:1.3; margin-top:auto;}
   .ov-card .ov-theme.empty{color:var(--ink-faint); font-weight:600;}
+
+  /* 고른 날 · 고정일 카드의 하루 흐름 + 가이드 칩 */
+  .slot.picked{flex-wrap:wrap; align-items:flex-start;}
+  .slot.picked.fixed{background:var(--bg-alt);}
+  .fixed-sec{margin-top:14px;}
+  .day-more{flex-basis:100%; border-top:1px dashed var(--surface-line); padding-top:12px; display:flex; flex-direction:column; gap:12px;}
+  .flow-head{font-size:11px; font-weight:800; letter-spacing:.04em; color:var(--ink-faint); margin-bottom:6px; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .zone-tag{display:inline-flex; align-items:center; gap:5px; font-size:10.5px; font-weight:700; color:var(--ink-soft); background:var(--bg-alt); border-radius:999px; padding:2px 9px;}
+  .zone-tag i{width:8px; height:8px; border-radius:50%; flex:none;}
+  .flow-row{display:flex; gap:10px; font-size:12.5px; line-height:1.55; color:var(--ink-soft); padding:2px 0;}
+  .flow-row .tod{flex:none; width:32px; font-weight:800; font-size:11px; color:var(--teal); padding-top:1px;}
+  .spot-chips{display:flex; flex-wrap:wrap; gap:6px;}
+  .spot-chip{font-size:11.5px; font-weight:700; color:var(--teal); background:var(--teal-soft); border:1px solid transparent; border-radius:999px; padding:5px 11px; cursor:pointer; text-align:left;}
+  .spot-chip:hover{border-color:var(--teal);}
+  .spot-chip.saved{background:var(--good-soft); color:var(--good);}
+  .spot-chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+
+  /* 플랜 A·B 비교, 준비물·팁 */
+  details.cmp{margin-top:12px; background:var(--surface); border:1px solid var(--surface-line); border-radius:14px; padding:12px 16px;}
+  details.cmp summary{cursor:pointer; font-size:13px; font-weight:800; color:var(--teal);}
+  .cmp-warn{margin:12px 0 0; background:var(--low-soft); border:1px solid color-mix(in srgb, var(--low) 40%, transparent); border-radius:12px; padding:11px 14px; font-size:12.5px; line-height:1.6; color:var(--ink);}
+  .cmp-warn b{color:var(--low);}
+  .cmp-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:12px; margin-top:12px;}
+  .cmp-card{border-radius:14px; padding:16px; display:flex; flex-direction:column; gap:8px;}
+  .cmp-card.a{background:var(--accent-soft); border:1.5px solid color-mix(in srgb, var(--accent) 45%, transparent);}
+  .cmp-card.b{background:var(--sage-soft); border:1.5px solid color-mix(in srgb, var(--sage) 45%, transparent);}
+  .cmp-card .tag{font-size:11px; font-weight:800; letter-spacing:.04em;}
+  .cmp-card.a .tag{color:var(--accent-ink);}
+  .cmp-card.b .tag{color:var(--sage-ink);}
+  .cmp-card h3{font-size:16px; font-weight:600;}
+  .cmp-card p{margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-soft);}
+  .cmp-card p.warn{color:var(--low); font-size:11.5px;}
+  .cmp-stat{display:flex; justify-content:space-between; align-items:baseline; gap:8px; font-size:12px; color:var(--ink-soft); padding-top:8px; border-top:1px dashed color-mix(in srgb, var(--ink) 20%, transparent);}
+  .cmp-stat b{font-family:'Fraunces',serif; font-size:15px; font-weight:600; color:var(--ink); white-space:nowrap;}
+  .cmp-note{margin:12px 0 0; font-size:11.5px; color:var(--ink-faint); line-height:1.55;}
+  .tip-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(210px,1fr)); gap:10px; margin-top:12px;}
+  .tip-card{background:var(--bg-alt); border-radius:12px; padding:12px 14px;}
+  .tip-card h4{margin:0 0 6px; font-family:'Fraunces',serif; font-weight:600; font-size:14px;}
+  .tip-card ul, .book-ol{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:4px; font-size:12.5px; color:var(--ink-soft); line-height:1.5;}
+  .book-ol{margin-top:6px;}
+  .book-ol b{color:var(--ink);}
+  .cmp-sub{margin:16px 0 0; font-size:12.5px; font-weight:800; color:var(--ink);}
+  .cmp-link{margin-top:10px; font-size:12px; font-weight:700; color:var(--teal); background:var(--teal-soft); border:none; border-radius:999px; padding:7px 13px; cursor:pointer;}
 </style>
 
 <svg style="display:none" aria-hidden="true">
@@ -223,6 +266,41 @@
     <div class="mode-note" id="mode-note"></div>
 
     <div class="presets" id="preset-row"></div>
+    <div id="plan-compare"></div>
+    <details class="cmp">
+      <summary>준비물 · 팁 · 먼저 예약할 것</summary>
+      <div class="tip-grid">
+        <div class="tip-card"><h4>매일 기본</h4><ul>
+          <li>수영복 + 빠르게 마르는 수건</li>
+          <li>자외선차단제 SPF50+, 조깅용 모자</li>
+          <li>돗자리 또는 피크닉 매트(옵저버토리힐·보타닉가든용)</li>
+        </ul></div>
+        <div class="tip-card"><h4>집밥 · 장보기</h4><ul>
+          <li>숙소에 그릴/인덕션 화구 있는지 예약 전 확인</li>
+          <li>울월스·콜스 앱 미리 설치하면 재고·가격 확인 편함</li>
+          <li>캐리지웍스·퀸빅토리아마켓은 현금보다 카드 결제가 대부분 편함</li>
+        </ul></div>
+        <div class="tip-card"><h4>유람선 · 크루즈</h4><ul>
+          <li>선셋크루즈는 성수기 저녁 시간대 조기 마감 — 미리 예약</li>
+          <li>페리(타롱가행)는 오팔카드로 바로 탑승 가능</li>
+          <li>바람이 강할 수 있어 얇은 겉옷 챙기기</li>
+        </ul></div>
+        <div class="tip-card"><h4>필립아일랜드</h4><ul>
+          <li>촬영 금지 구역 있음 — 아이들에게 미리 설명</li>
+          <li>저녁 바닷바람 쌀쌀 — 겉옷 필수</li>
+          <li>소규모 투어라 성수기엔 조기 마감, 최우선 예약</li>
+        </ul></div>
+      </div>
+      <p class="cmp-sub">지금 예약해야 할 것 — 어느 플랜으로 가든 서두를 항목</p>
+      <ol class="book-ol">
+        <li><b>시드니⇄멜버른 국내선</b> — 멜버른을 넣는다면 두 플랜 모두 필요, 확정되는 대로 예약.</li>
+        <li><b>필립아일랜드 펭귄퍼레이드</b> — 두 플랜 공통 하이라이트, 조기 마감.</li>
+        <li><b>(플랜 A) 웜뱃투어</b> — 성수기 좌석 여유 없음. 운영사·출발 요일부터 확인.</li>
+        <li><b>(플랜 B) 선셋 하버크루즈, 타롱가동물원 페리 콤보</b> — 저녁 시간대 인기 슬롯부터 마감.</li>
+        <li><b>멜버른 숙소</b> — 취사 시설(그릴 포함) 있는 곳으로, 두 플랜 모두 필요.</li>
+      </ol>
+      <button class="cmp-link" onclick="if(window.goTab)goTab('tracker')">예약 진행 체크하러 가기</button>
+    </details>
   </header>
 
   <section style="margin-top:26px;">
@@ -235,7 +313,7 @@
 
   <div id="root"><div class="skeleton">불러오는 중…</div></div>
 
-  <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 선택 상태는 이 아티팩트에 저장됩니다</footer>
+  <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 선택은 저장돼 가족 기기끼리 맞춰집니다 · 금액은 최근 시세 기반 추정치예요</footer>
 </div>
 
 <script id="app-state" type="application/json">{"mode":"WITH_MEL","picks":{}}</script>
@@ -243,48 +321,225 @@
 (function(){
   "use strict";
 
+  /* ------------------------------------------------------------------
+     공유 인터페이스 (지도 등 다른 화면이 이 위에서 동작)
+     - window.TRIP_ZONES : build.py가 data/zones.json을 주입. [{id, name, color, city:"SYD"|"MEL", regions:[가이드 region 문자열]}]
+     - window.TRIP = {
+         zones,                       // TRIP_ZONES 배열 그대로
+         zoneOfRegion(region),        // 가이드 region 문자열 → zone 객체 (없으면 null)
+         themeById(id),               // THEMES 항목 {id,title,desc,intensity,tags,icon,cost,area,zone,stops,timeline}
+         state(),                     // {mode:"WITH_MEL"|"SYD_ONLY", picks:{"2/11":"themeId", ...}} 사본
+         days()                       // 현재 모드의 날짜순 [{date, dow, type:"arrival"|"pick"|"travel"|"depart", city, label, themeId}]
+       }                              //   city는 그날 밤 묵는 도시, themeId는 pick이고 골랐을 때만 (아니면 null)
+     - window 이벤트 "trip-change" : 모드·선택이 바뀔 때(공유 저장소 동기화 포함)와 첫 렌더 직후
+     - window 이벤트 "guide-change" : 가이드(src/guide.html)가 발생 — 받으면 고른 날 카드의 칩을 다시 그림
+     - window.GUIDE (가이드 스크립트가 나중에 정의, 없을 수 있음) : all() → [{id,kind,title,region,icon,tags,q,lat,lng,picked}], show(id)
+     - 저장 형식(바꾸지 말 것): 문서 trip/picks = {mode, picks:{date: themeId}, updatedAt}
+     테마의 zone은 zones.json의 id, stops는 가이드 항목 id(방문 순서), timeline은 [{tod:"오전"|"낮"|"오후"|"저녁", text}]
+     ------------------------------------------------------------------ */
   var THEMES = {
     SYD: [
-      {id:"wombat", title:"웜뱃투어", desc:"웜뱃 직접 안기 + 코알라·쿼카 관찰, 로컬 파이 맛집", intensity:"heavy", tags:["animal"], icon:"i-quokka", cost:[63,81], area:"근교"},
-      {id:"bluemtn", title:"블루마운틴 + 페더데일", desc:"코알라·캥거루 근접체험 + 대협곡 전망대", intensity:"heavy", tags:["animal","nature"], icon:"i-roo", cost:[59,77], area:"근교"},
-      {id:"taronga", title:"타롱가동물원 + 피크닉", desc:"페리로 이동, 코알라·캥거루·왈라비 + 브릿지뷰 피크닉", intensity:"medium", tags:["animal","swim"], icon:"i-ferry", cost:[18,25], area:"시내"},
-      {id:"bondi", title:"시티 + 본다이비치", desc:"오페라하우스·하버브리지 워킹 + 해변 수영", intensity:"light", tags:["swim"], icon:"i-bridge", cost:[3,6], area:"시내"},
-      {id:"jogbbq", title:"해변조깅 + 장보기 + 집밥", desc:"본다이~쿠지 조깅, 장봐서 숙소에서 고기 굽기", intensity:"light", tags:["swim","food"], icon:"i-run", cost:[0,3], area:"시내"},
-      {id:"marketcruise", title:"마켓 + 선셋 하버크루즈", desc:"캐리지웍스 마켓 + 노을 유람선", intensity:"medium", tags:["market","sunset"], icon:"i-market", cost:[15,22], area:"시내"},
-      {id:"portstephens", title:"포트스테판", desc:"사막 모래썰매 + 야생 돌고래 크루즈", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-tour", cost:[40,55], area:"근교(2.5시간)"},
-      {id:"jervisbay", title:"저비스베이", desc:"새하얀 모래사장 화이트헤이븐 + 야생 돌고래 관찰", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-wave", cost:[25,40], area:"근교(2.5시간)"},
-      {id:"huntervalley", title:"헌터밸리 와이너리", desc:"포도밭 피크닉 + 치즈테이스팅 + 목장 체험", intensity:"medium", tags:["nature","food"], icon:"i-grape", cost:[20,35], area:"근교(2시간)"},
-      {id:"kiama", title:"카이아마 블로우홀", desc:"바닷물이 솟구치는 블로우홀 + 사우스코스트 드라이브", intensity:"light", tags:["nature"], icon:"i-bridge", cost:[8,15], area:"근교(1.5시간)"},
-      {id:"portstephenslite", title:"센트럴코스트", desc:"코알라 보호구역 + 한적한 해변 반나절", intensity:"medium", tags:["animal","swim"], icon:"i-koala", cost:[15,25], area:"근교(1.5시간)"},
-      {id:"royalnp", title:"로열내셔널파크", desc:"해안 트레킹 + 한적한 비치, 시드니에서 가장 가까운 국립공원", intensity:"light", tags:["nature","swim"], icon:"i-run", cost:[5,10], area:"근교(1시간)"},
-      {id:"gerringong", title:"타스만드라이브 · 게링공", desc:"워리비치 도보+피크닉, 다오를란도 화덕피자(울런공, 렌터카 권장)", intensity:"heavy", tags:["nature","swim","food"], icon:"i-wave", cost:[30,45], area:"근교(렌터카 2시간+)"}
+      {id:"wombat", title:"웜뱃투어", desc:"웜뱃 직접 안기 + 코알라·쿼카 관찰, 로컬 파이 맛집", intensity:"heavy", tags:["animal"], icon:"i-quokka", cost:[63,81], area:"근교",
+        zone:"syd-highlands", stops:["wombattour"],
+        timeline:[
+          {tod:"오전", text:"시드니 달링하버 집결 후 출발 — 운영사·출발 요일·출발 시간은 확인 필요"},
+          {tod:"낮", text:"한국어 가이드 상품(지그재그투어) 기준 보우럴 마을 + 와이너리 — 실제 코스는 예약 시 확인 필요"},
+          {tod:"오후", text:"타랄가 와일드라이프 파크에서 웜뱃 교감 체험(현장 결제 약 A$15) — 웜뱃 안기 가능 여부와 7세 아동 참여 조건은 확인 필요"},
+          {tod:"저녁", text:"시드니 복귀 — 종일 투어라 저녁은 숙소 근처에서 가볍게"}
+        ]},
+      {id:"bluemtn", title:"블루마운틴 + 페더데일", desc:"코알라·캥거루 근접체험 + 대협곡 전망대", intensity:"heavy", tags:["animal","nature"], icon:"i-roo", cost:[59,77], area:"근교",
+        zone:"bluemtn", stops:["featherdale","scenicworld","echopoint"],
+        timeline:[
+          {tod:"오전", text:"페더데일 야생동물공원(매일 08:00~17:00) — 더우니 8시 오픈에 맞춰 코알라·캥거루 근접체험"},
+          {tod:"낮", text:"블루마운틴으로 이동(시드니에서 약 2시간), 시닉월드 — 평일 10:00~16:00 · 주말 09:00~17:00, 매진되는 날이 있어 온라인 사전 예매"},
+          {tod:"오후", text:"에코포인트에서 세자매봉 전망(무료, 주차 유료) — 여름엔 산불 경보로 닫힐 수 있어 당일 확인"},
+          {tod:"저녁", text:"시드니 복귀, 풀데이라 저녁은 간단히"}
+        ]},
+      {id:"taronga", title:"타롱가동물원 + 피크닉", desc:"페리로 이동, 코알라·캥거루·왈라비 + 브릿지뷰 피크닉", intensity:"medium", tags:["animal","swim"], icon:"i-ferry", cost:[18,25], area:"시내",
+        zone:"syd-north", stops:["circularquay","taronga","observatoryhill"],
+        timeline:[
+          {tod:"오전", text:"서큘러키에서 페리를 타고 타롱가동물원으로 — 하버브리지·오페라하우스를 바다에서 감상. 더운 날은 09:30 개장 직후가 좋아요"},
+          {tod:"낮", text:"코알라·캥거루·왈라비 근접 관찰 (쿼카 전시는 방문 전 홈페이지 확인). 위쪽 정문에서 시작해 아래 선착장으로 내려오는 동선이 편해요"},
+          {tod:"오후", text:"더록스 옵저버토리 힐 공원에서 하버브리지가 보이는 잔디밭에 돗자리 펴고 피크닉"}
+        ]},
+      {id:"bondi", title:"시티 + 본다이비치", desc:"오페라하우스·하버브리지 워킹 + 해변 수영", intensity:"light", tags:["swim"], icon:"i-bridge", cost:[3,6], area:"시내",
+        zone:"syd-east", stops:["circularquay","bondi"],
+        timeline:[
+          {tod:"오전", text:"오페라하우스·서큘러키·하버브리지 산책 — 그늘이 적어 오전에"},
+          {tod:"낮", text:"버스(333번)로 본다이비치 이동, 해변 근처에서 점심"},
+          {tod:"오후", text:"본다이비치 수영 — 빨강·노랑 깃발 사이에서만. 노스본다이 아동용 조수풀이 파도가 잔잔해요. 한낮 자외선이 매우 강하니 그늘·래시가드 준비"}
+        ]},
+      {id:"jogbbq", title:"해변조깅 + 장보기 + 집밥", desc:"본다이~쿠지 조깅, 장봐서 숙소에서 고기 굽기", intensity:"light", tags:["swim","food"], icon:"i-run", cost:[0,3], area:"시내",
+        zone:"syd-east", stops:["coastalwalk","bondi"],
+        timeline:[
+          {tod:"오전", text:"본다이~쿠지 해안 산책로 조깅(전 구간 약 6km) — 그늘이 없어 9시 전 출발, 아이 페이스면 본다이~브론테(약 2.5km)만 걷고 버스로 복귀"},
+          {tod:"낮", text:"본다이 근처 카페에서 브런치"},
+          {tod:"오후", text:"본다이비치 수영, 돌아오는 길에 장보기(스테이크·해산물)"},
+          {tod:"저녁", text:"숙소에서 고기 구워먹기 — 취사 가능 객실 활용"}
+        ]},
+      {id:"marketcruise", title:"마켓 + 선셋 하버크루즈", desc:"캐리지웍스 마켓 + 노을 유람선", intensity:"medium", tags:["market","sunset"], icon:"i-market", cost:[15,22], area:"시내",
+        zone:"syd-city", stops:["carriageworks","rocksmarket","qvb"],
+        timeline:[
+          {tod:"오전", text:"토요일이면 캐리지웍스 파머스 마켓(08:00~13:00)에서 커피·페이스트리 — 일요일엔 열지 않아 록스 마켓(10:00~17:00)으로 대체"},
+          {tod:"낮", text:"QVB·시티 여유롭게 쇼핑"},
+          {tod:"저녁", text:"선셋 하버크루즈 — 유람선에서 노을과 하버브리지 야경. 운영사·출항 시간은 확인 필요, 저녁 시간대는 미리 예약"}
+        ]},
+      {id:"portstephens", title:"포트스테판", desc:"사막 모래썰매 + 야생 돌고래 크루즈", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-tour", cost:[40,55], area:"근교(2.5시간)",
+        zone:"portstephens", stops:["stockton","nelsonbay"],
+        timeline:[
+          {tod:"오전", text:"이른 출발(편도 약 2.5시간) → 스톡턴 모래언덕 모래썰매. 그늘이 없고 모래가 뜨거워 양말·운동화 필수, 이른 시간에"},
+          {tod:"낮", text:"넬슨베이에서 점심"},
+          {tod:"오후", text:"넬슨베이 돌핀크루즈 13:30 출항(약 1.5시간, 15분 전 승선) — 야생이라 못 볼 수도 있어요, 사전 예약 권장"},
+          {tod:"저녁", text:"시드니 복귀(약 2.5시간) — 긴 하루라 옵션은 줄이는 편이 좋아요"}
+        ]},
+      {id:"jervisbay", title:"저비스베이", desc:"새하얀 모래사장 하이암스 비치 + 야생 돌고래 관찰", intensity:"heavy", tags:["animal","swim","nature"], icon:"i-wave", cost:[25,40], area:"근교(2.5시간)",
+        zone:"jervisbay", stops:["jbdolphin","hyams"],
+        timeline:[
+          {tod:"오전", text:"이른 출발(편도 약 2.5시간) → 허스키슨 부두"},
+          {tod:"낮", text:"저비스베이 돌핀크루즈(약 1.5시간, 15분 전 승선) — 보통 10:30·13:00 출항이지만 조수에 따라 바뀌어 날짜별 확인 필요"},
+          {tod:"오후", text:"하이암스 비치 물놀이 — 안전요원이 없는 해변, 주차 약 400면뿐이고 그늘이 없어요"},
+          {tod:"저녁", text:"시드니 복귀(약 2.5시간)"}
+        ]},
+      {id:"huntervalley", title:"헌터밸리 와이너리", desc:"포도밭 피크닉 + 치즈테이스팅 + 목장 체험", intensity:"medium", tags:["nature","food"], icon:"i-grape", cost:[20,35], area:"근교(2시간)",
+        zone:"centralcoast-hunter", stops:["hvgardens"],
+        timeline:[
+          {tod:"오전", text:"시드니 출발(약 2시간) → 헌터밸리 가든(09:00~17:00, 입장 마감 16:00) — 2월엔 덥고 그늘이 적어 오전에"},
+          {tod:"낮", text:"포도밭 피크닉 + 치즈 테이스팅 — 들를 셀러도어·치즈숍은 확인 필요(대체로 10:00~17:00)"},
+          {tod:"오후", text:"목장 체험 — 장소·예약은 확인 필요"},
+          {tod:"저녁", text:"시드니 복귀(약 2시간)"}
+        ]},
+      {id:"kiama", title:"키아마 블로우홀", desc:"바닷물이 솟구치는 블로우홀 + 사우스코스트 드라이브", intensity:"light", tags:["nature"], icon:"i-bridge", cost:[8,15], area:"근교(1.5시간)",
+        zone:"southcoast", stops:["seacliff","kiamablowhole","kiamarockpool"],
+        timeline:[
+          {tod:"오전", text:"해안도로로 남하, 씨클리프 브릿지·볼드힐 전망대 — 보도에 그늘이 없어 한낮 전에"},
+          {tod:"낮", text:"키아마 블로우홀 & 등대 — 남동 너울이 있을 때만 크게 솟구쳐요. 항구 근처에서 점심"},
+          {tod:"오후", text:"여유가 되면 키아마 락풀 — 잔잔한 날만, 안전요원 없음"},
+          {tod:"저녁", text:"시드니 복귀(약 1.5시간)"}
+        ]},
+      {id:"portstephenslite", title:"센트럴코스트", desc:"코알라 보호구역 + 한적한 해변 반나절", intensity:"medium", tags:["animal","swim"], icon:"i-koala", cost:[15,25], area:"근교(1.5시간)",
+        zone:"centralcoast-hunter", stops:["reptilepark","terrigal"],
+        timeline:[
+          {tod:"오전", text:"시드니 출발(약 1.5시간, 차 필요) → 오스트레일리안 렙타일 파크(09:00~17:00) — 온라인 예매가 더 저렴"},
+          {tod:"낮", text:"파크 안 피크닉·바베큐 공간에서 점심"},
+          {tod:"오후", text:"테리갈 비치 — 깃발 사이에서만 수영"},
+          {tod:"저녁", text:"시드니 복귀"}
+        ]},
+      {id:"royalnp", title:"로열내셔널파크", desc:"해안 트레킹 + 한적한 비치, 시드니에서 가장 가까운 국립공원", intensity:"light", tags:["nature","swim"], icon:"i-run", cost:[5,10], area:"근교(1시간)",
+        zone:"southcoast", stops:["wattamolla"],
+        timeline:[
+          {tod:"오전", text:"시드니 출발(약 1시간), 공원 게이트는 07:00부터 — 더운 날은 주차장이 일찍 차요. 차량 1대 하루 A$12"},
+          {tod:"낮", text:"와타몰라 비치 & 라군에서 물놀이·피크닉 — 안전요원 없음, 식수 지참"},
+          {tod:"오후", text:"해안 트레킹은 짧은 구간만 걷고 복귀 — 산불 위험일엔 공원이 닫힐 수 있어 당일 NPWS 알림 확인"}
+        ]},
+      {id:"gerringong", title:"타스만드라이브 · 게링공", desc:"워리비치 도보+피크닉, 다오를란도 화덕피자(울런공, 렌터카 권장)", intensity:"heavy", tags:["nature","swim","food"], icon:"i-wave", cost:[30,45], area:"근교(렌터카 2시간+)",
+        zone:"southcoast", stops:["seacliff"],
+        timeline:[
+          {tod:"오전", text:"시드니 → 그랜드퍼시픽드라이브·씨클리프 브릿지 경유 울런공(약 1.5시간)"},
+          {tod:"낮", text:"울런공 다오를란도에서 화덕피자 픽업 — 화요일 휴무, 영업시간은 방문 전 전화로 확인 필요"},
+          {tod:"오후", text:"게링공·워리비치(약 37분) — 남단에 무료주차·화장실·바베큐·놀이터, 피자 피크닉과 타스만 드라이브 뷰포인트"},
+          {tod:"저녁", text:"시드니 복귀(약 2시간 10분) — 전체 약 8~9시간"}
+        ]}
     ],
     MEL: [
-      {id:"gor", title:"그레이트오션로드", desc:"12사도 절벽 + 야생 코알라 관찰(케넷강)", intensity:"heavy", tags:["animal","nature"], icon:"i-tour", cost:[50,68]},
-      {id:"phillip", title:"필립아일랜드 펭귄퍼레이드", desc:"야생 리틀펭귄, 저녁 투어", intensity:"heavy", tags:["animal"], icon:"i-penguin", cost:[43,59]},
-      {id:"qvmarket", title:"퀸빅토리아마켓 + 시티", desc:"장보기 + 페더레이션스퀘어", intensity:"medium", tags:["market","food"], icon:"i-market", cost:[0,3]},
-      {id:"stkilda", title:"세인트킬다 조깅 + 야라강크루즈", desc:"해안 조깅 + 카페 + 유람선", intensity:"medium", tags:["swim","nature"], icon:"i-run", cost:[8,12]},
-      {id:"botanic", title:"보타닉가든 피크닉 + 집밥", desc:"여유로운 피크닉 + 숙소에서 저녁", intensity:"light", tags:["food","nature"], icon:"i-picnic", cost:[0,3]},
-      {id:"healesville", title:"힐스빌 생추어리 + 야라밸리 초콜릿공장", desc:"코알라·웜뱃·플래티푸스 등 호주 고유종 + 무료시식 초콜릿공장(아이 쇼콜라티에 클래스도)", intensity:"heavy", tags:["animal","nature"], icon:"i-koala", cost:[35,55]},
-      {id:"puffingbilly", title:"퍼핑빌리 증기기차", desc:"댄더농산맥, 다리 밖으로 내놓고 타는 증기기관차. 가족요금 할인, BBQ·놀이터 있음", intensity:"medium", tags:["nature"], icon:"i-tour", cost:[14,20]},
-      {id:"melbournezoo", title:"멜버른동물원", desc:"1862년 개장, 호주 최초 동물원. 코알라 설명·미어캣 먹이주기 타임드 프로그램", intensity:"medium", tags:["animal"], icon:"i-roo", cost:[10,14]},
-      {id:"lanewalk", title:"레인웨이 도보투어", desc:"호시어레인 그래피티 + 디그레이브스 노천카페 골목 + ACMI 무료 체험전시", intensity:"light", tags:["market"], icon:"i-market", cost:[2,5]},
-      {id:"sealifemel", title:"씨라이프 멜버른 아쿠아리움", desc:"펭귄 서식지 워크 체험(스노우장비 착용), 실내라 우천 대비 좋음", intensity:"medium", tags:["animal"], icon:"i-wave", cost:[13,16]},
-      {id:"collingwoodfarm", title:"콜링우드 칠드런스팜", desc:"야라강변 체험농장, 동물 만지기·먹이주기, 유기농 텃밭+카페", intensity:"light", tags:["animal","nature"], icon:"i-picnic", cost:[3,8]},
-      {id:"eureka", title:"유레카 스카이덱", desc:"88층 전망대, MCG·페더레이션스퀘어 조망. 우천 대비 실내 옵션", intensity:"light", tags:["market"], icon:"i-bridge", cost:[8,14]}
+      {id:"gor", title:"그레이트오션로드", desc:"12사도 절벽 + 야생 코알라 관찰(케넷강)", intensity:"heavy", tags:["animal","nature"], icon:"i-tour", cost:[50,68],
+        zone:"gor", stops:["kennettriver","twelveapostles"],
+        timeline:[
+          {tod:"오전", text:"07:30경 당일 투어 출발, 해안도로를 따라 케넷 리버에서 야생 코알라 관찰 — 만지거나 먹이 주기 금지"},
+          {tod:"낮", text:"가는 길에 점심 — 장소는 투어별로 확인 필요"},
+          {tod:"오후", text:"12사도 전망 — 2026년 10월부터 사전 예약제·유료화가 예고돼 있어 투어 포함 여부 확인 필요"},
+          {tod:"저녁", text:"20:30경 멜버른 복귀(12~13시간 일정)"}
+        ]},
+      {id:"phillip", title:"필립아일랜드 펭귄퍼레이드", desc:"야생 리틀펭귄, 저녁 투어", intensity:"heavy", tags:["animal"], icon:"i-penguin", cost:[43,59],
+        zone:"mel-mornington", stops:["phillipisland"],
+        timeline:[
+          {tod:"오전", text:"숙소 근처 카페·수영장에서 느긋하게"},
+          {tod:"오후", text:"필립아일랜드로 이동 — 가는 길 해안 풍경, 방문자센터는 12:00 개장"},
+          {tod:"저녁", text:"야생 리틀펭귄 퍼레이드 — 2월엔 20:30 전후 도착, 1시간 전 자리 잡기. 촬영 금지·겉옷 필수, 투어로 가면 숙소 복귀는 자정 무렵"}
+        ]},
+      {id:"qvmarket", title:"퀸빅토리아마켓 + 시티", desc:"장보기 + 페더레이션스퀘어", intensity:"medium", tags:["market","food"], icon:"i-market", cost:[0,3],
+        zone:"mel-city", stops:["qvm","fedsquare"],
+        timeline:[
+          {tod:"오전", text:"퀸 빅토리아 마켓에서 장보기 — 델리·치즈·과일까지 다 여기서 (월·수 휴무, 잡화 구역은 09:00부터)"},
+          {tod:"낮", text:"마켓에서 점심 후 페더레이션 광장·야라강변 산책 — 붙어 있는 ACMI는 더운 날 대안"},
+          {tod:"저녁", text:"숙소에서 마켓에서 사온 재료로 고기 구워먹기"}
+        ]},
+      {id:"stkilda", title:"세인트킬다 조깅 + 야라강크루즈", desc:"해안 조깅 + 카페 + 유람선", intensity:"medium", tags:["swim","nature"], icon:"i-run", cost:[8,12],
+        zone:"mel-bayside", stops:["stkildabeach"],
+        timeline:[
+          {tod:"오전", text:"세인트 킬다 비치 해안 조깅 + 피어 산책, 근처 카페에서 브런치"},
+          {tod:"오후", text:"야라강 유람선 — 도심을 물 위에서 여유롭게. 운영사·출항 시간은 확인 필요"},
+          {tod:"저녁", text:"(선택) 세인트 킬다 피어 펭귄 관람 — 2월엔 20:30 이후, 무료지만 예약 필수"}
+        ]},
+      {id:"botanic", title:"보타닉가든 피크닉 + 집밥", desc:"여유로운 피크닉 + 숙소에서 저녁", intensity:"light", tags:["food","nature"], icon:"i-picnic", cost:[0,3],
+        zone:"mel-city", stops:["rbgmelb"],
+        timeline:[
+          {tod:"오전", text:"느긋하게 출발, 피크닉 거리 장보기"},
+          {tod:"낮", text:"로열 보타닉 가든 멜버른(07:30~19:30)에서 여유로운 피크닉 — 어린이 정원은 학기 중 수~일만 열어요"},
+          {tod:"저녁", text:"숙소에서 집밥"}
+        ]},
+      {id:"healesville", title:"힐스빌 생추어리 + 야라밸리 초콜릿공장", desc:"코알라·웜뱃·플래티푸스 등 호주 고유종 + 무료시식 초콜릿공장(아이 쇼콜라티에 클래스도)", intensity:"heavy", tags:["animal","nature"], icon:"i-koala", cost:[35,55],
+        zone:"mel-near", stops:["healesville"],
+        timeline:[
+          {tod:"오전", text:"멜버른 출발(차로 약 1시간~1시간 15분) → 힐스빌 생추어리(09:00~17:00). 맹금류 쇼는 하루 2회라 도착 즉시 시간 확인"},
+          {tod:"낮", text:"코알라·웜뱃·플래티푸스 관람, 점심"},
+          {tod:"오후", text:"야라밸리 초콜릿공장(차로 15분, 09:00~17:00, 입장 무료)"},
+          {tod:"저녁", text:"멜버른 복귀 — 폭염·산불 위험일엔 휴장할 수 있어 아침 공지 확인"}
+        ]},
+      {id:"puffingbilly", title:"퍼핑빌리 증기기차", desc:"댄더농산맥, 다리 밖으로 내놓고 타는 증기기관차. 가족요금 할인, BBQ·놀이터 있음", intensity:"medium", tags:["nature"], icon:"i-tour", cost:[14,20],
+        zone:"mel-near", stops:["puffingbilly"],
+        timeline:[
+          {tod:"오전", text:"벨그레이브역으로 이동 → 증기기차 탑승. 2026년 2월 기준 출발 10:00·11:00·12:30·14:15, 2027년 시간표는 확인 필요 — 전 좌석 온라인 사전 예약"},
+          {tod:"낮", text:"레이크사이드 도착, 호숫가 BBQ·놀이터에서 점심"},
+          {tod:"오후", text:"돌아오는 기차로 벨그레이브 → 멜버른 복귀. 산불 위험이 큰 날은 디젤 대체·운휴 가능"}
+        ]},
+      {id:"melbournezoo", title:"멜버른동물원", desc:"1862년 개장, 호주 최초 동물원. 코알라 설명·미어캣 먹이주기 타임드 프로그램", intensity:"medium", tags:["animal"], icon:"i-roo", cost:[10,14],
+        zone:"mel-city", stops:["melbournezoo"],
+        timeline:[
+          {tod:"오전", text:"09:00 개장 직후 입장 — 더운 날은 이때 동물이 활발해요. 11:30 코알라 설명·11:45 미어캣 먹이주기(당일 시간표 확인 필요)"},
+          {tod:"낮", text:"동물원 안에서 점심 — 현금 불가, 카드만"},
+          {tod:"오후", text:"나머지 구역 관람 후 17:00 폐장 전 복귀 — 업필드선 로열파크역 이용이 무난"}
+        ]},
+      {id:"lanewalk", title:"레인웨이 도보투어", desc:"호시어레인 그래피티 + 디그레이브스 노천카페 골목 + ACMI 무료 체험전시", intensity:"light", tags:["market"], icon:"i-market", cost:[2,5],
+        zone:"mel-city", stops:["degravesst","hosierlane","acmi"],
+        timeline:[
+          {tod:"오전", text:"디그레이브스 스트리트 노천카페 골목에서 아침 — 평일 9시 이전이 한적해요"},
+          {tod:"낮", text:"호시어 레인 그래피티 골목 — 옆 골목까지 돌면 30분~1시간"},
+          {tod:"오후", text:"ACMI 무료 체험전시(10:00~17:00) — 냉방이 돼 더운 날에도 좋아요"}
+        ]},
+      {id:"sealifemel", title:"씨라이프 멜버른 아쿠아리움", desc:"펭귄 서식지 워크 체험(스노우장비 착용), 실내라 우천 대비 좋음", intensity:"medium", tags:["animal"], icon:"i-wave", cost:[13,16],
+        zone:"mel-city", stops:["sealifemelb"],
+        timeline:[
+          {tod:"오전", text:"씨라이프 멜버른(09:30~17:00, 입장 마감 16:00) — 온라인으로 날짜·시간대 사전 예약 필수, 평일 오전 권장"},
+          {tod:"낮", text:"펭귄 서식지 등 관람 약 1.5~2시간 후 야라강변에서 점심"},
+          {tod:"오후", text:"사우스뱅크 강변 산책 후 숙소로"}
+        ]},
+      {id:"collingwoodfarm", title:"콜링우드 칠드런스팜", desc:"야라강변 체험농장, 동물 만지기·먹이주기, 유기농 텃밭+카페", intensity:"light", tags:["animal","nature"], icon:"i-picnic", cost:[3,8],
+        zone:"mel-city", stops:["collingwoodfarm"],
+        timeline:[
+          {tod:"오전", text:"콜링우드 칠드런스팜(09:30~16:30, 입장 마감 16:00) — 기니피그 안기·젖소 짜기 등 체험 시간은 당일 안내판 확인, 흙길이라 운동화"},
+          {tod:"낮", text:"농장 카페에서 점심"},
+          {tod:"오후", text:"야라강변 산책 후 복귀"}
+        ]},
+      {id:"eureka", title:"유레카 스카이덱", desc:"88층 전망대, MCG·페더레이션스퀘어 조망. 우천 대비 실내 옵션", intensity:"light", tags:["market"], icon:"i-bridge", cost:[8,14],
+        zone:"mel-city", stops:["eurekaskydeck"],
+        timeline:[
+          {tod:"오전", text:"정오에 열어 오전은 숙소 근처에서 여유롭게"},
+          {tod:"오후", text:"사우스뱅크 강변 산책"},
+          {tod:"저녁", text:"스카이덱(12:00~22:00, 입장 마감 21:30) — 2월 일몰은 20:20 전후라 19:30쯤 올라가면 노을과 야경을 함께. 온라인 예매가 저렴"}
+        ]}
     ]
   };
 
   // 요일별 운영 제약 (2026.10 확인값). only: 이 요일에만 가능, closed: 휴무 요일, caution: 갈 수는 있지만 알고 가야 할 것
   var RULES = {
-    wombat:{hours:"투어사마다 출발 요일이 다름(화·금 / 화·목·토·일 등) — 예약 가능한 날짜부터 확인", caution:{"*":"투어사 미확정 — 출발 요일을 먼저 확인하세요"}},
-    bluemtn:{hours:"페더데일 매일 08:00~17:00 · 시닉월드 매일 09:00~17:00"},
+    wombat:{hours:"운영사·출발 요일 미확인(종일 투어, 달링하버 집결) — 예약 가능한 날짜부터 확인", caution:{"*":"투어사 미확정 — 출발 요일을 먼저 확인하세요"}},
+    bluemtn:{hours:"페더데일 매일 08:00~17:00 · 시닉월드 평일 10:00~16:00, 주말·공휴일·방학 09:00~17:00"},
     taronga:{hours:"매일 09:30~17:00 (입장 마감 16:30)"},
     bondi:{hours:"해변은 상시 · 구조대 깃발 구역 안에서만 수영", caution:{"목":"본다이 아이스버그 수영장은 목요일 청소 휴장"}},
     jogbbq:{hours:"해변은 상시 · 마트(콜스·울워스) 매일 영업", caution:{"목":"본다이 아이스버그 수영장은 목요일 청소 휴장"}},
-    marketcruise:{hours:"캐리지웍스 파머스마켓 토 08:00~13:00 · 더록스 마켓 토·일 10:00~17:00",
-      only:{days:["토","일"], why:"마켓이 주말에만 열려요 (캐리지웍스 토요일, 더록스 토·일)"},
-      caution:{"일":"일요일엔 캐리지웍스가 없어요 — 더록스 마켓(10~17시)으로 대체"}},
+    marketcruise:{hours:"캐리지웍스 파머스마켓 토 08:00~13:00 · 더록스 마켓 금 10:00~15:00, 토·일 10:00~17:00",
+      only:{days:["금","토","일"], why:"마켓이 금·토·일에만 열려요 (캐리지웍스 토요일, 더록스 금·토·일)"},
+      caution:{"금":"금요일엔 캐리지웍스가 없어요 — 더록스 마켓(10~15시)으로 대체", "일":"일요일엔 캐리지웍스가 없어요 — 더록스 마켓(10~17시)으로 대체"}},
     portstephens:{hours:"돌고래 크루즈·모래썰매 매일 운영, 출발 시간 지정 예약"},
     jervisbay:{hours:"돌고래 크루즈 매일 운영, 출발 시간 지정 예약"},
     huntervalley:{hours:"셀러도어 대체로 10:00~17:00", caution:{"월":"일부 소규모 와이너리·레스토랑이 월·화 휴무 — 방문지 미리 확인", "화":"일부 소규모 와이너리·레스토랑이 월·화 휴무 — 방문지 미리 확인"}},
@@ -293,16 +548,16 @@
     royalnp:{hours:"공원 게이트 07:00~20:30 · 차량 입장료 있음"},
     gerringong:{hours:"다오를란도 화요일 휴무 · 해변은 상시", closed:{"화":"다오를란도(화덕피자)가 화요일 휴무예요"}},
     gor:{hours:"당일 투어 매일 출발 (약 07:30~20:30, 12~13시간)"},
-    phillip:{hours:"펭귄퍼레이드 매일 일몰 무렵(2월 20:30 전후) · 사전예약 필수, 숙소 복귀 23시경"},
+    phillip:{hours:"펭귄퍼레이드 매일 일몰 무렵(2월 20:30 전후) · 사전예약 필수, 투어로 가면 숙소 복귀 자정 무렵"},
     qvmarket:{hours:"화·목·금 06:00~15:00 · 토 06:00~16:00 · 일 09:00~16:00",
       closed:{"월":"퀸빅토리아마켓은 월요일 휴무예요", "수":"퀸빅토리아마켓은 수요일 낮 휴무예요 (여름 수요일 밤 나이트마켓은 별도, 운영 여부 확인)"}},
     stkilda:{hours:"해변 상시 · 야라강 크루즈 매일 운항"},
-    botanic:{hours:"정원 매일 07:30~일몰", caution:{"월":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방", "화":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방"}},
+    botanic:{hours:"정원 매일 07:30~19:30", caution:{"월":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방", "화":"어린이정원(이안 포터)은 학기 중 월·화 일반 입장 불가 — 정원 본원은 정상 개방"}},
     healesville:{hours:"생추어리 매일 09:00~17:00 (입장 마감 15:30)"},
-    puffingbilly:{hours:"매일 운행 · 벨그레이브 출발 10:00 / 11:00 / 12:30 / 14:15, 좌석 예약제", caution:{"*":"월~목은 레이크사이드까지만 운행 (젬브룩 연장은 금·토·일)"}},
+    puffingbilly:{hours:"벨그레이브 출발 10:00 / 11:00 / 12:30 / 14:15 (2026년 2월 기준, 2027년 시간표 미발표) · 좌석 예약제", caution:{"*":"월~목은 레이크사이드까지만 운행 (젬브룩 연장은 금·토·일)"}},
     melbournezoo:{hours:"매일 09:00~17:00"},
     lanewalk:{hours:"골목은 상시 · ACMI 매일 10:00~17:00"},
-    sealifemel:{hours:"평일 10:00~17:00 (입장 마감 16:00)"},
+    sealifemel:{hours:"매일 09:30~17:00 (입장 마감 16:00)"},
     collingwoodfarm:{hours:"매일 09:30~16:30 (입장 마감 16:00)"},
     eureka:{hours:"매일 12:00~22:00 (입장 마감 21:30)", caution:{"*":"정오에 열어요 — 오전 일정으로는 못 넣어요"}}
   };
@@ -354,21 +609,50 @@
     }
   };
 
+  // 고정일(도착·이동·귀국)의 하루 흐름. city는 그날 밤 묵는 도시.
+  var FIXED = {
+    arrival:{date:"2/10", dow:"수", type:"arrival", city:"SYD", label:"도착 · 시차적응", icon:"i-sunset",
+      note:"OZ601 08:30경 시드니 도착 · 메리턴 스위트 월드타워 체크인",
+      timeline:[
+        {tod:"오전", text:"08:30경 도착 → 짐 보관 → 달링하버 가볍게 산책, 근처 카페에서 브런치"},
+        {tod:"오후", text:"체크인, 근처 마트(울월스)에서 장보기 — 이번 여행 첫 집밥 재료"},
+        {tod:"저녁", text:"달링하버에서 첫 노을 감상 후 숙소에서 가볍게 저녁"}
+      ]},
+    toMel:{date:"2/14", dow:"일", type:"travel", city:"MEL", label:"시드니→멜버른", icon:"i-plane",
+      note:"국내선 약 1시간 25분 · 멜버른 숙소 체크인(미예약)",
+      timeline:[
+        {tod:"오전", text:"체크아웃, 마지막 짐 정리"},
+        {tod:"오후", text:"국내선 이동(약 1시간 25분), 멜버른 취사 가능 숙소 체크인"},
+        {tod:"저녁", text:"레인웨이(골목길) 카페에서 가볍게 첫 저녁"}
+      ]},
+    toSyd:{date:"2/18", dow:"목", type:"travel", city:"SYD", label:"멜버른→시드니", icon:"i-plane",
+      note:"국내선 · 시드니 공항 인근 1박(미예약)",
+      timeline:[
+        {tod:"오전", text:"체크아웃, 국내선으로 시드니 복귀"},
+        {tod:"오후", text:"공항 인근 숙소 체크인, 마지막 기념품 쇼핑"},
+        {tod:"저녁", text:"마지막 노을, 다음 날 오전 출국이라 짐 정리"}
+      ]},
+    depart:{date:"2/19", dow:"금", type:"depart", city:"SYD", label:"귀국(10:20)", icon:"i-plane",
+      note:"OZ602 10:20 시드니 출발",
+      timeline:[
+        {tod:"오전", text:"10:20 OZ602 시드니 출발 → 인천"}
+      ]}
+  };
   var ALL_DAYS = {
     WITH_MEL: [
-      {date:"2/10", dow:"수", type:"arrival", label:"도착 · 시차적응"},
+      FIXED.arrival,
       {date:"2/11", dow:"목", type:"pick", city:"SYD"},
       {date:"2/12", dow:"금", type:"pick", city:"SYD"},
       {date:"2/13", dow:"토", type:"pick", city:"SYD"},
-      {date:"2/14", dow:"일", type:"travel", label:"시드니→멜버른"},
+      FIXED.toMel,
       {date:"2/15", dow:"월", type:"pick", city:"MEL"},
       {date:"2/16", dow:"화", type:"pick", city:"MEL"},
       {date:"2/17", dow:"수", type:"pick", city:"MEL"},
-      {date:"2/18", dow:"목", type:"travel", label:"멜버른→시드니"},
-      {date:"2/19", dow:"금", type:"depart", label:"귀국(10:20)"}
+      FIXED.toSyd,
+      FIXED.depart
     ],
     SYD_ONLY: [
-      {date:"2/10", dow:"수", type:"arrival", label:"도착 · 시차적응"},
+      FIXED.arrival,
       {date:"2/11", dow:"목", type:"pick", city:"SYD"},
       {date:"2/12", dow:"금", type:"pick", city:"SYD"},
       {date:"2/13", dow:"토", type:"pick", city:"SYD"},
@@ -377,7 +661,7 @@
       {date:"2/16", dow:"화", type:"pick", city:"SYD"},
       {date:"2/17", dow:"수", type:"pick", city:"SYD"},
       {date:"2/18", dow:"목", type:"pick", city:"SYD"},
-      {date:"2/19", dow:"금", type:"depart", label:"귀국(10:20)"}
+      FIXED.depart
     ]
   };
 
@@ -450,6 +734,56 @@
   function esc(s){ return String(s).replace(/[&<>"']/g, function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];}); }
   function svgUse(icon){ return '<svg class="ic"><use href="#'+icon+'"/></svg>'; }
 
+  var ZONES = Array.isArray(window.TRIP_ZONES) ? window.TRIP_ZONES : [];
+  function zoneById(id){
+    for (var i=0;i<ZONES.length;i++){ if (ZONES[i].id===id) return ZONES[i]; }
+    return null;
+  }
+  function zoneOfRegion(region){
+    for (var i=0;i<ZONES.length;i++){ if ((ZONES[i].regions||[]).indexOf(region)!==-1) return ZONES[i]; }
+    return null;
+  }
+  // 가이드 스크립트는 빌더보다 늦게 실행돼요 — 없으면 빈 목록, "guide-change"가 오면 다시 그림
+  function guideItems(){
+    try { return (window.GUIDE && window.GUIDE.all) ? (window.GUIDE.all() || []) : []; } catch(e){ return []; }
+  }
+  function flowHtml(timeline, zone){
+    if (!timeline || !timeline.length) return "";
+    var ztag = (zone && /^#[0-9a-fA-F]{3,8}$/.test(zone.color||""))
+      ? '<span class="zone-tag"><i style="background:'+esc(zone.color)+'"></i>'+esc(zone.name)+'</span>' : '';
+    return '<div class="flow"><div class="flow-head">하루 흐름'+ztag+'</div>'
+      + timeline.map(function(r){ return '<div class="flow-row"><span class="tod">'+esc(r.tod)+'</span><span class="tx">'+esc(r.text)+'</span></div>'; }).join("")
+      + '</div>';
+  }
+  function chipRow(label, items){
+    if (!items.length) return "";
+    return '<div class="spots"><div class="flow-head">'+esc(label)+'</div><div class="spot-chips">'
+      + items.map(function(it){
+          return '<button class="spot-chip'+(it.picked?' saved':'')+'" data-spot="'+esc(it.id)+'" onclick="tripGoSpot(this.getAttribute(\'data-spot\'))">'+esc(it.title)+'</button>';
+        }).join("")
+      + '</div></div>';
+  }
+  function dayMore(t){
+    var all = guideItems(), byId = {}, stopIds = t.stops || [];
+    all.forEach(function(it){ byId[it.id] = it; });
+    var stops = stopIds.map(function(id){ return byId[id]; }).filter(Boolean);
+    var saved = all.filter(function(it){
+      if (!it.picked || stopIds.indexOf(it.id)!==-1) return false;
+      var z = zoneOfRegion(it.region);
+      return !!z && z.id===t.zone;
+    });
+    var inner = flowHtml(t.timeline, zoneById(t.zone)) + chipRow("들르는 곳", stops) + chipRow("이 권역에 담아둔 곳", saved);
+    return inner ? '<div class="day-more">'+inner+'</div>' : '';
+  }
+  function renderFixed(d){
+    return '<div class="slot picked fixed">'
+      + '<div class="datechip"><span class="dow">'+esc(d.dow)+'</span><span class="dom">'+esc(d.date)+'</span></div>'
+      + '<div class="picked-ic">'+svgUse(d.icon)+'</div>'
+      + '<div class="picked-body"><b>'+esc(d.label)+'</b><span>'+esc(d.note)+'</span></div>'
+      + '<div class="day-more">'+flowHtml(d.timeline, null)+'</div>'
+      + '</div>';
+  }
+
   function recommendedIntensity(city, slotDate){
     var slots = citySlots(city);
     var idx = -1;
@@ -483,6 +817,7 @@
         + '<div class="picked-ic">'+svgUse(t.icon)+'</div>'
         + '<div class="picked-body"><b>'+esc(t.title)+'</b><span>'+esc(t.desc)+'</span>'+extra+'</div>'
         + '<button class="change-btn" onclick="changeFrom(\''+slot.city+'\',\''+slot.date+'\')">다시 선택</button>'
+        + dayMore(t)
         + '</div>';
     }
 
@@ -618,6 +953,39 @@
     }
     html += '<button class="reset-btn" onclick="resetAll()">전체 초기화</button>';
     row.innerHTML = html;
+    renderCompare();
+  }
+
+  // 추천 세트의 예상 경비 = 이 모드 고정비 + 세트에 든 테마 비용 합 (완성된 루트 요약과 같은 계산)
+  function presetBudget(mode, name){
+    var p = PRESETS[mode][name], lo = 0, hi = 0;
+    for (var date in p){ var t = themeById(p[date]); if (t){ lo += t.cost[0]; hi += t.cost[1]; } }
+    return {tourLo:lo, tourHi:hi, lo:MODES[mode].fixed.low+lo, hi:MODES[mode].fixed.high+hi};
+  }
+  function renderCompare(){
+    var box = document.getElementById("plan-compare");
+    if (!box) return;
+    if (state.mode!=="WITH_MEL"){ box.innerHTML = ""; return; }
+    var prev = box.querySelector("details");
+    var a = presetBudget("WITH_MEL","A"), b = presetBudget("WITH_MEL","B"), f = MODES.WITH_MEL.fixed;
+    function stat(x){
+      return '<div class="cmp-stat"><span>예상 경비(4인, 항공료 제외)</span><b>'+x.lo+'~'+x.hi+'만원</b></div>'
+        + '<p>투어·입장료 '+x.tourLo+'~'+x.tourHi+'만원 + 숙박·국내선·교통·식비 등 고정비 '+f.low+'~'+f.high+'만원</p>';
+    }
+    box.innerHTML = '<details class="cmp"'+(prev && prev.open?' open':'')+'><summary>플랜 A·B 비교</summary>'
+      + '<p class="cmp-warn"><b>읽고 시작하세요:</b> 플랜 A·B는 <b>멜버른을 포함하는 시나리오 전용</b>이에요. 멜버른 없이 시드니 근교만 도는 안은 위의 "시드니 중심(멜버른 없이)" 모드를 보세요. 또한 <b>플랜 A(모험형, '+a.lo+'~'+a.hi+'만원)는 예산 상한(500~800만원)을 초과할 수 있어요</b> — 예산이 최우선이면 플랜 B('+b.lo+'~'+b.hi+'만원)를 추천해요.</p>'
+      + '<div class="cmp-grid">'
+      + '<div class="cmp-card a"><span class="tag">플랜 A · 모험형</span><h3>특별한 동물체험 + 자연 스케일</h3>'
+      + '<p>웜뱃을 직접 안고, 블루마운틴·그레이트오션로드의 압도적 풍경을 본다. 이동은 길지만 "평생 기억에 남을 장면"이 많다.</p>'
+      + stat(a)
+      + '<p class="warn">주의: 명시적 수영은 2/12(본다이) 단 하루뿐 — "수영+새동물" 우선순위 중 동물 쪽에 치우쳐 있어요.</p></div>'
+      + '<div class="cmp-card b"><span class="tag">플랜 B · 라이프스타일형</span><h3>동물원 + 유람선 + 피크닉 + 노을</h3>'
+      + '<p>동물은 가까운 동물원에서 여유 있게 보고, 나머지는 조깅·마켓·집밥·노을처럼 현지인처럼 사는 하루하루. 이동이 적어 아이들 체력 부담이 훨씬 적다.</p>'
+      + stat(b)
+      + '<p>집밥 비중이 높아 식비를 80~120만원으로 줄이면 이보다 더 내려가요. 풀데이급은 필립아일랜드 펭귄퍼레이드 하나만 남겼어요.</p></div>'
+      + '</div>'
+      + '<p class="cmp-note">같은 항공권(마일리지 발권 완료)·같은 시드니 호텔에서 출발하지만 하루를 채우는 방식이 달라요. 숙박·국내선은 거의 같고 차이는 투어·입장료와 식비에서 갈려요. 금액은 최근 시세 기반 추정치이고, 버튼으로 적용한 뒤 아래 "완성된 루트"에 나오는 금액과 같은 계산이에요.</p>'
+      + '</details>';
   }
 
   function renderModeUI(){
@@ -628,11 +996,48 @@
     renderPresets();
   }
 
-  function render(){
+  function emit(name){
+    try { window.dispatchEvent(new CustomEvent(name)); } catch(e){}
+  }
+  // silent: 가이드 쪽 변화로 칩만 다시 그릴 때 — "trip-change"를 내보내지 않음
+  function render(silent){
     renderModeUI();
     renderOverview();
-    root.innerHTML = renderCityBlock("SYD","시드니") + renderCityBlock("MEL","멜버른") + renderSummary();
+    var html = "", done = {};
+    ALL_DAYS[state.mode].forEach(function(d){
+      if (d.type!=="pick"){ html += '<section class="fixed-sec">'+renderFixed(d)+'</section>'; return; }
+      if (done[d.city]) return;
+      done[d.city] = true;
+      html += renderCityBlock(d.city, d.city==="SYD" ? "시드니" : "멜버른");
+    });
+    root.innerHTML = html + renderSummary();
+    if (!silent) emit("trip-change");
   }
+
+  window.TRIP = {
+    zones: ZONES,
+    zoneOfRegion: zoneOfRegion,
+    themeById: themeById,
+    state: function(){
+      var picks = {};
+      for (var k in state.picks){ if (state.picks[k]) picks[k] = state.picks[k]; }
+      return {mode: state.mode, picks: picks};
+    },
+    days: function(){
+      return ALL_DAYS[state.mode].map(function(d){
+        var id = d.type==="pick" ? (state.picks[d.date] || null) : null;
+        var t = id ? themeById(id) : null;
+        return {date:d.date, dow:d.dow, type:d.type, city:d.city,
+                label: d.type==="pick" ? (t ? t.title : "미정") : d.label, themeId: t ? id : null};
+      });
+    }
+  };
+  // 칩 → 가이드의 해당 카드로 이동
+  window.tripGoSpot = function(id){
+    if (window.goTab) window.goTab("guide", true);
+    if (window.GUIDE && window.GUIDE.show) window.GUIDE.show(id);
+  };
+  window.addEventListener("guide-change", function(){ render(true); });
 
   async function persist(){
     if (!dbRef) return;
@@ -656,8 +1061,14 @@
     persist();
   };
   window.applyPreset = function(name){
-    var p = PRESETS[state.mode][name];
-    state.picks = Object.assign({}, p);
+    var p = PRESETS[state.mode] && PRESETS[state.mode][name];
+    if (!p) return;
+    var picks = {};
+    for (var date in p){
+      var sl = slotByDate(date);
+      if (sl && themeById(p[date]) && availability(p[date], sl.dow).ok) picks[date] = p[date];
+    }
+    state.picks = picks;
     render();
     persist();
   };

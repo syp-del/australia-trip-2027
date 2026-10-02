@@ -7,7 +7,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).parent
 SRC = ROOT / "src"
-PANES = ["builder", "plan", "guide", "tracker"]
+PANES = ["builder", "guide", "tracker"]
 ROOT_RE = re.compile(r'^(:root(?::not\(\[data-theme="light"\]\)|\[data-theme="dark"\])?)\s*(.*)$', re.S)
 
 
@@ -86,9 +86,6 @@ def main():
         if name in ("guide", "tracker"):
             markup = drop_hero(markup)
             markup, scripts = retab(markup, scripts, name, f"{name}Tab")
-        if name == "plan":
-            markup = re.sub(r'<a href="https://claude\.ai/artifact/[^"]+" target="_blank" rel="noopener"',
-                            '<a href="#builder" onclick="goTab(\'builder\');return false;"', markup)
         pane_css.append(f"/* {name} */\n" + scope_css(css, f"#p-{name}"))
         pane_scripts.append(scripts)
         for sym in symbols:
@@ -111,9 +108,10 @@ def main():
     extra = json.loads((ROOT / "data" / "extra.json").read_text())
     details = json.loads((ROOT / "data" / "details.json").read_text())
     tags = json.loads((ROOT / "data" / "tags.json").read_text())
+    zones = json.loads((ROOT / "data" / "zones.json").read_text())
     photos = sorted(f.stem for f in (ROOT / "img").glob("*.jpg"))
-    data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;window.GUIDE_TAGS=%s;</script>" % tuple(
-        json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos, tags))
+    data = "<script>window.GUIDE_EXTRA=%s;window.GUIDE_DETAILS=%s;window.GUIDE_PHOTOS=%s;window.GUIDE_TAGS=%s;window.TRIP_ZONES=%s;</script>" % tuple(
+        json.dumps(x, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/") for x in (extra, details, photos, tags, zones))
     shell = shell.replace("<!--PANE_SCRIPTS-->", data + "\n" + "\n".join(pane_scripts))
     head_end = shell.index("</style>") + len("</style>")
     page = ('<!doctype html>\n<html lang="ko">\n<head>\n<meta charset="utf-8">\n'
