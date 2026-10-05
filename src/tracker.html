@@ -61,6 +61,20 @@
   .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:13.5px; max-width:68ch;}
 
   /* progress bar */
+  .due-card{background:var(--surface); border:1.5px solid var(--coral); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
+  .due-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; margin-bottom:6px;}
+  .due-head b{font-size:15px;}
+  .due-head span{font-size:12px; color:var(--ink-faint);}
+  .due-row{padding:12px 0; border-top:1px dashed var(--line); display:grid; grid-template-columns:1fr auto; gap:6px 14px; align-items:start;}
+  .due-what b{display:block; font-size:13.5px;}
+  .due-what span{font-size:12px; color:var(--ink-faint);}
+  .due-when{font-size:12.5px; font-weight:800; color:var(--coral-ink); display:flex; flex-wrap:wrap; gap:6px; align-items:center; justify-content:flex-end; text-align:right;}
+  .due-row p{grid-column:1 / -1; margin:0; font-size:12.5px; color:var(--ink-soft); line-height:1.55;}
+  .due-foot{margin:10px 0 0; font-size:11.5px; color:var(--ink-faint);}
+  .dday{font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--euca-soft); color:var(--euca-ink);}
+  .dday.soon{background:var(--coral-soft); color:var(--coral-ink);}
+  .dday.over{background:var(--coral); color:#fff;}
+  @media (max-width:560px){ .due-row{grid-template-columns:1fr;} .due-when{justify-content:flex-start; text-align:left;} }
   .progress-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
   .progress-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;}
   .progress-top b{font-family:'Bricolage Grotesque',serif; font-size:20px;}
@@ -145,6 +159,20 @@
   <!-- TAB 1: BOOKING TRACKER -->
   <div class="tabpanel active" id="tab-booking">
     <section style="margin-top:28px;">
+      <div class="due-card">
+        <div class="due-head"><b>확정 예약 · 무료 취소 기한</b><span>이 날짜를 넘기면 수수료가 붙거나 취소가 안 돼요</span></div>
+        <div class="due-row">
+          <div class="due-what"><b>항공권 왕복 (아시아나 마일리지)</b><span>OZ601 2/9 인천→시드니 · OZ602 2/19 시드니→인천</span></div>
+          <div class="due-when" data-due="2026-11-10">2026.11.10(화)까지 무료 환불</div>
+          <p>미사용 국제선 보너스 항공권은 첫 출발일 91일 전까지 환불하면 수수료가 없어요. 그 뒤에는 환불 수수료가 붙어요. 일정을 바꾸거나 멜버른 출발로 다시 발권할 생각이 있다면 이 날짜 전에 결정해야 해요.</p>
+        </div>
+        <div class="due-row">
+          <div class="due-what"><b>시드니 숙소 · 메리턴 스위트 월드타워</b><span>2/10~2/14 4박 · AUD 1,867.50 · 현장 결제</span></div>
+          <div class="due-when" data-due="2027-02-09">2027.2.9(화)까지 무료 취소</div>
+          <p>체크인 전날까지 무료로 취소할 수 있어요. 시드니 일정을 줄이거나 다른 숙소로 바꿀 여지가 출발 직전까지 남아 있어요.</p>
+        </div>
+        <p class="due-foot">마감 시각과 수수료는 예약 확인서와 항공사 안내에서 한 번 더 확인하세요.</p>
+      </div>
       <div class="progress-card">
         <div class="progress-top"><span style="font-size:13px; color:var(--ink-soft); font-weight:700;">예약 진행률</span><b id="progress-text">0 / 0 완료</b></div>
         <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>

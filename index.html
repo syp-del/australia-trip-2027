@@ -77,6 +77,10 @@
   .hm-fact .v{font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:700; margin-top:5px;}
   .hm-fact .d{font-size:12.5px; color:var(--s-ink-soft); margin-top:4px; line-height:1.5;}
   .hm-pill{display:inline-block; font-size:10.5px; font-weight:800; padding:2px 9px; border-radius:999px; margin-top:8px;}
+  .hm-due{margin-top:9px; padding-top:9px; border-top:1px dashed var(--s-line); font-size:12px; font-weight:700; color:var(--s-ink-soft); display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+  .dday{font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--s-euca-soft); color:var(--s-euca);}
+  .dday.soon{background:var(--s-coral-soft); color:var(--s-coral-ink);}
+  .dday.over{background:var(--s-coral-ink); color:#fff;}
   .hm-pill.ok{background:var(--s-euca-soft); color:var(--s-euca);}
   .hm-pill.todo{background:var(--s-coral-soft); color:var(--s-coral-ink);}
 
@@ -582,6 +586,23 @@
 #p-tracker .section-head .eyebrow2{display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:800; letter-spacing:.06em; text-transform:uppercase; color:var(--euca-ink); background:var(--euca-soft); padding:4px 11px; border-radius:999px; margin-bottom:8px;}
 #p-tracker .section-head h2{font-size:clamp(20px,3.2vw,25px); font-weight:700;}
 #p-tracker .section-head p{margin:8px 0 0; color:var(--ink-soft); font-size:13.5px; max-width:68ch;}
+#p-tracker .due-card{background:var(--surface); border:1.5px solid var(--coral); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
+#p-tracker .due-head{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; margin-bottom:6px;}
+#p-tracker .due-head b{font-size:15px;}
+#p-tracker .due-head span{font-size:12px; color:var(--ink-faint);}
+#p-tracker .due-row{padding:12px 0; border-top:1px dashed var(--line); display:grid; grid-template-columns:1fr auto; gap:6px 14px; align-items:start;}
+#p-tracker .due-what b{display:block; font-size:13.5px;}
+#p-tracker .due-what span{font-size:12px; color:var(--ink-faint);}
+#p-tracker .due-when{font-size:12.5px; font-weight:800; color:var(--coral-ink); display:flex; flex-wrap:wrap; gap:6px; align-items:center; justify-content:flex-end; text-align:right;}
+#p-tracker .due-row p{grid-column:1 / -1; margin:0; font-size:12.5px; color:var(--ink-soft); line-height:1.55;}
+#p-tracker .due-foot{margin:10px 0 0; font-size:11.5px; color:var(--ink-faint);}
+#p-tracker .dday{font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--euca-soft); color:var(--euca-ink);}
+#p-tracker .dday.soon{background:var(--coral-soft); color:var(--coral-ink);}
+#p-tracker .dday.over{background:var(--coral); color:#fff;}
+@media (max-width:560px){
+#p-tracker .due-row{grid-template-columns:1fr;}
+#p-tracker .due-when{justify-content:flex-start; text-align:left;}
+}
 #p-tracker .progress-card{background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin-bottom:18px;}
 #p-tracker .progress-top{display:flex; justify-content:space-between; align-items:baseline; margin-bottom:10px;}
 #p-tracker .progress-top b{font-family:'Bricolage Grotesque',serif; font-size:20px;}
@@ -715,9 +736,9 @@
     <section>
       <h2>확정된 것과 남은 것</h2>
       <div class="hm-facts">
-        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
-        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
-        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50</div><span class="hm-pill ok">예약 완료</span></div>
+        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span><div class="hm-due" data-due="2026-11-10">무료 환불 2026.11.10(화)까지</div></div>
+        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span><div class="hm-due" data-due="2026-11-10">무료 환불 2026.11.10(화)까지</div></div>
+        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50 · 현장 결제</div><span class="hm-pill ok">예약 완료</span><div class="hm-due" data-due="2027-02-09">무료 취소 2027.2.9(화)까지</div></div>
         <div class="hm-fact"><div class="k">2/14 이후</div><div class="v">숙소 · 국내선 · 투어</div><div class="d">멜버른을 갈지, 시드니 근교만 돌지에 따라 달라져요</div><span class="hm-pill todo">미예약</span></div>
       </div>
     </section>
@@ -959,7 +980,7 @@ derivative work: · CC BY-SA 4.0</li>
     <span class="fx-label">AUD → KRW</span>
     <span class="fx-rate">1 AUD ≈ 945원</span>
     <div class="fx-sep"></div>
-    <span class="fx-sub">시드니 호텔 예약분 AUD 1,867.50 ≈ 약 176만원</span>
+    <span class="fx-sub">시드니 호텔 예약분 AUD 1,867.50 ≈ 약 176만원 · 2/9까지 무료 취소</span>
     <span class="fx-date">2026.10.01 기준 · 환전 시점에 재확인 필요</span>
   </div>
 
@@ -1250,6 +1271,20 @@ derivative work: · CC BY-SA 4.0</li>
   <!-- TAB 1: BOOKING TRACKER -->
   <div class="tabpanel active" id="tab-booking">
     <section style="margin-top:28px;">
+      <div class="due-card">
+        <div class="due-head"><b>확정 예약 · 무료 취소 기한</b><span>이 날짜를 넘기면 수수료가 붙거나 취소가 안 돼요</span></div>
+        <div class="due-row">
+          <div class="due-what"><b>항공권 왕복 (아시아나 마일리지)</b><span>OZ601 2/9 인천→시드니 · OZ602 2/19 시드니→인천</span></div>
+          <div class="due-when" data-due="2026-11-10">2026.11.10(화)까지 무료 환불</div>
+          <p>미사용 국제선 보너스 항공권은 첫 출발일 91일 전까지 환불하면 수수료가 없어요. 그 뒤에는 환불 수수료가 붙어요. 일정을 바꾸거나 멜버른 출발로 다시 발권할 생각이 있다면 이 날짜 전에 결정해야 해요.</p>
+        </div>
+        <div class="due-row">
+          <div class="due-what"><b>시드니 숙소 · 메리턴 스위트 월드타워</b><span>2/10~2/14 4박 · AUD 1,867.50 · 현장 결제</span></div>
+          <div class="due-when" data-due="2027-02-09">2027.2.9(화)까지 무료 취소</div>
+          <p>체크인 전날까지 무료로 취소할 수 있어요. 시드니 일정을 줄이거나 다른 숙소로 바꿀 여지가 출발 직전까지 남아 있어요.</p>
+        </div>
+        <p class="due-foot">마감 시각과 수수료는 예약 확인서와 항공사 안내에서 한 번 더 확인하세요.</p>
+      </div>
       <div class="progress-card">
         <div class="progress-top"><span style="font-size:13px; color:var(--ink-soft); font-weight:700;">예약 진행률</span><b id="progress-text">0 / 0 완료</b></div>
         <div class="progress-track"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
@@ -1333,6 +1368,23 @@ derivative work: · CC BY-SA 4.0</li>
   };
   var h = (location.hash || "").replace("#","");
   if (h) window.goTab(h, true);
+})();
+</script>
+<script>
+// 무료 취소·환불 기한까지 남은 날 표시: data-due="YYYY-MM-DD"인 요소 뒤에 D-day 배지를 붙임
+(function(){
+  function run(){
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    Array.prototype.forEach.call(document.querySelectorAll("[data-due]"), function(el){
+      var p = el.getAttribute("data-due").split("-");
+      var days = Math.round((new Date(+p[0], +p[1]-1, +p[2]) - today) / 86400000);
+      var b = el.querySelector(".dday") || el.appendChild(document.createElement("span"));
+      b.className = "dday" + (days < 0 ? " over" : days <= 14 ? " soon" : "");
+      b.textContent = days < 0 ? "기한 지남" : days === 0 ? "오늘까지" : "D-" + days;
+    });
+  }
+  window.tripDueBadges = run;
+  run();
 })();
 </script>
 <script>

@@ -72,6 +72,10 @@
   .hm-fact .v{font-family:'Bricolage Grotesque',sans-serif; font-size:18px; font-weight:700; margin-top:5px;}
   .hm-fact .d{font-size:12.5px; color:var(--s-ink-soft); margin-top:4px; line-height:1.5;}
   .hm-pill{display:inline-block; font-size:10.5px; font-weight:800; padding:2px 9px; border-radius:999px; margin-top:8px;}
+  .hm-due{margin-top:9px; padding-top:9px; border-top:1px dashed var(--s-line); font-size:12px; font-weight:700; color:var(--s-ink-soft); display:flex; flex-wrap:wrap; gap:6px; align-items:center;}
+  .dday{font-size:10.5px; font-weight:800; padding:2px 8px; border-radius:999px; background:var(--s-euca-soft); color:var(--s-euca);}
+  .dday.soon{background:var(--s-coral-soft); color:var(--s-coral-ink);}
+  .dday.over{background:var(--s-coral-ink); color:#fff;}
   .hm-pill.ok{background:var(--s-euca-soft); color:var(--s-euca);}
   .hm-pill.todo{background:var(--s-coral-soft); color:var(--s-coral-ink);}
 
@@ -135,9 +139,9 @@
     <section>
       <h2>확정된 것과 남은 것</h2>
       <div class="hm-facts">
-        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
-        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span></div>
-        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50</div><span class="hm-pill ok">예약 완료</span></div>
+        <div class="hm-fact"><div class="k">가는 편 · OZ601</div><div class="v">2/9(화) 20:00 인천</div><div class="d">2/10(수) 08:30경 시드니 도착</div><span class="hm-pill ok">마일리지 발권 완료</span><div class="hm-due" data-due="2026-11-10">무료 환불 2026.11.10(화)까지</div></div>
+        <div class="hm-fact"><div class="k">오는 편 · OZ602</div><div class="v">2/19(금) 10:20 시드니</div><div class="d">전날은 시드니에서 숙박</div><span class="hm-pill ok">마일리지 발권 완료</span><div class="hm-due" data-due="2026-11-10">무료 환불 2026.11.10(화)까지</div></div>
+        <div class="hm-fact"><div class="k">시드니 숙소</div><div class="v">메리턴 스위트 월드타워</div><div class="d">2/10~2/14 4박 · AUD 1,867.50 · 현장 결제</div><span class="hm-pill ok">예약 완료</span><div class="hm-due" data-due="2027-02-09">무료 취소 2027.2.9(화)까지</div></div>
         <div class="hm-fact"><div class="k">2/14 이후</div><div class="v">숙소 · 국내선 · 투어</div><div class="d">멜버른을 갈지, 시드니 근교만 돌지에 따라 달라져요</div><span class="hm-pill todo">미예약</span></div>
       </div>
     </section>
@@ -198,6 +202,23 @@
   };
   var h = (location.hash || "").replace("#","");
   if (h) window.goTab(h, true);
+})();
+</script>
+<script>
+// 무료 취소·환불 기한까지 남은 날 표시: data-due="YYYY-MM-DD"인 요소 뒤에 D-day 배지를 붙임
+(function(){
+  function run(){
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    Array.prototype.forEach.call(document.querySelectorAll("[data-due]"), function(el){
+      var p = el.getAttribute("data-due").split("-");
+      var days = Math.round((new Date(+p[0], +p[1]-1, +p[2]) - today) / 86400000);
+      var b = el.querySelector(".dday") || el.appendChild(document.createElement("span"));
+      b.className = "dday" + (days < 0 ? " over" : days <= 14 ? " soon" : "");
+      b.textContent = days < 0 ? "기한 지남" : days === 0 ? "오늘까지" : "D-" + days;
+    });
+  }
+  window.tripDueBadges = run;
+  run();
 })();
 </script>
 <script>
