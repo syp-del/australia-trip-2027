@@ -77,6 +77,14 @@
   .section-head h2{font-size:clamp(19px,3vw,23px); font-weight:600;}
   .section-head .cnt{font-size:12.5px; color:var(--ink-faint); font-weight:700;}
 
+  /* 도시 색: 시드니 파랑, 멜버른 주황 — 가이드 카드·지도 범례와 같은 색 */
+  .city-sec.city-syd{--city:#1F7AC2;} .city-sec.city-mel{--city:#E07A2F;}
+  .city-sec .slot{border-left:5px solid var(--city, var(--surface-line));}
+  .city-dot{display:inline-block; width:11px; height:11px; border-radius:50%; background:var(--city, transparent); margin-right:8px; vertical-align:middle;}
+  .tmap-lgrow{display:flex; flex-wrap:wrap; gap:5px; align-items:center; width:100%;}
+  .tmap-lgrow + .tmap-lgrow{margin-top:6px;}
+  .tmap-lgcity{font-size:11px; font-weight:800; padding:3px 10px; border-radius:999px; color:#fff; margin-right:2px;}
+  .tmap-lgcity.syd{background:#1F7AC2;} .tmap-lgcity.mel{background:#E07A2F;}
   .slot{border-radius:16px; border:1px solid var(--surface-line); background:var(--surface); overflow:hidden; margin-bottom:12px;}
 
   .slot.picked{display:flex; align-items:center; gap:14px; padding:14px 18px;}
@@ -956,7 +964,7 @@
     var firstOpenIdx = -1;
     for (var i=0;i<slots.length;i++){ if (!state.picks[slots[i].date]){ firstOpenIdx=i; break; } }
     var doneCount = slots.filter(function(s){return !!state.picks[s.date];}).length;
-    var html = '<section><div class="section-head"><h2>'+label+'</h2><span class="cnt">'+doneCount+' / '+slots.length+' 완료</span></div>';
+    var html = '<section class="city-sec city-'+city.toLowerCase()+'"><div class="section-head"><h2><i class="city-dot"></i>'+label+'</h2><span class="cnt">'+doneCount+' / '+slots.length+' 완료</span></div>';
     slots.forEach(function(s,i){ html += renderSlot(s, i, firstOpenIdx); });
     html += '</section>';
     return html;
@@ -1087,7 +1095,7 @@
     renderOverview();
     var html = "", done = {};
     ALL_DAYS[state.mode].forEach(function(d){
-      if (d.type!=="pick"){ html += '<section class="fixed-sec">'+renderFixed(d)+'</section>'; return; }
+      if (d.type!=="pick"){ html += '<section class="fixed-sec city-sec city-'+String(d.city||"").toLowerCase()+'">'+renderFixed(d)+'</section>'; return; }
       if (done[d.city]) return;
       done[d.city] = true;
       html += renderCityBlock(d.city, d.city==="SYD" ? "시드니" : "멜버른");
@@ -1557,12 +1565,17 @@
     for (var id in dots){ if (!seen[id]){ dotsLayer.removeLayer(dots[id].m); delete dots[id]; } }
   }
   function renderLegend(){
-    var html = ZONES.map(function(z){
+    function chip(z){
       var days = plan.zoneDays[z.id];
       return '<button class="tmap-lg'+(days?' on':'')+'" data-zone="'+esc(z.id)+'" title="'+esc(z.name)+'"'+(geo[z.id]?'':' disabled')
         + ' onclick="tripMapZone(this.getAttribute(\'data-zone\'))"><i style="background:'+esc(zoneColor(z))+'"></i>'+esc(shortName(z))
         + (days ? '<span class="d">'+esc(days.map(function(d){ return d.date+" "+d.dow; }).join(" · "))+'</span>' : '')
         + '</button>';
+    }
+    // 시드니 권역과 멜버른 권역을 두 줄로 나눠 표시
+    var html = [["SYD","syd","시드니 권역"],["MEL","mel","멜버른 권역"]].map(function(c){
+      var zs = ZONES.filter(function(z){ return z.city===c[0]; });
+      return zs.length ? '<div class="tmap-lgrow"><span class="tmap-lgcity '+c[1]+'">'+c[2]+'</span>'+zs.map(chip).join("")+'</div>' : '';
     }).join("");
     if (html!==legendHtml){ legendHtml = html; legend.innerHTML = html; }
   }

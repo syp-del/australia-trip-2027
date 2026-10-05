@@ -132,6 +132,13 @@
   .bcard dd b{color:var(--coral-ink);}
   .basics-src{margin:12px 0 0; font-size:11px; color:var(--ink-faint); line-height:1.7;}
   .basics-src a{color:var(--ocean);}
+  /* 도시 색: 시드니 파랑, 멜버른 주황 */
+  .card.city-syd{--city:#1F7AC2;} .card.city-mel{--city:#E07A2F;}
+  .card.city-syd, .card.city-mel{border-top:5px solid var(--city);}
+  .lv.city{background:var(--city); color:#fff;}
+  .subhead .city-dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; vertical-align:middle;}
+  .filter-btn .sw{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle;}
+  .filter-row.city{margin-bottom:8px;}
   .lv.mine{background:var(--ocean-soft); color:var(--ocean);}
   .card-actions{display:flex; align-items:center; gap:6px;}
   .del-btn{font:inherit; font-size:11px; font-weight:700; color:var(--ink-faint); background:none; border:1.5px solid var(--line); border-radius:999px; padding:4px 10px; cursor:pointer;}
@@ -445,6 +452,7 @@
         <h2>가볼만한곳</h2>
         <p><span id="place-count">여러 지역의 가볼만한곳</span>을 지역별로 묶었어요. 동선 짤 때 같은 지역끼리 묶어서 하루 코스로 쓰기 좋아요.</p>
       </div>
+      <div class="filter-row city" id="place-city"></div>
       <div class="filter-row" id="place-filter"></div>
       <div id="place-add"></div>
       <div id="place-grid"></div>
@@ -462,6 +470,7 @@
         <h2>맛집 · 카페</h2>
         <p><span id="food-count">지역별 맛집·카페</span>. Totti's·Hurricane's Grill·Pizza Bros·Lune Croissanterie는 웨이팅/예약 경쟁이 치열해요 — 날짜 확정되면 바로 예약 추천.</p>
       </div>
+      <div class="filter-row city" id="food-city"></div>
       <div class="filter-row" id="food-filter"></div>
       <div id="food-add"></div>
       <div id="food-grid"></div>
@@ -928,6 +937,31 @@
       : '';
   }
   var FILTER = {place:"all", food:"all"};
+  // 도시 구분: 지역(region) → 권역(TRIP_ZONES) → 도시. 권역에 없는 지역(직접 추가한 곳 등)은 도시 없음
+  var CITY = {place:"all", food:"all"};
+  var CITY_NAME = {SYD:"시드니", MEL:"멜버른"}, CITY_COLOR = {SYD:"#1F7AC2", MEL:"#E07A2F"};
+  var REGION_CITY = {};
+  (window.TRIP_ZONES || []).forEach(function(z){ (z.regions||[]).forEach(function(r){ REGION_CITY[r] = z.city; }); });
+  function cityOf(it){ return REGION_CITY[it.region] || ""; }
+  function cityChip(it){ var c = cityOf(it); return c ? '<span class="lv city">'+CITY_NAME[c]+'</span>' : ''; }
+  function cityClass(it){ var c = cityOf(it); return c ? " city-"+c.toLowerCase() : ""; }
+  function cityDot(region){ var c = REGION_CITY[region]; return c ? '<i class="city-dot" style="background:'+CITY_COLOR[c]+'"></i>' : ''; }
+  function renderCityFilter(kind, items){
+    var n = {all:items.length, SYD:0, MEL:0};
+    items.forEach(function(it){ var c = cityOf(it); if (n[c]!==undefined) n[c]++; });
+    document.getElementById(kind+"-city").innerHTML = [["all","전체"],["SYD","시드니"],["MEL","멜버른"]].map(function(f){
+      return '<button class="filter-btn'+(CITY[kind]===f[0]?" on":"")+'" onclick="setGuideCity(\''+kind+'\',\''+f[0]+'\')">'
+        + (f[0]==="all" ? "" : '<i class="sw" style="background:'+CITY_COLOR[f[0]]+'"></i>')+f[1]+'<span>'+n[f[0]]+'</span></button>';
+    }).join("");
+  }
+  function applyCity(kind, items){
+    var c = CITY[kind];
+    return c==="all" ? items : items.filter(function(it){ return cityOf(it)===c; });
+  }
+  window.setGuideCity = function(kind, c){
+    CITY[kind] = c;
+    if (kind==="place") renderPlaces(); else renderFood();
+  };
   var DOWS = ["월","화","수","목","금","토","일"];
 
   function levelOf(it){
@@ -951,7 +985,7 @@
     var lv = levelOf(it);
     var cls = lv==="필수" ? "must" : lv==="검토필요" ? "chk" : lv==="직접 추가" ? "mine" : "rec";
     var ct = closedText(d.closed);
-    return '<div class="lv-row"><span class="lv '+cls+'">'+lv+'</span>'+(ct?'<span class="lv off">'+esc(ct)+'</span>':'')+'</div>';
+    return '<div class="lv-row">'+cityChip(it)+'<span class="lv '+cls+'">'+lv+'</span>'+(ct?'<span class="lv off">'+esc(ct)+'</span>':'')+'</div>';
   }
   function detailHtml(d){
     var alert = "", note = d.note;
@@ -991,6 +1025,8 @@
     var picks = loadPicks("au_places");
     var list = spots("place");
     renderCount("place", list);
+    renderCityFilter("place", list);
+    list = applyCity("place", list);
     renderFilter("place", list);
     if (!document.getElementById("place-new-title")) renderAddForm("place");
     renderRemoved("place");
@@ -998,7 +1034,7 @@
     document.getElementById("place-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(s){
         var on = !!picks[s.id], d = detailOf(s);
-        return '<div class="card'+(on?" picked":"")+'" data-id="'+s.id+'">'
+        return '<div class="card'+(on?" picked":"")+cityClass(s)+'" data-id="'+s.id+'">'
           + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
           + levelHtml(s, d)
           + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub||"")+'</span></div></div>'
@@ -1010,7 +1046,7 @@
           + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
           + '</div>';
       }).join("");
-      return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+      return '<div class="subhead">'+cityDot(g.region)+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
     }).join("");
     renderPlaceSummary();
   }
@@ -1032,6 +1068,8 @@
     var picks = loadPicks("au_food");
     var list = spots("food");
     renderCount("food", list);
+    renderCityFilter("food", list);
+    list = applyCity("food", list);
     renderFilter("food", list);
     if (!document.getElementById("food-new-title")) renderAddForm("food");
     renderRemoved("food");
@@ -1039,7 +1077,7 @@
     document.getElementById("food-grid").innerHTML = groups.map(function(g){
       var cards = g.items.map(function(f){
         var on = !!picks[f.id], d = detailOf(f);
-        return '<div class="card'+(on?" picked":"")+'" data-id="'+f.id+'">'
+        return '<div class="card'+(on?" picked":"")+cityClass(f)+'" data-id="'+f.id+'">'
           + (PHOTOS[f.id] ? '<img class="card-photo" src="img/'+f.id+'.jpg" alt="'+esc(f.title)+'" loading="lazy">' : '')
           + levelHtml(f, d)
           + '<div class="card-top"><span class="card-ic">'+svgUse(f.icon)+'</span><div><h4>'+esc(f.title)+'</h4></div></div>'
@@ -1052,7 +1090,7 @@
           + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
           + '</div>';
       }).join("");
-      return '<div class="subhead">'+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+      return '<div class="subhead">'+cityDot(g.region)+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
     }).join("");
     renderFoodSummary();
   }
@@ -1113,7 +1151,7 @@
     show: function(id){
       var kind = kindOfId(id);
       if (!kind) return false;
-      if (FILTER[kind]!=="all"){ FILTER[kind] = "all"; rerender(kind); }
+      if (FILTER[kind]!=="all" || CITY[kind]!=="all"){ FILTER[kind] = "all"; CITY[kind] = "all"; rerender(kind); }
       window.showTab(kind==="place" ? "places" : "food");
       var cards = document.getElementById(kind+"-grid").querySelectorAll(".card"), card = null;
       for (var i=0;i<cards.length;i++){ if (cards[i].getAttribute("data-id")===id){ card = cards[i]; break; } }
