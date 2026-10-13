@@ -85,6 +85,18 @@
   .tmap-lgrow + .tmap-lgrow{margin-top:6px;}
   .tmap-lgcity{font-size:11px; font-weight:800; padding:3px 10px; border-radius:999px; color:#fff; margin-right:2px;}
   .tmap-lgcity.syd{background:#1F7AC2;} .tmap-lgcity.mel{background:#E07A2F;}
+  .ctl-row{display:flex; flex-wrap:wrap; gap:10px 14px; align-items:center; margin:18px 0 6px;}
+  .ctl-row .mode-toggle{margin-top:0;}
+  .ctl-row .presets{margin-top:0;}
+  .strip-hint{margin:10px 0 6px; font-size:11.5px; color:var(--ink-faint);}
+  .overview-row .ov-card{font:inherit; cursor:pointer; text-align:left; border-top:4px solid var(--surface-line);}
+  .overview-row .ov-card.city-syd{border-top-color:#1F7AC2;} .overview-row .ov-card.city-mel{border-top-color:#E07A2F;}
+  .overview-row .ov-card:hover{border-left-color:var(--teal); border-right-color:var(--teal); border-bottom-color:var(--teal);}
+  .ov-dot{display:inline-block; width:7px; height:7px; border-radius:50%; margin-left:5px; vertical-align:middle; background:var(--ink-faint);}
+  .ov-dot.booked{background:var(--good);} .ov-dot.unbooked{background:var(--low);}
+  .more-box{margin-top:22px; display:flex; flex-direction:column; gap:0;}
+  .more-box .fx-bar{margin:12px 0 8px;}
+  .more-box .lede{margin-top:10px;}
   .slot{border-radius:16px; border:1px solid var(--surface-line); background:var(--surface); overflow:hidden; margin-bottom:12px;}
 
   .slot.picked{display:flex; align-items:center; gap:14px; padding:14px 18px;}
@@ -205,6 +217,30 @@
   .spot-chips{display:flex; flex-wrap:wrap; gap:6px;}
   .spot-chip{font-size:11.5px; font-weight:700; color:var(--teal); background:var(--teal-soft); border:1px solid transparent; border-radius:999px; padding:5px 11px; cursor:pointer; text-align:left;}
   .spot-chip:hover{border-color:var(--teal);}
+  .spot-wrap{display:inline-flex; align-items:center;}
+  .spot-wrap.added .spot-chip, .spot-wrap.added .buy-chip{border-radius:999px 0 0 999px; padding-right:8px;}
+  .spot-wrap.bad .spot-chip{background:var(--low-soft); color:var(--low);}
+  .spot-x{font:inherit; font-size:13px; font-weight:800; line-height:1; color:var(--ink-faint); background:var(--bg-alt); border:none; border-radius:0 999px 999px 0; padding:6px 9px 6px 7px; cursor:pointer;}
+  .spot-x:hover{color:var(--low);}
+  .buy-chip{font:inherit; font-size:11.5px; font-weight:700; color:var(--gold); background:var(--gold-soft); border:1px solid transparent; border-radius:999px; padding:5px 11px; cursor:pointer;}
+  .buy-chip.done{text-decoration:line-through; opacity:.65;}
+  details.add-spot{border:1.5px dashed var(--surface-line); border-radius:12px; padding:10px 12px;}
+  details.add-spot summary, details.day-tips summary{cursor:pointer; font-size:12.5px; font-weight:800; color:var(--teal); list-style:none;}
+  details.add-spot summary::-webkit-details-marker, details.day-tips summary::-webkit-details-marker{display:none;}
+  .as-q{font:inherit; font-size:14px; width:100%; margin-top:10px; padding:9px 12px; border:1.5px solid var(--surface-line); border-radius:10px; background:var(--bg); color:var(--ink);}
+  .as-cats{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px;}
+  .as-cat{font:inherit; font-size:11.5px; font-weight:700; padding:5px 11px; border-radius:999px; border:1.5px solid var(--surface-line); background:var(--surface); color:var(--ink-soft); cursor:pointer;}
+  .as-cat.on{background:var(--teal); border-color:var(--teal); color:#fff;}
+  .as-res{margin-top:8px; display:flex; flex-direction:column; gap:6px;}
+  .as-item{display:flex; align-items:center; gap:10px; padding:8px 10px; border-radius:10px; background:var(--bg-alt);}
+  .as-item.bad{opacity:.7;}
+  .as-tx{flex:1; min-width:0; display:flex; flex-direction:column; gap:1px;}
+  .as-tx b{font-size:13px;}
+  .as-tx span{font-size:11px; color:var(--ink-faint); line-height:1.4;}
+  .as-add{flex:none; font:inherit; font-size:12px; font-weight:800; color:#fff; background:var(--teal); border:none; border-radius:999px; padding:7px 12px; cursor:pointer;}
+  .as-no{flex:none; font-size:11px; font-weight:800; color:var(--low);}
+  .as-empty{margin:4px 0 0; font-size:12px; color:var(--ink-faint);}
+  details.day-tips ul{margin:8px 0 0; padding-left:18px; font-size:12.5px; color:var(--ink-soft); line-height:1.6;}
   .spot-chip.saved{background:var(--good-soft); color:var(--good);}
   .spot-chip:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
 
@@ -327,26 +363,31 @@
     <p class="tmap-key">회색 점은 가이드의 모든 장소, 이모지는 담아둔 곳, 색 테두리와 숫자가 붙은 이모지는 고른 날에 들르는 곳이에요. 색이 진한 권역이 고른 날의 권역이고, 선은 날짜 순서예요(점선은 도시 간 이동).</p>
   </div>
 
-  <div class="fx-bar">
+  <div class="ctl-row">
+    <div class="mode-toggle">
+      <button class="mode-btn" id="mode-btn-MEL" onclick="setMode('WITH_MEL')">시드니 + 멜버른</button>
+      <button class="mode-btn" id="mode-btn-SYD" onclick="setMode('SYD_ONLY')">시드니 중심(멜버른 없이)</button>
+    </div>
+    <div class="presets" id="preset-row"></div>
+  </div>
+  <p class="strip-hint">날짜를 누르면 그 날 카드로 이동해요</p>
+  <div class="overview-scroll"><div class="overview-row" id="overview-row"></div></div>
+
+  <div id="root"><div class="skeleton">불러오는 중…</div></div>
+
+  <div class="more-box">
+    <details class="cmp">
+      <summary>예산 · 환율</summary>
+      <div class="fx-bar">
     <span class="fx-label">AUD → KRW</span>
     <span class="fx-rate">1 AUD ≈ 945원</span>
     <div class="fx-sep"></div>
     <span class="fx-sub">시드니 호텔 예약분 AUD 1,867.50 ≈ 약 176만원 · 2/9까지 무료 취소</span>
     <span class="fx-date">2026.10.01 기준 · 환전 시점에 재확인 필요</span>
-  </div>
+      </div>
 
-  <header>
-    <span class="eyebrow">2027.02.09 ~ 02.19 · 가족 4인 · 인터랙티브 루트 빌더</span>
-    <h1>하루씩 테마를 골라 루트 완성하기</h1>
-    <p class="lede" id="lede-text">시드니 3일 · 멜버른 3일, 각 날짜마다 테마를 하나씩 고르세요. 고른 테마는 다른 날짜 선택지에서 빠지고, 전날 강도에 따라 다음 날 추천 테마가 바뀌어요. 선택은 저장되니 나중에 다시 열어도 이어집니다.</p>
-
-    <div class="mode-toggle">
-      <button class="mode-btn" id="mode-btn-MEL" onclick="setMode('WITH_MEL')">시드니 + 멜버른</button>
-      <button class="mode-btn" id="mode-btn-SYD" onclick="setMode('SYD_ONLY')">시드니 중심(멜버른 없이)</button>
-    </div>
-    <div class="mode-note" id="mode-note"></div>
-
-    <div class="presets" id="preset-row"></div>
+      <div class="mode-note" id="mode-note"></div>
+    </details>
     <div id="plan-compare"></div>
     <details class="cmp">
       <summary>준비물 · 팁 · 먼저 예약할 것</summary>
@@ -382,17 +423,12 @@
       </ol>
       <button class="cmp-link" onclick="if(window.goTab)goTab('tracker')">예약 진행 체크하러 가기</button>
     </details>
-  </header>
-
-  <section style="margin-top:26px;">
-    <div class="section-head">
-      <h2>전체 개요</h2>
-      <span class="cnt">숙소 예약 현황 + 대표 일정</span>
-    </div>
-    <div class="overview-scroll"><div class="overview-row" id="overview-row"></div></div>
-  </section>
-
-  <div id="root"><div class="skeleton">불러오는 중…</div></div>
+    <details class="cmp">
+      <summary>이 화면 사용법</summary>
+      <p class="lede" id="lede-text"></p>
+      <p class="lede">날짜 카드에서 테마를 고르면 하루 흐름과 들르는 곳이 펼쳐져요. 카드 아래 "+ 이 날 장소 · 살 것 추가"에서 가이드의 장소를 검색해 그 날에 넣을 수 있고, 휴무일인 곳은 담기지 않아요. 지도에는 고르는 대로 선이 이어져요.</p>
+    </details>
+  </div>
 
   <footer>가족 4인(성인2 · 초2 여아2) · 2027.02.09~02.19 · 선택은 저장돼 가족 기기끼리 맞춰집니다 · 금액은 최근 시세 기반 추정치예요</footer>
 </div>
@@ -417,7 +453,8 @@
      - window.GUIDE (가이드 스크립트가 나중에 정의, 없을 수 있음) : all() → [{id,kind,title,region,icon,tags,q,lat,lng,picked}], show(id), toggle(id)
      - 날짜 카드에는 data-date="2/11" 이 붙어 있음 (지도에서 해당 날 카드로 스크롤할 때 사용)
      - 지도는 이 파일 맨 아래 두 번째 <script> (window.TRIP_MAP)
-     - 저장 형식(바꾸지 말 것): 문서 trip/picks = {mode, picks:{date: themeId}, updatedAt}
+     - 저장 형식: 문서 trip/picks = {mode, picks:{date: themeId}, extra:{date:[가이드 id]}, buy:{date:{상품 id:0|1}}, updatedAt}
+       (mode·picks는 바꾸지 말 것. extra·buy는 없을 수 있음)
      테마의 zone은 zones.json의 id, stops는 가이드 항목 id(방문 순서), timeline은 [{tod:"오전"|"낮"|"오후"|"저녁", text}]
      ------------------------------------------------------------------ */
   var THEMES = {
@@ -521,6 +558,54 @@
           {tod:"낮", text:"울런공 다오를란도에서 화덕피자 픽업 — 화요일 휴무, 영업시간은 방문 전 전화로 확인 필요"},
           {tod:"오후", text:"게링공·워리비치(약 37분) — 남단에 무료주차·화장실·바베큐·놀이터, 피자 피크닉과 타스만 드라이브 뷰포인트"},
           {tod:"저녁", text:"시드니 복귀(약 2시간 10분) — 전체 약 8~9시간"}
+        ],
+        tips:[
+          "타스만 드라이브는 굽이치는 초록 언덕과 바다가 함께 보이는 게링공의 뷰포인트예요.",
+          "다오를란도(Da Orlando, 348 Keira St, Wollongong)는 게링공이 아니라 울런공에 있어요. 화요일 휴무이고, 영업시간은 출처마다 달라 방문 전 +61 2 4298 3011로 확인하세요.",
+          "렌터카가 사실상 필수예요. 울런공→게링공은 차로 약 37분, 기차는 키아마 환승으로 약 1시간 18분이에요.",
+          "기차만으로 가면 센트럴역→게링공역이 약 2시간 25분~2시간 39분(키아마 환승, 오팔카드 가능, 편도 $11~), 역에서 워리비치까지 걸어서 약 13분이에요.",
+          "워리비치 남단에 무료 주차·화장실·바베큐·놀이터가 있어 피크닉하기 좋아요.",
+          "한국인 가이드 투어도 있어요(게링공·볼드힐·키아마 묶음, 1인 약 9.2만~14.4만원, 화/금 또는 화/목/토/일 출발, 9~10시간). 여러 곳을 편하게 보려면 투어, 여유 있는 피크닉을 원하면 렌터카가 맞아요."
+        ]},
+      {id:"camp1", title:"캠퍼밴 1일차 · 픽업 → 홀리데이파크", desc:"캠퍼밴을 빌려 정식 홀리데이파크로 이동, 전기 사이트에 자리 잡고 저녁 바베큐", intensity:"heavy", tags:["nature","animal"], icon:"i-tour", cost:[27,40], area:"근교(캠퍼밴)",
+        zone:"murramarang", stops:["murramarang"],
+        timeline:[
+          {tod:"오전", text:"시드니에서 캠퍼밴 픽업 — 인수 점검과 사용법 설명에 시간이 걸려요. 마트에서 장보기"},
+          {tod:"낮", text:"홀리데이파크로 이동(머라마랑은 약 4시간) — 중간에 쉬어 가기"},
+          {tod:"오후", text:"체크인 후 전기 사이트(파워드 사이트)에 연결, 수영장·놀이터"},
+          {tod:"저녁", text:"캠핑장에서 바베큐 — 해질녘엔 캥거루가 부지 안까지 내려와요"}
+        ],
+        tips:[
+          "국립공원 오지 캠핑장이 아니라 전기·샤워·수영장을 갖춘 정식 홀리데이파크를 골랐어요. 전기 사이트가 있어야 냉장고·에어컨을 쓸 수 있어서 2월 한여름엔 아이와 훨씬 편해요.",
+          "후보 ① NRMA 머라마랑 비치프론트 리조트 — 시드니에서 약 4시간(사우스더라스). 야생 캥거루가 부지 안을 돌아다니고 해변까지 이어져요. 사이트 60개, 수영장·카페·놀이터.",
+          "후보 ② NRMA 시드니 레이크사이드 홀리데이파크 — 약 30~40분(노스나라빈). 가장 가까운 정식 파크로, 이동 부담을 줄이고 싶을 때.",
+          "후보 ③ 저비스베이 인근 홀리데이파크 — 약 2.5~3시간. 새하얀 하이암스 비치와 가깝고 캥거루보다 수영·스노클링 중심.",
+          "비용: 캠퍼밴 4인승 2박3일 약 60~90만원(2월 성수기), 전기 사이트 1박 약 $60~80(4인).",
+          "예약: NRMA 파크는 nrmaparksandresorts.com.au에서 직접 예약해요(성수기엔 필수). 캠퍼밴은 브리츠·마우이·아폴로·저씨 등에서 빌리고, 한국어 예약대행을 쓰면 편해요. 2월은 가장 비싼 시즌이에요."
+        ]},
+      {id:"camp2", title:"캠퍼밴 2일차 · 캠핑장에서 하루", desc:"해변 수영과 캥거루 관찰, 이동 없이 캠핑장 주변에서 보내는 날", intensity:"light", tags:["nature","animal","swim"], icon:"i-wave", cost:[23,34], area:"근교(캠퍼밴)",
+        zone:"murramarang", stops:["murramarang"],
+        timeline:[
+          {tod:"오전", text:"해변 산책과 수영 — 머라마랑은 바로 옆이 페블리비치"},
+          {tod:"낮", text:"캠핑장 수영장·놀이터, 캠퍼밴에서 점심"},
+          {tod:"오후", text:"주변 해안 짧은 산책 — 캥거루는 만지거나 먹이 주지 않기"},
+          {tod:"저녁", text:"노을 보며 바베큐, 별 보기"}
+        ],
+        tips:[
+          "캥거루는 야생동물이에요. 먹이를 주지 말고 거리를 두세요.",
+          "안전요원이 없는 해변일 수 있어요. 아이들은 어른과 함께 얕은 곳에서만."
+        ]},
+      {id:"camp3", title:"캠퍼밴 3일차 · 시드니 복귀 · 반납", desc:"아침 정리 후 시드니로 돌아와 캠퍼밴 반납", intensity:"medium", tags:["nature"], icon:"i-tour", cost:[22,33], area:"근교(캠퍼밴)",
+        zone:"murramarang", stops:["murramarang"],
+        timeline:[
+          {tod:"오전", text:"체크아웃 전 오수 비우기와 정리 — 보통 오전 체크아웃"},
+          {tod:"낮", text:"시드니로 이동 — 돌아오는 길에 키아마·남부해안에 잠깐 들를 수 있어요"},
+          {tod:"오후", text:"주유 후 캠퍼밴 반납 — 반납 마감 시각을 예약할 때 확인"},
+          {tod:"저녁", text:"시드니 숙소 체크인, 가볍게 저녁"}
+        ],
+        tips:[
+          "새벽과 해질녘에는 도로에 캥거루가 튀어나와요. 해가 있을 때 이동하세요.",
+          "반납 시각에 늦으면 추가 요금이 붙을 수 있어요."
         ]}
     ],
     MEL: [
@@ -630,6 +715,9 @@
     portstephenslite:{hours:"오스트레일리안 렙타일파크 기준 매일 09:00~17:00"},
     royalnp:{hours:"공원 게이트 07:00~20:30 · 차량 입장료 있음"},
     gerringong:{hours:"다오를란도 화요일 휴무 · 해변은 상시", closed:{"화":"다오를란도(화덕피자)가 화요일 휴무예요"}},
+    camp1:{hours:"캠퍼밴 픽업·홀리데이파크 체크인 시각은 예약할 때 확인", caution:{"*":"캠퍼밴 카드 3장(1·2·3일차)을 연속된 날짜에 순서대로 넣으세요"}},
+    camp2:{hours:"홀리데이파크 시설 이용 시간은 예약 확인서 확인", caution:{"*":"1일차 다음 날에 넣으세요"}},
+    camp3:{hours:"캠퍼밴 반납 마감 시각은 예약할 때 확인", caution:{"*":"2일차 다음 날에 넣으세요"}},
     gor:{hours:"당일 투어 매일 출발 (약 07:30~20:30, 12~13시간)"},
     phillip:{hours:"펭귄퍼레이드 매일 일몰 무렵(2월 20:30 전후) · 사전예약 필수, 투어로 가면 숙소 복귀 자정 무렵"},
     qvmarket:{hours:"화·목·금 06:00~15:00 · 토 06:00~16:00 · 일 09:00~16:00",
@@ -676,7 +764,7 @@
     },
     SYD_ONLY: {
       label:"시드니 9박, 멜버른 없이 근교만",
-      lede:"시드니에 계속 머물며 근교 소도시로 당일치기를 다닙니다. 8일 모두 시드니 기준이라 테마 폭이 넓어요 — 국내선이 없어 이동 부담과 경비 모두 가장 낮습니다. 캠핑을 좋아하는 가족이라면 개별 테마 2~3개 대신 캠퍼밴 렌탈+NRMA 머라마랑 리조트 캠핑(가이드 참고, 정식 홀리데이파크인데 야생 캥거루가 부지를 돌아다님) 2박3일로 통째로 바꿔도 좋아요.",
+      lede:"시드니에 계속 머물며 근교로 당일치기를 다니는 방식이에요. 8일 모두 시드니 기준이라 테마 폭이 넓고, 국내선이 없어 이동 부담과 경비가 가장 낮아요. 캠핑을 좋아한다면 캠퍼밴 1·2·3일차 카드 3장을 연속된 날짜에 넣어 2박3일 캠핑으로 바꿀 수 있어요.",
       slots:[
         {date:"2/11", dow:"목", city:"SYD"},
         {date:"2/12", dow:"금", city:"SYD"},
@@ -769,33 +857,21 @@
     }
   };
 
+  // 날짜 줄: 누르면 그 날 카드로 이동. 숙소 예약 여부는 점 색으로만 표시
   function renderOverview(){
-    var days = ALL_DAYS[state.mode];
     var row = document.getElementById("overview-row");
-    var html = days.map(function(d){
-      var accom = ACCOM[state.mode](d.date);
-      var stayHtml = accom
-        ? '<span class="ov-stay '+accom.status+'">'+(accom.status==="booked"?"예약완료":"미예약")+'</span><span class="ov-hotel">'+esc(accom.name)+'</span>'
-        : '<span class="ov-stay none">숙박없음</span>';
-      var themeHtml;
+    row.innerHTML = ALL_DAYS[state.mode].map(function(d){
+      var accom = ACCOM[state.mode](d.date), label, cls = "";
       if (d.type==="pick"){
-        var pickedId = state.picks[d.date];
-        if (pickedId){
-          var t = themeById(pickedId);
-          var av = availability(pickedId, d.dow);
-          themeHtml = '<span class="ov-theme'+(av.ok?'':' conflict')+'">'+esc(t.title)+(av.ok?'':' · 휴무')+'</span>';
-        } else {
-          themeHtml = '<span class="ov-theme empty">미정</span>';
-        }
-      } else {
-        themeHtml = '<span class="ov-theme">'+esc(d.label)+'</span>';
-      }
-      return '<div class="ov-card'+(d.type!=="pick"?" fixed":"")+'">'
-        + '<span class="ov-date">'+d.dow+'</span><span class="ov-dom">'+d.date+'</span>'
-        + stayHtml + themeHtml
-        + '</div>';
+        var id = state.picks[d.date], t = id ? themeById(id) : null;
+        if (t){ var av = availability(id, d.dow); label = t.title; if (!av.ok) cls = " conflict"; }
+        else { label = "미정"; cls = " empty"; }
+      } else label = d.label;
+      var stay = accom ? '<i class="ov-dot '+accom.status+'" title="'+esc(accom.name)+(accom.status==="booked"?" · 예약완료":" · 미예약")+'"></i>' : '';
+      return '<button class="ov-card city-'+String(d.city||"").toLowerCase()+(d.type!=="pick"?" fixed":"")+'" onclick="tripGoDay(\''+d.date+'\')">'
+        + '<span class="ov-date">'+d.dow+stay+'</span><span class="ov-dom">'+d.date+'</span>'
+        + '<span class="ov-theme'+cls+'">'+esc(label)+'</span></button>';
     }).join("");
-    row.innerHTML = html;
   }
 
   var PRESETS = {
@@ -808,7 +884,9 @@
     }
   };
 
-  var state = {mode:"WITH_MEL", picks:{}};
+  // extra: 날짜별로 검색해서 추가한 장소 {date:[가이드 id]}, buy: 날짜별 살 것 {date:{상품 id: 0|1(샀음)}}
+  var state = {mode:"WITH_MEL", picks:{}, extra:{}, buy:{}};
+  var SEARCH = {};   // 날짜별 검색창 상태 {date:{q, cat}} — 화면을 다시 그려도 유지
   var dbRef = null;
   var root = document.getElementById("root");
 
@@ -853,17 +931,148 @@
         }).join("")
       + '</div></div>';
   }
-  function dayMore(t){
-    var all = guideItems(), byId = {}, stopIds = t.stops || [];
+  function dkey(date){ return String(date).replace("/", "-"); }
+  function extraIds(date){ return (state.extra && state.extra[date]) ? state.extra[date] : []; }
+  function stopIdsOf(t, date){
+    var ids = (t.stops || []).slice();
+    extraIds(date).forEach(function(id){ if (ids.indexOf(id)===-1) ids.push(id); });
+    return ids;
+  }
+  function martItems(){
+    try { return (window.GUIDE && window.GUIDE.marts) ? (window.GUIDE.marts() || []) : []; } catch(e){ return []; }
+  }
+  // 그 요일에 문 닫는 장소인지 (가이드 상세의 휴무 요일 기준)
+  function closedOn(it, dow){
+    var c = it.closed || [];
+    if (c.length===7) return "현재 운영 안 함";
+    return c.indexOf(dow)!==-1 ? dow+"요일 휴무" : "";
+  }
+  function stopChips(t, slot){
+    var all = guideItems(), byId = {}, mine = extraIds(slot.date);
     all.forEach(function(it){ byId[it.id] = it; });
-    var stops = stopIds.map(function(id){ return byId[id]; }).filter(Boolean);
+    var ids = stopIdsOf(t, slot.date).filter(function(id){ return byId[id]; });
+    if (!ids.length) return "";
+    return '<div class="spots"><div class="flow-head">들르는 곳</div><div class="spot-chips">'
+      + ids.map(function(id){
+          var it = byId[id], added = mine.indexOf(id)!==-1, bad = closedOn(it, slot.dow);
+          return '<span class="spot-wrap'+(added?' added':'')+(bad?' bad':'')+'">'
+            + '<button class="spot-chip'+(it.picked?' saved':'')+'" data-spot="'+esc(id)+'" onclick="tripGoSpot(this.getAttribute(\'data-spot\'))">'+esc(it.title)+(bad?' · '+esc(bad):'')+'</button>'
+            + (added ? '<button class="spot-x" aria-label="'+esc(it.title)+' 빼기" data-spot="'+esc(id)+'" onclick="tripDelSpot(\''+slot.date+'\', this.getAttribute(\'data-spot\'))">×</button>' : '')
+            + '</span>';
+        }).join("")
+      + '</div></div>';
+  }
+  function buyRow(slot){
+    var list = (state.buy && state.buy[slot.date]) || {}, byId = {}, ids = [];
+    martItems().forEach(function(m){ byId[m.id] = m; });
+    for (var id in list){ if (byId[id]) ids.push(id); }
+    if (!ids.length) return "";
+    return '<div class="spots"><div class="flow-head">이 날 살 것</div><div class="spot-chips">'
+      + ids.map(function(id){
+          var done = !!list[id];
+          return '<span class="spot-wrap added">'
+            + '<button class="buy-chip'+(done?' done':'')+'" data-id="'+esc(id)+'" onclick="tripToggleBuy(\''+slot.date+'\', this.getAttribute(\'data-id\'))">'+(done?'✓ ':'')+esc(byId[id].title)+'</button>'
+            + '<button class="spot-x" aria-label="'+esc(byId[id].title)+' 빼기" data-id="'+esc(id)+'" onclick="tripDelBuy(\''+slot.date+'\', this.getAttribute(\'data-id\'))">×</button>'
+            + '</span>';
+        }).join("")
+      + '</div></div>';
+  }
+  var CATS = [["all","전체"],["place","가볼만한곳"],["food","맛집·카페"],["mart","마트·쇼핑"]];
+  var KIND_LABEL = {place:"가볼만한곳", food:"맛집·카페", shop:"쇼핑 장소", mart:"살 것"};
+  // 검색 결과: 검색어가 없으면 그날 권역의 장소를 먼저 보여줌
+  function searchResults(t, slot){
+    var st = SEARCH[slot.date] || {q:"", cat:"all"};
+    var q = String(st.q || "").trim().toLowerCase(), cat = st.cat || "all";
+    var have = stopIdsOf(t, slot.date), buy = (state.buy && state.buy[slot.date]) || {};
+    var out = [];
+    if (cat!=="mart" || q){
+      guideItems().forEach(function(it){
+        if (cat==="place" && it.kind!=="place") return;
+        if (cat==="food" && it.kind!=="food") return;
+        if (cat==="mart" && it.kind!=="shop") return;
+        var z = zoneOfRegion(it.region);
+        if (!z || z.city!==slot.city) return;
+        if (have.indexOf(it.id)!==-1) return;
+        var same = z.id===t.zone;
+        if (q){
+          var hay = (it.title+" "+(it.tags||[]).join(" ")+" "+it.region+" "+(it.sub||"")+" "+z.name).toLowerCase();
+          if (hay.indexOf(q)===-1) return;
+        } else if (!same) return;
+        out.push({it:it, zone:z, same:same});
+      });
+    }
+    if (cat==="mart" || (cat==="all" && q)){
+      martItems().forEach(function(m){
+        if (buy[m.id]!==undefined) return;
+        if (q){
+          var hay = (m.title+" "+(m.tags||[]).join(" ")+" "+m.cat+" "+(m.desc||"")).toLowerCase();
+          if (hay.indexOf(q)===-1) return;
+        }
+        out.push({mart:m});
+      });
+    }
+    out.sort(function(a, b){ return (b.same?1:0) - (a.same?1:0); });
+    return out;
+  }
+  function resultsHtml(t, slot){
+    var st = SEARCH[slot.date] || {q:"", cat:"all"};
+    var res = searchResults(t, slot), total = res.length;
+    if (!total){
+      return '<p class="as-empty">'+(String(st.q||"").trim() ? '맞는 곳이 없어요. 다른 낱말로 찾아보세요.' : '이 권역에서 더 추가할 곳이 없어요. 이름이나 태그로 검색해 보세요.')+'</p>';
+    }
+    var rows = res.slice(0, 8).map(function(r){
+      if (r.mart){
+        var m = r.mart;
+        return '<div class="as-item"><div class="as-tx"><b>'+esc(m.title)+'</b><span>'+esc(KIND_LABEL.mart)+' · '+esc(m.cat)+(m.tags&&m.tags.length?' · '+esc(m.tags.slice(0,3).join(" · ")):'')+'</span></div>'
+          + '<button class="as-add" data-id="'+esc(m.id)+'" onclick="tripAddBuy(\''+slot.date+'\', this.getAttribute(\'data-id\'))">+ 살 것</button></div>';
+      }
+      var it = r.it, bad = closedOn(it, slot.dow);
+      return '<div class="as-item'+(bad?' bad':'')+'"><div class="as-tx"><b>'+esc(it.title)+'</b>'
+        + '<span>'+esc(KIND_LABEL[it.kind]||"")+' · '+esc(it.region)+((it.tags||[]).length?' · '+esc(it.tags.slice(0,3).join(" · ")):'')+'</span>'
+        + (it.hours ? '<span class="h">'+esc(it.hours)+'</span>' : '')+'</div>'
+        + (bad ? '<span class="as-no">'+esc(bad)+'</span>'
+               : '<button class="as-add" data-id="'+esc(it.id)+'" onclick="tripAddSpot(\''+slot.date+'\', this.getAttribute(\'data-id\'))">+ 추가</button>')
+        + '</div>';
+    }).join("");
+    return rows + (total>8 ? '<p class="as-empty">'+(total-8)+'곳 더 있어요. 검색어를 더 적어 좁혀 보세요.</p>' : '');
+  }
+  function searchBox(t, slot){
+    var st = SEARCH[slot.date] || (SEARCH[slot.date] = {q:"", cat:"all"}), k = dkey(slot.date);
+    return '<details class="add-spot"'+(st.open?' open':'')+' ontoggle="tripSearchOpen(\''+slot.date+'\', this.open)">'
+      + '<summary>+ 이 날 장소 · 살 것 추가</summary>'
+      + '<input type="search" class="as-q" id="as-q-'+k+'" placeholder="이름·태그로 검색 (예: 수영, 젤라또, 놀이터, 팀탐)" value="'+esc(st.q||"")+'" oninput="tripSearch(\''+slot.date+'\', this.value)">'
+      + '<div class="as-cats" id="as-cats-'+k+'">'+catBtns(slot.date)+'</div>'
+      + '<div class="as-res" id="as-res-'+k+'">'+resultsHtml(t, slot)+'</div>'
+      + '</details>';
+  }
+  function catBtns(date){
+    var st = SEARCH[date] || {cat:"all"};
+    return CATS.map(function(c){
+      return '<button class="as-cat'+(st.cat===c[0]?' on':'')+'" onclick="tripSearchCat(\''+date+'\',\''+c[0]+'\')">'+c[1]+'</button>';
+    }).join("");
+  }
+  function refreshSearch(date){
+    var slot = slotByDate(date), t = slot && themeById(state.picks[date]);
+    if (!slot || !t) return;
+    var k = dkey(date), res = document.getElementById("as-res-"+k), cats = document.getElementById("as-cats-"+k);
+    if (res) res.innerHTML = resultsHtml(t, slot);
+    if (cats) cats.innerHTML = catBtns(date);
+  }
+  function tipsHtml(t){
+    if (!t.tips || !t.tips.length) return "";
+    return '<details class="day-tips"><summary>알아둘 것 '+t.tips.length+'가지</summary><ul>'
+      + t.tips.map(function(x){ return '<li>'+esc(x)+'</li>'; }).join("")+'</ul></details>';
+  }
+  function dayMore(t, slot){
+    var all = guideItems(), stopIds = stopIdsOf(t, slot.date);
     var saved = all.filter(function(it){
       if (!it.picked || stopIds.indexOf(it.id)!==-1) return false;
       var z = zoneOfRegion(it.region);
       return !!z && z.id===t.zone;
     });
-    var inner = flowHtml(t.timeline, zoneById(t.zone)) + chipRow("들르는 곳", stops) + chipRow("이 권역에 담아둔 곳", saved);
-    return inner ? '<div class="day-more">'+inner+'</div>' : '';
+    var inner = flowHtml(t.timeline, zoneById(t.zone)) + tipsHtml(t) + stopChips(t, slot) + chipRow("이 권역에 담아둔 곳", saved)
+      + buyRow(slot) + searchBox(t, slot);
+    return '<div class="day-more">'+inner+'</div>';
   }
   function renderFixed(d){
     return '<div class="slot picked fixed" data-date="'+esc(d.date)+'">'
@@ -907,7 +1116,7 @@
         + '<div class="picked-ic">'+svgUse(t.icon)+'</div>'
         + '<div class="picked-body"><b>'+esc(t.title)+'</b><span>'+esc(t.desc)+'</span>'+extra+'</div>'
         + '<button class="change-btn" onclick="changeFrom(\''+slot.city+'\',\''+slot.date+'\')">다시 선택</button>'
-        + dayMore(t)
+        + dayMore(t, slot)
         + '</div>';
     }
 
@@ -988,21 +1197,7 @@
   function renderSummary(){
     var cfg = currentConfig();
     var b = budget();
-    var chips = cfg.slots.map(function(s){
-      var id = state.picks[s.date];
-      if (!id) return '<span class="route-chip empty">'+s.date+' 미정</span>';
-      var t = themeById(id);
-      return '<span class="route-chip"><span class="rcic">'+svgUse(t.icon)+'</span>'+s.date+' '+esc(t.title)+'</span>';
-    }).join("");
-
-    var edgeChips = '<span class="route-chip">2/10 도착</span>' + chips;
-    if (state.mode==="WITH_MEL"){
-      edgeChips += '<span class="route-chip">2/14 시드니→멜버른 이동</span><span class="route-chip">2/18 멜버른→시드니 이동</span>';
-    }
-    edgeChips += '<span class="route-chip">2/19 귀국</span>';
-
-    var html = '<div class="summary"><h2>완성된 루트</h2>';
-    html += '<div class="route-line">'+edgeChips+'</div>';
+    var html = '<div class="summary"><h2>일정 요약</h2>';
     if (b.picked===0){
       html += '<div class="empty-note">아직 선택한 테마가 없어요 — 위에서 하루씩 골라보시거나 추천 세트를 한번에 적용해보세요.</div>';
     } else {
@@ -1020,6 +1215,28 @@
       var av = availability(id, s.dow), t = themeById(id);
       if (!av.ok) notes.push('<li class="bad">'+s.date+'('+s.dow+') '+esc(t.title)+' — '+esc(av.why)+'</li>');
       else if (av.caution) notes.push('<li>'+s.date+'('+s.dow+') '+esc(t.title)+' — '+esc(av.caution)+'</li>');
+    });
+    // 캠퍼밴 카드는 1·2·3일차가 연속된 날짜에 순서대로 있어야 함
+    var campAt = {}, campN = 0;
+    cfg.slots.forEach(function(s, i){ var id = state.picks[s.date]; if (/^camp[123]$/.test(id||"")){ campAt[id] = i; campN++; } });
+    if (campN>0 && !(campN===3 && campAt.camp2===campAt.camp1+1 && campAt.camp3===campAt.camp2+1)){
+      notes.push('<li class="bad">캠퍼밴 — 1·2·3일차 카드 3장을 연속된 날짜에 순서대로 넣어야 해요 (지금 '+campN+'장)</li>');
+    }
+    if (campN>0){
+      cfg.slots.forEach(function(s){
+        if (/^camp[12]$/.test(state.picks[s.date]||"") && ["2/10","2/11","2/12","2/13"].indexOf(s.date)!==-1){
+          notes.push('<li>'+s.date+'('+s.dow+') 캠핑하는 밤은 이미 예약한 메리턴 숙박(2/10~2/14)과 겹쳐요 — 숙소를 줄이거나 캠핑 날짜를 2/14 이후로</li>');
+        }
+      });
+    }
+    var gById = {};
+    guideItems().forEach(function(it){ gById[it.id] = it; });
+    cfg.slots.forEach(function(s){
+      if (!state.picks[s.date]) return;
+      extraIds(s.date).forEach(function(id){
+        var it = gById[id], bad = it ? closedOn(it, s.dow) : "";
+        if (bad) notes.push('<li class="bad">'+s.date+'('+s.dow+') 추가한 '+esc(it.title)+' — '+esc(bad)+'</li>');
+      });
     });
     if (notes.length){
       html += '<div class="check-list"><b>헛걸음 방지 체크</b><ul>'+notes.join("")+'</ul>'
@@ -1111,14 +1328,15 @@
     state: function(){
       var picks = {};
       for (var k in state.picks){ if (state.picks[k]) picks[k] = state.picks[k]; }
-      return {mode: state.mode, picks: picks};
+      return {mode: state.mode, picks: picks, extra: JSON.parse(JSON.stringify(state.extra || {})), buy: JSON.parse(JSON.stringify(state.buy || {}))};
     },
     days: function(){
       return ALL_DAYS[state.mode].map(function(d){
         var id = d.type==="pick" ? (state.picks[d.date] || null) : null;
         var t = id ? themeById(id) : null;
         return {date:d.date, dow:d.dow, type:d.type, city:d.city,
-                label: d.type==="pick" ? (t ? t.title : "미정") : d.label, themeId: t ? id : null};
+                label: d.type==="pick" ? (t ? t.title : "미정") : d.label, themeId: t ? id : null,
+                stops: t ? stopIdsOf(t, d.date) : []};   // 테마의 들르는 곳 + 그 날 검색해서 추가한 곳
       });
     }
   };
@@ -1129,9 +1347,67 @@
   };
   window.addEventListener("guide-change", function(){ render(true); });
 
+  // ---- 날짜별 장소 검색·추가 / 살 것
+  window.tripSearch = function(date, q){
+    (SEARCH[date] = SEARCH[date] || {q:"", cat:"all"}).q = q;
+    refreshSearch(date);            // 입력 중에는 결과 칸만 다시 그림(입력 포커스 유지)
+  };
+  window.tripSearchCat = function(date, cat){
+    (SEARCH[date] = SEARCH[date] || {q:"", cat:"all"}).cat = cat;
+    refreshSearch(date);
+  };
+  window.tripSearchOpen = function(date, open){
+    (SEARCH[date] = SEARCH[date] || {q:"", cat:"all"}).open = !!open;
+  };
+  window.tripAddSpot = function(date, id){
+    var slot = slotByDate(date), it = null;
+    guideItems().forEach(function(x){ if (x.id===id) it = x; });
+    if (!slot || !it || closedOn(it, slot.dow)) return;      // 휴무일인 곳은 담지 않음
+    var list = (state.extra[date] = state.extra[date] || []);
+    if (list.indexOf(id)===-1) list.push(id);
+    render();
+    persist();
+  };
+  window.tripDelSpot = function(date, id){
+    var list = state.extra[date] || [], i = list.indexOf(id);
+    if (i!==-1) list.splice(i, 1);
+    if (!list.length) delete state.extra[date];
+    render();
+    persist();
+  };
+  window.tripAddBuy = function(date, id){
+    (state.buy[date] = state.buy[date] || {})[id] = 0;
+    render();
+    persist();
+  };
+  window.tripToggleBuy = function(date, id){
+    var m = state.buy[date];
+    if (!m || m[id]===undefined) return;
+    m[id] = m[id] ? 0 : 1;
+    render();
+    persist();
+  };
+  window.tripDelBuy = function(date, id){
+    var m = state.buy[date];
+    if (!m) return;
+    delete m[id];
+    var any = false; for (var k in m){ any = true; }
+    if (!any) delete state.buy[date];
+    render();
+    persist();
+  };
+  // 날짜 줄·지도에서 그 날 카드로 이동
+  window.tripGoDay = function(date){
+    var el = root.querySelector('[data-date="'+date+'"]');
+    if (!el) return;
+    el.scrollIntoView({block:"center", behavior:"smooth"});
+    el.classList.add("flash");
+    setTimeout(function(){ el.classList.remove("flash"); }, 1600);
+  };
+
   async function persist(){
     if (!dbRef) return;
-    try { await dbRef.set({mode: state.mode, picks: state.picks, updatedAt: Date.now()}); }
+    try { await dbRef.set({mode: state.mode, picks: state.picks, extra: state.extra || {}, buy: state.buy || {}, updatedAt: Date.now()}); }
     catch(e){ /* keep local state; will retry on next change */ }
   }
 
@@ -1163,14 +1439,14 @@
     persist();
   };
   window.resetAll = function(){
-    state.picks = {};
+    state.picks = {}; state.extra = {}; state.buy = {};
     render();
     persist();
   };
   window.setMode = function(mode){
     if (state.mode===mode) return;
     state.mode = mode;
-    state.picks = {};
+    state.picks = {}; state.extra = {}; state.buy = {};
     render();
     persist();
   };
@@ -1198,12 +1474,16 @@
           if (snap.exists && snap.data()){
             if (snap.data().mode) state.mode = snap.data().mode;
             if (snap.data().picks) state.picks = snap.data().picks;
+            state.extra = snap.data().extra || {};
+            state.buy = snap.data().buy || {};
             render();
           }
           dbRef.onSnapshot(function(s){
             if (s.exists && s.data()){
               if (s.data().mode) state.mode = s.data().mode;
               state.picks = s.data().picks || {};
+              state.extra = s.data().extra || {};
+              state.buy = s.data().buy || {};
               render();
             }
           }, function(err){ /* ignore live-sync errors, local state still works */ });
@@ -1429,7 +1709,7 @@
       var t = T.themeById(d.themeId);
       if (!t) return;
       n++;
-      var z = zoneById(t.zone), color = zoneColor(z), stops = t.stops || [];
+      var z = zoneById(t.zone), color = zoneColor(z), stops = d.stops || t.stops || [];
       stops.forEach(function(id){ if (!p.stopOf[id]) p.stopOf[id] = {num:n, color:color, date:d.date, dow:d.dow}; });
       if (z){ p.strong[z.id] = true; (p.zoneDays[z.id] = p.zoneDays[z.id] || []).push({date:d.date, dow:d.dow}); }
       var g = z && geo[z.id];

@@ -165,5 +165,14 @@
   "regions": [
    "멜버른 · 모닝턴반도"
   ]
+ },
+ {
+  "id": "murramarang",
+  "name": "머라마랑 (남부 먼 해안)",
+  "color": "#546E7A",
+  "city": "SYD",
+  "regions": [
+   "머라마랑 · 남부해안"
+  ]
  }
 ]

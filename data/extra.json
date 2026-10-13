@@ -173,6 +173,29 @@
   ]
  },
  {
+  "id": "murramarang",
+  "kind": "place",
+  "region": "머라마랑 · 남부해안",
+  "icon": "i-roo",
+  "title": "NRMA 머라마랑 비치프론트 리조트",
+  "sub": "시드니에서 약 4시간",
+  "desc": "정식 홀리데이파크인데 야생 캥거루가 부지 안을 자유롭게 돌아다니고 해변까지 이어져요. 파워드·언파워드·앙수이트 사이트가 60개, 수영장·카페·놀이터가 있고 바로 옆이 페블리비치예요.",
+  "q": "Murramarang Beachfront Nature Resort South Durras",
+  "badge": "추천",
+  "hours": "리조트 시설·체크인 시간은 예약 확인서 확인 필요",
+  "closed": [],
+  "price": "파워드 사이트 1박 약 $60~80(4인)",
+  "note": "캠퍼밴 캠핑 후보 1순위. 성수기·학교방학엔 예약 필수예요. 캥거루는 야생동물이라 먹이를 주지 않고, 새벽·해질녘 도로에서는 감속하세요.",
+  "src": "https://www.nrmaparksandresorts.com.au/murramarang/",
+  "verified": "official",
+  "tags": [
+   "캠핑",
+   "동물",
+   "수영",
+   "렌터카"
+  ]
+ },
+ {
   "id": "cookphillip",
   "kind": "place",
   "region": "시티 · 서큘러키 · 달링하버",
