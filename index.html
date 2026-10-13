@@ -514,6 +514,51 @@
 #p-guide .subhead .city-dot{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:7px; vertical-align:middle;}
 #p-guide .filter-btn .sw{display:inline-block; width:9px; height:9px; border-radius:50%; margin-right:6px; vertical-align:middle;}
 #p-guide .filter-row.city{margin-bottom:8px;}
+#p-guide .card.scard{padding:0; gap:0;}
+#p-guide .scard .ph{position:relative; background:var(--surface-alt);}
+#p-guide .scard .card-photo{width:100%; height:150px; margin:0; display:block;}
+#p-guide .scard .ph-link{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; height:110px; text-decoration:none; font-size:12px; font-weight:700; color:var(--ocean);}
+#p-guide .scard .ph-ic{width:38px; height:38px; border-radius:11px; background:var(--ocean-soft); color:var(--ocean); display:flex; align-items:center; justify-content:center;}
+#p-guide .scard .ph-ic svg{width:20px; height:20px;}
+#p-guide .scard .ph-chips{position:absolute; left:10px; top:10px; display:flex; gap:5px;}
+#p-guide .scard .pick-btn{position:absolute; right:10px; top:10px; width:38px; height:38px; border:none; background:rgba(255,255,255,.94); color:var(--ocean-deep); box-shadow:0 2px 8px rgba(0,0,0,.22);}
+#p-guide .scard .pick-btn.on{background:var(--euca); color:#fff;}
+#p-guide .scard .pick-btn svg{width:19px; height:19px;}
+#p-guide .scard .sbody{font:inherit; color:inherit; text-align:left; background:none; border:none; cursor:pointer; padding:13px 15px 12px; display:flex; flex-direction:column; gap:6px; width:100%;}
+#p-guide .scard .sbody h4{font-size:15px;}
+#p-guide .scard .sbody .sub{font-size:11px;}
+#p-guide .scard .sbody p{display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;}
+#p-guide .scard.open .sbody p{display:block; overflow:visible;}
+#p-guide .scard .stags{display:flex; flex-wrap:wrap; gap:5px;}
+#p-guide .scard .stags i{font-style:normal; font-size:10.5px; font-weight:700; padding:2px 8px; border-radius:999px; background:var(--bg); border:1px solid var(--line); color:var(--ink-soft);}
+#p-guide .scard .shours{font-size:11.5px; color:var(--ink-faint); line-height:1.45;}
+#p-guide .scard .shours .off{font-weight:800; color:var(--coral-ink); background:var(--coral-soft); border-radius:999px; padding:1px 8px; margin-right:6px;}
+#p-guide .scard .smore-hint{font-size:11px; font-weight:700; color:var(--ocean);}
+#p-guide .scard.open .smore-hint{display:none;}
+#p-guide .scard .smore{display:none; padding:0 15px 14px; border-top:1px dashed var(--line);}
+#p-guide .scard.open .smore{display:block;}
+#p-guide .scard .smore dl{margin:12px 0 0; display:grid; grid-template-columns:auto 1fr; gap:5px 10px; font-size:12px; line-height:1.5;}
+#p-guide .scard .smore dt{color:var(--ink-faint); font-weight:700; white-space:nowrap;}
+#p-guide .scard .smore dd{margin:0; color:var(--ink-soft); overflow-wrap:anywhere;}
+#p-guide .scard .smore dd a{color:var(--ocean);}
+#p-guide .scard .smore .alert{margin-top:12px;}
+#p-guide .scard .sact{display:flex; justify-content:space-between; align-items:center; gap:8px; margin-top:12px;}
+#p-guide .scard.flash{outline:3px solid var(--coral); outline-offset:2px;}
+#p-guide details.fold{background:var(--surface); border:1.5px solid var(--line); border-radius:16px; padding:0 18px; margin-top:14px;}
+#p-guide details.fold:first-of-type{margin-top:24px;}
+#p-guide details.fold > summary{cursor:pointer; list-style:none; padding:16px 0; display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px;}
+#p-guide details.fold > summary::-webkit-details-marker{display:none;}
+#p-guide details.fold > summary b{font-size:17px; font-weight:700; flex:1; min-width:200px;}
+#p-guide details.fold > summary::after{content:"펼치기 ▾"; font-size:12px; font-weight:700; color:var(--ocean);}
+#p-guide details.fold[open] > summary::after{content:"접기 ▴";}
+#p-guide details.fold[open]{padding-bottom:18px;}
+#p-guide .fold-lede{margin:0 0 14px; color:var(--ink-soft); font-size:13.5px; max-width:70ch;}
+#p-guide #place-grid .grid, #p-guide #food-grid .grid{align-items:start;}
+#p-guide .grp-toggle{margin-left:auto; display:inline-flex; background:var(--surface); border:1.5px solid var(--line); border-radius:999px; padding:3px; gap:2px;}
+#p-guide .grp-btn{font:inherit; font-size:12px; font-weight:700; padding:4px 12px; border-radius:999px; border:none; background:none; color:var(--ink-soft); cursor:pointer;}
+#p-guide .grp-btn.on{background:var(--ocean-deep); color:#fff;}
+#p-guide .subhead .gcount{margin-left:8px; font-size:11px; font-weight:700; color:var(--ink-faint); text-transform:none; letter-spacing:0;}
+#p-guide .scard .sreg{font-size:10.5px; font-weight:700; color:var(--ink-faint);}
 #p-guide .lv.mine{background:var(--ocean-soft); color:var(--ocean);}
 #p-guide .card-actions{display:flex; align-items:center; gap:6px;}
 #p-guide .del-btn{font:inherit; font-size:11px; font-weight:700; color:var(--ink-faint); background:none; border:1.5px solid var(--line); border-radius:999px; padding:4px 10px; cursor:pointer;}
@@ -806,25 +851,8 @@
       </div>
     </section>
 
-    <section>
-      <h2>이번 여행에서 만날 것들</h2>
-      <p class="sub">아이들이 기다리는 동물과 수영, 그리고 어른들이 기다리는 풍경이에요.</p>
-      <div class="hm-gallery">
-        <figure class="hm-shot wide tall"><img src="img/hero_koala.jpg" alt="유칼립투스 잎을 먹는 코알라" loading="lazy"><figcaption>코알라</figcaption></figure>
-        <figure class="hm-shot"><img src="img/wombattour.jpg" alt="웜뱃" loading="lazy"><figcaption>웜뱃</figcaption></figure>
-        <figure class="hm-shot"><img src="img/hero_quokka.jpg" alt="쿼카" loading="lazy"><figcaption>쿼카</figcaption></figure>
-        <figure class="hm-shot wide"><img src="img/phillip.jpg" alt="해변을 걷는 리틀펭귄 무리" loading="lazy"><figcaption>필립아일랜드 리틀펭귄</figcaption></figure>
-        <figure class="hm-shot wide"><img src="img/northsydneypool.jpg" alt="하버브리지 아래 노스 시드니 올림픽 풀" loading="lazy"><figcaption>노스 시드니 올림픽 풀 · 필수 일정</figcaption></figure>
-        <figure class="hm-shot"><img src="img/murramarang.jpg" alt="머라마랑 해변 풀밭의 캥거루" loading="lazy"><figcaption>해변의 캥거루</figcaption></figure>
-        <figure class="hm-shot"><img src="img/icebergs.jpg" alt="본다이 아이스버그스 수영장" loading="lazy"><figcaption>본다이 아이스버그스</figcaption></figure>
-        <figure class="hm-shot wide"><img src="img/greatoceanroad.jpg" alt="그레이트오션로드 해안 절벽" loading="lazy"><figcaption>그레이트오션로드</figcaption></figure>
-        <figure class="hm-shot"><img src="img/jervisbay.jpg" alt="저비스베이 하이엄스비치" loading="lazy"><figcaption>저비스베이</figcaption></figure>
-        <figure class="hm-shot"><img src="img/mrsmacquarie.jpg" alt="미세스 매쿼리스 포인트의 노을" loading="lazy"><figcaption>하버 노을</figcaption></figure>
-      </div>
-    </section>
-
     <details class="s-credits">
-      <summary>사진 출처 (위키미디어 커먼즈, 자유 라이선스)</summary>
+      <summary>사진 출처 (위키미디어 커먼즈 · 플리커, 자유 라이선스)</summary>
       <ul>
         <li><a href="https://commons.wikimedia.org/wiki/File:Koala_m%C3%A2chonnant_une_feuille_d%27eucalyptus,_Queensland,_Australie,_2014.jpg" target="_blank" rel="noopener">Koala mâchonnant une feuille d&#x27;eucalyptus, Queensland, Australie, 2014</a> · cuatrok77 · CC BY-SA 2.0</li>
         <li><a href="https://commons.wikimedia.org/wiki/File:Pebbly_Beach_Escape_kangaroo_basking.jpg" target="_blank" rel="noopener">Pebbly Beach Escape kangaroo basking</a> · Kylz22 · CC BY-SA 4.0</li>
@@ -1109,21 +1137,15 @@ derivative work: · CC BY-SA 4.0</li>
 
   <!-- TAB 1: PREP -->
   <div class="tabpanel active" id="tab-prep">
-    <section style="margin-top:28px;">
-      <div class="section-head">
-        <span class="eyebrow2">체크리스트</span>
-        <h2>출발 전 유의사항</h2>
-        <p>탭하면 체크돼요 — 이 기기에 저장되니 짐 쌀 때 다시 열어서 이어서 확인하세요.</p>
-      </div>
+    <details class="fold">
+      <summary><span class="eyebrow2">체크리스트</span><b>출발 전 유의사항</b></summary>
+      <p class="fold-lede">탭하면 체크돼요 — 이 기기에 저장되니 짐 쌀 때 다시 열어서 이어서 확인하세요.</p>
       <div class="prep-list" id="prep-list"></div>
-    </section>
+    </details>
 
-    <section>
-      <div class="section-head">
-        <span class="eyebrow2">현지 기본 상식</span>
-        <h2>호주에서 알고 있어야 할 것</h2>
-        <p>전기·단위·세금·팁부터 꼭 지켜야 하는 법과 문화 차이까지. 법규는 주마다 조금씩 달라요 — 시드니는 NSW주, 멜버른은 VIC주 기준이에요.</p>
-      </div>
+    <details class="fold">
+      <summary><span class="eyebrow2">현지 기본 상식</span><b>호주에서 알고 있어야 할 것</b></summary>
+      <p class="fold-lede">전기·단위·세금·팁부터 꼭 지켜야 하는 법과 문화 차이까지. 법규는 주마다 조금씩 달라요 — 시드니는 NSW주, 멜버른은 VIC주 기준이에요.</p>
       <div class="basics" id="basics-grid"></div>
       <p class="basics-src">2026년 10월 확인 기준 · 출처:
         <a href="https://www.abf.gov.au/entering-and-leaving-australia/tourist-refund-scheme" target="_blank" rel="noopener">세금 환급(ABF)</a> ·
@@ -1132,14 +1154,11 @@ derivative work: · CC BY-SA 4.0</li>
         <a href="https://www.health.nsw.gov.au/tobacco/Pages/smoke-free-laws.aspx" target="_blank" rel="noopener">금연구역(NSW Health)</a> ·
         <a href="https://www.abf.gov.au/prohibited-goods-subsite/Pages/nicotine-electronic-cigarettes-vapes.aspx" target="_blank" rel="noopener">전자담배 반입(ABF)</a>
       </p>
-    </section>
+    </details>
 
-    <section>
-      <div class="section-head">
-        <span class="eyebrow2">★ 중요 — 입국 시 세관신고</span>
-        <h2>음식물 반입, 신고하면 안전해요</h2>
-        <p>호주는 생물보안 규정이 엄격해요. 핵심은 하나 — <b>가능/불가능을 스스로 판단하지 말고, 갖고 있으면 무조건 입국신고서에 체크</b>하는 거예요. 신고하면 불이익이 없지만, 미신고 적발 시 벌금(최대 $2,600+)이 부과돼요.</p>
-      </div>
+    <details class="fold">
+      <summary><span class="eyebrow2">★ 중요 — 입국 시 세관신고</span><b>음식물 반입, 신고하면 안전해요</b></summary>
+      <p class="fold-lede">호주는 생물보안 규정이 엄격해요. 핵심은 하나 — <b>가능/불가능을 스스로 판단하지 말고, 갖고 있으면 무조건 입국신고서에 체크</b>하는 거예요. 신고하면 불이익이 없지만, 미신고 적발 시 벌금(최대 $2,600+)이 부과돼요.</p>
       <div class="table-scroll" style="overflow-x:auto;">
         <table class="customs-table">
           <thead><tr><th>품목</th><th>가능 여부</th><th>조건</th></tr></thead>
@@ -1155,7 +1174,7 @@ derivative work: · CC BY-SA 4.0</li>
         </table>
       </div>
       <div class="note-box"><b>실무 팁:</b> 헷갈리면 무조건 "신고함"으로 체크하고 검역관에게 직접 보여주세요. 최신 규정은 출발 전 <a href="https://www.agriculture.gov.au/biosecurity-trade/travelling/bringing-mailing-goods" target="_blank" rel="noopener">호주 농림부(DAFF) 공식 페이지</a>에서 한 번 더 확인하는 걸 추천해요.</div>
-    </section>
+    </details>
   </div>
 
   <!-- TAB 2: PLACES -->
@@ -3337,6 +3356,52 @@ derivative work: · CC BY-SA 4.0</li>
 
   var PHOTOS = {"wombattour": 1, "bondi": 1, "icebergs": 1, "coastalwalk": 1, "coogee": 1, "clovelly": 1, "bbq": 1, "manlybeach": 1, "shellybeach": 1, "thegap": 1, "balmoral": 1, "taronga": 1, "fireworks": 1, "agnsw": 1, "circularquay": 1, "darlingharbour": 1, "barangaroo": 1, "fishmarket": 1, "powerhouse": 1, "northsydneypool": 1, "lunapark": 1, "wendysgarden": 1, "tumbalong": 1, "mrsmacquarie": 1, "paddingtonres": 1, "paddingtonmkt": 1, "centennial": 1, "camperdown": 1, "hosierlane": 1, "degravesst": 1, "acmi": 1, "statelibrary": 1, "eurekaskydeck": 1, "sealifemelb": 1, "melbournemuseum": 1, "melbournezoo": 1, "fitzroygardens": 1, "collingwoodfarm": 1, "scienceworks": 1, "healesville": 1, "puffingbilly": 1, "grotto": 1, "londonbridge": 1, "twelveapostles": 1, "kennettriver": 1};
 
+  // 테마별 묶기: 카드의 태그를 앞에서부터 보고 처음 걸리는 테마로 분류 (태그는 중요한 것부터 적혀 있음)
+  var GROUP = {place:"theme", food:"theme"};
+  var THEME_ORDER = {
+    place:["동물 만나기","수영 · 물놀이","놀이터 · 놀이공원","박물관 · 실내","전망 · 노을","공원 · 피크닉","마켓 · 쇼핑","투어 · 드라이브","체험","숙소 · 캠핑 · 온천","그 밖의 곳"],
+    food:["고기 · 버거","이탈리안","해산물","아시안 · 세계 음식","브런치","커피","베이커리","디저트","그 밖의 곳"]
+  };
+  var THEME_OF = {place:{}, food:{}};
+  (function(){
+    function set(kind, theme, tags){ tags.forEach(function(t){ THEME_OF[kind][t] = theme; }); }
+    set("place","동물 만나기",["동물"]);
+    set("place","수영 · 물놀이",["수영","물놀이"]);
+    set("place","놀이터 · 놀이공원",["놀이터","놀이공원"]);
+    set("place","박물관 · 실내",["박물관","미술관","도서관","실내","우천대비"]);
+    set("place","전망 · 노을",["전망","노을","포토스팟","불꽃놀이"]);
+    set("place","공원 · 피크닉",["피크닉","바베큐","산책","정원","조깅"]);
+    set("place","마켓 · 쇼핑",["마켓","쇼핑","기념품","아울렛","장보기","쇼핑몰","명소"]);
+    set("place","투어 · 드라이브",["투어","드라이브","크루즈","기차","마을"]);
+    set("place","체험",["체험"]);
+    set("place","숙소 · 캠핑 · 온천",["캠핑","숙소","온천"]);
+    set("food","고기 · 버거",["스테이크","립","버거"]);
+    set("food","이탈리안",["피자","파스타","이탈리안"]);
+    set("food","해산물",["해산물","피시앤칩스"]);
+    set("food","아시안 · 세계 음식",["한식","한인타운","중식","딤섬","태국","베트남","쌀국수","말레이","마라탕","케밥","푸드코트"]);
+    set("food","브런치",["브런치","팬케이크","샌드위치"]);
+    set("food","커피",["커피"]);
+    set("food","베이커리",["베이커리","크루아상","파이","도넛"]);
+    set("food","디저트",["디저트","젤라또","아이스크림","초콜릿"]);
+  })();
+  function themeOf(it, kind){
+    var tags = tagsOf(it), map = THEME_OF[kind];
+    for (var i=0;i<tags.length;i++){ if (map[tags[i]]) return map[tags[i]]; }
+    return "그 밖의 곳";
+  }
+  function groupByTheme(items, kind){
+    var map = {};
+    items.forEach(function(it){ var t = themeOf(it, kind); (map[t] = map[t] || []).push(it); });
+    return THEME_ORDER[kind].filter(function(t){ return map[t]; }).map(function(t){ return {region:t, items:map[t], theme:true}; });
+  }
+  function grouped(kind, items){ return GROUP[kind]==="theme" ? groupByTheme(items, kind) : groupByRegion(items); }
+  function groupHead(g){
+    return '<div class="subhead">'+(g.theme ? '' : cityDot(g.region))+esc(g.region)+'<span class="gcount">'+g.items.length+'곳</span></div>';
+  }
+  window.setGuideGroup = function(kind, mode){
+    GROUP[kind] = mode;
+    if (kind==="place") renderPlaces(); else renderFood();
+  };
   function groupByRegion(items){
     var groups = [], map = {};
     items.forEach(function(it){
@@ -3436,7 +3501,7 @@ derivative work: · CC BY-SA 4.0</li>
         }).join("")+'</div>'
       : '';
   }
-  var FILTER = {place:"all", food:"all"};
+  var FILTER = {place:"top", food:"top"};   // 처음에는 필수·추천만 보이고 검토필요는 숨김
   // 도시 구분: 지역(region) → 권역(TRIP_ZONES) → 도시. 권역에 없는 지역(직접 추가한 곳 등)은 도시 없음
   var CITY = {place:"all", food:"all"};
   var CITY_NAME = {SYD:"시드니", MEL:"멜버른"}, CITY_COLOR = {SYD:"#1F7AC2", MEL:"#E07A2F"};
@@ -3452,7 +3517,11 @@ derivative work: · CC BY-SA 4.0</li>
     document.getElementById(kind+"-city").innerHTML = [["all","전체"],["SYD","시드니"],["MEL","멜버른"]].map(function(f){
       return '<button class="filter-btn'+(CITY[kind]===f[0]?" on":"")+'" onclick="setGuideCity(\''+kind+'\',\''+f[0]+'\')">'
         + (f[0]==="all" ? "" : '<i class="sw" style="background:'+CITY_COLOR[f[0]]+'"></i>')+f[1]+'<span>'+n[f[0]]+'</span></button>';
-    }).join("");
+    }).join("")
+      + '<span class="grp-toggle" role="group" aria-label="묶는 기준">'
+      + [["theme","테마별"],["region","지역별"]].map(function(g){
+          return '<button class="grp-btn'+(GROUP[kind]===g[0]?" on":"")+'" onclick="setGuideGroup(\''+kind+'\',\''+g[0]+'\')">'+g[1]+'</button>';
+        }).join("")+'</span>';
   }
   function applyCity(kind, items){
     var c = CITY[kind];
@@ -3506,7 +3575,7 @@ derivative work: · CC BY-SA 4.0</li>
   function renderFilter(kind, items){
     var n = {all:items.length, top:0, chk:0};
     items.forEach(function(it){ if (levelOf(it)==="검토필요") n.chk++; else n.top++; });
-    var defs = [["all","전체"],["top","필수·추천"],["chk","검토필요"]];
+    var defs = [["top","필수·추천"],["all","검토필요 포함"],["chk","검토필요만"]];
     document.getElementById(kind+"-filter").innerHTML = defs.map(function(f){
       return '<button class="filter-btn'+(FILTER[kind]===f[0]?" on":"")+'" onclick="setGuideFilter(\''+kind+'\',\''+f[0]+'\')">'+f[1]+'<span>'+n[f[0]]+'</span></button>';
     }).join("");
@@ -3521,6 +3590,54 @@ derivative work: · CC BY-SA 4.0</li>
     if (kind==="place") renderPlaces(); else renderFood();
   };
 
+  // 간단 카드: 사진 · 이름 · 한 줄 설명 · 핵심 태그 3개 · 운영 한 줄. 나머지는 눌러서 펼침
+  var OPEN = {};   // 펼쳐 둔 카드 id — 목록을 다시 그려도 유지
+  function simpleCard(it, kind, on){
+    var d = detailOf(it), lv = levelOf(it), ct = closedText(d.closed);
+    var chip = lv==="필수" ? '<span class="lv must">필수</span>' : lv==="검토필요" ? '<span class="lv chk">검토필요</span>'
+             : lv==="직접 추가" ? '<span class="lv mine">직접 추가</span>' : '';
+    var photo = PHOTOS[it.id]
+      ? '<img class="card-photo" src="img/'+it.id+'.jpg" alt="'+esc(it.title)+'" loading="lazy">'
+      : '<a class="ph-link" href="'+mapLink(it.q)+'" target="_blank" rel="noopener"><span class="ph-ic">'+svgUse(it.icon)+'</span><span>구글 지도에서 사진 보기 ↗</span></a>';
+    var tags = tagsOf(it).slice(0, 3);
+    var alert = "", note = d.note || "";
+    if (note.indexOf("주의:")===0){
+      var cut = note.indexOf(". ");
+      alert = '<div class="alert">'+esc(cut===-1?note:note.slice(0,cut+1))+'</div>';
+    }
+    var rows = '';
+    if (it.sig) rows += '<dt>대표 메뉴</dt><dd>'+esc(it.sig)+'</dd>';
+    if (d.hours) rows += '<dt>운영시간</dt><dd>'+esc(d.hours)+'</dd>';
+    rows += '<dt>휴무</dt><dd>'+(ct?esc(ct):'없음(매일) 또는 상시 개방')+'</dd>';
+    if (d.price) rows += '<dt>요금</dt><dd>'+esc(d.price)+'</dd>';
+    if (note) rows += '<dt>참고</dt><dd>'+esc(note)+'</dd>';
+    if (tagsOf(it).length>3) rows += '<dt>태그</dt><dd>'+esc(tagsOf(it).join(" · "))+'</dd>';
+    if (d.verified) rows += '<dt>확인 수준</dt><dd>'+esc(VERIFIED[d.verified]||d.verified)+(d.src?' · <a href="'+esc(d.src)+'" target="_blank" rel="noopener">출처</a>':'')+'</dd>';
+    var toggle = kind==="place" ? "togglePlace" : "toggleFood", open = !!OPEN[it.id];
+    return '<div class="card scard'+(on?" picked":"")+(open?" open":"")+cityClass(it)+'" data-id="'+it.id+'">'
+      + '<div class="ph">'+photo+(chip?'<div class="ph-chips">'+chip+'</div>':'')
+      + '<button class="pick-btn'+(on?" on":"")+'" aria-label="'+(on?"담기 취소":"담기")+'" onclick="'+toggle+'(\''+it.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></div>'
+      + '<button class="sbody" aria-expanded="'+(open?"true":"false")+'" onclick="toggleCard(this)">'
+      + '<span class="sreg">'+esc(it.region)+'</span>'
+      + '<h4>'+esc(it.title)+'</h4>'
+      + ((it.sub||it.sig) ? '<span class="sub">'+esc(it.sub||it.sig)+'</span>' : '')
+      + (it.desc ? '<p>'+esc(it.desc)+'</p>' : '')
+      + (tags.length ? '<span class="stags">'+tags.map(function(t){ return '<i>'+esc(t)+'</i>'; }).join("")+'</span>' : '')
+      + '<span class="shours">'+(ct?'<b class="off">'+esc(ct)+'</b>':'')+(d.hours?esc(d.hours):'운영시간 확인 필요')+'</span>'
+      + '<span class="smore-hint">자세히 ▾</span>'
+      + '</button>'
+      + '<div class="smore">'+alert+'<dl>'+rows+'</dl>'
+      + '<div class="sact"><a class="maplink" href="'+mapLink(it.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
+      + '<button class="del-btn" onclick="removeSpot(\''+kind+'\',\''+it.id+'\')">리스트에서 삭제</button></div></div>'
+      + '</div>';
+  }
+  window.toggleCard = function(btn){
+    var card = btn.parentNode, id = card.getAttribute("data-id");
+    var open = !card.classList.contains("open");
+    card.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", open ? "true" : "false");
+    if (open) OPEN[id] = true; else delete OPEN[id];
+  };
   function renderPlaces(){
     var picks = loadPicks("au_places");
     var list = spots("place");
@@ -3530,23 +3647,11 @@ derivative work: · CC BY-SA 4.0</li>
     renderFilter("place", list);
     if (!document.getElementById("place-new-title")) renderAddForm("place");
     renderRemoved("place");
-    var groups = groupByRegion(applyFilter("place", list));
+    var groups = grouped("place", applyFilter("place", list));
     document.getElementById("place-grid").innerHTML = groups.map(function(g){
-      var cards = g.items.map(function(s){
-        var on = !!picks[s.id], d = detailOf(s);
-        return '<div class="card'+(on?" picked":"")+cityClass(s)+'" data-id="'+s.id+'">'
-          + (PHOTOS[s.id] ? '<img class="card-photo" src="img/'+s.id+'.jpg" alt="'+esc(s.title)+'" loading="lazy">' : '')
-          + levelHtml(s, d)
-          + '<div class="card-top"><span class="card-ic">'+svgUse(s.icon)+'</span><div><h4>'+esc(s.title)+'</h4><span class="sub">'+esc(s.sub||"")+'</span></div></div>'
-          + (s.desc?'<p>'+esc(s.desc)+'</p>':'')
-          + tagRow(s)
-          + detailHtml(d)
-          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(s.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
-          + '<span class="card-actions"><button class="del-btn" onclick="removeSpot(\'place\',\''+s.id+'\')">삭제</button>'
-          + '<button class="pick-btn'+(on?" on":"")+'" onclick="togglePlace(\''+s.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
-          + '</div>';
+      var cards = g.items.map(function(s){ return simpleCard(s, "place", !!picks[s.id]);
       }).join("");
-      return '<div class="subhead">'+cityDot(g.region)+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+      return groupHead(g)+'<div class="grid">'+cards+'</div>';
     }).join("");
     renderPlaceSummary();
   }
@@ -3573,24 +3678,11 @@ derivative work: · CC BY-SA 4.0</li>
     renderFilter("food", list);
     if (!document.getElementById("food-new-title")) renderAddForm("food");
     renderRemoved("food");
-    var groups = groupByRegion(applyFilter("food", list));
+    var groups = grouped("food", applyFilter("food", list));
     document.getElementById("food-grid").innerHTML = groups.map(function(g){
-      var cards = g.items.map(function(f){
-        var on = !!picks[f.id], d = detailOf(f);
-        return '<div class="card'+(on?" picked":"")+cityClass(f)+'" data-id="'+f.id+'">'
-          + (PHOTOS[f.id] ? '<img class="card-photo" src="img/'+f.id+'.jpg" alt="'+esc(f.title)+'" loading="lazy">' : '')
-          + levelHtml(f, d)
-          + '<div class="card-top"><span class="card-ic">'+svgUse(f.icon)+'</span><div><h4>'+esc(f.title)+'</h4></div></div>'
-          + (f.sig?'<span class="badge">'+esc(f.sig)+'</span>':'')
-          + (f.desc?'<p>'+esc(f.desc)+'</p>':'')
-          + tagRow(f)
-          + detailHtml(d)
-          + '<div class="card-bottom"><a class="maplink" href="'+mapLink(f.q)+'" target="_blank" rel="noopener">'+svgUse("i-map")+'구글 지도</a>'
-          + '<span class="card-actions"><button class="del-btn" onclick="removeSpot(\'food\',\''+f.id+'\')">삭제</button>'
-          + '<button class="pick-btn'+(on?" on":"")+'" onclick="toggleFood(\''+f.id+'\')">'+svgUse(on?"i-check":"i-plus")+'</button></span></div>'
-          + '</div>';
+      var cards = g.items.map(function(f){ return simpleCard(f, "food", !!picks[f.id]);
       }).join("");
-      return '<div class="subhead">'+cityDot(g.region)+esc(g.region)+'</div><div class="grid">'+cards+'</div>';
+      return groupHead(g)+'<div class="grid">'+cards+'</div>';
     }).join("");
     renderFoodSummary();
   }
